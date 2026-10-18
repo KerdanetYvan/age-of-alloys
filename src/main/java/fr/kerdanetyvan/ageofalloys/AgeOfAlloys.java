@@ -1,7 +1,11 @@
 package fr.kerdanetyvan.ageofalloys;
 
 import com.mojang.logging.LogUtils;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 /**
@@ -13,7 +17,20 @@ public class AgeOfAlloys {
     public static final String MOD_ID = "ageofalloys";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public AgeOfAlloys() {
+    public AgeOfAlloys(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
+
+        modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
+
         LOGGER.info("Age of Alloys is loading");
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        LOGGER.info("Age of Alloys: common setup (client and server)");
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event) {
+        LOGGER.info("Age of Alloys: client setup (client only)");
     }
 }

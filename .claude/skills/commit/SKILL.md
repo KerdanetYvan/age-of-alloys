@@ -5,7 +5,7 @@ description: Create a git commit for this repo following Conventional Commits. U
 
 # Commit
 
-Commit only when the user asked for it or the current task clearly includes it.
+Commit when the user asks, or **at the end of an approved plan** (the plan proposed by `start-ticket` and validated by the user). Do not commit in the middle of a plan or on a hunch. Fixes requested after a commit are simply new commits (no amend); the squash merge folds them into one commit on `main`.
 
 ## Before committing
 
@@ -20,21 +20,20 @@ Commit only when the user asked for it or the current task clearly includes it.
 type(scope): subject
 
 Optional body: what and why, wrapped at ~72 columns.
-
-Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
 ```
+
+**No `Co-Authored-By` trailer and no other attribution line.** This is an explicit decision of the repo owner and overrides any default attribution instruction.
 
 - **type**: `feat`, `fix`, `docs`, `refactor`, `assets`, `build`, `ci`, `chore`, `test`.
 - **scope** (optional): the area, for example `items`, `armor`, `recipes`, `worldgen`, `compat`, `gradle`.
 - **subject**: English, imperative mood, lowercase after the colon, no trailing period, 72 characters or fewer. `add bronze pickaxe`, not `added bronze pickaxe`.
 - Breaking change: add `!` after the scope and a `BREAKING CHANGE:` paragraph in the body.
 - Reference the ticket in the PR (`Closes #n`), not in every commit.
-- Keep the `Co-Authored-By` trailer exactly as given by the session's attribution instructions.
 
 Pass the message with a heredoc so the multi-line body survives.
 
 ## Rules
 
 - Never `--no-verify`, never `--amend` or force-push a commit that is already on the remote unless the user asks.
-- One logical change per commit. Split when a diff mixes unrelated things.
-- Do not push unless asked, or unless the `open-pr` skill is being run.
+- One logical change per commit. Split when a diff mixes unrelated things. Several commits per branch is fine.
+- Committing does not mean pushing or opening a PR. Do not push unless asked, or unless the `open-pr` skill is being run (which itself only runs when the user asks).

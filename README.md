@@ -1,44 +1,50 @@
 # ⚒️ Age of Alloys
 
-> Un mod Minecraft qui ajoute des **alliages**, et avec eux de nouveaux outils, armes et armures.
+🇬🇧 **English** · 🇫🇷 [Français](README.fr.md)
 
-![Statut](https://img.shields.io/badge/statut-en%20d%C3%A9veloppement-orange)
-<!-- TODO: badges version Minecraft, loader, licence, téléchargements CurseForge/Modrinth, CI -->
+> A Minecraft mod that adds **alloys**, and with them new tools, weapons and armor.
+
+[![Build](https://github.com/KerdanetYvan/age-of-alloys/actions/workflows/build.yml/badge.svg)](https://github.com/KerdanetYvan/age-of-alloys/actions/workflows/build.yml)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.20.1-62b47a)
+![Forge](https://img.shields.io/badge/Forge-47.x-d9672b)
+![Status](https://img.shields.io/badge/status-in%20development-orange)
+![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey)
+<!-- TODO: CurseForge / Modrinth download badges -->
 
 ## Concept
 
-Age of Alloys enrichit la progression de Minecraft avec des métaux composites : on ne se contente plus de fer, d'or et de diamant, on **fond, mélange et forge** de nouveaux matériaux.
+Age of Alloys deepens Minecraft's progression with composite metals: iron, gold and diamond are no longer enough, you **smelt, mix and forge** brand new materials.
 
-## Fonctionnalités prévues
+## Planned features
 
-- [ ] **Alliages** et leurs équipements (outils, armes, armures)
-- [ ] **Création des alliages** en jeu
-- [ ] **Matières premières** générées dans le monde
-- [ ] **Compatibilité** avec d'autres mods populaires
-- [ ] **Wiki** complet
+- [ ] **Alloys** and their gear (tools, weapons, armor)
+- [ ] **Alloy creation** in game
+- [ ] **Raw materials** generated in the world
+- [ ] **Compatibility** with popular mods
+- [ ] Full **wiki**
 
-Le détail et l'ordre sont dans la [roadmap](ROADMAP.md).
+Details and order are in the [roadmap](ROADMAP.md) (in French).
 
-## Compatibilité
+## Compatibility
 
-| Minecraft | Loader | Statut |
+| Minecraft | Loader | Status |
 |-----------|--------|--------|
-| 1.20.1 | Forge 47.x (Java 17) | 🚧 En développement |
+| 1.20.1 | Forge 47.x (Java 17) | 🚧 In development |
 
-Un portage vers NeoForge et des versions plus récentes est envisagé plus tard.
+A port to NeoForge and newer Minecraft versions is planned for later.
 
 ## Installation
 
-_Disponible dès la première release._
+_Available with the first release._
 
 ## Documentation
 
-- [Roadmap](ROADMAP.md)
+- [Roadmap](ROADMAP.md) (French)
 - [Changelog](CHANGELOG.md)
-- [Contribuer](CONTRIBUTING.md)
-- [Fiche de notions (apprentissage)](docs/NOTIONS.md)
+- [Contributing](CONTRIBUTING.md) (French)
+- [Learning notes](docs/NOTIONS.md) (French)
 
-## Licence
+## License
 
-© 2026 Kerdanet Yvan, **All Rights Reserved**. Voir [LICENSE](LICENSE).
-Certaines textures dérivent des assets de Minecraft (propriété de Mojang/Microsoft).
+© 2026 Kerdanet Yvan, **All Rights Reserved**. See [LICENSE](LICENSE).
+Some textures are derived from Minecraft assets (property of Mojang/Microsoft).

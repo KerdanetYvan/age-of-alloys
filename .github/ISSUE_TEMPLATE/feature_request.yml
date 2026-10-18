@@ -1,0 +1,22 @@
+name: Feature / content
+description: Propose a new item, mechanic or integration
+labels: ["type: feature"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be added and why?
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Stats, recipe, behavior, visuals... whatever is already decided.
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: How do we know it is finished?
+      placeholder: "- [ ] ...\n- [ ] ..."

@@ -1,0 +1,16 @@
+name: Learning topic
+description: A concept to study and understand before building
+labels: ["type: learning"]
+body:
+  - type: textarea
+    id: concepts
+    attributes:
+      label: Concepts to understand
+      description: Link the matching sections of docs/NOTIONS.md.
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: Understanding check
+      description: Question(s) to answer in your own words to validate the topic.

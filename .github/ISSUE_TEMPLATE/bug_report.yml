@@ -1,0 +1,42 @@
+name: Bug report
+description: Something in the mod is broken
+labels: ["type: bug"]
+body:
+  - type: input
+    id: mod_version
+    attributes:
+      label: Mod version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Minecraft / Forge version
+      placeholder: "1.20.1 / Forge 47.4.10"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. ...\n2. ...\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / crash report
+      description: Attach `latest.log` or the crash report (use a paste service for long logs).
+  - type: textarea
+    id: other_mods
+    attributes:
+      label: Other mods installed
+      description: Leave empty if none.

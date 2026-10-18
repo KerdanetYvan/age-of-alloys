@@ -9,9 +9,9 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 ## 1. Les fondations du modding
 
-- [ ] Ce qu'est un mod : du code Java chargé par le jeu au démarrage (E1)
-- [ ] Minecraft Java Edition vs Bedrock : pourquoi on parle uniquement de Java (E1)
-- [ ] Les **mod loaders** : Forge, NeoForge, Fabric, Quilt, et pourquoi ils existent (E1)
+- [x] Ce qu'est un mod : du code Java chargé par le jeu au démarrage (E1)
+- [x] Minecraft Java Edition vs Bedrock : pourquoi on parle uniquement de Java (E1)
+- [x] Les **mod loaders** : Forge, NeoForge, Fabric, Quilt, et pourquoi ils existent (E1)
 - [ ] Les **mappings** : le code de Minecraft est obfusqué, comment on le rend lisible (E1)
 - [ ] Le **versioning de Minecraft** et pourquoi un mod est lié à une version précise (E1)
 - [ ] Côté **client** vs côté **serveur** (logical sides) : la notion la plus importante du modding (E1)
@@ -19,15 +19,15 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 ## 2. Environnement et outillage
 
-- [ ] **JDK** : quelle version de Java pour quelle version de Minecraft (E1)
-- [ ] **Gradle** : système de build, `build.gradle`, `gradle.properties`, wrapper (E1)
-- [ ] Le **MDK / template** de mod fourni par le loader (E1)
-- [ ] Structure d'un projet de mod : `src/main/java`, `src/main/resources` (E1)
-- [ ] Lancer le jeu en développement : `runClient`, `runServer`, `runData` (E1)
+- [x] **JDK** : quelle version de Java pour quelle version de Minecraft (E1)
+- [x] **Gradle** : système de build, `build.gradle`, `gradle.properties`, wrapper (E1)
+- [x] Le **MDK / template** de mod fourni par le loader (E1)
+- [x] Structure d'un projet de mod : `src/main/java`, `src/main/resources` (E1)
+- [x] Lancer le jeu en développement : `runClient`, `runServer`, `runData` (E1)
 - [ ] Lire un **crash report** et un `latest.log` (E1)
 - [ ] Déboguer avec l'IDE (points d'arrêt) (E1)
 - [ ] Le fichier de métadonnées du mod : `neoforge.mods.toml` / `fabric.mod.json` (E1)
-- [ ] **mod id**, namespace, et convention de nommage (E1)
+- [x] **mod id**, namespace, et convention de nommage (E1)
 
 ## 3. Le modèle de données de Minecraft
 

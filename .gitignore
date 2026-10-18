@@ -1,0 +1,33 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Minecraft dev runtime
+run/
+runs/
+out/
+logs/
+crash-reports/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+bin/
+*.ipr
+*.iws
+
+# Datagen cache
+src/generated/resources/.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets (clés de publication CurseForge/Modrinth)
+.env
+*.token

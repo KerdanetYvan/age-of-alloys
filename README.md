@@ -23,7 +23,9 @@ Le détail et l'ordre sont dans la [roadmap](ROADMAP.md).
 
 | Minecraft | Loader | Statut |
 |-----------|--------|--------|
-| _à définir_ | _à définir_ | 🚧 |
+| 1.20.1 | Forge 47.x (Java 17) | 🚧 En développement |
+
+Un portage vers NeoForge et des versions plus récentes est envisagé plus tard.
 
 ## Installation
 
@@ -38,4 +40,5 @@ _Disponible dès la première release._
 
 ## Licence
 
-_À définir._
+© 2026 Kerdanet Yvan, **All Rights Reserved**. Voir [LICENSE](LICENSE).
+Certaines textures dérivent des assets de Minecraft (propriété de Mojang/Microsoft).

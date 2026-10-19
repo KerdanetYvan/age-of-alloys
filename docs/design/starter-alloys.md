@@ -16,6 +16,8 @@
 
 Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on ne veut pas faire doublon.
 
+**Palettes.** Chaque métal a de **5 à 7 teintes** : les plus sombres servent aux contours et aux ombres, les plus claires aux reflets, comme dans le lingot de fer vanilla (8 teintes). Sans elles, une texture paraît plate. Les palettes ci-dessous sont celles **réellement utilisées** dans les textures. Les gris métalliques se ressemblent, donc on les distingue à la fois par la **teinte** et par la **valeur** (clair ou sombre).
+
 **Nommage.** Tous les objets suivent `ageofalloys:<alliage>_<objet>` (`ageofalloys:bronze_ingot`, `ageofalloys:steel_sword`). Le namespace est le mod id et ne changera jamais.
 
 **Contenu de l'étape 1.** Par alliage : un lingot, une pioche, une hache, une pelle, une houe et une épée, soit 18 objets. Plus **4 lingots de matières premières** (étain, aluminium, magnésium, manganèse), nécessaires pour tester les recettes de l'étape 2, obtenus en créatif tant que l'étape 3 n'existe pas. Les armures sont conçues plus tard. Les pépites sont ajoutées le jour où une recette en a besoin.
@@ -28,7 +30,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 - **En jeu** : l'outil robuste de milieu de partie, plus durable que le fer.
 - **Objets** : `bronze_ingot`, `bronze_pickaxe`, `bronze_axe`, `bronze_shovel`, `bronze_hoe`, `bronze_sword`.
 - **Recette prévue (étape 2, non implémentée ici)** : 3 cuivre + 1 étain, pour 4 lingots.
-- **Palette** (sombre à clair) : `#5C3A1B` · `#8A5A2B` · `#CD7F32` · `#E8A55F`.
+- **Palette** (6 teintes, sombre à clair) : `#5C3A1B` · `#8A5A2B` · `#CD7F32` · `#E8A55F` · `#F3BC82` · `#F8DABC`. Les deux dernières teintes (reflets) viennent de la première texture dessinée.
 
 ### Duralumin
 
@@ -36,7 +38,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 - **En jeu** : l'alliage des **mineurs pressés** : vitesse de minage supérieure à celle de l'acier, mais durabilité et dégâts faibles. Il casse moins de blocs au total, plus vite.
 - **Objets** : `duralumin_ingot`, `duralumin_pickaxe`, `duralumin_axe`, `duralumin_shovel`, `duralumin_hoe`, `duralumin_sword`.
 - **Recette prévue (étape 2, non implémentée ici)** : alliage à 4 composants (aluminium, cuivre, magnésium, manganèse). Les proportions seront simplifiées pour rester jouables, à définir à l'étape 2.
-- **Palette** (6 teintes, sombre à clair) : `#4A545C` · `#7C868F` · `#9AA3AB` · `#B9C1C8` · `#D5DBE0` · `#EEF2F5`. Argent clair, plus lumineux que l'acier. Les deux teintes sombres servent aux contours : le lingot de fer vanilla en a, sans quoi la texture paraîtrait délavée.
+- **Palette** (6 teintes, sombre à clair) : `#344455` · `#566B80` · `#7C94AA` · `#A6BBCE` · `#CDDDEA` · `#EAF3FA`. Bleu-argent franc, pour le distinguer du fer (gris neutre) et de l'aluminium (gris mat).
 
 ### Acier
 
@@ -44,7 +46,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 - **En jeu** : le meilleur matériau de l'étape 1, à la frontière du diamant, qu'il n'égale pas.
 - **Objets** : `steel_ingot`, `steel_pickaxe`, `steel_axe`, `steel_shovel`, `steel_hoe`, `steel_sword`.
 - **Recette prévue (étape 2)** : fer + charbon (source de carbone). Ratio à définir.
-- **Palette** : `#3B4652` · `#5F6F7F` · `#8A9AA8` · `#BCC7D1`.
+- **Palette** (carbone chaud) : `#2B2625` · `#47403D` · `#6B625D` · `#948A83` · `#BDB3AB`, avec `#E0D8D1` réservé aux éclats. Plus sombre que le fer (luminosité moyenne 97 contre 156) mais nettement plus clair que la netherite vanilla (59), pour ne pas la confondre avec elle.
 
 ## 3. Statistiques des outils
 
@@ -81,7 +83,7 @@ Dégâts par coup = base de l'objet + bonus du matériau + 1 (la main). Dégâts
 
 - Objets : voir les fiches ci-dessus.
 - Tags de ressources partagés avec les autres mods, **espace de noms `forge:`** en 1.20.1 : `forge:ingots/bronze`, `forge:ingots/duralumin`, `forge:ingots/steel`.
-- **Matières premières** (étape 1) : `ageofalloys:tin_ingot`, `aluminum_ingot`, `magnesium_ingot`, `manganese_ingot`, avec les tags `forge:ingots/tin`, `forge:ingots/aluminum`, `forge:ingots/magnesium`, `forge:ingots/manganese`. Ce sont les noms usuels partagés avec les autres mods (orthographe américaine pour l'aluminium). Les palettes de ces lingots seront fixées au ticket des textures (#13).
+- **Matières premières** (étape 1) : `ageofalloys:tin_ingot`, `aluminum_ingot`, `magnesium_ingot`, `manganese_ingot`, avec les tags `forge:ingots/tin`, `forge:ingots/aluminum`, `forge:ingots/magnesium`, `forge:ingots/manganese`. Ce sont les noms usuels partagés avec les autres mods (orthographe américaine pour l'aluminium). Palettes (sombre à clair) : étain `#2A3A41` · `#3E5560` · `#5F7C8A` · `#86A3B1` · `#B0C8D3` · `#D8E8EF` · `#EAF2F5` (gris-bleu froid, turquoise pâle) ; aluminium `#464B4D` · `#6B7476` · `#8F989A` · `#B3BCBE` · `#D3DADC` (gris mat moyen, légèrement verdâtre) ; magnésium `#4A4843` · `#8A8780` · `#B9B5AB` · `#DAD6CB` · `#EFEBE0` · `#F8F5EC` · `#FFFFFF` (blanc crème chaud, le lingot le plus clair) ; manganèse `#3F3340` · `#5E4C5F` · `#7F6A80` · `#A08AA1` · `#C3B0C4` · `#DED4DF` · `#F1E7F2` (gris-violet).
 - **Autres loaders (préparation)** : NeoForge (1.21+) et Fabric utilisent l'espace `c:` (`c:ingots/bronze`) au lieu de `forge:`. Le chemin (`ingots/bronze`) reste le même, seul l'espace change : à garder en tête pour un futur portage.
 - Tags d'outils : les outils rejoignent `minecraft:pickaxes`, `minecraft:axes`, `minecraft:shovels`, `minecraft:hoes`, `minecraft:swords`.
 - Les niveaux de minage des tiers personnalisés passent par le système de tiers de Forge : à traiter dans le ticket des outils (#11).

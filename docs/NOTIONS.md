@@ -55,8 +55,8 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 ## 5. Assets visuels (côté ressources)
 
-- [ ] **Textures** : format PNG, taille 16×16, palettes cohérentes (E1)
-- [ ] **Item models** JSON (`item/generated`, `item/handheld`) (E1)
+- [*] **Textures** : format PNG, taille 16×16, palettes cohérentes (E1)
+- [*] **Item models** JSON (`item/generated`, `item/handheld`) (E1)
 - [ ] **Blockstates** et **block models** (E3)
 - [ ] **Armor models / layers** : rendu des armures sur le joueur (E1)
 - [ ] **Atlas** : comment les textures sont regroupées (E1)

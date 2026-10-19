@@ -24,7 +24,7 @@ Project: GitHub Projects v2 number `6`, owner `KerdanetYvan`, id `PVT_kwHOCjZVkc
    - `slug`: 2-4 lowercase words from the title, joined by `-`.
    - Uncommitted changes on the current branch: do not carry them over silently. Tell the user and ask.
 4. **Confirm** in one short line: ticket moved, branch name.
-5. **Plan before coding.** Enter plan mode (EnterPlanMode) and propose a plan for the ticket: files to create or change, steps in order, what the user will code themselves if it is a crucial learning moment, how it will be verified. Write no code and touch no project file until the user approves the plan.
+5. **Plan before coding.** Enter plan mode (EnterPlanMode) and propose a plan for the ticket: files to create or change, steps in order, what the user will code themselves if it is a crucial learning moment, how it will be verified. **Write the plan in French** (the plan file, the approval text and any question). Write no code and touch no project file until the user approves the plan.
 
 ## Rules
 
@@ -32,4 +32,4 @@ Project: GitHub Projects v2 number `6`, owner `KerdanetYvan`, id `PVT_kwHOCjZVkc
 - Do not mix unrelated changes in a branch.
 - Never work on `main` directly.
 - "Review" and "Fait" are set by the project's automations (PR linked, PR merged). Do not set them by hand unless the user reports they did not fire.
-- Respond in French, unless the user explicitly asks for English.
+- Language rules are defined in `CLAUDE.md`: everything the user reads, including the plan, is in French.

@@ -31,3 +31,10 @@ Thumbs.db
 # Secrets (clés de publication CurseForge/Modrinth)
 .env
 *.token
+
+# Reference art extracted from Minecraft (Mojang assets, never published)
+art/reference/
+
+# Local backups of earlier texture versions, and PNG copies already tracked in src/main/resources
+art/source/archive/
+art/source/*.png

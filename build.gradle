@@ -205,3 +205,28 @@ publishing {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+
+// Architecture rule (see docs/architecture.md): the neutral `content` package must not depend on Forge,
+// so it stays reusable when porting to another loader. Runs as part of `check`, hence `build` and CI.
+tasks.register('checkArchitecture') {
+    group = 'verification'
+    description = 'Fails if a class in the content package references net.minecraftforge.'
+    doLast {
+        def violations = []
+        fileTree('src/main/java/fr/kerdanetyvan/ageofalloys/content').matching { include '**/*.java' }.each { source ->
+            source.eachLine { line, number ->
+                if (line.contains('net.minecraftforge')) {
+                    violations << "${source}:${number}: ${line.trim()}"
+                }
+            }
+        }
+        if (!violations.isEmpty()) {
+            throw new GradleException("The content package must not use Forge:\n" + violations.join('\n'))
+        }
+    }
+}
+
+tasks.named('check') {
+    dependsOn 'checkArchitecture'
+}

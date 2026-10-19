@@ -32,3 +32,4 @@ Project: GitHub Projects v2 number `6`, owner `KerdanetYvan`, id `PVT_kwHOCjZVkc
 - Do not mix unrelated changes in a branch.
 - Never work on `main` directly.
 - "Review" and "Fait" are set by the project's automations (PR linked, PR merged). Do not set them by hand unless the user reports they did not fire.
+- Respond in French, unless the user explicitly asks for English.

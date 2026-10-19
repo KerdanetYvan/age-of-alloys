@@ -32,7 +32,7 @@ Useful commands: `grep -nE "^(minecraft|forge|loader|mod_)" gradle.properties`, 
 
 ## 3. Learning checklist (`docs/NOTIONS.md`)
 
-Never tick a box. For each notion that this ticket was supposed to teach, add a trailing ` *` to its line (`- [ ] **Registries** ... (E1) *`). The `*` means "should have been covered, waiting for the user to confirm". The user ticks the box and removes the `*` once they have understood. If the legend is missing at the top of the file, add: `` `*` = covered in a lesson, awaiting your validation ``. Touching `NOTIONS.md` belongs in the ticket's own branch.
+Never write `[x]`. For each notion that this ticket was supposed to teach and that has not been marked yet, change its `[ ]` into `[*]` (`- [*] **Registries** ...`). `[*]` means "covered, waiting for the user to confirm"; the user replaces the star with an `x` once they have understood. The legend at the top of `docs/NOTIONS.md` already describes the three states (`[ ]`, `[*]`, `[x]`); recreate it only if it is missing. Touching `NOTIONS.md` belongs in the ticket's own branch.
 
 ## 4. Open
 

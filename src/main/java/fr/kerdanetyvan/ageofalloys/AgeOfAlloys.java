@@ -1,6 +1,8 @@
 package fr.kerdanetyvan.ageofalloys;
 
 import com.mojang.logging.LogUtils;
+import fr.kerdanetyvan.ageofalloys.registry.ModCreativeTabs;
+import fr.kerdanetyvan.ageofalloys.registry.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -19,6 +21,9 @@ public class AgeOfAlloys {
 
     public AgeOfAlloys(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

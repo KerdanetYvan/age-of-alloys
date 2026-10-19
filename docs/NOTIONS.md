@@ -15,7 +15,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [x] Minecraft Java Edition vs Bedrock : pourquoi on parle uniquement de Java (E1)
 - [x] Les **mod loaders** : Forge, NeoForge, Fabric, Quilt, et pourquoi ils existent (E1)
 - [x] Les **mappings** : le code de Minecraft est obfusqué, comment on le rend lisible (E1)
-- [*] Le **versioning de Minecraft** et pourquoi un mod est lié à une version précise (E1)
+- [x] Le **versioning de Minecraft** et pourquoi un mod est lié à une version précise (E1)
 - [x] Côté **client** vs côté **serveur** (logical sides) : la notion la plus importante du modding (E1)
 - [x] Solo = serveur intégré + client : ce que ça implique (E1)
 
@@ -43,8 +43,8 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 ## 4. Items
 
-- [ ] Un **Item** vs un **ItemStack** (E1)
-- [ ] **Item.Properties** : stack size, durabilité, rareté, résistance au feu… (E1)
+- [x] Un **Item** vs un **ItemStack** (E1)
+- [x] **Item.Properties** : stack size, durabilité, rareté, résistance au feu… (E1)
 - [ ] Les **tiers de matériaux** (Tier) : durabilité, vitesse de minage, dégâts, enchantabilité (E1)
 - [ ] Outils : pioche, hache, pelle, houe, épée, et leurs **attributs** (E1)
 - [ ] Armures : **ArmorMaterial**, slots, protection, toughness, knockback resistance (E1)

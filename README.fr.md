@@ -1,8 +1,8 @@
-# ⚒️ Age of Alloys
+<p align="center"><img src="docs/assets/banner.png" alt="Age of Alloys" width="100%"></p>
 
 🇬🇧 [English](README.md) · 🇫🇷 **Français**
 
-> Un mod Minecraft qui ajoute des **alliages**, et avec eux de nouveaux outils, armes et armures.
+> **Le meilleur de chaque métal.** Un mod Minecraft qui ajoute des **alliages**, et avec eux de nouveaux outils, armes et armures.
 
 [![Build](https://github.com/KerdanetYvan/age-of-alloys/actions/workflows/build.yml/badge.svg)](https://github.com/KerdanetYvan/age-of-alloys/actions/workflows/build.yml)
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.20.1-62b47a)

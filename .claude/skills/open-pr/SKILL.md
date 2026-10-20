@@ -50,8 +50,26 @@ gh pr create --base main --head <branch> --title "<type(scope): subject>" --body
 - Do not move the ticket to "Review" by hand: the "Pull request linked to issue" automation does it. Wait about 15 seconds and verify with `gh project item-list 6 --owner KerdanetYvan --limit 100 --format json`. Set it manually only if it did not move, and tell the user.
 - Watch CI: `gh pr checks <pr> --watch`. Report the result. On failure read the log (`gh run view --log-failed`), fix on the same branch, push.
 - Give the PR link as a markdown link.
+- Do not touch the parent ticket yet, even if this is its last open sub-issue: it is closed after the merge (see "Parent ticket" below).
 
 ## Rules
 
 - **Never merge.** The user merges with "Squash and merge". Branch protection requires a green `Build mod` check.
-- After the user says it is merged: `git switch main && git pull`, delete the local branch, and confirm the ticket reached "Fait" (automation "Pull request merged").
+- After the user says it is merged: `git switch main && git pull`, delete the local branch, and confirm the ticket reached "Fait" (automation "Pull request merged"). Then handle the parent ticket (below).
+
+## Parent ticket (after the merge, never when the PR is opened)
+
+If the merged ticket is a sub-issue, close its parent once **all** its sub-issues are closed. Closing at merge time, not at PR time, avoids declaring a parent done while the last PR could still fail CI or be rejected. Replace `<n>` with the merged ticket's number:
+
+```bash
+PARENT=$(gh api graphql -f query='query{repository(owner:"KerdanetYvan",name:"age-of-alloys"){issue(number:<n>){parent{number}}}}' --jq '.data.repository.issue.parent.number // empty')
+if [ -n "$PARENT" ]; then
+  # open siblings, ignoring the ticket just merged (GitHub may not have closed it yet)
+  LEFT=$(gh api repos/KerdanetYvan/age-of-alloys/issues/$PARENT/sub_issues --paginate --jq '[.[]|select(.state=="open" and .number!=<n>)]|length')
+  [ "$LEFT" = 0 ] && gh issue close $PARENT -R KerdanetYvan/age-of-alloys --reason completed --comment "All sub-issues are done."
+fi
+```
+
+- `LEFT` greater than 0: close nothing and tell the user how many sub-issues remain.
+- After closing, wait about 15 seconds and check that the parent reached "Fait" on the board (automation "Item closed"). If not, set it by hand with the `Fait` option of the Status field (same commands as in `start-ticket`, with `Fait`) and tell the user.
+- Tell the user which parent was closed.

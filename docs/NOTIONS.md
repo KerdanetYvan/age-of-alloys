@@ -51,7 +51,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [ ] **Data components** (1.20.5+) vs NBT : stocker des données sur un item (E1)
 - [ ] **Creative tabs** : ranger ses items dans l'inventaire créatif (E1)
 - [ ] **Tags** : `#c:ingots`, `#minecraft:pickaxes`… et pourquoi ils sont clés pour la compat (E1/E4)
-- [ ] **Localisation** (`lang/*.json`) : noms traduits (E1)
+- [*] **Localisation** (`lang/*.json`) : noms traduits (E1)
 
 ## 5. Assets visuels (côté ressources)
 

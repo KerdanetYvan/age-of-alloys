@@ -3,6 +3,7 @@ package fr.kerdanetyvan.ageofalloys;
 import com.mojang.logging.LogUtils;
 import fr.kerdanetyvan.ageofalloys.registry.ModCreativeTabs;
 import fr.kerdanetyvan.ageofalloys.registry.ModItems;
+import fr.kerdanetyvan.ageofalloys.registry.ModTiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -32,6 +33,7 @@ public class AgeOfAlloys {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(ModTiers::register);
         LOGGER.info("Age of Alloys: common setup (client and server)");
     }
 

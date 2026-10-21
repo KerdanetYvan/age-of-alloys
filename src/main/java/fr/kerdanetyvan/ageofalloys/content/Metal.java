@@ -37,4 +37,8 @@ public enum Metal {
     public String ingotName() {
         return id + "_ingot";
     }
+
+    public String toolName(ToolType type) {
+        return id + "_" + type.id();
+    }
 }

@@ -45,8 +45,8 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 - [x] Un **Item** vs un **ItemStack** (E1)
 - [x] **Item.Properties** : stack size, durabilité, rareté, résistance au feu… (E1)
-- [ ] Les **tiers de matériaux** (Tier) : durabilité, vitesse de minage, dégâts, enchantabilité (E1)
-- [ ] Outils : pioche, hache, pelle, houe, épée, et leurs **attributs** (E1)
+- [*] Les **tiers de matériaux** (Tier) : durabilité, vitesse de minage, dégâts, enchantabilité (E1)
+- [*] Outils : pioche, hache, pelle, houe, épée, et leurs **attributs** (E1)
 - [ ] Armures : **ArmorMaterial**, slots, protection, toughness, knockback resistance (E1)
 - [ ] **Data components** (1.20.5+) vs NBT : stocker des données sur un item (E1)
 - [ ] **Creative tabs** : ranger ses items dans l'inventaire créatif (E1)

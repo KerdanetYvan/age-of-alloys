@@ -24,6 +24,11 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.ALUMINUM_INGOT.get());
                 output.accept(ModItems.MAGNESIUM_INGOT.get());
                 output.accept(ModItems.MANGANESE_INGOT.get());
+                output.accept(ModItems.BRONZE_PICKAXE.get());
+                output.accept(ModItems.BRONZE_AXE.get());
+                output.accept(ModItems.BRONZE_SHOVEL.get());
+                output.accept(ModItems.BRONZE_HOE.get());
+                output.accept(ModItems.BRONZE_SWORD.get());
             })
             .build());
 

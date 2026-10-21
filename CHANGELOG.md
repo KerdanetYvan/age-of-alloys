@@ -13,3 +13,4 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 - 7 lingots : bronze, duralumin, acier, étain, aluminium, magnésium et manganèse, regroupés dans l'onglet créatif « Age of Alloys ». Chaque lingot a sa propre texture, obtenus en créatif.
 - Identité visuelle : logo du mod (affiché dans la liste des mods), bannière et image sociale, README alignés avec le slogan « Le meilleur de chaque métal ».
 - Noms des 7 lingots et de l'onglet créatif traduits en anglais (`en_us`) et en français (`fr_fr`).
+- Famille d'outils en bronze : pioche, hache, pelle, houe et épée (durabilité 400, vitesse 6, niveau du fer), dans l'onglet créatif. Textures et noms viendront avec les tickets dédiés.

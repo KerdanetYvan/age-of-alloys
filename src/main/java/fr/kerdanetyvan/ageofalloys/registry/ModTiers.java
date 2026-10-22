@@ -17,13 +17,20 @@ import net.minecraftforge.common.TierSortingRegistry;
 public final class ModTiers {
     public static final TagKey<Block> NEEDS_BRONZE_TOOL =
             TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID, "needs_bronze_tool"));
+    public static final TagKey<Block> NEEDS_DURALUMIN_TOOL =
+            TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID, "needs_duralumin_tool"));
 
     public static final Tier BRONZE =
             new AlloyTier(ToolStats.BRONZE, NEEDS_BRONZE_TOOL, () -> Ingredient.of(ModItems.BRONZE_INGOT.get()));
+    public static final Tier DURALUMIN =
+            new AlloyTier(ToolStats.DURALUMIN, NEEDS_DURALUMIN_TOOL, () -> Ingredient.of(ModItems.DURALUMIN_INGOT.get()));
 
     /** Tells Forge where each tier ranks between the vanilla ones. Call it once, during common setup. */
     public static void register() {
         TierSortingRegistry.registerTier(BRONZE, ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID, "bronze"),
+                List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
+
+        TierSortingRegistry.registerTier(DURALUMIN, ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID, "duralumin"),
                 List.of(Tiers.IRON), List.of(Tiers.DIAMOND));
     }
 

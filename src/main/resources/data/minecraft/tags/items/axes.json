@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "ageofalloys:bronze_axe"
+    "ageofalloys:bronze_axe",
+    "ageofalloys:duralumin_axe"
   ]
 }

@@ -29,6 +29,11 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.BRONZE_SHOVEL.get());
                 output.accept(ModItems.BRONZE_HOE.get());
                 output.accept(ModItems.BRONZE_SWORD.get());
+                output.accept(ModItems.DURALUMIN_PICKAXE.get());
+                output.accept(ModItems.DURALUMIN_AXE.get());
+                output.accept(ModItems.DURALUMIN_SHOVEL.get());
+                output.accept(ModItems.DURALUMIN_HOE.get());
+                output.accept(ModItems.DURALUMIN_SWORD.get());
             })
             .build());
 

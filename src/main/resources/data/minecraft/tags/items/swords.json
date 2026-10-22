@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "ageofalloys:bronze_sword"
+    "ageofalloys:bronze_sword",
+    "ageofalloys:duralumin_sword"
   ]
 }

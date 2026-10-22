@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "ageofalloys:bronze_pickaxe"
+    "ageofalloys:bronze_pickaxe",
+    "ageofalloys:duralumin_pickaxe"
   ]
 }

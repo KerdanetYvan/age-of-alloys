@@ -52,6 +52,17 @@ public final class ModItems {
     public static final RegistryObject<Item> DURALUMIN_SWORD = tool(Metal.DURALUMIN, ToolType.SWORD,
             () -> new SwordItem(ModTiers.DURALUMIN, 3, -2.0F, new Item.Properties()));
 
+    public static final RegistryObject<Item> STEEL_PICKAXE = tool(Metal.STEEL, ToolType.PICKAXE,
+            () -> new PickaxeItem(ModTiers.STEEL, 1, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_AXE = tool(Metal.STEEL, ToolType.AXE,
+            () -> new AxeItem(ModTiers.STEEL, 6.0F, -3.1F, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_SHOVEL = tool(Metal.STEEL, ToolType.SHOVEL,
+            () -> new ShovelItem(ModTiers.STEEL, 1.5F, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_HOE = tool(Metal.STEEL, ToolType.HOE,
+            () -> new HoeItem(ModTiers.STEEL, -2, -1.0F, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_SWORD = tool(Metal.STEEL, ToolType.SWORD,
+            () -> new SwordItem(ModTiers.STEEL, 3, -2.4F, new Item.Properties()));
+
     private static RegistryObject<Item> ingot(Metal metal) {
         return ITEMS.register(metal.ingotName(), () -> new Item(new Item.Properties()));
     }

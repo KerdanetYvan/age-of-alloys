@@ -15,3 +15,4 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 - Noms des 7 lingots et de l'onglet créatif traduits en anglais (`en_us`) et en français (`fr_fr`).
 - Famille d'outils en bronze : pioche, hache, pelle, houe et épée (durabilité 400, vitesse 6, niveau du fer), dans l'onglet créatif. Textures et noms viendront avec les tickets dédiés.
 - Famille d'outils en duralumin : pioche, hache, pelle, houe et épée (durabilité 200, vitesse 7,5, niveau du fer), avec une épée à 2,0 coups/s et une hache à 1,2 coup/s, dans l'onglet créatif.
+- Famille d'outils en acier : pioche, hache, pelle, houe et épée (durabilité 850, vitesse 7, niveau du fer), dans l'onglet créatif.

@@ -13,4 +13,5 @@ package fr.kerdanetyvan.ageofalloys.content;
 public record ToolStats(int uses, float speed, float attackDamageBonus, int level, int enchantmentValue) {
     public static final ToolStats BRONZE = new ToolStats(400, 6.0F, 2.0F, 2, 12);
     public static final ToolStats DURALUMIN = new ToolStats(200, 7.5F, 0.5F, 2, 15);
+    public static final ToolStats STEEL = new ToolStats(850, 7.0F, 2.5F, 2, 9);
 }

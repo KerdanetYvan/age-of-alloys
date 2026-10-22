@@ -34,6 +34,11 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.DURALUMIN_SHOVEL.get());
                 output.accept(ModItems.DURALUMIN_HOE.get());
                 output.accept(ModItems.DURALUMIN_SWORD.get());
+                output.accept(ModItems.STEEL_PICKAXE.get());
+                output.accept(ModItems.STEEL_AXE.get());
+                output.accept(ModItems.STEEL_SHOVEL.get());
+                output.accept(ModItems.STEEL_HOE.get());
+                output.accept(ModItems.STEEL_SWORD.get());
             })
             .build());
 

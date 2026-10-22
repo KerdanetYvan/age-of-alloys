@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "ageofalloys:bronze_shovel",
-    "ageofalloys:duralumin_shovel"
+    "ageofalloys:duralumin_shovel",
+    "ageofalloys:steel_shovel"
   ]
 }

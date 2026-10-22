@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "ageofalloys:bronze_hoe"
+    "ageofalloys:bronze_hoe",
+    "ageofalloys:duralumin_hoe"
   ]
 }

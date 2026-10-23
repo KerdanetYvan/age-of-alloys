@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "ageofalloys:item/duralumin_hoe"
+  }
+}

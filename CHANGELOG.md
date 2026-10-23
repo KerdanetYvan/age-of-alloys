@@ -19,3 +19,4 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 - Noms des 15 outils et armes (bronze, duralumin, acier) traduits en anglais (`en_us`) et en français (`fr_fr`).
 - Textures et modèles des 5 outils en bronze (pioche, hache, pelle, houe, épée).
 - Textures et modèles des 5 outils en duralumin (pioche, hache, pelle, houe, épée).
+- Textures et modèles des 5 outils en acier (pioche, hache, pelle, houe, épée).

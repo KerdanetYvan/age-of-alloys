@@ -50,7 +50,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [ ] Armures : **ArmorMaterial**, slots, protection, toughness, knockback resistance (E1)
 - [ ] **Data components** (1.20.5+) vs NBT : stocker des données sur un item (E1)
 - [ ] **Creative tabs** : ranger ses items dans l'inventaire créatif (E1)
-- [ ] **Tags** : `#c:ingots`, `#minecraft:pickaxes`… et pourquoi ils sont clés pour la compat (E1/E4)
+- [ ] **Tags** : `#forge:ingots` (Forge 1.20.1 ; `#c:ingots` sur Fabric et NeoForge), `#minecraft:pickaxes`… et pourquoi ils sont clés pour la compat (E1/E4)
 - [*] **Localisation** (`lang/*.json`) : noms traduits (E1)
 
 ## 5. Assets visuels (côté ressources)
@@ -105,7 +105,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 ## 10. Compatibilité avec d'autres mods
 
 - [ ] **Dépendances** : obligatoires, optionnelles, incompatibilités (E4)
-- [ ] **Tags communs** (`c:`) : la base de l'interopérabilité (E4)
+- [ ] **Tags communs** (`forge:` sur Forge 1.20.1, `c:` sur Fabric et NeoForge) : la base de l'interopérabilité (E4)
 - [ ] Conventions de matériaux partagés (lingots, poudres, plaques…) (E4)
 - [ ] **Create** : recettes de mélange, pressage, etc. via datapack (E4)
 - [ ] **Tinkers' Construct** : fonderie, alliages, matériaux d'outils (E4)

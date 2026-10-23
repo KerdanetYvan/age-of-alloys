@@ -22,6 +22,7 @@ Minecraft mod adding alloys, with tools, weapons and (later) armor. Forge 1.20.1
 - Update the board **before** coding: use `start-ticket` (moves the ticket to "En cours", creates the branch, then proposes a plan in plan mode and waits for approval).
 - Create tickets with `new-ticket`. Commit with `commit`, only at the end of an approved plan or on request. Open PRs with `open-pr`, **only when the user asks**.
 - Never merge a PR: the user merges ("Squash and merge"). Squash merge is the only method allowed and the `Build mod` check must be green.
+- `board` audits code, Git and the board (read-only report, fixes only after the user approves), suggests ticket splits and the next task.
 - "Review" and "Fait" on the board are set by GitHub automations; do not set them by hand unless they did not fire.
 - A parent ticket (one with sub-issues) has no branch and no PR: `start-ticket` moves it to "En cours" with its first started sub-issue, and `open-pr` closes it after the merge of its last sub-issue.
 

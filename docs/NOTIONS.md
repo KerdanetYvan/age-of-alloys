@@ -59,7 +59,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [*] **Item models** JSON (`item/generated`, `item/handheld`) (E1)
 - [ ] **Blockstates** et **block models** (E3)
 - [ ] **Armor models / layers** : rendu des armures sur le joueur (E1)
-- [ ] **Atlas** : comment les textures sont regroupées (E1)
+- [*] **Atlas** : comment les textures sont regroupées (E1)
 - [ ] **pack.mcmeta** et icône du mod (🚢)
 
 ## 6. Blocs et block entities

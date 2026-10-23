@@ -4,8 +4,8 @@ Le projet avance par étapes. Chaque étape produit quelque chose de **jouable e
 
 | Étape | Thème | Objectif | Statut |
 |-------|-------|----------|--------|
-| 0 | Fondations | Dépôt, outillage, mod vide qui se charge dans le jeu | 🟡 En cours |
-| 1 | Items | Alliages, outils, armes et armures (obtenus en créatif / commande) | ⚪ À faire |
+| 0 | Fondations | Dépôt, outillage, mod vide qui se charge dans le jeu | 🟢 Terminée |
+| 1 | Items | Alliages, outils et armes (obtenus en créatif / commande) | 🟡 En cours |
 | 2 | Mécaniques | Création des alliages en jeu (recettes, machines, progression) | ⚪ À faire |
 | 3 | Monde | Génération des matières premières manquantes | ⚪ À faire |
 | 4 | Compatibilité | Intégration avec des mods populaires (Create, Tinkers' Construct…) | ⚪ À faire |
@@ -16,5 +16,9 @@ Le projet avance par étapes. Chaque étape produit quelque chose de **jouable e
 - **v0.2.0** : fin de l'étape 2
 - **v1.0.0** : étapes 1 + 2 + 3 fonctionnelles, + page wiki
 - **v1.x** : étape 4 et évolutions
+
+## Reporté
+
+- **Armures** : reportées après v0.1.0 (ticket #12, jalon provisoire : étape 2). La date de reprise sera décidée plus tard.
 
 > Cette roadmap est volontairement sobre : elle sera détaillée étape par étape au fil de l'avancement.

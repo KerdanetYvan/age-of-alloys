@@ -17,7 +17,7 @@ Age of Alloys enrichit la progression de Minecraft avec des métaux composites :
 
 ## Fonctionnalités prévues
 
-- [ ] **Alliages** et leurs équipements (outils, armes, armures)
+- [ ] **Alliages** et leurs équipements (outils et armes ; armures plus tard)
 - [ ] **Création des alliages** en jeu
 - [ ] **Matières premières** générées dans le monde
 - [ ] **Compatibilité** avec d'autres mods populaires

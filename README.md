@@ -17,7 +17,7 @@ Age of Alloys deepens Minecraft's progression with composite metals: iron, gold 
 
 ## Planned features
 
-- [ ] **Alloys** and their gear (tools, weapons, armor)
+- [ ] **Alloys** and their gear (tools and weapons; armor comes later)
 - [ ] **Alloy creation** in game
 - [ ] **Raw materials** generated in the world
 - [ ] **Compatibility** with popular mods

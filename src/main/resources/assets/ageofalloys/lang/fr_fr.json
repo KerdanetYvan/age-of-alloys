@@ -6,5 +6,20 @@
   "item.ageofalloys.duralumin_ingot": "Lingot de duralumin",
   "item.ageofalloys.aluminum_ingot": "Lingot d'aluminium",
   "item.ageofalloys.magnesium_ingot": "Lingot de magnésium",
-  "item.ageofalloys.manganese_ingot": "Lingot de manganèse"
+  "item.ageofalloys.manganese_ingot": "Lingot de manganèse",
+  "item.ageofalloys.bronze_pickaxe": "Pioche en bronze",
+  "item.ageofalloys.bronze_axe": "Hache en bronze",
+  "item.ageofalloys.bronze_shovel": "Pelle en bronze",
+  "item.ageofalloys.bronze_hoe": "Houe en bronze",
+  "item.ageofalloys.bronze_sword": "Épée en bronze",
+  "item.ageofalloys.duralumin_pickaxe": "Pioche en duralumin",
+  "item.ageofalloys.duralumin_axe": "Hache en duralumin",
+  "item.ageofalloys.duralumin_shovel": "Pelle en duralumin",
+  "item.ageofalloys.duralumin_hoe": "Houe en duralumin",
+  "item.ageofalloys.duralumin_sword": "Épée en duralumin",
+  "item.ageofalloys.steel_pickaxe": "Pioche en acier",
+  "item.ageofalloys.steel_axe": "Hache en acier",
+  "item.ageofalloys.steel_shovel": "Pelle en acier",
+  "item.ageofalloys.steel_hoe": "Houe en acier",
+  "item.ageofalloys.steel_sword": "Épée en acier"
 }

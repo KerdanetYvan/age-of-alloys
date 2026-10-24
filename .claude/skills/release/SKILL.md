@@ -60,7 +60,7 @@ Repo `KerdanetYvan/age-of-alloys` (public). Version lives in `mod_version` of `g
    gh release create vX.Y.Z build/libs/ageofalloys-X.Y.Z.jar --title "vX.Y.Z" --notes-file <notes> [--prerelease]
    ```
    Use `--prerelease` while the major version is `0` (beta).
-10. Give the release link as a markdown link, then remind the user that CurseForge and Modrinth are separate (ticket #70) and not handled here.
+10. Give the release link as a markdown link. Then remind the user that CurseForge and Modrinth are not handled by this skill and only concern versions that are playable in survival (see `ROADMAP.md`, ticket #70).
 
 ## Preview (`--dry-run` or no version)
 

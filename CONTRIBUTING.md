@@ -35,8 +35,8 @@ Toute PR qui modifie le comportement du mod ajoute une ligne dans la section `[N
 
 1. Déplacer `[Non publié]` vers une nouvelle section `[X.Y.Z] - AAAA-MM-JJ`.
 2. Mettre à jour la version dans la config de build.
-3. Commit `chore(release): vX.Y.Z`, puis tag `vX.Y.Z`.
-4. Publier la GitHub Release (notes = section du changelog).
+3. Générer la bannière de la version, puis commit `chore(release): vX.Y.Z` (changelog, version et bannière), puis tag `vX.Y.Z`.
+4. Publier la GitHub Release (notes de présentation en anglais, construites à partir du changelog, avec la bannière de la version).
 5. Publier sur CurseForge / Modrinth.
 
 Les étapes 1 à 4 sont automatisées par le skill `release` (`/release X.Y.Z`) : il prépare le commit de release sur la branche du ticket, puis, une fois la PR mergée, crée le tag et la GitHub Release après confirmation. `/release X.Y.Z --dry-run` prévisualise sans rien écrire. L'étape 5 reste manuelle.

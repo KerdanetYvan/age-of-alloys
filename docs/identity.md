@@ -31,7 +31,8 @@ Pixel art, forge sombre : une enclume, un lingot incandescent marqué de coups d
 | `src/main/resources/logo.png` | 128×128 | Logo du mod : liste des mods en jeu (`logoFile` dans `mods.toml`) et page officielle |
 | `docs/assets/logo-32.png` | 32×32 | Version de référence du logo, à partir de laquelle le 128×128 est obtenu |
 | `docs/assets/banner.png` | 1280×320 | Bannière des README |
-| `docs/assets/banner-notext.png` | 1280×320 | Bannière sans texte, pour tester d'autres typographies |
+| `docs/assets/banner-notext.png` | 1280×320 | Bannière sans texte, pour tester d'autres typographies et générer celles des versions |
+| `docs/assets/releases/banner-vX.Y.Z.png` | 1280×320 | Bannière d'une version : « AoA vX.Y.Z » sur la bannière sans texte, en tête des notes de la release. Générée par le skill `release`, jamais dessinée à la main |
 | `docs/assets/social.png` | 1280×640 | Image sociale du dépôt GitHub (Settings > General > Social preview) |
 | `docs/assets/social-notext.png` | 1280×640 | Image sociale sans texte |
 
@@ -40,4 +41,5 @@ Pixel art, forge sombre : une enclume, un lingot incandescent marqué de coups d
 - Tout est dessiné en pixel art à petite taille, puis agrandi par un **entier** (×4) en « plus proche voisin », jamais lissé : 32×32 pour le logo, 320×80 pour la bannière, 320×160 pour l'image sociale.
 - Le logo doit rester lisible à 32×32 : peu de teintes, pas de motif fin.
 - Les textures sont originales : ni le bloc de charbon ni le lingot de Minecraft ne sont recopiés.
+- Bannière de version : elle est générée par `.claude/skills/release/ReleaseBanner.java` (police pixel 5×7 du titre, dégradé de bronze, ombre portée) à partir de `banner-notext.png`. Son mode `--check` redessine l'ancien titre et vérifie que les lettres et le dégradé redonnent exactement ceux de `banner.png`. L'ombre est une approximation (environ 91 %) de celle, dessinée à la main, de l'original.
 - Typographie du titre et du slogan : provisoire (police pixel 5×7 dessinée pour les visuels). À remplacer par la police choisie via les versions « sans texte ».

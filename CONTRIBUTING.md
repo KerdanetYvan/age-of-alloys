@@ -39,4 +39,4 @@ Toute PR qui modifie le comportement du mod ajoute une ligne dans la section `[N
 4. Publier la GitHub Release (notes = section du changelog).
 5. Publier sur CurseForge / Modrinth.
 
-_(Sera automatisé via GitHub Actions une fois le build en place.)_
+Les étapes 1 à 4 sont automatisées par le skill `release` (`/release X.Y.Z`) : il prépare le commit de release sur la branche du ticket, puis, une fois la PR mergée, crée le tag et la GitHub Release après confirmation. `/release X.Y.Z --dry-run` prévisualise sans rien écrire. L'étape 5 reste manuelle.

@@ -5,6 +5,7 @@ build/
 
 # Minecraft dev runtime
 run/
+run-data/
 runs/
 out/
 logs/

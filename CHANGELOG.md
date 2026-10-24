@@ -20,3 +20,4 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 - Textures et modèles des 5 outils en bronze (pioche, hache, pelle, houe, épée).
 - Textures et modèles des 5 outils en duralumin (pioche, hache, pelle, houe, épée).
 - Textures et modèles des 5 outils en acier (pioche, hache, pelle, houe, épée).
+- Tags `forge:ingots/<métal>` pour les 7 lingots (et `forge:ingots`), pour que les autres mods reconnaissent les lingots d'Age of Alloys. Les tags des outils et des blocs sont désormais générés par datagen (`./gradlew runData`).

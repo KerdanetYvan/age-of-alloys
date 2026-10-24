@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#forge:ingots/bronze",
+    "#forge:ingots/duralumin",
+    "#forge:ingots/steel",
+    "#forge:ingots/tin",
+    "#forge:ingots/aluminum",
+    "#forge:ingots/magnesium",
+    "#forge:ingots/manganese"
+  ]
+}

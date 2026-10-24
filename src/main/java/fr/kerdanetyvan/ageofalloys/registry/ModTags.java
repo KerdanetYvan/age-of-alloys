@@ -1,0 +1,22 @@
+package fr.kerdanetyvan.ageofalloys.registry;
+
+import fr.kerdanetyvan.ageofalloys.content.Metal;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+
+/** Names of the shared item tags of the mod. The shared namespace is written once, here. */
+public final class ModTags {
+    /** Namespace of the shared tags on Forge 1.20.1 (it is "c" on Fabric and NeoForge). */
+    private static final String COMMON_NAMESPACE = "forge";
+
+    /** The tag of the ingots of a metal, for example {@code forge:ingots/bronze}. */
+    public static TagKey<Item> ingot(Metal metal) {
+        return TagKey.create(Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(COMMON_NAMESPACE, "ingots/" + metal.id()));
+    }
+
+    private ModTags() {
+    }
+}

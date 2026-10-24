@@ -50,7 +50,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [ ] Armures : **ArmorMaterial**, slots, protection, toughness, knockback resistance (E1)
 - [ ] **Data components** (1.20.5+) vs NBT : stocker des données sur un item (E1)
 - [ ] **Creative tabs** : ranger ses items dans l'inventaire créatif (E1)
-- [ ] **Tags** : `#forge:ingots` (Forge 1.20.1 ; `#c:ingots` sur Fabric et NeoForge), `#minecraft:pickaxes`… et pourquoi ils sont clés pour la compat (E1/E4)
+- [*] **Tags** : `#forge:ingots` (Forge 1.20.1 ; `#c:ingots` sur Fabric et NeoForge), `#minecraft:pickaxes`… et pourquoi ils sont clés pour la compat (E1/E4)
 - [*] **Localisation** (`lang/*.json`) : noms traduits (E1)
 
 ## 5. Assets visuels (côté ressources)
@@ -91,7 +91,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [ ] **Ore generation** : taille de veine, nombre d'essais, plage de hauteur, distribution (E3)
 - [ ] **Biome modifiers** : ajouter ses minerais aux biomes existants (E3)
 - [ ] Équilibrage : rareté, profondeur, progression dans le jeu (E3)
-- [ ] **Datagen** : générer les JSON par code plutôt qu'à la main (E1→E3)
+- [*] **Datagen** : générer les JSON par code plutôt qu'à la main (E1→E3)
 - [ ] Structures et biomes custom (optionnel) (E3+)
 - [ ] Mondes existants : ce qui se passe quand on ajoute un mod à une sauvegarde (E3)
 

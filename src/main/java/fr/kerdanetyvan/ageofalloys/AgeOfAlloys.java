@@ -1,6 +1,7 @@
 package fr.kerdanetyvan.ageofalloys;
 
 import com.mojang.logging.LogUtils;
+import fr.kerdanetyvan.ageofalloys.datagen.DataGenerators;
 import fr.kerdanetyvan.ageofalloys.registry.ModCreativeTabs;
 import fr.kerdanetyvan.ageofalloys.registry.ModItems;
 import fr.kerdanetyvan.ageofalloys.registry.ModTiers;
@@ -28,6 +29,7 @@ public class AgeOfAlloys {
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
+        modEventBus.addListener(DataGenerators::gatherData);
 
         LOGGER.info("Age of Alloys is loading");
     }

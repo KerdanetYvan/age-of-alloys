@@ -7,6 +7,8 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 
 ## [Non publié]
 
+## [0.1.0] - 2026-10-24
+
 ### Ajouté
 - Structure initiale du dépôt : README, roadmap, fiche de notions, conventions de contribution.
 - Squelette du mod pour Forge 1.20.1 (47.4.10) : build Gradle, identifiant `ageofalloys` et point d'entrée qui écrit un message au chargement.

@@ -2,6 +2,7 @@ package fr.kerdanetyvan.ageofalloys;
 
 import com.mojang.logging.LogUtils;
 import fr.kerdanetyvan.ageofalloys.datagen.DataGenerators;
+import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
 import fr.kerdanetyvan.ageofalloys.registry.ModCreativeTabs;
 import fr.kerdanetyvan.ageofalloys.registry.ModItems;
 import fr.kerdanetyvan.ageofalloys.registry.ModTiers;
@@ -24,6 +25,7 @@ public class AgeOfAlloys {
     public AgeOfAlloys(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
 

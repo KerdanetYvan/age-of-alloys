@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ageofalloys:block/alloy_foundry" },
+    "facing=east": { "model": "ageofalloys:block/alloy_foundry", "y": 90 },
+    "facing=south": { "model": "ageofalloys:block/alloy_foundry", "y": 180 },
+    "facing=west": { "model": "ageofalloys:block/alloy_foundry", "y": 270 }
+  }
+}

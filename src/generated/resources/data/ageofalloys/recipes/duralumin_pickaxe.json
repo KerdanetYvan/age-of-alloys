@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "tag": "forge:ingots/duralumin"
+    }
+  },
+  "pattern": [
+    "XXX",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "ageofalloys:duralumin_pickaxe"
+  },
+  "show_notification": true
+}

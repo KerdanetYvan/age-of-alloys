@@ -6,7 +6,7 @@ Le projet avance par étapes. Chaque étape fait avancer le mod vers une version
 |-------|-------|----------|--------|
 | 0 | Fondations | Dépôt, outillage, mod vide qui se charge dans le jeu | 🟢 Terminée |
 | 1 | Items | Alliages, outils et armes (obtenus en créatif / commande) | 🟢 Terminée |
-| 2 | Mécaniques | Création des alliages en jeu (recettes, machines, progression) | ⚪ À faire |
+| 2 | Mécaniques | Création des alliages en jeu (recettes, machines, progression) | 🟡 En cours |
 | 3 | Monde | Génération des matières premières manquantes | ⚪ À faire |
 | 4 | Compatibilité | Intégration avec des mods populaires (Create, Tinkers' Construct…) | ⚪ À faire |
 

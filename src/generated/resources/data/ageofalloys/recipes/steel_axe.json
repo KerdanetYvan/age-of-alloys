@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "tag": "forge:ingots/steel"
+    }
+  },
+  "pattern": [
+    "XX",
+    "XS",
+    " S"
+  ],
+  "result": {
+    "item": "ageofalloys:steel_axe"
+  },
+  "show_notification": true
+}

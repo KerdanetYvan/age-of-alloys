@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "tag": "forge:ingots/bronze"
+    }
+  },
+  "pattern": [
+    "X",
+    "X",
+    "S"
+  ],
+  "result": {
+    "item": "ageofalloys:bronze_sword"
+  },
+  "show_notification": true
+}

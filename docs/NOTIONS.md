@@ -75,7 +75,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 - [x] **Recipes** JSON en forme (*shaped*) : `pattern`, `key`, `result`, et leur génération par datagen (E1/E2)
 - [ ] **Recipes** sans forme, fourneau, haut fourneau, forge : *shapeless*, *smelting*, *blasting*, *smithing* (E2)
-- [ ] **Recipe types** et **recipe serializers** custom (E2)
+- [*] **Recipe types** et **recipe serializers** custom (E2)
 - [ ] Le **Smithing Table** (table de forge) et les templates (E2)
 - [*] **Inventaires** : `Container`, slots, **capabilities** d'items (E2)
 - [*] **Menus (Menu/Container)** et **Screens (GUI)** : interface d'un bloc custom (E2)

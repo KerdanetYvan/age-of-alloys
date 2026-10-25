@@ -4,7 +4,7 @@
 
 ## Why
 
-<!-- Context or motivation. Link the ticket below. -->
+<!-- Context or motivation. Link the ticket below. Only the line below may use a closing keyword followed by a ticket number: anywhere else, it would close that ticket when the PR is merged. -->
 
 Closes #
 

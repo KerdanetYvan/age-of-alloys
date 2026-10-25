@@ -1,10 +1,18 @@
 package fr.kerdanetyvan.ageofalloys.block;
 
+import fr.kerdanetyvan.ageofalloys.menu.AlloyFoundryMenu;
 import fr.kerdanetyvan.ageofalloys.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
@@ -24,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
  * The memory of an alloy foundry: its six slots and its fire. It uses Forge (inventory
  * capabilities), so it lives in the block package and not in content.
  */
-public class AlloyFoundryBlockEntity extends BlockEntity {
+public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider {
     public static final int INPUT_SLOTS = 4;
     public static final int FUEL_SLOT = 4;
     public static final int OUTPUT_SLOT = 5;
@@ -42,7 +50,7 @@ public class AlloyFoundryBlockEntity extends BlockEntity {
                 return false;
             }
             if (slot == FUEL_SLOT) {
-                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
+                return isFuel(stack);
             }
             return true;
         }
@@ -62,8 +70,42 @@ public class AlloyFoundryBlockEntity extends BlockEntity {
     /** Total duration of the fuel being burnt, for the flame of the interface. */
     private int burnDuration;
 
+    /** The numbers the server keeps in sync with the client while the menu is open (flame, progress bar). */
+    private final ContainerData data = new ContainerData() {
+        @Override
+        public int get(int index) {
+            switch (index) {
+                case AlloyFoundryMenu.DATA_BURN_TIME:
+                    return burnTime;
+                case AlloyFoundryMenu.DATA_BURN_DURATION:
+                    return burnDuration;
+                case AlloyFoundryMenu.DATA_PROGRESS:
+                    return 0; // no recipe yet: the recipe type will feed the progress bar
+                case AlloyFoundryMenu.DATA_PROGRESS_MAX:
+                    return 0;
+                default:
+                    return 0;
+            }
+        }
+
+        @Override
+        public void set(int index, int value) {
+            // Unused on the server: only the client receives values.
+        }
+
+        @Override
+        public int getCount() {
+            return AlloyFoundryMenu.DATA_COUNT;
+        }
+    };
+
     public AlloyFoundryBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ALLOY_FOUNDRY.get(), pos, state);
+    }
+
+    /** Whether an item burns, so it may go in the fuel slot. */
+    public static boolean isFuel(ItemStack stack) {
+        return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
     }
 
     public ItemStackHandler getInventory() {
@@ -109,6 +151,16 @@ public class AlloyFoundryBlockEntity extends BlockEntity {
             level.setBlock(pos, state.setValue(AlloyFoundryBlock.LIT, burning), 3);
         }
         foundry.setChanged();
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        return Component.translatable("block.ageofalloys.alloy_foundry");
+    }
+
+    @Override
+    public AbstractContainerMenu createMenu(int id, @NotNull Inventory playerInventory, @NotNull Player player) {
+        return new AlloyFoundryMenu(id, playerInventory, inventory, data, ContainerLevelAccess.create(level, worldPosition));
     }
 
     @Override

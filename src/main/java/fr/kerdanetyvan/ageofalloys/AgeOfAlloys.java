@@ -6,6 +6,7 @@ import fr.kerdanetyvan.ageofalloys.registry.ModBlockEntities;
 import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
 import fr.kerdanetyvan.ageofalloys.registry.ModCreativeTabs;
 import fr.kerdanetyvan.ageofalloys.registry.ModItems;
+import fr.kerdanetyvan.ageofalloys.registry.ModMenuTypes;
 import fr.kerdanetyvan.ageofalloys.registry.ModTiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +29,7 @@ public class AgeOfAlloys {
 
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
 

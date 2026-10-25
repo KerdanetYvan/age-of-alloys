@@ -45,21 +45,21 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 - [x] Un **Item** vs un **ItemStack** (E1)
 - [x] **Item.Properties** : stack size, durabilité, rareté, résistance au feu… (E1)
-- [*] Les **tiers de matériaux** (Tier) : durabilité, vitesse de minage, dégâts, enchantabilité (E1)
-- [*] Outils : pioche, hache, pelle, houe, épée, et leurs **attributs** (E1)
+- [x] Les **tiers de matériaux** (Tier) : durabilité, vitesse de minage, dégâts, enchantabilité (E1)
+- [x] Outils : pioche, hache, pelle, houe, épée, et leurs **attributs** (E1)
 - [ ] Armures : **ArmorMaterial**, slots, protection, toughness, knockback resistance (E1)
 - [ ] **Data components** (1.20.5+) vs NBT : stocker des données sur un item (E1)
 - [ ] **Creative tabs** : ranger ses items dans l'inventaire créatif (E1)
-- [*] **Tags** : `#forge:ingots` (Forge 1.20.1 ; `#c:ingots` sur Fabric et NeoForge), `#minecraft:pickaxes`… et pourquoi ils sont clés pour la compat (E1/E4)
-- [*] **Localisation** (`lang/*.json`) : noms traduits (E1)
+- [x] **Tags** : `#forge:ingots` (Forge 1.20.1 ; `#c:ingots` sur Fabric et NeoForge), `#minecraft:pickaxes`… et pourquoi ils sont clés pour la compat (E1/E4)
+- [x] **Localisation** (`lang/*.json`) : noms traduits (E1)
 
 ## 5. Assets visuels (côté ressources)
 
-- [*] **Textures** : format PNG, taille 16×16, palettes cohérentes (E1)
-- [*] **Item models** JSON (`item/generated`, `item/handheld`) (E1)
+- [x] **Textures** : format PNG, taille 16×16, palettes cohérentes (E1)
+- [x] **Item models** JSON (`item/generated`, `item/handheld`) (E1)
 - [ ] **Blockstates** et **block models** (E3)
 - [ ] **Armor models / layers** : rendu des armures sur le joueur (E1)
-- [*] **Atlas** : comment les textures sont regroupées (E1)
+- [x] **Atlas** : comment les textures sont regroupées (E1)
 - [ ] **pack.mcmeta** et icône du mod (🚢)
 
 ## 6. Blocs et block entities
@@ -91,7 +91,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [ ] **Ore generation** : taille de veine, nombre d'essais, plage de hauteur, distribution (E3)
 - [ ] **Biome modifiers** : ajouter ses minerais aux biomes existants (E3)
 - [ ] Équilibrage : rareté, profondeur, progression dans le jeu (E3)
-- [*] **Datagen** : générer les JSON par code plutôt qu'à la main (E1→E3)
+- [x] **Datagen** : générer les JSON par code plutôt qu'à la main (E1→E3)
 - [ ] Structures et biomes custom (optionnel) (E3+)
 - [ ] Mondes existants : ce qui se passe quand on ajoute un mod à une sauvegarde (E3)
 

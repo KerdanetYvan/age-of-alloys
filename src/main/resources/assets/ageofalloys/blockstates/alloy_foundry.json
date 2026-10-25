@@ -1,8 +1,12 @@
 {
   "variants": {
-    "facing=north": { "model": "ageofalloys:block/alloy_foundry" },
-    "facing=east": { "model": "ageofalloys:block/alloy_foundry", "y": 90 },
-    "facing=south": { "model": "ageofalloys:block/alloy_foundry", "y": 180 },
-    "facing=west": { "model": "ageofalloys:block/alloy_foundry", "y": 270 }
+    "facing=north,lit=false": { "model": "ageofalloys:block/alloy_foundry" },
+    "facing=east,lit=false": { "model": "ageofalloys:block/alloy_foundry", "y": 90 },
+    "facing=south,lit=false": { "model": "ageofalloys:block/alloy_foundry", "y": 180 },
+    "facing=west,lit=false": { "model": "ageofalloys:block/alloy_foundry", "y": 270 },
+    "facing=north,lit=true": { "model": "ageofalloys:block/alloy_foundry_on" },
+    "facing=east,lit=true": { "model": "ageofalloys:block/alloy_foundry_on", "y": 90 },
+    "facing=south,lit=true": { "model": "ageofalloys:block/alloy_foundry_on", "y": 180 },
+    "facing=west,lit=true": { "model": "ageofalloys:block/alloy_foundry_on", "y": 270 }
   }
 }

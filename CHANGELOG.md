@@ -8,7 +8,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ## [Non publié]
 
 ### Ajouté
-- La fonderie d'alliages : un bloc avec sa texture, son nom en anglais et en français et sa place dans l'onglet créatif. Elle se pose face au joueur, se mine à la pioche et lâche son objet avec une pioche en pierre ou mieux. Elle ne fond rien pour l'instant.
+- La fonderie d'alliages : un bloc avec sa texture, son nom en anglais et en français et sa place dans l'onglet créatif. Elle se pose face au joueur, se mine à la pioche et lâche son objet avec une pioche en pierre ou mieux. Elle garde 6 emplacements (4 entrées, un combustible, une sortie) accessibles aux entonnoirs par le dessus, les côtés et le dessous, brûle son combustible quand elle a quelque chose à fondre, s'allume et éclaire (niveau 13). Elle lâche son contenu quand on la casse. Elle ne fond rien pour l'instant.
 - Recettes d'établi des 15 outils et armes (pioche, hache, pelle, houe et épée en bronze, duralumin et acier) : les lingots et des bâtons suffisent, avec les mêmes formes que les outils de Minecraft. Les recettes se débloquent dès qu'on possède un lingot du métal.
 
 ## [0.1.0] - 2026-10-24

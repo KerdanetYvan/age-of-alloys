@@ -1,7 +1,7 @@
 package fr.kerdanetyvan.ageofalloys.registry;
 
 import fr.kerdanetyvan.ageofalloys.AgeOfAlloys;
-import fr.kerdanetyvan.ageofalloys.content.AlloyFoundryBlock;
+import fr.kerdanetyvan.ageofalloys.block.AlloyFoundryBlock;
 import java.util.List;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -20,7 +20,9 @@ public final class ModBlocks {
             () -> new AlloyFoundryBlock(BlockBehaviour.Properties.of()
                     .strength(3.5F)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.METAL)));
+                    .sound(SoundType.METAL)
+                    .lightLevel(state -> state.getValue(AlloyFoundryBlock.LIT) ? 13 : 0)
+            ));
 
     /** Every block of the mod, for the loot tables. */
     public static List<Block> all() {

@@ -28,6 +28,7 @@ Conséquence : plus on met de choses **en données** (JSON), moins il y a de cod
 | Paquet | Contenu | Dépend de Forge ? |
 |---|---|---|
 | `content` | Définitions des alliages (statistiques, identifiants), implémentation du `Tier` | **Non** : uniquement du Java et des types `net.minecraft.*` |
+| `block` | Blocs qui portent une logique (la fonderie) et leurs *block entities* : inventaires, tick, capacités | Oui |
 | `registry` | Enregistrement des objets (`DeferredRegister`, `RegistryObject`), enregistrement du tier auprès de Forge | Oui |
 | `client` | Tout ce qui touche à l'affichage (écrans, rendu) | Oui, **côté client seulement** (voir la leçon sur les côtés) |
 | `datagen` | Génération des fichiers JSON | Oui |

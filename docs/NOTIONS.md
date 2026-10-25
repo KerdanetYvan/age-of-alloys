@@ -64,10 +64,10 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 ## 6. Blocs et block entities
 
-- [ ] **Block** vs **BlockState** vs **BlockItem** (E2/E3)
+- [*] **Block** vs **BlockState** vs **BlockItem** (E2/E3)
 - [*] **Block.Properties** : dureté, résistance, son, outil requis (E2/E3)
-- [ ] **Block entity** : un bloc qui possède des données/une logique (four, forge…) (E2)
-- [ ] **Ticking** : exécuter de la logique à chaque tick (E2)
+- [*] **Block entity** : un bloc qui possède des données/une logique (four, forge…) (E2)
+- [*] **Ticking** : exécuter de la logique à chaque tick (E2)
 - [*] **Loot tables** : ce qu'un bloc/ennemi lâche (E1/E3)
 - [ ] Niveau d'outil requis pour miner (`needs_iron_tool` etc.) (E3)
 
@@ -77,7 +77,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [ ] **Recipes** sans forme, fourneau, haut fourneau, forge : *shapeless*, *smelting*, *blasting*, *smithing* (E2)
 - [ ] **Recipe types** et **recipe serializers** custom (E2)
 - [ ] Le **Smithing Table** (table de forge) et les templates (E2)
-- [ ] **Inventaires** : `Container`, slots, **capabilities** d'items (E2)
+- [*] **Inventaires** : `Container`, slots, **capabilities** d'items (E2)
 - [ ] **Menus (Menu/Container)** et **Screens (GUI)** : interface d'un bloc custom (E2)
 - [ ] Synchronisation client ↔ serveur : **networking / payloads** (E2)
 - [ ] **Fluides** (si métal fondu) et capabilities de fluides (E2)

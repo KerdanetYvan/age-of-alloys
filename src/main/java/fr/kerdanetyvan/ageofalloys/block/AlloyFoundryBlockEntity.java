@@ -1,11 +1,15 @@
 package fr.kerdanetyvan.ageofalloys.block;
 
 import fr.kerdanetyvan.ageofalloys.menu.AlloyFoundryMenu;
+import fr.kerdanetyvan.ageofalloys.recipe.AlloyIngredient;
+import fr.kerdanetyvan.ageofalloys.recipe.AlloyingRecipe;
 import fr.kerdanetyvan.ageofalloys.registry.ModBlockEntities;
+import fr.kerdanetyvan.ageofalloys.registry.ModRecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,6 +18,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -25,6 +30,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RangedWrapper;
+import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -65,10 +71,20 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
     private final LazyOptional<IItemHandler> fromBottom =
             LazyOptional.of(() -> new RangedWrapper(inventory, OUTPUT_SLOT, SLOT_COUNT));
 
+    // The inventory seen as a vanilla container, to ask the recipe manager which recipe matches. Its cache
+    // remembers the last recipe found, so the tick does not search the whole list 20 times per second.
+    private final Container recipeInputs = new RecipeWrapper(inventory);
+    private final RecipeManager.CachedCheck<Container, AlloyingRecipe> recipeCheck =
+            RecipeManager.createCheck(ModRecipeTypes.ALLOYING.get());
+
     /** Ticks left on the fuel being burnt. */
     private int burnTime;
     /** Total duration of the fuel being burnt, for the flame of the interface. */
     private int burnDuration;
+    /** Ticks of melting done on the current batch. */
+    private int progress;
+    /** Ticks the current recipe takes (0 when there is nothing to melt). */
+    private int progressMax;
 
     /** The numbers the server keeps in sync with the client while the menu is open (flame, progress bar). */
     private final ContainerData data = new ContainerData() {
@@ -80,9 +96,9 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
                 case AlloyFoundryMenu.DATA_BURN_DURATION:
                     return burnDuration;
                 case AlloyFoundryMenu.DATA_PROGRESS:
-                    return 0; // no recipe yet: the recipe type will feed the progress bar
+                    return progress;
                 case AlloyFoundryMenu.DATA_PROGRESS_MAX:
-                    return 0;
+                    return progressMax;
                 default:
                     return 0;
             }
@@ -120,23 +136,16 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
         return burnDuration;
     }
 
-    /** Whether at least one input slot holds something. Temporary rule: #88 replaces it with "a recipe matches". */
-    private boolean hasInput() {
-        for (int slot = 0; slot < INPUT_SLOTS; slot++) {
-            if (!inventory.getStackInSlot(slot).isEmpty()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     /** Runs 20 times per second on the server. */
     public static void serverTick(Level level, BlockPos pos, BlockState state, AlloyFoundryBlockEntity foundry) {
         if (foundry.burnTime > 0) {
             foundry.burnTime--;
         }
 
-        if (foundry.burnTime == 0 && foundry.hasInput()) {
+        AlloyingRecipe recipe = foundry.recipeCheck.getRecipeFor(foundry.recipeInputs, level).orElse(null);
+        boolean canWork = recipe != null && foundry.hasRoomFor(recipe);
+
+        if (foundry.burnTime == 0 && canWork) {
             ItemStack fuel = foundry.inventory.getStackInSlot(FUEL_SLOT);
             int duration = fuel.isEmpty() ? 0 : ForgeHooks.getBurnTime(fuel, RecipeType.SMELTING);
             if (duration > 0) {
@@ -146,11 +155,54 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
             }
         }
 
+        if (foundry.burnTime > 0 && canWork) {
+            foundry.progressMax = recipe.time();
+            foundry.progress++;
+            if (foundry.progress >= foundry.progressMax) {
+                foundry.melt(recipe);
+                foundry.progress = 0;
+            }
+        } else if (foundry.progress > 0) {
+            // Nothing to melt, no fire or no room: the progress goes back down, like a furnace.
+            foundry.progress = Math.max(foundry.progress - 2, 0);
+        }
+
         boolean burning = foundry.burnTime > 0;
         if (state.getValue(AlloyFoundryBlock.LIT) != burning) {
             level.setBlock(pos, state.setValue(AlloyFoundryBlock.LIT, burning), 3);
         }
         foundry.setChanged();
+    }
+
+    /** Whether the result fits in the output slot: it is empty, or holds the same item with room left. */
+    private boolean hasRoomFor(AlloyingRecipe recipe) {
+        ItemStack output = inventory.getStackInSlot(OUTPUT_SLOT);
+        ItemStack result = recipe.result();
+        if (output.isEmpty()) {
+            return true;
+        }
+        return ItemStack.isSameItemSameTags(output, result)
+                && output.getCount() + result.getCount() <= output.getMaxStackSize();
+    }
+
+    /** Takes a whole batch of ingredients from the inputs and puts the result in the output. */
+    private void melt(AlloyingRecipe recipe) {
+        for (AlloyIngredient ingredient : recipe.alloyIngredients()) {
+            int left = ingredient.count();
+            for (int slot = 0; slot < INPUT_SLOTS && left > 0; slot++) {
+                ItemStack stack = inventory.getStackInSlot(slot);
+                if (ingredient.accepts(stack)) {
+                    left -= inventory.extractItem(slot, Math.min(left, stack.getCount()), false).getCount();
+                }
+            }
+        }
+        ItemStack output = inventory.getStackInSlot(OUTPUT_SLOT);
+        if (output.isEmpty()) {
+            inventory.setStackInSlot(OUTPUT_SLOT, recipe.result().copy());
+        } else {
+            output.grow(recipe.result().getCount());
+            inventory.setStackInSlot(OUTPUT_SLOT, output);
+        }
     }
 
     @Override
@@ -193,6 +245,8 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
         tag.put("Inventory", inventory.serializeNBT());
         tag.putInt("BurnTime", burnTime);
         tag.putInt("BurnDuration", burnDuration);
+        tag.putInt("Progress", progress);
+        tag.putInt("ProgressMax", progressMax);
     }
 
     @Override
@@ -201,6 +255,8 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
         inventory.deserializeNBT(tag.getCompound("Inventory"));
         burnTime = tag.getInt("BurnTime");
         burnDuration = tag.getInt("BurnDuration");
+        progress = tag.getInt("Progress");
+        progressMax = tag.getInt("ProgressMax");
     }
 
     /** Throws the whole content into the world, when the foundry is broken. */

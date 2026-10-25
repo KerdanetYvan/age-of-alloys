@@ -1,0 +1,19 @@
+{
+  "type": "ageofalloys:alloying",
+  "heat": 1,
+  "ingredients": [
+    {
+      "count": 1,
+      "tag": "forge:ingots/tin"
+    },
+    {
+      "count": 3,
+      "tag": "forge:ingots/copper"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "ageofalloys:bronze_ingot"
+  },
+  "time": 200
+}

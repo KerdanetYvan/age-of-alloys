@@ -7,6 +7,9 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 
 ## [Non publié]
 
+### Ajouté
+- Recettes d'établi des 15 outils et armes (pioche, hache, pelle, houe et épée en bronze, duralumin et acier) : les lingots et des bâtons suffisent, avec les mêmes formes que les outils de Minecraft. Les recettes se débloquent dès qu'on possède un lingot du métal.
+
 ## [0.1.0] - 2026-10-24
 
 ### Ajouté

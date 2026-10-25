@@ -19,6 +19,7 @@ public final class DataGenerators {
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(),
                 new ModItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(output));
     }
 
     private DataGenerators() {

@@ -36,6 +36,18 @@ Never write `[x]`. For each notion that this ticket was supposed to teach and th
 
 ## 4. Open
 
+**First, check the title and the body for closing keywords.** The squash merge message is the PR title followed by the PR body (repository settings `PR_TITLE` and `PR_BODY`). GitHub reads `close`, `closes`, `closed`, `fix`, `fixes`, `fixed`, `resolve`, `resolves` or `resolved` followed by a ticket number as an order to close that ticket on merge, **wherever it appears in the text**: a sentence of explanation counts. Only the line `Closes #<n>` (one per ticket) may use one. Both commands must print nothing:
+
+```bash
+KEYWORDS='\b(close[sd]?|fix(e[sd])?|resolve[sd]?)\b[: ]+(https://github\.com/[^ ]+/issues/|[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+#|#)[0-9]+'
+# body: only the "Closes #<n>" lines may match
+grep -n -i -E "$KEYWORDS" <body-file> | grep -v -E '^[0-9]+:Closes #[0-9]+$'
+# title: nothing may match
+printf '%s\n' "<title>" | grep -i -E "$KEYWORDS"
+```
+
+If a line is printed, rephrase it (another verb such as "complete" or "end", the number before the verb, or no number at all) and run the check again, **before** creating the PR. This really happened: a sentence saying that something "would close" a ticket, with its number, closed that ticket when PR #92 was merged, with six sub-issues still open. A line such as `Closes #12 and #13` is reported too: write one `Closes #<n>` line per ticket.
+
 ```bash
 git push -u origin <branch>
 gh pr create --base main --head <branch> --title "<type(scope): subject>" --body-file <file>

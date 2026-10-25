@@ -31,6 +31,7 @@ Minecraft mod adding alloys, with tools, weapons and (later) armor. Forge 1.20.1
 
 - Conventional Commits, English, imperative. Details in `CONTRIBUTING.md` and the `commit` and `open-pr` skills.
 - **No attribution lines**: no `Co-Authored-By` trailer in commits, no "Generated with" footer in PRs.
+- **Closing keywords**: only the `Closes #<n>` line of a PR body may use `close`, `fix` or `resolve` followed by a ticket number. Anywhere else (a sentence of explanation, the PR title), it closes that ticket when the PR is merged. `open-pr` checks it before creating the PR.
 
 ## Code
 

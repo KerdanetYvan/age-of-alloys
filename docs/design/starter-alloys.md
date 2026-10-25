@@ -29,7 +29,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 - **Réel** : cuivre + étain (environ 88 % / 12 %). Dur, résistant à la corrosion, utilisé dès l'âge du bronze.
 - **En jeu** : l'outil robuste de milieu de partie, plus durable que le fer.
 - **Objets** : `bronze_ingot`, `bronze_pickaxe`, `bronze_axe`, `bronze_shovel`, `bronze_hoe`, `bronze_sword`.
-- **Recette prévue (étape 2, non implémentée ici)** : 3 cuivre + 1 étain, pour 4 lingots.
+- **Recette prévue (étape 2, non implémentée ici)** : 3 cuivre + 1 étain, pour 4 lingots, fondus dans la fonderie (voir [alloy-creation.md](alloy-creation.md)).
 - **Palette** (6 teintes, sombre à clair) : `#5C3A1B` · `#8A5A2B` · `#CD7F32` · `#E8A55F` · `#F3BC82` · `#F8DABC`. Les deux dernières teintes (reflets) viennent de la première texture dessinée.
 
 ### Duralumin
@@ -37,7 +37,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 - **Réel** : aluminium (environ 94 %) + cuivre (4 %) + magnésium (1 %) + manganèse (0,5 %). Un alliage de l'aviation : léger, mais presque aussi résistant qu'un acier doux.
 - **En jeu** : l'alliage des **mineurs pressés** : vitesse de minage supérieure à celle de l'acier, mais durabilité et dégâts faibles. Il casse moins de blocs au total, plus vite.
 - **Objets** : `duralumin_ingot`, `duralumin_pickaxe`, `duralumin_axe`, `duralumin_shovel`, `duralumin_hoe`, `duralumin_sword`.
-- **Recette prévue (étape 2, non implémentée ici)** : alliage à 4 composants (aluminium, cuivre, magnésium, manganèse). Les proportions seront simplifiées pour rester jouables, à définir à l'étape 2.
+- **Recette prévue (étape 2, non implémentée ici)** : alliage à 4 composants (aluminium, cuivre, magnésium, manganèse). Les proportions sont simplifiées pour rester jouables : 5 aluminium + 1 cuivre + 1 magnésium + 1 manganèse, pour 8 lingots (voir [alloy-creation.md](alloy-creation.md)).
 - **Palette** (6 teintes, sombre à clair) : `#344455` · `#566B80` · `#7C94AA` · `#A6BBCE` · `#CDDDEA` · `#EAF3FA`. Bleu-argent franc, pour le distinguer du fer (gris neutre) et de l'aluminium (gris mat).
 
 ### Acier
@@ -45,7 +45,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 - **Réel** : fer + un peu de carbone (de 0,2 % à 2 %). Plus dur et plus résistant que le fer.
 - **En jeu** : le meilleur matériau de l'étape 1, à la frontière du diamant, qu'il n'égale pas.
 - **Objets** : `steel_ingot`, `steel_pickaxe`, `steel_axe`, `steel_shovel`, `steel_hoe`, `steel_sword`.
-- **Recette prévue (étape 2)** : fer + charbon (source de carbone). Ratio à définir.
+- **Recette prévue (étape 2)** : fer + charbon (source de carbone) : 4 fer + 1 charbon, pour 4 lingots, avec une chaleur plus élevée (voir [alloy-creation.md](alloy-creation.md)).
 - **Palette** (carbone chaud) : `#2B2625` · `#47403D` · `#6B625D` · `#948A83` · `#BDB3AB`, avec `#E0D8D1` réservé aux éclats. Plus sombre que le fer (luminosité moyenne 97 contre 156) mais nettement plus clair que la netherite vanilla (59), pour ne pas la confondre avec elle.
 
 ## 3. Statistiques des outils
@@ -94,4 +94,4 @@ Dégâts par coup = base de l'objet + bonus du matériau + 1 (la main). Dégâts
 - **Blocs de minerai**, drops (minerais bruts) et **génération dans le monde** des matières premières : étape 3. Les *lingots* de ces métaux, eux, sont créés à l'étape 1. Le carbone de l'acier vient du charbon vanilla.
 - **Blocs de stockage** et **pépites** : quand une recette en a besoin.
 - Plusieurs de ces métaux existent déjà dans d'autres mods : l'utilisation de tags communs évitera les doublons à l'étape 4.
-- **Machines et mécanique de fonte** : étape 2.
+- **Machines et mécanique de fonte** : étape 2, voir [alloy-creation.md](alloy-creation.md).

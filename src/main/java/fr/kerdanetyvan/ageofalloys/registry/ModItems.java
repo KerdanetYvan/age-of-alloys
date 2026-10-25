@@ -5,6 +5,7 @@ import fr.kerdanetyvan.ageofalloys.content.Metal;
 import fr.kerdanetyvan.ageofalloys.content.ToolType;
 import java.util.function.Supplier;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
@@ -62,6 +63,10 @@ public final class ModItems {
             () -> new HoeItem(ModTiers.STEEL, -2, -1.0F, new Item.Properties()));
     public static final RegistryObject<Item> STEEL_SWORD = tool(Metal.STEEL, ToolType.SWORD,
             () -> new SwordItem(ModTiers.STEEL, 3, -2.4F, new Item.Properties()));
+
+    /** The item of the alloy foundry: the thing in the inventory that places the block. */
+    public static final RegistryObject<Item> ALLOY_FOUNDRY = ITEMS.register("alloy_foundry",
+            () -> new BlockItem(ModBlocks.ALLOY_FOUNDRY.get(), new Item.Properties()));
 
     private static RegistryObject<Item> ingot(Metal metal) {
         return ITEMS.register(metal.ingotName(), () -> new Item(new Item.Properties()));

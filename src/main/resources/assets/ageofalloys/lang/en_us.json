@@ -21,5 +21,6 @@
   "item.ageofalloys.steel_axe": "Steel Axe",
   "item.ageofalloys.steel_shovel": "Steel Shovel",
   "item.ageofalloys.steel_hoe": "Steel Hoe",
-  "item.ageofalloys.steel_sword": "Steel Sword"
+  "item.ageofalloys.steel_sword": "Steel Sword",
+  "block.ageofalloys.alloy_foundry": "Alloy Foundry"
 }

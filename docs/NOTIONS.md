@@ -65,10 +65,10 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 ## 6. Blocs et block entities
 
 - [ ] **Block** vs **BlockState** vs **BlockItem** (E2/E3)
-- [ ] **Block.Properties** : dureté, résistance, son, outil requis (E2/E3)
+- [*] **Block.Properties** : dureté, résistance, son, outil requis (E2/E3)
 - [ ] **Block entity** : un bloc qui possède des données/une logique (four, forge…) (E2)
 - [ ] **Ticking** : exécuter de la logique à chaque tick (E2)
-- [ ] **Loot tables** : ce qu'un bloc/ennemi lâche (E1/E3)
+- [*] **Loot tables** : ce qu'un bloc/ennemi lâche (E1/E3)
 - [ ] Niveau d'outil requis pour miner (`needs_iron_tool` etc.) (E3)
 
 ## 7. Recettes et mécaniques d'alliage

@@ -47,29 +47,33 @@ gh pr create --base main --head <branch> --title "<type(scope): subject>" --body
 
 ## 5. After opening
 
-- Do not move the ticket to "Review" by hand: the "Pull request linked to issue" automation does it. Wait about 15 seconds and verify with `gh project item-list 6 --owner KerdanetYvan --limit 100 --format json`. Set it manually only if it did not move, and tell the user.
+- Do not move the ticket to "Review" by hand: the "Pull request linked to issue" automation does it. Wait about 15 seconds and verify with `gh project item-list 6 --owner KerdanetYvan --limit 200 --format json`. Set it manually only if it did not move, and tell the user.
 - Watch CI: `gh pr checks <pr> --watch`. Report the result. On failure read the log (`gh run view --log-failed`), fix on the same branch, push.
 - Give the PR link as a markdown link.
-- Do not touch the parent ticket yet, even if this is its last open sub-issue: it is closed after the merge (see "Parent ticket" below).
+- Do not touch the parent tickets yet, even if this is the last open sub-issue of one of them: they are closed after the merge (see "Parent tickets" below).
 
 ## Rules
 
 - **Never merge.** The user merges with "Squash and merge". Branch protection requires a green `Build mod` check.
-- After the user says it is merged: `git switch main && git pull`, delete the local branch, and confirm the ticket reached "Fait" (automation "Pull request merged"). Then handle the parent ticket (below).
+- After the user says it is merged: `git switch main && git pull`, delete the local branch, and confirm the ticket reached "Fait" (automation "Pull request merged"). Then handle the parent tickets (below).
 
-## Parent ticket (after the merge, never when the PR is opened)
+## Parent tickets (after the merge, never when the PR is opened)
 
-If the merged ticket is a sub-issue, close its parent once **all** its sub-issues are closed. Closing at merge time, not at PR time, avoids declaring a parent done while the last PR could still fail CI or be rejected. Replace `<n>` with the merged ticket's number:
+If the merged ticket is a sub-issue, close its parent once **all** its sub-issues are closed, then do the same for the parent of that parent, and so on up the chain (a parent can itself be a sub-issue). Closing at merge time, not at PR time, avoids declaring a parent done while the last PR could still fail CI or be rejected. Replace `<n>` with the merged ticket's number:
 
 ```bash
-PARENT=$(gh api graphql -f query='query{repository(owner:"KerdanetYvan",name:"age-of-alloys"){issue(number:<n>){parent{number}}}}' --jq '.data.repository.issue.parent.number // empty')
-if [ -n "$PARENT" ]; then
-  # open siblings, ignoring the ticket just merged (GitHub may not have closed it yet)
-  LEFT=$(gh api repos/KerdanetYvan/age-of-alloys/issues/$PARENT/sub_issues --paginate --jq '[.[]|select(.state=="open" and .number!=<n>)]|length')
-  [ "$LEFT" = 0 ] && gh issue close $PARENT -R KerdanetYvan/age-of-alloys --reason completed --comment "All sub-issues are done."
-fi
+CUR=<n>
+while PARENT=$(gh api graphql -f query='query($n:Int!){repository(owner:"KerdanetYvan",name:"age-of-alloys"){issue(number:$n){parent{number}}}}' -F n=$CUR --jq '.data.repository.issue.parent.number // empty'); [ -n "$PARENT" ]; do
+  # open siblings, ignoring the ticket just handled (GitHub may not have closed it yet)
+  LEFT=$(gh api repos/KerdanetYvan/age-of-alloys/issues/$PARENT/sub_issues --paginate --jq "[.[]|select(.state==\"open\" and .number!=$CUR)]|length")
+  [ "$LEFT" = 0 ] || { echo "#$PARENT keeps $LEFT open sub-issue(s)"; break; }
+  gh issue close $PARENT -R KerdanetYvan/age-of-alloys --reason completed --comment "All sub-issues are done."
+  echo "closed #$PARENT"
+  CUR=$PARENT
+done
 ```
 
-- `LEFT` greater than 0: close nothing and tell the user how many sub-issues remain.
-- After closing, wait about 15 seconds and check that the parent reached "Fait" on the board (automation "Item closed"). If not, set it by hand with the `Fait` option of the Status field (same commands as in `start-ticket`, with `Fait`) and tell the user.
-- Tell the user which parent was closed.
+- Each turn excludes `$CUR` from the open siblings: this is what lets the grandparent close right after the parent, even if GitHub has not recorded the closing of the parent yet.
+- A line `#X keeps N open sub-issue(s)` means the cascade stopped there: nothing above it is closed. Tell the user how many sub-issues remain.
+- After closing, wait about 15 seconds and check that each closed parent reached "Fait" on the board (automation "Item closed"). If not, set it by hand with the `Fait` option of the Status field (same commands as in `start-ticket`, with `Fait`) and tell the user.
+- Tell the user which parents were closed, from the lowest to the highest.

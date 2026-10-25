@@ -25,7 +25,7 @@ Minecraft mod adding alloys, with tools, weapons and (later) armor. Forge 1.20.1
 - `board` audits code, Git and the board (read-only report, fixes only after the user approves), suggests ticket splits and the next task.
 - `release` prepares a version on the release ticket's branch, then, after the merge and an explicit confirmation, tags it and publishes the GitHub Release. `--dry-run` only previews.
 - "Review" and "Fait" on the board are set by GitHub automations; do not set them by hand unless they did not fire.
-- A parent ticket (one with sub-issues) has no branch and no PR: `start-ticket` moves it to "En cours" with its first started sub-issue, and `open-pr` closes it after the merge of its last sub-issue.
+- A parent ticket (one with sub-issues) has no branch and no PR: `start-ticket` moves it to "En cours" with its first started sub-issue, and `open-pr` closes it after the merge of its last sub-issue. This works at any depth: `start-ticket` moves all ancestors, `open-pr` closes them in cascade.
 
 ## Git
 

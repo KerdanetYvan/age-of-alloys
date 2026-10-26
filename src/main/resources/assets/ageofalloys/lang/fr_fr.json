@@ -34,5 +34,9 @@
   "block.ageofalloys.deepslate_magnesium_ore": "Minerai de magnésium des abîmes",
   "item.ageofalloys.raw_manganese": "Manganèse brut",
   "block.ageofalloys.manganese_ore": "Minerai de manganèse",
-  "block.ageofalloys.deepslate_manganese_ore": "Minerai de manganèse des abîmes"
+  "block.ageofalloys.deepslate_manganese_ore": "Minerai de manganèse des abîmes",
+  "item.ageofalloys.bronze_helmet": "Casque en bronze",
+  "item.ageofalloys.bronze_chestplate": "Plastron en bronze",
+  "item.ageofalloys.bronze_leggings": "Jambières en bronze",
+  "item.ageofalloys.bronze_boots": "Bottes en bronze"
 }

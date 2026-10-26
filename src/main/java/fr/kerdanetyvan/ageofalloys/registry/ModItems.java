@@ -6,6 +6,8 @@ import fr.kerdanetyvan.ageofalloys.content.ToolType;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.function.Supplier;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.HoeItem;
@@ -74,6 +76,16 @@ public final class ModItems {
     public static final RegistryObject<Item> STEEL_SWORD = tool(Metal.STEEL, ToolType.SWORD,
             () -> new SwordItem(ModTiers.STEEL, 3, -2.4F, new Item.Properties()));
 
+    // The bronze armor: four pieces made from the same material.
+    public static final RegistryObject<Item> BRONZE_HELMET =
+            armor(Metal.BRONZE, ModArmorMaterials.BRONZE, ArmorItem.Type.HELMET);
+    public static final RegistryObject<Item> BRONZE_CHESTPLATE =
+            armor(Metal.BRONZE, ModArmorMaterials.BRONZE, ArmorItem.Type.CHESTPLATE);
+    public static final RegistryObject<Item> BRONZE_LEGGINGS =
+            armor(Metal.BRONZE, ModArmorMaterials.BRONZE, ArmorItem.Type.LEGGINGS);
+    public static final RegistryObject<Item> BRONZE_BOOTS =
+            armor(Metal.BRONZE, ModArmorMaterials.BRONZE, ArmorItem.Type.BOOTS);
+
     /** The item of the alloy foundry: the thing in the inventory that places the block. */
     public static final RegistryObject<Item> ALLOY_FOUNDRY = ITEMS.register("alloy_foundry",
             () -> new BlockItem(ModBlocks.ALLOY_FOUNDRY.get(), new Item.Properties()));
@@ -132,6 +144,10 @@ public final class ModItems {
     /** The ingot of a metal. */
     public static RegistryObject<Item> ingotOf(Metal metal) {
         return INGOTS.get(metal);
+    }
+
+    private static RegistryObject<Item> armor(Metal metal, ArmorMaterial material, ArmorItem.Type type) {
+        return ITEMS.register(metal.armorName(type), () -> new ArmorItem(material, type, new Item.Properties()));
     }
 
     private static RegistryObject<Item> tool(Metal metal, ToolType type, Supplier<Item> factory) {

@@ -1,5 +1,7 @@
 package fr.kerdanetyvan.ageofalloys.content;
 
+import net.minecraft.world.item.ArmorItem;
+
 /**
  * Every metal of the mod: the three alloys and the raw metals they are made from.
  * Neutral code: it must not import anything from Forge (see docs/architecture.md).
@@ -59,6 +61,11 @@ public enum Metal {
     /** The raw item an ore drops, which is melted into an ingot, for example {@code raw_tin}. */
     public String rawName() {
         return "raw_" + id;
+    }
+
+    /** The name of an armor piece, for example {@code bronze_helmet}. */
+    public String armorName(ArmorItem.Type type) {
+        return id + "_" + type.getName();
     }
 
     public String toolName(ToolType type) {

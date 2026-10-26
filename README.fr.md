@@ -14,15 +14,17 @@
 
 ## Concept
 
-Age of Alloys enrichit la progression de Minecraft avec des métaux composites : on ne se contente plus de fer, d'or et de diamant, on va **fondre, mélanger et forger** de nouveaux matériaux. La bêta permet maintenant de fabriquer les alliages dans une fonderie d'alliages ; les métaux bruts dont ils sont faits ne sont pas encore générés dans le monde.
+Age of Alloys enrichit la progression de Minecraft avec des métaux composites : on ne se contente plus de fer, d'or et de diamant, on va **fondre, mélanger et forger** de nouveaux matériaux. Les métaux bruts se trouvent dans le monde sous forme de minerais, et on en fait les alliages dans une fonderie d'alliages.
 
-## Ce que contient la v0.2.0
+## Ce que contient le mod
 
-Tout se trouve dans l'onglet créatif **Age of Alloys**, et la fonderie et les outils se fabriquent aussi :
+Tout se trouve dans l'onglet créatif **Age of Alloys**, et tout s'obtient aussi en survie :
 
+- **4 minerais** : l'étain, l'aluminium, le magnésium et le manganèse, dans la pierre et l'ardoise des profondeurs de tous les biomes du monde normal. Chacun lâche un objet brut qui se fond en lingot au four ou au haut fourneau. L'aluminium et l'étain se minent à la pioche en pierre, le magnésium et le manganèse demandent une pioche de niveau fer. Les minerais ne se génèrent que dans les chunks créés après cette version : il faut explorer une zone neuve ou créer un nouveau monde.
 - **7 lingots** : trois alliages (bronze, duralumin et acier) et les quatre métaux bruts dont ils sont faits (étain, aluminium, magnésium et manganèse).
 - **15 outils et armes** : une pioche, une hache, une pelle, une houe et une épée pour chaque alliage. Tous minent au niveau du fer, et se fabriquent avec des lingots et des bâtons.
 - **La fonderie d'alliages** : un bloc qui se fabrique avec quatre briques de pierre, trois pierres lisses et un seau. Elle fond le bronze, le duralumin et l'acier à partir des métaux bruts, et le combustible doit être assez chaud pour l'alliage : n'importe lequel pour le bronze, un charbon ou mieux pour le duralumin, un bloc de charbon ou un seau de lave pour l'acier.
+- **12 pièces d'armure** : un casque, un plastron, des jambières et des bottes pour chaque alliage, qui se fabriquent avec des lingots selon les formes de l'armure de Minecraft et se réparent avec le lingot de leur alliage.
 - Des noms en anglais et en français. Les lingots portent les tags `forge:ingots/<métal>`, ce qui permet aux autres mods et aux recettes de les reconnaître comme des lingots de leur métal.
 
 | Alliage | Rôle | Durabilité | Vitesse de minage |
@@ -32,14 +34,21 @@ Tout se trouve dans l'onglet créatif **Age of Alloys**, et la fonderie et les o
 | Acier | Le meilleur matériau de cette version, juste en dessous du diamant | 850 | 7 |
 | _Fer (vanilla, pour repère)_ | | _250_ | _6_ |
 
-> **Bêta :** les alliages se fabriquent désormais en jeu, dans la fonderie d'alliages, mais leurs matières premières (étain, aluminium, magnésium, manganèse) ne se trouvent pas encore dans le monde : pour l'instant, elles s'obtiennent en créatif ou par commande.
+| Armure | Rôle | Protection (jeu complet) | Durabilité (jeu complet) | Robustesse (par pièce) |
+|---|---|---:|---:|---:|
+| Bronze | Comme le fer, mais elle dure plus longtemps | 15 | 1 100 | 0 |
+| Duralumin | Comme le fer, mais fragile ; la meilleure enchantabilité | 15 | 550 | 0 |
+| Acier | Juste en dessous du diamant | 18 | 1 485 | 1 |
+| _Fer (vanilla, pour repère)_ | | _15_ | _825_ | _0_ |
+
+> **Bêta :** toute la boucle fonctionne en survie (trouver les minerais, fondre les lingots, fabriquer les alliages, façonner outils et armures), mais le mod est encore en test : attendez-vous à quelques aspérités. La compatibilité avec d'autres mods, les succès et un livre de recettes pour la fonderie viendront plus tard.
 
 ## Fonctionnalités prévues
 
 - [x] **Alliages** et leurs équipements (outils et armes)
 - [x] **Création des alliages** en jeu
-- [ ] **Matières premières** générées dans le monde
-- [ ] **Armures** pour chaque alliage
+- [x] **Matières premières** générées dans le monde
+- [x] **Armures** pour chaque alliage
 - [ ] **Compatibilité** avec d'autres mods populaires
 - [ ] **Wiki** complet
 

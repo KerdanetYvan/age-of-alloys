@@ -59,16 +59,16 @@ Le détail et l'ordre sont dans la [roadmap](ROADMAP.md) (en français).
 Prérequis : Minecraft 1.20.1 et Forge 47.x (Java 17).
 
 1. Installer Forge pour Minecraft 1.20.1.
-2. Télécharger `ageofalloys-0.2.0.jar` depuis la page des [releases](https://github.com/KerdanetYvan/age-of-alloys/releases).
+2. Télécharger `ageofalloys-0.3.0.jar` depuis la page des [releases](https://github.com/KerdanetYvan/age-of-alloys/releases).
 3. Déposer le jar dans le dossier `mods` du jeu.
 
-La v0.2.0 est une pré-version (bêta) : attendez-vous à quelques aspérités.
+La v0.3.0 est une pré-version (bêta) : attendez-vous à quelques aspérités.
 
 ## Compatibilité
 
 | Minecraft | Loader | Statut |
 |-----------|--------|--------|
-| 1.20.1 | Forge 47.x (Java 17) | 🧪 Bêta (v0.2.0) |
+| 1.20.1 | Forge 47.x (Java 17) | 🧪 Bêta (v0.3.0) |
 
 Un portage vers NeoForge et des versions plus récentes est envisagé plus tard.
 

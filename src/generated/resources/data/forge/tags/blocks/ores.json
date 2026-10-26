@@ -1,5 +1,8 @@
 {
   "values": [
-    "#forge:ores/tin"
+    "#forge:ores/tin",
+    "#forge:ores/aluminum",
+    "#forge:ores/magnesium",
+    "#forge:ores/manganese"
   ]
 }

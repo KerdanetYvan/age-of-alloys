@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "manganese_ingot",
+  "ingredient": {
+    "item": "ageofalloys:manganese_ore"
+  },
+  "result": "ageofalloys:manganese_ingot"
+}

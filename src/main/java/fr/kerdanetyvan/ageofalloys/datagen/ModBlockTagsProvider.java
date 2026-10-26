@@ -9,6 +9,7 @@ import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -31,14 +32,22 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.ALLOY_FOUNDRY.get());
         tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.ALLOY_FOUNDRY.get());
 
-        // The tin ores are mined with a pickaxe, at the stone level like the copper ores.
-        tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.TIN_ORE.get(), ModBlocks.DEEPSLATE_TIN_ORE.get());
-        tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.TIN_ORE.get(), ModBlocks.DEEPSLATE_TIN_ORE.get());
+        // The ores of the raw metals are mined with a pickaxe, at the stone level for the tin and the aluminum,
+        // and at the iron level for the magnesium and the manganese (our alloys mine at the iron level too).
+        for (Metal metal : Metal.values()) {
+            if (metal.kind() != Metal.Kind.RAW) {
+                continue;
+            }
+            Block ore = ModBlocks.oreOf(metal).get();
+            Block deepslateOre = ModBlocks.deepslateOreOf(metal).get();
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ore, deepslateOre);
+            tag(metal.oreNeedsIronTool() ? BlockTags.NEEDS_IRON_TOOL : BlockTags.NEEDS_STONE_TOOL).add(ore, deepslateOre);
 
-        // Forge's shared tags, so that other mods recognize the ores of tin: forge:ores holds one sub-tag per metal.
-        tag(ModTags.oreBlock(Metal.TIN)).add(ModBlocks.TIN_ORE.get(), ModBlocks.DEEPSLATE_TIN_ORE.get());
-        tag(Tags.Blocks.ORES).addTag(ModTags.oreBlock(Metal.TIN));
-        tag(Tags.Blocks.ORES_IN_GROUND_STONE).add(ModBlocks.TIN_ORE.get());
-        tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE).add(ModBlocks.DEEPSLATE_TIN_ORE.get());
+            // Forge's shared tags, so that other mods recognize the ores: forge:ores holds one sub-tag per metal.
+            tag(ModTags.oreBlock(metal)).add(ore, deepslateOre);
+            tag(Tags.Blocks.ORES).addTag(ModTags.oreBlock(metal));
+            tag(Tags.Blocks.ORES_IN_GROUND_STONE).add(ore);
+            tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE).add(deepslateOre);
+        }
     }
 }

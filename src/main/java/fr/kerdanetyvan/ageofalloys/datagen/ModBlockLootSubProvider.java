@@ -1,5 +1,6 @@
 package fr.kerdanetyvan.ageofalloys.datagen;
 
+import fr.kerdanetyvan.ageofalloys.content.Metal;
 import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
 import fr.kerdanetyvan.ageofalloys.registry.ModItems;
 import java.util.Set;
@@ -17,8 +18,15 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.ALLOY_FOUNDRY.get());
 
-        add(ModBlocks.TIN_ORE.get(), createOreDrop(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get()));
-        add(ModBlocks.DEEPSLATE_TIN_ORE.get(), createOreDrop(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get()));
+        // Every ore drops the raw item of its metal (more with Fortune), or itself with Silk Touch.
+        for (Metal metal : Metal.values()) {
+            if (metal.kind() == Metal.Kind.RAW) {
+                Block ore = ModBlocks.oreOf(metal).get();
+                Block deepslateOre = ModBlocks.deepslateOreOf(metal).get();
+                add(ore, createOreDrop(ore, ModItems.rawOf(metal).get()));
+                add(deepslateOre, createOreDrop(deepslateOre, ModItems.rawOf(metal).get()));
+            }
+        }
     }
 
     @Override

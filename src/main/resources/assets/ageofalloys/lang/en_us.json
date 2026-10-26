@@ -25,5 +25,14 @@
   "block.ageofalloys.alloy_foundry": "Alloy Foundry",
   "item.ageofalloys.raw_tin": "Raw Tin",
   "block.ageofalloys.tin_ore": "Tin Ore",
-  "block.ageofalloys.deepslate_tin_ore": "Deepslate Tin Ore"
+  "block.ageofalloys.deepslate_tin_ore": "Deepslate Tin Ore",
+  "item.ageofalloys.raw_aluminum": "Raw Aluminum",
+  "block.ageofalloys.aluminum_ore": "Aluminum Ore",
+  "block.ageofalloys.deepslate_aluminum_ore": "Deepslate Aluminum Ore",
+  "item.ageofalloys.raw_magnesium": "Raw Magnesium",
+  "block.ageofalloys.magnesium_ore": "Magnesium Ore",
+  "block.ageofalloys.deepslate_magnesium_ore": "Deepslate Magnesium Ore",
+  "item.ageofalloys.raw_manganese": "Raw Manganese",
+  "block.ageofalloys.manganese_ore": "Manganese Ore",
+  "block.ageofalloys.deepslate_manganese_ore": "Deepslate Manganese Ore"
 }

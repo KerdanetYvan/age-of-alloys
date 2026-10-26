@@ -1,5 +1,8 @@
 {
   "values": [
-    "#forge:raw_materials/tin"
+    "#forge:raw_materials/tin",
+    "#forge:raw_materials/aluminum",
+    "#forge:raw_materials/magnesium",
+    "#forge:raw_materials/manganese"
   ]
 }

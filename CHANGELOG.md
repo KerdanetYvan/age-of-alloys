@@ -9,6 +9,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 
 ### Ajouté
 - Le minerai d'étain : un bloc dans la pierre et un dans l'ardoise des profondeurs, qui se minent à la pioche en pierre ou mieux et lâchent de l'étain brut (plus avec Fortune, ou le bloc lui-même avec Silk Touch). L'étain brut et les deux minerais se fondent en lingot d'étain au four et au haut fourneau. Ils sont dans l'onglet créatif.
+- Les minerais d'aluminium, de magnésium et de manganèse : chacun a son bloc dans la pierre et dans l'ardoise des profondeurs, et son objet brut. L'aluminium se mine à la pioche en pierre ; le magnésium et le manganèse demandent une pioche de niveau fer (fer, bronze, duralumin ou acier). Comme l'étain, ils lâchent l'objet brut (plus avec Fortune, ou le bloc avec Silk Touch), et l'objet brut et les blocs se fondent en lingot au four et au haut fourneau. Ils sont dans l'onglet créatif, mais n'apparaissent pas encore dans le monde.
 - L'étain se trouve dans le monde : des filons de minerai d'étain apparaissent dans tous les biomes du monde normal, dans la pierre et dans l'ardoise des profondeurs, de -24 à 80 de hauteur, un peu plus rares que le cuivre. Ils ne se génèrent que dans les chunks créés après cette version : dans un monde déjà exploré, il faut aller plus loin. Avec le cuivre de Minecraft, le bronze devient faisable en survie.
 
 ## [0.2.0] - 2026-10-26

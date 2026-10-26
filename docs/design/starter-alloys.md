@@ -90,7 +90,7 @@ Dégâts par coup = base de l'objet + bonus du matériau + 1 (la main). Dégâts
 
 ## 5. Hors périmètre
 
-- **Armures** : stats à définir au ticket correspondant (#12).
+- **Armures** : leurs statistiques sont fixées dans [armor.md](armor.md).
 - **Blocs de minerai**, drops (minerais bruts) et **génération dans le monde** des matières premières : étape 3. Les *lingots* de ces métaux, eux, sont créés à l'étape 1. Le carbone de l'acier vient du charbon vanilla.
 - **Blocs de stockage** et **pépites** : quand une recette en a besoin.
 - Plusieurs de ces métaux existent déjà dans d'autres mods : l'utilisation de tags communs évitera les doublons à l'étape 4.

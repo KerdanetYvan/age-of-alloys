@@ -38,6 +38,14 @@ public enum Metal {
         return id + "_ingot";
     }
 
+    /**
+     * Whether the ores of this metal need a pickaxe of the iron level (iron, bronze, duralumin or steel), where
+     * the other ores only need one of stone (see docs/design/raw-materials.md).
+     */
+    public boolean oreNeedsIronTool() {
+        return this == MAGNESIUM || this == MANGANESE;
+    }
+
     /** The ore in stone, for example {@code tin_ore}. */
     public String oreName() {
         return id + "_ore";

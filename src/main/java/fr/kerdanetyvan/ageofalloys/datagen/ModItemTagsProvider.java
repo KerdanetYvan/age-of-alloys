@@ -38,12 +38,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         }
 
         // The ore items and the raw items, for the same shared tags as the blocks.
-        copy(ModTags.oreBlock(Metal.TIN), ModTags.oreItem(Metal.TIN));
         copy(Tags.Blocks.ORES, Tags.Items.ORES);
         copy(Tags.Blocks.ORES_IN_GROUND_STONE, Tags.Items.ORES_IN_GROUND_STONE);
         copy(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE, Tags.Items.ORES_IN_GROUND_DEEPSLATE);
-        tag(ModTags.rawMaterial(Metal.TIN)).add(ModItems.RAW_TIN.get());
-        tag(Tags.Items.RAW_MATERIALS).addTag(ModTags.rawMaterial(Metal.TIN));
+        for (Metal metal : Metal.values()) {
+            if (metal.kind() == Metal.Kind.RAW) {
+                copy(ModTags.oreBlock(metal), ModTags.oreItem(metal));
+                tag(ModTags.rawMaterial(metal)).add(ModItems.rawOf(metal).get());
+                tag(Tags.Items.RAW_MATERIALS).addTag(ModTags.rawMaterial(metal));
+            }
+        }
 
         tag(ItemTags.PICKAXES).add(ModItems.BRONZE_PICKAXE.get(), ModItems.DURALUMIN_PICKAXE.get(),
                 ModItems.STEEL_PICKAXE.get());

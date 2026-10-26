@@ -83,9 +83,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_stone_bricks", has(Items.STONE_BRICKS))
                 .save(writer);
 
-        List<ItemLike> tin = List.of(ModItems.RAW_TIN.get(), ModBlocks.TIN_ORE.get(), ModBlocks.DEEPSLATE_TIN_ORE.get());
-        smelting(writer, tin, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.7F, 200, "tin_ingot");
-        blasting(writer, tin, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.7F, 100, "tin_ingot");
+        // The raw item and both ores of each raw metal melt into its ingot, in a furnace and in a blast furnace.
+        for (Metal metal : Metal.values()) {
+            if (metal.kind() != Metal.Kind.RAW) {
+                continue;
+            }
+            List<ItemLike> sources = List.of(ModItems.rawOf(metal).get(), ModBlocks.oreOf(metal).get(),
+                    ModBlocks.deepslateOreOf(metal).get());
+            Item ingot = ModItems.ingotOf(metal).get();
+            smelting(writer, sources, RecipeCategory.MISC, ingot, 0.7F, 200, metal.ingotName());
+            blasting(writer, sources, RecipeCategory.MISC, ingot, 0.7F, 100, metal.ingotName());
+        }
     }
 
     /**

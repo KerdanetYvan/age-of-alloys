@@ -1,5 +1,8 @@
 {
   "values": [
-    "ageofalloys:tin_ore"
+    "ageofalloys:tin_ore",
+    "ageofalloys:aluminum_ore",
+    "ageofalloys:magnesium_ore",
+    "ageofalloys:manganese_ore"
   ]
 }

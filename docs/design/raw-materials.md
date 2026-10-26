@@ -87,7 +87,7 @@ Pour chaque minerai, trois ensembles de données, tous écrits **en JSON par dat
 
 Chaque minerai se mine avec une pioche (le tag `mineable/pickaxe`). Le niveau requis se règle par les tags de blocs de Minecraft : `needs_stone_tool` pour l'étain et l'aluminium, `needs_iron_tool` pour le magnésium et le manganèse. Vanilla y range déjà le cuivre et le fer à la pierre, l'or et le diamant au fer.
 
-Nos trois alliages minent au **niveau du fer**. Le bronze, le duralumin et l'acier doivent donc extraire le magnésium et le manganèse : c'est **à vérifier en jeu** dès le ticket du premier minerai de niveau fer (#110), parce que nos alliages ont leur propre tag de niveau (`needs_bronze_tool`…).
+Nos trois alliages minent au **niveau du fer**. Le bronze, le duralumin et l'acier doivent donc extraire le magnésium et le manganèse. **Vérifié en jeu avec #110** : une pioche de fer, de bronze, de duralumin ou d'acier lâche l'objet brut du magnésium et du manganèse, alors qu'une pioche en bois ou en pierre ne lâche rien. Nos alliages ont pourtant leur propre tag de niveau (`needs_bronze_tool`…), mais ils sont rangés au niveau du fer, donc ils ouvrent aussi `needs_iron_tool`.
 
 ## 7. Notions à apprendre
 

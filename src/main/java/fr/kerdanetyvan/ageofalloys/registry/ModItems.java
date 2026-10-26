@@ -3,6 +3,8 @@ package fr.kerdanetyvan.ageofalloys.registry;
 import fr.kerdanetyvan.ageofalloys.AgeOfAlloys;
 import fr.kerdanetyvan.ageofalloys.content.Metal;
 import fr.kerdanetyvan.ageofalloys.content.ToolType;
+import java.util.EnumMap;
+import java.util.Map;
 import java.util.function.Supplier;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
@@ -21,6 +23,13 @@ import net.minecraftforge.registries.RegistryObject;
 public final class ModItems {
     private static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, AgeOfAlloys.MOD_ID);
+
+    // The raw items, the ore items and the ingots by metal, for the code that treats every raw metal the same way.
+    // The tables come first: the constants below fill them.
+    private static final Map<Metal, RegistryObject<Item>> RAW = new EnumMap<>(Metal.class);
+    private static final Map<Metal, RegistryObject<Item>> ORE_ITEMS = new EnumMap<>(Metal.class);
+    private static final Map<Metal, RegistryObject<Item>> DEEPSLATE_ORE_ITEMS = new EnumMap<>(Metal.class);
+    private static final Map<Metal, RegistryObject<Item>> INGOTS = new EnumMap<>(Metal.class);
 
     public static final RegistryObject<Item> TIN_INGOT = ingot(Metal.TIN);
     public static final RegistryObject<Item> BRONZE_INGOT = ingot(Metal.BRONZE);
@@ -69,24 +78,60 @@ public final class ModItems {
     public static final RegistryObject<Item> ALLOY_FOUNDRY = ITEMS.register("alloy_foundry",
             () -> new BlockItem(ModBlocks.ALLOY_FOUNDRY.get(), new Item.Properties()));
 
-    /** The raw tin an ore drops: it is melted into a tin ingot in a furnace. */
+    /** The raw items an ore drops: they are melted into an ingot in a furnace. */
     public static final RegistryObject<Item> RAW_TIN = raw(Metal.TIN);
+    public static final RegistryObject<Item> RAW_ALUMINUM = raw(Metal.ALUMINUM);
+    public static final RegistryObject<Item> RAW_MAGNESIUM = raw(Metal.MAGNESIUM);
+    public static final RegistryObject<Item> RAW_MANGANESE = raw(Metal.MANGANESE);
 
-    /** The items of the tin ores, the things in the inventory that place the blocks. */
-    public static final RegistryObject<Item> TIN_ORE = blockItem(Metal.TIN.oreName(), ModBlocks.TIN_ORE);
-    public static final RegistryObject<Item> DEEPSLATE_TIN_ORE =
-            blockItem(Metal.TIN.deepslateOreName(), ModBlocks.DEEPSLATE_TIN_ORE);
+    /** The items of the ores, the things in the inventory that place the blocks. */
+    public static final RegistryObject<Item> TIN_ORE = oreItem(Metal.TIN, false);
+    public static final RegistryObject<Item> DEEPSLATE_TIN_ORE = oreItem(Metal.TIN, true);
+    public static final RegistryObject<Item> ALUMINUM_ORE = oreItem(Metal.ALUMINUM, false);
+    public static final RegistryObject<Item> DEEPSLATE_ALUMINUM_ORE = oreItem(Metal.ALUMINUM, true);
+    public static final RegistryObject<Item> MAGNESIUM_ORE = oreItem(Metal.MAGNESIUM, false);
+    public static final RegistryObject<Item> DEEPSLATE_MAGNESIUM_ORE = oreItem(Metal.MAGNESIUM, true);
+    public static final RegistryObject<Item> MANGANESE_ORE = oreItem(Metal.MANGANESE, false);
+    public static final RegistryObject<Item> DEEPSLATE_MANGANESE_ORE = oreItem(Metal.MANGANESE, true);
 
     private static RegistryObject<Item> raw(Metal metal) {
-        return ITEMS.register(metal.rawName(), () -> new Item(new Item.Properties()));
+        RegistryObject<Item> item = ITEMS.register(metal.rawName(), () -> new Item(new Item.Properties()));
+        RAW.put(metal, item);
+        return item;
     }
 
-    private static RegistryObject<Item> blockItem(String name, RegistryObject<Block> block) {
-        return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    private static RegistryObject<Item> oreItem(Metal metal, boolean deepslate) {
+        RegistryObject<Block> block = deepslate ? ModBlocks.deepslateOreOf(metal) : ModBlocks.oreOf(metal);
+        String name = deepslate ? metal.deepslateOreName() : metal.oreName();
+        RegistryObject<Item> item = ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        (deepslate ? DEEPSLATE_ORE_ITEMS : ORE_ITEMS).put(metal, item);
+        return item;
     }
 
     private static RegistryObject<Item> ingot(Metal metal) {
-        return ITEMS.register(metal.ingotName(), () -> new Item(new Item.Properties()));
+        RegistryObject<Item> item = ITEMS.register(metal.ingotName(), () -> new Item(new Item.Properties()));
+        INGOTS.put(metal, item);
+        return item;
+    }
+
+    /** The raw item of a raw metal, for example the raw tin. */
+    public static RegistryObject<Item> rawOf(Metal metal) {
+        return RAW.get(metal);
+    }
+
+    /** The item of the ore of a raw metal, in stone. */
+    public static RegistryObject<Item> oreItemOf(Metal metal) {
+        return ORE_ITEMS.get(metal);
+    }
+
+    /** The item of the ore of a raw metal, in deepslate. */
+    public static RegistryObject<Item> deepslateOreItemOf(Metal metal) {
+        return DEEPSLATE_ORE_ITEMS.get(metal);
+    }
+
+    /** The ingot of a metal. */
+    public static RegistryObject<Item> ingotOf(Metal metal) {
+        return INGOTS.get(metal);
     }
 
     private static RegistryObject<Item> tool(Metal metal, ToolType type, Supplier<Item> factory) {

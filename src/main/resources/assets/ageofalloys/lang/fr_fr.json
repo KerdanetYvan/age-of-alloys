@@ -25,5 +25,14 @@
   "block.ageofalloys.alloy_foundry": "Fonderie d'alliages",
   "item.ageofalloys.raw_tin": "Étain brut",
   "block.ageofalloys.tin_ore": "Minerai d'étain",
-  "block.ageofalloys.deepslate_tin_ore": "Minerai d'étain des abîmes"
+  "block.ageofalloys.deepslate_tin_ore": "Minerai d'étain des abîmes",
+  "item.ageofalloys.raw_aluminum": "Aluminium brut",
+  "block.ageofalloys.aluminum_ore": "Minerai d'aluminium",
+  "block.ageofalloys.deepslate_aluminum_ore": "Minerai d'aluminium des abîmes",
+  "item.ageofalloys.raw_magnesium": "Magnésium brut",
+  "block.ageofalloys.magnesium_ore": "Minerai de magnésium",
+  "block.ageofalloys.deepslate_magnesium_ore": "Minerai de magnésium des abîmes",
+  "item.ageofalloys.raw_manganese": "Manganèse brut",
+  "block.ageofalloys.manganese_ore": "Minerai de manganèse",
+  "block.ageofalloys.deepslate_manganese_ore": "Minerai de manganèse des abîmes"
 }

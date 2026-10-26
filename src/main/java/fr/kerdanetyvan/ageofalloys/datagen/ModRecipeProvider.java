@@ -74,10 +74,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(writer);
 
         // The shapes of the vanilla armor, with the ingot of the alloy (X is an ingot).
-        armor(writer, Metal.BRONZE, ArmorItem.Type.HELMET, "XXX", "X X");
-        armor(writer, Metal.BRONZE, ArmorItem.Type.CHESTPLATE, "X X", "XXX", "XXX");
-        armor(writer, Metal.BRONZE, ArmorItem.Type.LEGGINGS, "XXX", "X X", "X X");
-        armor(writer, Metal.BRONZE, ArmorItem.Type.BOOTS, "X X", "X X");
+        for (Metal metal : Metal.values()) {
+            if (metal.kind() != Metal.Kind.ALLOY) {
+                continue;
+            }
+            armor(writer, metal, ArmorItem.Type.HELMET, "XXX", "X X");
+            armor(writer, metal, ArmorItem.Type.CHESTPLATE, "X X", "XXX", "XXX");
+            armor(writer, metal, ArmorItem.Type.LEGGINGS, "XXX", "X X", "X X");
+            armor(writer, metal, ArmorItem.Type.BOOTS, "X X", "X X");
+        }
 
         // The foundry looks like a crucible: walls of stone bricks, a bucket on top and a smooth stone base.
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ALLOY_FOUNDRY.get())

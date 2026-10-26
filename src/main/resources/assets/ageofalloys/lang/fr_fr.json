@@ -38,5 +38,13 @@
   "item.ageofalloys.bronze_helmet": "Casque en bronze",
   "item.ageofalloys.bronze_chestplate": "Plastron en bronze",
   "item.ageofalloys.bronze_leggings": "Jambières en bronze",
-  "item.ageofalloys.bronze_boots": "Bottes en bronze"
+  "item.ageofalloys.bronze_boots": "Bottes en bronze",
+  "item.ageofalloys.duralumin_helmet": "Casque en duralumin",
+  "item.ageofalloys.duralumin_chestplate": "Plastron en duralumin",
+  "item.ageofalloys.duralumin_leggings": "Jambières en duralumin",
+  "item.ageofalloys.duralumin_boots": "Bottes en duralumin",
+  "item.ageofalloys.steel_helmet": "Casque en acier",
+  "item.ageofalloys.steel_chestplate": "Plastron en acier",
+  "item.ageofalloys.steel_leggings": "Jambières en acier",
+  "item.ageofalloys.steel_boots": "Bottes en acier"
 }

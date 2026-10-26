@@ -18,6 +18,8 @@ import net.minecraft.world.item.ArmorItem;
 public record ArmorStats(int boots, int leggings, int chestplate, int helmet, int durabilityMultiplier, float toughness, float knockbackResistance, int enchantmentValue) {
 
     public static final ArmorStats BRONZE = new ArmorStats(2, 5, 6, 2, 20, 0.0F, 0.0F, 10);
+    public static final ArmorStats DURALUMIN = new ArmorStats(2, 5, 6, 2, 10, 0.0F, 0.0F, 15);
+    public static final ArmorStats STEEL = new ArmorStats(3, 5, 7, 3, 27, 1.0F, 0.0F, 9);
 
     /** The protection of a piece. */
     public int protection(ArmorItem.Type type) {

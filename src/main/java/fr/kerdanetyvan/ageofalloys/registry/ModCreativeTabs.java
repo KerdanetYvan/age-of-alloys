@@ -51,6 +51,14 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.BRONZE_CHESTPLATE.get());
                 output.accept(ModItems.BRONZE_LEGGINGS.get());
                 output.accept(ModItems.BRONZE_BOOTS.get());
+                output.accept(ModItems.DURALUMIN_HELMET.get());
+                output.accept(ModItems.DURALUMIN_CHESTPLATE.get());
+                output.accept(ModItems.DURALUMIN_LEGGINGS.get());
+                output.accept(ModItems.DURALUMIN_BOOTS.get());
+                output.accept(ModItems.STEEL_HELMET.get());
+                output.accept(ModItems.STEEL_CHESTPLATE.get());
+                output.accept(ModItems.STEEL_LEGGINGS.get());
+                output.accept(ModItems.STEEL_BOOTS.get());
                 output.accept(ModItems.ALLOY_FOUNDRY.get());
             })
             .build());

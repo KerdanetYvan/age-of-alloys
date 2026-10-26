@@ -1,0 +1,48 @@
+---
+layout: default
+title: Bronze
+permalink: /en/bronze/
+alt: /bronze/
+---
+
+{% include nav_en.md %}
+
+# Bronze
+
+Bronze is the **sturdy mid-game alloy**: it has the power of iron but lasts longer. In real life it is copper and tin, already used in the Bronze Age.
+
+## Making it
+
+In [the foundry]({{ '/en/foundry/' | relative_url }}), with any fuel (heat 1):
+
+- 3 copper ingots + 1 tin ingot → **4 bronze ingots**.
+
+Copper comes from Minecraft, tin is found in [the ores]({{ '/en/ores/' | relative_url }}).
+
+## Tools and weapons
+
+All of them mine at iron level. Shapes and amounts: [the recipes]({{ '/en/recipes/' | relative_url }}).
+
+| | Bronze | _Iron (reference)_ |
+|---|---:|---:|
+| Durability | 400 | _250_ |
+| Mining speed | 6 | _6_ |
+| Enchantability | 12 | _14_ |
+| Sword damage | 6 | _6_ |
+| Sword attack speed | 1.6 | _1.6_ |
+
+## Armor
+
+It protects like iron armor, but lasts longer.
+
+| Piece | Protection | Durability |
+|---|---:|---:|
+| Helmet | 2 | 220 |
+| Chestplate | 6 | 320 |
+| Leggings | 5 | 300 |
+| Boots | 2 | 260 |
+| **Full set** | **15** | **1,100** |
+
+Toughness: 0. Enchantability: 10. For comparison, iron has 15 protection and 825 durability for the full set.
+
+Repair it at an anvil with a bronze ingot.

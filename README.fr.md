@@ -50,7 +50,7 @@ Tout se trouve dans l'onglet créatif **Age of Alloys**, et tout s'obtient aussi
 - [x] **Matières premières** générées dans le monde
 - [x] **Armures** pour chaque alliage
 - [ ] **Compatibilité** avec d'autres mods populaires
-- [ ] **Wiki** complet
+- [x] **Wiki** complet
 
 Le détail et l'ordre sont dans la [roadmap](ROADMAP.md) (en français).
 
@@ -74,6 +74,7 @@ Un portage vers NeoForge et des versions plus récentes est envisagé plus tard.
 
 ## Documentation
 
+- [Wiki](https://kerdanetyvan.github.io/age-of-alloys/) (recettes, minerais, alliages)
 - [Roadmap](ROADMAP.md)
 - [Changelog](CHANGELOG.md)
 - [Contribuer](CONTRIBUTING.md)

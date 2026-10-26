@@ -48,14 +48,16 @@ Un minerai est généré par un **filon** : un petit amas de blocs, placé plusi
 | Fer (au milieu) | 9 | 10 | trapèze de -24 à 56 |
 | Charbon (enterré) | 17 | 20 | trapèze de 0 à 192 |
 
-**Nos valeurs provisoires :**
+**Nos valeurs, après un premier réglage en jeu (#113) :**
 
 | Minerai | Pioche | Taille d'un filon | Filons par chunk | Hauteur (trapèze) | Pourquoi |
 |---|---|---:|---:|---|---|
-| Étain | pierre | 8 | 12 | de -24 à 80 | Un peu plus rare que le cuivre, dont il suit à peu près la plage. Il en faut peu pour le bronze. |
+| Étain | pierre | 9 | 16 | de -24 à 80 | Un peu moins courant que le cuivre, dont il suit à peu près la plage. Il en faut peu pour le bronze, mais la première version (8 × 12) était trop rare en jeu. |
 | Aluminium | pierre | 9 | 14 | de 0 à 128 | La base du duralumin : le plus courant, et assez haut pour se trouver sans creuser. |
 | Magnésium | fer | 6 | 4 | de -48 à 48 | Rare, en petits filons : il n'en faut que deux lingots par jeu d'outils. |
-| Manganèse | fer | 6 | 4 | de -64 à 16 | Rare et profond, pour que le duralumin vienne après avoir exploré. |
+| Manganèse | fer | 6 | 6 | de -64 à 16 | Rare et profond, pour que le duralumin vienne après avoir exploré. La première version (4 filons) était trop rare en jeu. |
+
+Le réglage a porté sur **deux minerais** seulement, et sur le nombre de filons surtout : l'étain passe de 96 à 144 blocs par chunk (16 × 9, contre 160 pour le cuivre) et le manganèse de 24 à 36 (6 × 6). L'aluminium et le magnésium, trouvés « bien » en jeu, n'ont pas bougé. Ces valeurs restent révisables jusqu'à la v1.0.0.
 
 Chaque filon est placé à la fois dans la pierre et dans l'ardoise : un même filon remplace la pierre par le minerai de pierre et l'ardoise par le minerai d'ardoise, comme le cuivre de Minecraft, et il n'y a donc **qu'une seule règle par minerai**, pas deux.
 

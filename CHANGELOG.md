@@ -13,6 +13,9 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 - L'aluminium, le magnésium et le manganèse se trouvent dans le monde, dans tous les biomes du monde normal, dans la pierre et dans l'ardoise des profondeurs : l'aluminium est le plus courant et se trouve de la surface aux grottes (jusqu'à 128 de hauteur), le magnésium est rare et se trouve autour de 0, le manganèse est rare et profond (surtout sous 0). Comme l'étain, ils ne se génèrent que dans les chunks créés après cette version. Le duralumin devient faisable en survie.
 - L'étain se trouve dans le monde : des filons de minerai d'étain apparaissent dans tous les biomes du monde normal, dans la pierre et dans l'ardoise des profondeurs, de -24 à 80 de hauteur, un peu plus rares que le cuivre. Ils ne se génèrent que dans les chunks créés après cette version : dans un monde déjà exploré, il faut aller plus loin. Avec le cuivre de Minecraft, le bronze devient faisable en survie.
 
+### Modifié
+- L'étain et le manganèse sont plus courants dans le monde : l'étain se trouve presque aussi souvent que le cuivre, et le manganèse, toujours rare et profond, se trouve un peu plus facilement. Seuls les chunks créés après cette version en profitent.
+
 ## [0.2.0] - 2026-10-26
 
 ### Ajouté

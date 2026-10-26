@@ -42,10 +42,10 @@ public final class ModWorldGen {
 
     /** One vein per raw metal, with the values of docs/design/raw-materials.md (provisional). */
     private static final List<Vein> VEINS = List.of(
-            new Vein(Metal.TIN, 8, 12, -24, 80),
+            new Vein(Metal.TIN, 9, 16, -24, 80),
             new Vein(Metal.ALUMINUM, 9, 14, 0, 128),
             new Vein(Metal.MAGNESIUM, 6, 4, -48, 48),
-            new Vein(Metal.MANGANESE, 6, 4, -64, 16)
+            new Vein(Metal.MANGANESE, 6, 6, -64, 16)
     );
 
     // The names of the three pieces of an ore. The same name in two registries is fine.

@@ -8,13 +8,47 @@ version: v0.3.0
 key: recipes
 ---
 
-# Tool, weapon and armor recipes
+# Recipes
 
-All of them are crafted at a **crafting table** with **ingots of the alloy** (bronze, duralumin or steel) and, for tools, **sticks**. The shapes are Minecraft's: an iron tool is crafted the same way, with the ingot of the alloy instead.
+Every recipe of the mod in one place: the foundry, smelting the ores, the alloys, then the tools, weapons and armor. Crafting table recipes unlock as soon as you own an ingot of the metal.
 
-Recipes unlock as soon as you own an ingot of the metal.
+## The foundry {#foundry}
+
+At a crafting table:
+
+| | | |
+|---|---|---|
+| Stone bricks | Bucket | Stone bricks |
+| Stone bricks | _(empty)_ | Stone bricks |
+| Smooth stone | Smooth stone | Smooth stone |
+{: .craft-grid }
+
+Four stone bricks, a bucket and three smooth stones. This recipe unlocks as soon as you own stone bricks. How it works: [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}).
+
+## Smelting the ores
+
+The raw item and the two ore blocks (stone and deepslate) are smelted into an ingot:
+
+| Where | Time |
+|---|---:|
+| Furnace | 10 s |
+| Blast furnace | 5 s |
+
+## The alloys {#alloys}
+
+In [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}). Each recipe takes **10 seconds** (200 ticks) and asks for a **heat level**: see [heat]({{ '/en/v0.3.0/foundry/' | relative_url }}#heat).
+
+| Alloy | Ingredients | Result | Heat |
+|---|---|---:|:-:|
+| [Bronze]({{ '/en/v0.3.0/bronze/' | relative_url }}) | 3 copper ingots + 1 tin ingot | 4 ingots | 1 |
+| [Duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }}) | 5 aluminum + 1 copper + 1 magnesium + 1 manganese | 8 ingots | 2 |
+| [Steel]({{ '/en/v0.3.0/steel/' | relative_url }}) | 4 iron ingots + 1 coal (or charcoal) | 4 ingots | 3 |
+
+Ingredients are matched by tag (`forge:ingots/<metal>`): a copper, tin or iron ingot, or an ingot from another mod that carries the same tag, works.
 
 ## Tools and weapons
+
+At a crafting table, with **ingots of the alloy** (bronze, duralumin or steel) and **sticks**. The shapes are Minecraft's: an iron tool is crafted the same way, with the ingot of the alloy instead.
 
 | Item | Shape | Ingots | Sticks |
 |---|---|---:|---:|
@@ -26,6 +60,8 @@ Recipes unlock as soon as you own an ingot of the metal.
 
 ## Armor
 
+At a crafting table, with ingots of the alloy.
+
 | Piece | Shape | Ingots |
 |---|---|---:|
 | Helmet | 5 ingots: a row of 3, then the two sides | 5 |
@@ -36,7 +72,3 @@ Recipes unlock as soon as you own an ingot of the metal.
 ## Repairing
 
 At an anvil, with an ingot of the alloy. Tools and armor can also be repaired by combining two of them.
-
-## The alloys
-
-The ingots are made in [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}).

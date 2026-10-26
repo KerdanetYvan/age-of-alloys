@@ -6,6 +6,7 @@ alt: /v0.3.0/bronze/
 lang: en
 version: v0.3.0
 key: bronze
+nav: items
 ---
 
 # Bronze
@@ -14,11 +15,7 @@ Bronze is the **sturdy mid-game alloy**: it has the power of iron but lasts long
 
 ## Making it
 
-In [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}), with any fuel (heat 1):
-
-- 3 copper ingots + 1 tin ingot → **4 bronze ingots**.
-
-Copper comes from Minecraft, tin is found in [the ores]({{ '/en/v0.3.0/ores/' | relative_url }}).
+It is melted in [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}), with any fuel (heat 1): see [the recipe]({{ '/en/v0.3.0/recipes/' | relative_url }}#alloys). Copper comes from Minecraft, tin is found in [the ores]({{ '/en/v0.3.0/ores/' | relative_url }}).
 
 ## Tools and weapons
 

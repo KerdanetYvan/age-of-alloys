@@ -3,13 +3,15 @@
 {% assign nav = site.data.nav[lang] %}
 {% assign versions = site.data.versions %}
 {% assign latest = versions | where: "latest", true | first %}
-{% assign base = nav.prefix | append: "/" | append: page.version %}
+{% assign ver = page.version | default: latest.id %}
+{% assign cur = page.nav | default: page.key %}
+{% assign base = nav.prefix | append: "/" | append: ver %}
 {% assign home = base | append: "/" %}
 <html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.url != home %}{{ page.title }} · {% endif %}{{ site.title }} {{ page.version }}</title>
+  <title>{% if page.url != home %}{{ page.title }} · {% endif %}{{ site.title }}{% if page.version %} {{ page.version }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}">
   <meta name="theme-color" content="#131315">
   <link rel="icon" href="{{ '/assets/logo.png' | relative_url }}">
@@ -25,10 +27,10 @@
   <nav class="nav" aria-label="Navigation">
     <ul>
       {% for item in nav.items %}
-      {% assign url = base | append: item.url %}
-      <li><a href="{{ url | relative_url }}"{% if url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {% if item.root %}{% assign url = nav.prefix | append: item.url %}{% else %}{% assign url = base | append: item.url %}{% endif %}
+      <li><a href="{{ url | relative_url }}"{% if url == page.url %} aria-current="page"{% elsif item.key == cur %} aria-current="true"{% endif %}>{{ item.title }}</a></li>
       {% endfor %}
-      <li class="switch">
+      {% if page.version %}<li class="switch">
         <label for="version">{{ nav.version }}</label>
         <select id="version" onchange="location.href = this.value">
           {% for v in versions %}
@@ -38,12 +40,12 @@
           {% endfor %}
         </select>
         <noscript>{% for v in versions %}<a href="{{ nav.prefix | append: '/' | append: v.id | append: '/' | relative_url }}">{{ v.id }}</a> {% endfor %}</noscript>
-      </li>
+      </li>{% endif %}
       <li class="lang"><a href="{{ page.alt | relative_url }}">{{ nav.other }}</a></li>
     </ul>
   </nav>
   <div class="flames" aria-hidden="true"></div>
-  {% if page.version != latest.id %}
+  {% if page.version and page.version != latest.id %}
   <p class="old">{{ nav.old | replace: "%current%", page.version | replace: "%latest%", latest.id }} <a href="{{ nav.prefix | append: '/' | append: latest.id | append: '/' | relative_url }}">{{ latest.id }}</a></p>
   {% endif %}
   <main class="page">

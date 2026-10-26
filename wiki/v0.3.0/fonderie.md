@@ -10,20 +10,16 @@ key: foundry
 
 # La fonderie d'alliages
 
-La fonderie est le bloc qui **fond plusieurs lingots en un alliage**. On y met les ingrédients et un combustible ; plus l'alliage est avancé, plus le combustible doit être chaud.
+La fonderie est le bloc qui **fond plusieurs lingots en un alliage**. On y met les ingrédients et un combustible ; plus l'alliage est avancé, plus le combustible doit être chaud. Sa recette d'établi et celles des alliages sont dans [les recettes]({{ '/v0.3.0/recettes/' | relative_url }}).
 
-## Sa recette (établi)
+## Comment s'en servir
 
-| | | |
-|---|---|---|
-| Brique de pierre | Seau | Brique de pierre |
-| Brique de pierre | _(vide)_ | Brique de pierre |
-| Pierre lisse | Pierre lisse | Pierre lisse |
-{: .craft-grid }
+- Elle se pose face au joueur et se mine à la pioche (pierre ou mieux) ; elle lâche son contenu quand on la casse.
+- Un clic droit ouvre son interface : **4 emplacements d'entrée**, **1 combustible** (il n'accepte que ce qui brûle) et **1 sortie** (on ne peut rien y mettre).
+- Majuscule + clic déplace rapidement les objets. Les entonnoirs peuvent la remplir et la vider, par le dessus, les côtés et le dessous.
+- Elle ne brûle du combustible que quand elle a quelque chose à fondre. Elle s'allume et éclaire (niveau 13). La flèche montre la progression de la fonte, la flamme ce qu'il reste de combustible.
 
-Quatre briques de pierre, un seau et trois pierres lisses.
-
-## La chaleur
+## La chaleur {#la-chaleur}
 
 Chaque recette demande un **niveau de chaleur**. Un combustible plus chaud convient aussi aux recettes plus froides. La chaleur se lit sur la flamme de la fonderie : orange, orange-rouge ou bleue selon le niveau.
 
@@ -34,15 +30,3 @@ Chaque recette demande un **niveau de chaleur**. Un combustible plus chaud convi
 | 3 | un combustible qui brûle au moins **10 000 ticks** | bloc de charbon, seau de lave |
 
 Un combustible trop froid pour la recette **n'est pas consommé**. Un seau de lave laisse un seau vide.
-
-## Les recettes d'alliages
-
-Chaque recette dure **10 secondes** (200 ticks).
-
-| Alliage | Ingrédients | Résultat | Chaleur |
-|---|---|---:|:-:|
-| [Bronze]({{ '/v0.3.0/bronze/' | relative_url }}) | 3 lingots de cuivre + 1 lingot d'étain | 4 lingots | 1 |
-| [Duralumin]({{ '/v0.3.0/duralumin/' | relative_url }}) | 5 aluminium + 1 cuivre + 1 magnésium + 1 manganèse | 8 lingots | 2 |
-| [Acier]({{ '/v0.3.0/acier/' | relative_url }}) | 4 lingots de fer + 1 charbon (ou charbon de bois) | 4 lingots | 3 |
-
-Les lingots sont reconnus par leur tag (`forge:ingots/<métal>`) : un lingot de cuivre, d'étain, de fer ou d'un autre mod qui porte le même tag convient.

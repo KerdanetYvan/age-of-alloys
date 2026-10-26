@@ -14,6 +14,11 @@ key: home
 
 > **State of the mod:** testing pre-release (v0.3.0). Everything can be played in survival, but expect rough edges. Compatibility with other mods, advancements and a recipe book come later.
 
+## What's new in {{ page.version }}
+
+{% include news.html version=page.version %}
+All versions: [the history]({{ '/en/history/' | relative_url }}).
+
 ## Installation
 
 You need Minecraft **1.20.1** and **Forge 47.x** (Java 17).
@@ -22,27 +27,17 @@ You need Minecraft **1.20.1** and **Forge 47.x** (Java 17).
 2. Download `ageofalloys-<version>.jar` from the [releases](https://github.com/KerdanetYvan/age-of-alloys/releases) page.
 3. Put it in the `mods` folder of your game.
 
-## Getting started in survival
+Then head to [How to play]({{ '/en/v0.3.0/how-to-play/' | relative_url }}).
 
-Ores only generate in **chunks created with the mod**: create a new world, or go to an area you have never explored.
-
-1. **Find tin and aluminum** in stone (a stone pickaxe is enough), and Minecraft's **copper**. See [the ores]({{ '/en/v0.3.0/ores/' | relative_url }}).
-2. **Smelt** the raw items into ingots, in a furnace or a blast furnace.
-3. **Craft the foundry** at a crafting table: [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}).
-4. **Make [bronze]({{ '/en/v0.3.0/bronze/' | relative_url }})**: 3 copper ingots and 1 tin ingot, with any fuel.
-5. With an iron-level pickaxe, **look for magnesium and manganese** (deeper) for **[duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }})**.
-6. For **[steel]({{ '/en/v0.3.0/steel/' | relative_url }})**, you need iron, coal and a very hot fuel (a coal block or a lava bucket).
-7. Craft tools, weapons and armor: [the recipes]({{ '/en/v0.3.0/recipes/' | relative_url }}).
-
-## The pages
+## Map of the wiki
 
 | Page | Content |
 |---|---|
+| [How to play]({{ '/en/v0.3.0/how-to-play/' | relative_url }}) | First steps in survival, step by step |
 | [Ores]({{ '/en/v0.3.0/ores/' | relative_url }}) | Where to find tin, aluminum, magnesium and manganese |
-| [Foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}) | Its recipe, the heat and the alloy recipes |
-| [Bronze]({{ '/en/v0.3.0/bronze/' | relative_url }}) | The sturdy mid-game alloy |
-| [Duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }}) | The fast but fragile alloy |
-| [Steel]({{ '/en/v0.3.0/steel/' | relative_url }}) | The best alloy, just below diamond |
-| [Recipes]({{ '/en/v0.3.0/recipes/' | relative_url }}) | Shapes of the tools, weapons and armor |
+| [Foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}) | How it works and the heat of the fuel |
+| [Items]({{ '/en/v0.3.0/items/' | relative_url }}) | Every item and its numbers, with the pages of [bronze]({{ '/en/v0.3.0/bronze/' | relative_url }}), [duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }}) and [steel]({{ '/en/v0.3.0/steel/' | relative_url }}) |
+| [Recipes]({{ '/en/v0.3.0/recipes/' | relative_url }}) | Every recipe: foundry, alloys, tools, weapons, armor |
+| [History]({{ '/en/history/' | relative_url }}) | The news of every version |
 
 The code is on [GitHub](https://github.com/KerdanetYvan/age-of-alloys). Some textures are derived from Minecraft's (property of Mojang/Microsoft).

@@ -1,0 +1,48 @@
+# News shown on the home page of a version and on the history page, newest first.
+# Short lines written for players, in both languages (CHANGELOG.md stays the detailed source, in French).
+v0.3.0:
+  date: 2026-10-26
+  fr:
+    added:
+      - "Les armures en bronze, en duralumin et en acier : casque, plastron, jambières et bottes, avec leurs textures portées."
+      - "Les minerais d'étain, d'aluminium, de magnésium et de manganèse (dans la pierre et dans l'ardoise des abîmes), leurs objets bruts, à fondre au four ou au haut fourneau."
+      - "Les quatre métaux se trouvent dans le monde, dans tous les biomes du monde normal : bronze, duralumin et acier deviennent faisables en survie. Seuls les chunks créés avec cette version en contiennent."
+    changed:
+      - "L'étain est presque aussi courant que le cuivre, et le manganèse se trouve un peu plus facilement."
+  en:
+    added:
+      - "Bronze, duralumin and steel armor: helmet, chestplate, leggings and boots, with their worn textures."
+      - "Tin, aluminum, magnesium and manganese ores (in stone and in deepslate), their raw items, smelted in a furnace or a blast furnace."
+      - "All four metals generate in the world, in every biome of the Overworld: bronze, duralumin and steel can now be made in survival. Only chunks created with this version contain them."
+    changed:
+      - "Tin is almost as common as copper, and manganese is a little easier to find."
+v0.2.0:
+  date: 2026-10-26
+  fr:
+    added:
+      - "La fonderie d'alliages : un bloc avec son interface (4 entrées, un combustible, une sortie), qui fond les lingots en alliage."
+      - "Les recettes de bronze, de duralumin et d'acier, avec trois niveaux de chaleur selon le combustible."
+      - "La recette d'établi de la fonderie."
+      - "Les recettes d'établi des 15 outils et armes en bronze, en duralumin et en acier."
+    changed:
+      - "La flamme et la flèche de la fonderie sont redessinées ; la flamme change de couleur selon la chaleur."
+  en:
+    added:
+      - "The alloy foundry: a block with its screen (4 inputs, a fuel, an output) that melts ingots into an alloy."
+      - "Bronze, duralumin and steel recipes, with three heat levels depending on the fuel."
+      - "The crafting recipe of the foundry."
+      - "Crafting recipes for the 15 bronze, duralumin and steel tools and weapons."
+    changed:
+      - "The flame and the arrow of the foundry are redrawn; the flame changes color with the heat."
+v0.1.0:
+  date: 2026-10-24
+  fr:
+    added:
+      - "Sept lingots : bronze, duralumin, acier, étain, aluminium, magnésium et manganèse."
+      - "Quinze outils et armes : pioche, hache, pelle, houe et épée en bronze, en duralumin et en acier."
+      - "Les noms en anglais et en français, et les tags de lingots que les autres mods reconnaissent."
+  en:
+    added:
+      - "Seven ingots: bronze, duralumin, steel, tin, aluminum, magnesium and manganese."
+      - "Fifteen tools and weapons: pickaxe, axe, shovel, hoe and sword in bronze, duralumin and steel."
+      - "Names in English and French, and the ingot tags that other mods recognize."

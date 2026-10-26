@@ -10,7 +10,7 @@ key: ores
 
 # Les minerais
 
-Quatre métaux se trouvent dans le monde : l'**étain**, l'**aluminium**, le **magnésium** et le **manganèse**. Chacun existe en minerai de **pierre** et en minerai d'**ardoise des profondeurs**, et apparaît dans **tous les biomes du monde normal**.
+Quatre métaux se trouvent dans le monde : l'**étain**, l'**aluminium**, le **magnésium** et le **manganèse**. Chacun existe en minerai de **pierre** et en minerai d'**ardoise des abîmes**, et apparaît dans **tous les biomes du monde normal**.
 
 > **Important :** les minerais ne se génèrent que dans les chunks créés avec le mod. Créez un nouveau monde, ou allez dans une zone jamais explorée.
 

@@ -164,3 +164,24 @@ td em { color: var(--muted); }
 @media (max-width: 520px) {
   .nav .switch { margin-left: 0; padding-left: 9px; }
 }
+
+/* News list: a small label per kind of change (the word is always written, never color alone). */
+.news { list-style: none; padding: 0; margin: 0 0 18px; }
+.news li { padding: 8px 0; border-bottom: 1px solid var(--line); margin: 0; }
+.news li:last-child { border-bottom: 0; }
+.tag {
+  display: inline-block;
+  min-width: 5.2em;
+  margin-right: 8px;
+  padding: 1px 8px;
+  font-family: var(--f-pixel);
+  font-size: .85rem;
+  text-align: center;
+  color: var(--coal-deep);
+  background: var(--bronze);
+  border-radius: 2px;
+}
+.tag-changed { background: var(--flame-light); }
+.tag-fixed { background: var(--text); }
+.nav a[aria-current="true"] { color: var(--bronze); border-bottom-color: var(--ember); }
+h2 small { font-family: var(--f-body); font-size: .9rem; font-weight: 400; color: var(--muted); }

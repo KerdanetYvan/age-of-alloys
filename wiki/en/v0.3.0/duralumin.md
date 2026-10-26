@@ -6,6 +6,7 @@ alt: /v0.3.0/duralumin/
 lang: en
 version: v0.3.0
 key: duralumin
+nav: items
 ---
 
 # Duralumin
@@ -14,11 +15,7 @@ Duralumin is the alloy of **miners in a hurry**: it mines faster than steel, but
 
 ## Making it
 
-In [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}), with a **heat 2** fuel (at least a coal):
-
-- 5 aluminum ingots + 1 copper ingot + 1 magnesium ingot + 1 manganese ingot → **8 duralumin ingots**.
-
-You need all four metals: see [the ores]({{ '/en/v0.3.0/ores/' | relative_url }}). Magnesium and manganese need an iron-level pickaxe.
+It is melted in [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}), with a **heat 2** fuel (at least a coal): see [the recipe]({{ '/en/v0.3.0/recipes/' | relative_url }}#alloys). You need all four metals: see [the ores]({{ '/en/v0.3.0/ores/' | relative_url }}). Magnesium and manganese need an iron-level pickaxe.
 
 ## Tools and weapons
 

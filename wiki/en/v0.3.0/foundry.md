@@ -10,20 +10,16 @@ key: foundry
 
 # The alloy foundry
 
-The foundry is the block that **melts several ingots into one alloy**. You put the ingredients and a fuel in it; the more advanced the alloy, the hotter the fuel must be.
+The foundry is the block that **melts several ingots into one alloy**. You put the ingredients and a fuel in it; the more advanced the alloy, the hotter the fuel must be. Its crafting recipe and the alloy recipes are in [the recipes]({{ '/en/v0.3.0/recipes/' | relative_url }}).
 
-## Its recipe (crafting table)
+## How to use it
 
-| | | |
-|---|---|---|
-| Stone bricks | Bucket | Stone bricks |
-| Stone bricks | _(empty)_ | Stone bricks |
-| Smooth stone | Smooth stone | Smooth stone |
-{: .craft-grid }
+- It is placed facing the player and mined with a pickaxe (stone or better); it drops its contents when broken.
+- A right click opens its screen: **4 input slots**, **1 fuel slot** (it only accepts what burns) and **1 output slot** (nothing can be put in it).
+- Shift + click moves items quickly. Hoppers can fill and empty it, from the top, the sides and the bottom.
+- It only burns fuel when it has something to melt. It lights up and gives off light (level 13). The arrow shows the progress of the melting, the flame what is left of the fuel.
 
-Four stone bricks, a bucket and three smooth stones.
-
-## Heat
+## Heat {#heat}
 
 Each recipe asks for a **heat level**. A hotter fuel also suits the cooler recipes. The heat shows on the flame of the foundry: orange, red-orange or blue depending on the level.
 
@@ -34,15 +30,3 @@ Each recipe asks for a **heat level**. A hotter fuel also suits the cooler recip
 | 3 | a fuel that burns for at least **10,000 ticks** | coal block, lava bucket |
 
 A fuel that is too cool for the recipe **is not consumed**. A lava bucket leaves an empty bucket.
-
-## The alloy recipes
-
-Each recipe takes **10 seconds** (200 ticks).
-
-| Alloy | Ingredients | Result | Heat |
-|---|---|---:|:-:|
-| [Bronze]({{ '/en/v0.3.0/bronze/' | relative_url }}) | 3 copper ingots + 1 tin ingot | 4 ingots | 1 |
-| [Duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }}) | 5 aluminum + 1 copper + 1 magnesium + 1 manganese | 8 ingots | 2 |
-| [Steel]({{ '/en/v0.3.0/steel/' | relative_url }}) | 4 iron ingots + 1 coal (or charcoal) | 4 ingots | 3 |
-
-Ingredients are matched by tag (`forge:ingots/<metal>`): a copper, tin or iron ingot, or an ingot from another mod that carries the same tag, works.

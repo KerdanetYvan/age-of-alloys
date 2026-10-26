@@ -52,6 +52,7 @@ La page Recettes montre les interfaces du jeu (grille de l'établi, écran de la
 - `wiki/_data/recipes.yml` : les recettes, communes au français et à l'anglais (grille, ingrédients, quantités, chaleur). `A` dans une grille veut dire « un lingot d'alliage » : bronze, duralumin et acier alternent.
 - `wiki/_data/icons.yml` : pour chaque icône, le fichier de `wiki/assets/items/` et son nom en français et en anglais.
 - `wiki/_includes/` : `craft.html` (établi), `foundry.html` (fonderie), `smelt.html` (fonte), `slot.html` (une case).
+- Les blocs (briques de pierre, pierre lisse, bloc de charbon, fonderie, minerais) sont affichés en cube comme dans l'inventaire : `java wiki/_tools/BlockIcons.java <client-extra.jar> src/main/resources/assets/ageofalloys/textures wiki/assets/items` les redessine à partir des textures de leurs faces (à relancer si une texture change).
 - `wiki/assets/gui/` : les images d'interface (écran de la fonderie du mod, établi de Minecraft), découpées et agrandies en CSS.
 - Origine des images : les textures du mod viennent de `src/main/resources/assets/ageofalloys/textures/` ; celles de Minecraft (bâton, lingots de cuivre et de fer, charbon, seau, briques de pierre, établi, etc.) sont extraites du jeu (`client-extra.jar`) et appartiennent à Mojang/Microsoft. Le pied de page précise que le site n'est pas officiel.
 - Si une recette change dans une version, copier `recipes.yml` en `recipes/<version>.yml` et lire le bon fichier dans la page de cette version.

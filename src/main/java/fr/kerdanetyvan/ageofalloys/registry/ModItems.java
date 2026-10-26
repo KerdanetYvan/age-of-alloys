@@ -86,6 +86,24 @@ public final class ModItems {
     public static final RegistryObject<Item> BRONZE_BOOTS =
             armor(Metal.BRONZE, ModArmorMaterials.BRONZE, ArmorItem.Type.BOOTS);
 
+    // The duralumin and steel armor.
+    public static final RegistryObject<Item> DURALUMIN_HELMET =
+            armor(Metal.DURALUMIN, ModArmorMaterials.DURALUMIN, ArmorItem.Type.HELMET);
+    public static final RegistryObject<Item> DURALUMIN_CHESTPLATE =
+            armor(Metal.DURALUMIN, ModArmorMaterials.DURALUMIN, ArmorItem.Type.CHESTPLATE);
+    public static final RegistryObject<Item> DURALUMIN_LEGGINGS =
+            armor(Metal.DURALUMIN, ModArmorMaterials.DURALUMIN, ArmorItem.Type.LEGGINGS);
+    public static final RegistryObject<Item> DURALUMIN_BOOTS =
+            armor(Metal.DURALUMIN, ModArmorMaterials.DURALUMIN, ArmorItem.Type.BOOTS);
+    public static final RegistryObject<Item> STEEL_HELMET =
+            armor(Metal.STEEL, ModArmorMaterials.STEEL, ArmorItem.Type.HELMET);
+    public static final RegistryObject<Item> STEEL_CHESTPLATE =
+            armor(Metal.STEEL, ModArmorMaterials.STEEL, ArmorItem.Type.CHESTPLATE);
+    public static final RegistryObject<Item> STEEL_LEGGINGS =
+            armor(Metal.STEEL, ModArmorMaterials.STEEL, ArmorItem.Type.LEGGINGS);
+    public static final RegistryObject<Item> STEEL_BOOTS =
+            armor(Metal.STEEL, ModArmorMaterials.STEEL, ArmorItem.Type.BOOTS);
+
     /** The item of the alloy foundry: the thing in the inventory that places the block. */
     public static final RegistryObject<Item> ALLOY_FOUNDRY = ITEMS.register("alloy_foundry",
             () -> new BlockItem(ModBlocks.ALLOY_FOUNDRY.get(), new Item.Properties()));

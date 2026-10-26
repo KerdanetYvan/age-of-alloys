@@ -14,6 +14,16 @@ public final class ModArmorMaterials {
             AgeOfAlloys.MOD_ID + ":bronze", SoundEvents.ARMOR_EQUIP_IRON,
             () -> Ingredient.of(ModItems.BRONZE_INGOT.get()));
 
+    /** The duralumin: light and fragile, with the chain sound and the duralumin ingot to repair it. */
+    public static final ArmorMaterial DURALUMIN = new AlloyArmorMaterial(ArmorStats.DURALUMIN,
+            AgeOfAlloys.MOD_ID + ":duralumin", SoundEvents.ARMOR_EQUIP_CHAIN,
+            () -> Ingredient.of(ModItems.DURALUMIN_INGOT.get()));
+
+    /** The steel: close to diamond, with the diamond sound and the steel ingot to repair it. */
+    public static final ArmorMaterial STEEL = new AlloyArmorMaterial(ArmorStats.STEEL,
+            AgeOfAlloys.MOD_ID + ":steel", SoundEvents.ARMOR_EQUIP_DIAMOND,
+            () -> Ingredient.of(ModItems.STEEL_INGOT.get()));
+
     private ModArmorMaterials() {
     }
 }

@@ -1,6 +1,9 @@
 fr:
-  home: /
+  prefix: ""
   other: English
+  version: Version
+  latest: dernière
+  old: "Vous lisez la documentation de %current%, la dernière version est %latest%."
   items:
     - { title: Accueil, url: / }
     - { title: Minerais, url: /minerais/ }
@@ -10,13 +13,16 @@ fr:
     - { title: Acier, url: /acier/ }
     - { title: Recettes, url: /recettes/ }
 en:
-  home: /en/
+  prefix: /en
   other: Français
+  version: Version
+  latest: latest
+  old: "You are reading the documentation of %current%, the latest version is %latest%."
   items:
-    - { title: Home, url: /en/ }
-    - { title: Ores, url: /en/ores/ }
-    - { title: Foundry, url: /en/foundry/ }
-    - { title: Bronze, url: /en/bronze/ }
-    - { title: Duralumin, url: /en/duralumin/ }
-    - { title: Steel, url: /en/steel/ }
-    - { title: Recipes, url: /en/recipes/ }
+    - { title: Home, url: / }
+    - { title: Ores, url: /ores/ }
+    - { title: Foundry, url: /foundry/ }
+    - { title: Bronze, url: /bronze/ }
+    - { title: Duralumin, url: /duralumin/ }
+    - { title: Steel, url: /steel/ }
+    - { title: Recipes, url: /recipes/ }

@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Recettes
-permalink: /recettes/
-alt: /en/recipes/
+permalink: /v0.3.0/recettes/
+alt: /en/v0.3.0/recipes/
 lang: fr
+version: v0.3.0
+key: recipes
 ---
 
 # Les recettes d'outils, d'armes et d'armures
@@ -37,4 +39,4 @@ Les recettes se débloquent dès qu'on possède un lingot du métal.
 
 ## Les alliages
 
-Les lingots se fabriquent dans [la fonderie]({{ '/fonderie/' | relative_url }}).
+Les lingots se fabriquent dans [la fonderie]({{ '/v0.3.0/fonderie/' | relative_url }}).

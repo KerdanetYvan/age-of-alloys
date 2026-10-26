@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Foundry
-permalink: /en/foundry/
-alt: /fonderie/
+permalink: /en/v0.3.0/foundry/
+alt: /v0.3.0/fonderie/
 lang: en
+version: v0.3.0
+key: foundry
 ---
 
 # The alloy foundry
@@ -39,8 +41,8 @@ Each recipe takes **10 seconds** (200 ticks).
 
 | Alloy | Ingredients | Result | Heat |
 |---|---|---:|:-:|
-| [Bronze]({{ '/en/bronze/' | relative_url }}) | 3 copper ingots + 1 tin ingot | 4 ingots | 1 |
-| [Duralumin]({{ '/en/duralumin/' | relative_url }}) | 5 aluminum + 1 copper + 1 magnesium + 1 manganese | 8 ingots | 2 |
-| [Steel]({{ '/en/steel/' | relative_url }}) | 4 iron ingots + 1 coal (or charcoal) | 4 ingots | 3 |
+| [Bronze]({{ '/en/v0.3.0/bronze/' | relative_url }}) | 3 copper ingots + 1 tin ingot | 4 ingots | 1 |
+| [Duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }}) | 5 aluminum + 1 copper + 1 magnesium + 1 manganese | 8 ingots | 2 |
+| [Steel]({{ '/en/v0.3.0/steel/' | relative_url }}) | 4 iron ingots + 1 coal (or charcoal) | 4 ingots | 3 |
 
 Ingredients are matched by tag (`forge:ingots/<metal>`): a copper, tin or iron ingot, or an ingot from another mod that carries the same tag, works.

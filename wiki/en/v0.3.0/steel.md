@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Steel
-permalink: /en/steel/
-alt: /acier/
+permalink: /en/v0.3.0/steel/
+alt: /v0.3.0/acier/
 lang: en
+version: v0.3.0
+key: steel
 ---
 
 # Steel
@@ -12,13 +14,13 @@ Steel is the **best alloy** of the mod: one step below diamond on every criterio
 
 ## Making it
 
-In [the foundry]({{ '/en/foundry/' | relative_url }}), with a **heat 3** fuel (a coal block or a lava bucket):
+In [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}), with a **heat 3** fuel (a coal block or a lava bucket):
 
 - 4 iron ingots + 1 coal (or charcoal) → **4 steel ingots**.
 
 ## Tools and weapons
 
-All of them mine at iron level. Shapes and amounts: [the recipes]({{ '/en/recipes/' | relative_url }}).
+All of them mine at iron level. Shapes and amounts: [the recipes]({{ '/en/v0.3.0/recipes/' | relative_url }}).
 
 | | Steel | _Iron (reference)_ |
 |---|---:|---:|

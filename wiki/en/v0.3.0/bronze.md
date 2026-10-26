@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Bronze
-permalink: /en/bronze/
-alt: /bronze/
+permalink: /en/v0.3.0/bronze/
+alt: /v0.3.0/bronze/
 lang: en
+version: v0.3.0
+key: bronze
 ---
 
 # Bronze
@@ -12,15 +14,15 @@ Bronze is the **sturdy mid-game alloy**: it has the power of iron but lasts long
 
 ## Making it
 
-In [the foundry]({{ '/en/foundry/' | relative_url }}), with any fuel (heat 1):
+In [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}), with any fuel (heat 1):
 
 - 3 copper ingots + 1 tin ingot → **4 bronze ingots**.
 
-Copper comes from Minecraft, tin is found in [the ores]({{ '/en/ores/' | relative_url }}).
+Copper comes from Minecraft, tin is found in [the ores]({{ '/en/v0.3.0/ores/' | relative_url }}).
 
 ## Tools and weapons
 
-All of them mine at iron level. Shapes and amounts: [the recipes]({{ '/en/recipes/' | relative_url }}).
+All of them mine at iron level. Shapes and amounts: [the recipes]({{ '/en/v0.3.0/recipes/' | relative_url }}).
 
 | | Bronze | _Iron (reference)_ |
 |---|---:|---:|

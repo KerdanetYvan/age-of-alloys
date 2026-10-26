@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Ores
-permalink: /en/ores/
-alt: /minerais/
+permalink: /en/v0.3.0/ores/
+alt: /v0.3.0/minerais/
 lang: en
+version: v0.3.0
+key: ores
 ---
 
 # The ores
@@ -43,4 +45,4 @@ The raw item and both ore blocks smelt into an ingot:
 | Furnace | 10 s |
 | Blast furnace | 5 s |
 
-The ingots are then used to make the alloys in [the foundry]({{ '/en/foundry/' | relative_url }}).
+The ingots are then used to make the alloys in [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}).

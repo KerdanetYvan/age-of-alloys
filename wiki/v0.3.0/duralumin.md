@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Duralumin
-permalink: /duralumin/
-alt: /en/duralumin/
+permalink: /v0.3.0/duralumin/
+alt: /en/v0.3.0/duralumin/
 lang: fr
+version: v0.3.0
+key: duralumin
 ---
 
 # Le duralumin
@@ -12,15 +14,15 @@ Le duralumin est l'alliage des **mineurs pressés** : il mine plus vite que l'ac
 
 ## Le fabriquer
 
-Dans [la fonderie]({{ '/fonderie/' | relative_url }}), avec un combustible de **chaleur 2** (au moins un charbon) :
+Dans [la fonderie]({{ '/v0.3.0/fonderie/' | relative_url }}), avec un combustible de **chaleur 2** (au moins un charbon) :
 
 - 5 lingots d'aluminium + 1 lingot de cuivre + 1 lingot de magnésium + 1 lingot de manganèse → **8 lingots de duralumin**.
 
-Il faut donc trouver les quatre métaux : voir [les minerais]({{ '/minerais/' | relative_url }}). Le magnésium et le manganèse demandent une pioche de niveau fer.
+Il faut donc trouver les quatre métaux : voir [les minerais]({{ '/v0.3.0/minerais/' | relative_url }}). Le magnésium et le manganèse demandent une pioche de niveau fer.
 
 ## Outils et armes
 
-Tous minent au niveau du fer. Formes et quantités : [les recettes]({{ '/recettes/' | relative_url }}).
+Tous minent au niveau du fer. Formes et quantités : [les recettes]({{ '/v0.3.0/recettes/' | relative_url }}).
 
 | | Duralumin | _Fer (repère)_ |
 |---|---:|---:|

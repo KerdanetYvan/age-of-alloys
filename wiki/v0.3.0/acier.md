@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Acier
-permalink: /acier/
-alt: /en/steel/
+permalink: /v0.3.0/acier/
+alt: /en/v0.3.0/steel/
 lang: fr
+version: v0.3.0
+key: steel
 ---
 
 # L'acier
@@ -12,13 +14,13 @@ L'acier est le **meilleur alliage** du mod : un cran sous le diamant sur chaque 
 
 ## Le fabriquer
 
-Dans [la fonderie]({{ '/fonderie/' | relative_url }}), avec un combustible de **chaleur 3** (un bloc de charbon ou un seau de lave) :
+Dans [la fonderie]({{ '/v0.3.0/fonderie/' | relative_url }}), avec un combustible de **chaleur 3** (un bloc de charbon ou un seau de lave) :
 
 - 4 lingots de fer + 1 charbon (ou charbon de bois) → **4 lingots d'acier**.
 
 ## Outils et armes
 
-Tous minent au niveau du fer. Formes et quantités : [les recettes]({{ '/recettes/' | relative_url }}).
+Tous minent au niveau du fer. Formes et quantités : [les recettes]({{ '/v0.3.0/recettes/' | relative_url }}).
 
 | | Acier | _Fer (repère)_ |
 |---|---:|---:|

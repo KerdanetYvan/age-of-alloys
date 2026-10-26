@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Bronze
-permalink: /bronze/
-alt: /en/bronze/
+permalink: /v0.3.0/bronze/
+alt: /en/v0.3.0/bronze/
 lang: fr
+version: v0.3.0
+key: bronze
 ---
 
 # Le bronze
@@ -12,15 +14,15 @@ Le bronze est l'alliage **robuste de milieu de partie** : il a la puissance du f
 
 ## Le fabriquer
 
-Dans [la fonderie]({{ '/fonderie/' | relative_url }}), avec n'importe quel combustible (chaleur 1) :
+Dans [la fonderie]({{ '/v0.3.0/fonderie/' | relative_url }}), avec n'importe quel combustible (chaleur 1) :
 
 - 3 lingots de cuivre + 1 lingot d'étain → **4 lingots de bronze**.
 
-Le cuivre vient de Minecraft, l'étain se trouve dans [les minerais]({{ '/minerais/' | relative_url }}).
+Le cuivre vient de Minecraft, l'étain se trouve dans [les minerais]({{ '/v0.3.0/minerais/' | relative_url }}).
 
 ## Outils et armes
 
-Tous minent au niveau du fer. Formes et quantités : [les recettes]({{ '/recettes/' | relative_url }}).
+Tous minent au niveau du fer. Formes et quantités : [les recettes]({{ '/v0.3.0/recettes/' | relative_url }}).
 
 | | Bronze | _Fer (repère)_ |
 |---|---:|---:|

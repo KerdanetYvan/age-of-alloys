@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Recipes
-permalink: /en/recipes/
-alt: /recettes/
+permalink: /en/v0.3.0/recipes/
+alt: /v0.3.0/recettes/
 lang: en
+version: v0.3.0
+key: recipes
 ---
 
 # Tool, weapon and armor recipes
@@ -37,4 +39,4 @@ At an anvil, with an ingot of the alloy. Tools and armor can also be repaired by
 
 ## The alloys
 
-The ingots are made in [the foundry]({{ '/en/foundry/' | relative_url }}).
+The ingots are made in [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}).

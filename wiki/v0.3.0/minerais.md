@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Minerais
-permalink: /minerais/
-alt: /en/ores/
+permalink: /v0.3.0/minerais/
+alt: /en/v0.3.0/ores/
 lang: fr
+version: v0.3.0
+key: ores
 ---
 
 # Les minerais
@@ -43,4 +45,4 @@ L'objet brut et les deux blocs de minerai se fondent en lingot :
 | Four | 10 s |
 | Haut fourneau | 5 s |
 
-Les lingots servent ensuite à fabriquer les alliages dans [la fonderie]({{ '/fonderie/' | relative_url }}).
+Les lingots servent ensuite à fabriquer les alliages dans [la fonderie]({{ '/v0.3.0/fonderie/' | relative_url }}).

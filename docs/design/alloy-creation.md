@@ -22,7 +22,14 @@
 - **Emplacements** : 4 d'entrée (le duralumin a quatre composants), 1 de combustible, 1 de sortie.
 - **Interface** : du même genre que le four : une flamme qui montre le combustible restant et une barre de progression de la fonte.
 - **Fonctionnement** : quand les entrées correspondent à une recette, que le combustible est assez chaud (section 4) et qu'il y a de la place en sortie, la fonderie brûle son combustible et avance la barre. Au bout du temps de fonte, elle consomme les entrées et produit les lingots.
-- **Fabrication du bloc** : une recette d'établi en forme, à fixer à l'équilibrage. Piste : un fourneau entouré de briques et de lingots de fer.
+- **Fabrication du bloc** : une recette d'établi en forme, qui se lit comme un creuset (valeurs à équilibrer en jouant) :
+
+  ```
+  X S X      X = brique de pierre
+  X   X      S = seau (vide)
+  P P P      P = pierre lisse
+  ```
+  4 briques, 3 pierres lisses et 1 seau (3 lingots de fer) donnent 1 fonderie. La recette se débloque dès qu'on possède des briques de pierre.
 - **Ingrédients par tags** : les entrées sont des **tags** (`forge:ingots/<métal>`), comme pour les outils (#15 et #80). Les lingots d'un autre mod qui rejoignent le même tag sont acceptés, ce qui prépare l'étape 4.
 
 ## 3. Recettes et ratios

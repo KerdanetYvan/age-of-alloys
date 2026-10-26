@@ -31,14 +31,14 @@ Tout se trouve dans l'onglet créatif **Age of Alloys** :
 | Acier | Le meilleur matériau de cette version, juste en dessous du diamant | 850 | 7 |
 | _Fer (vanilla, pour repère)_ | | _250_ | _6_ |
 
-> **Bêta :** pour l'instant, tout s'obtient en créatif ou par commande. Il n'y a pas encore de recettes, ni de moyen de fabriquer des alliages en survie.
+> **Bêta :** les alliages se fabriquent désormais en jeu, dans la fonderie d'alliages, mais leurs matières premières (étain, aluminium, magnésium, manganèse) ne se trouvent pas encore dans le monde : pour l'instant, elles s'obtiennent en créatif ou par commande.
 
 ## Fonctionnalités prévues
 
 - [x] **Alliages** et leurs équipements (outils et armes)
-- [ ] **Création des alliages** en jeu
+- [x] **Création des alliages** en jeu
 - [ ] **Matières premières** générées dans le monde
-- [ ] **Armures** pour chaque alliage (plus tard)
+- [ ] **Armures** pour chaque alliage
 - [ ] **Compatibilité** avec d'autres mods populaires
 - [ ] **Wiki** complet
 

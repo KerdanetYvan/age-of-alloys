@@ -1,0 +1,27 @@
+{
+  "type": "ageofalloys:alloying",
+  "heat": 2,
+  "ingredients": [
+    {
+      "count": 5,
+      "tag": "forge:ingots/aluminum"
+    },
+    {
+      "count": 1,
+      "tag": "forge:ingots/copper"
+    },
+    {
+      "count": 1,
+      "tag": "forge:ingots/magnesium"
+    },
+    {
+      "count": 1,
+      "tag": "forge:ingots/manganese"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "ageofalloys:duralumin_ingot"
+  },
+  "time": 200
+}

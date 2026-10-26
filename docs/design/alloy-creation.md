@@ -59,6 +59,12 @@
 
 **Risque.** Le niveau de chaleur est la partie la plus incertaine de ce document : il ajoute une règle à implémenter et à expliquer au joueur. Il est isolé dans le ticket des recettes avancées (section 7, ticket 5) : s'il complique trop, on le retire sans toucher à la fonderie ni au bronze. Deux points à régler à l'équilibrage : le seau de lave laisse un seau vide à rendre, et la valeur exacte des seuils.
 
+**Décisions prises à l'implémentation (#89).**
+- Le niveau du feu en cours se lit dans la durée du combustible qui brûle (`burnDuration`, déjà sauvegardée) : aucun champ de plus.
+- La règle s'applique à deux endroits : au **rallumage**, un combustible trop froid pour la recette n'est **pas consommé** ; pendant la **fonte**, la progression n'avance que si le feu en cours est assez chaud (sinon elle redescend, comme sans recette).
+- Le seau de lave laisse un **seau vide** dans l'emplacement du combustible, comme un four ; un entonnoir sur un côté peut le retirer.
+- Aucun retour n'est donné au joueur quand un combustible est trop froid : à surveiller en jouant (info-bulle ou succès, hors de ce ticket).
+
 ## 5. Format de la recette
 
 La fonderie a son propre **type de recette**, `ageofalloys:alloying`, parce qu'aucun type de Minecraft n'accepte plusieurs ingrédients en quantités. Exemple complet (le bronze) :

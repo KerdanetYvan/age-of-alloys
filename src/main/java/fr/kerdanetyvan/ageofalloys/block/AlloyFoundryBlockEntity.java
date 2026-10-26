@@ -1,5 +1,6 @@
 package fr.kerdanetyvan.ageofalloys.block;
 
+import fr.kerdanetyvan.ageofalloys.content.Heat;
 import fr.kerdanetyvan.ageofalloys.menu.AlloyFoundryMenu;
 import fr.kerdanetyvan.ageofalloys.recipe.AlloyIngredient;
 import fr.kerdanetyvan.ageofalloys.recipe.AlloyingRecipe;
@@ -148,14 +149,21 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
         if (foundry.burnTime == 0 && canWork) {
             ItemStack fuel = foundry.inventory.getStackInSlot(FUEL_SLOT);
             int duration = fuel.isEmpty() ? 0 : ForgeHooks.getBurnTime(fuel, RecipeType.SMELTING);
-            if (duration > 0) {
+            // The fuel must burn, and be hot enough for the recipe: a cold fuel is not wasted.
+            if (duration > 0 && Heat.levelOf(duration) >= recipe.heat()) {
                 foundry.burnDuration = duration;
                 foundry.burnTime = duration;
+                // What the fuel leaves behind (an empty bucket for a lava bucket) takes its place, like a furnace.
+                ItemStack remaining = fuel.getCraftingRemainingItem();
                 fuel.shrink(1);
+                if (fuel.isEmpty()) {
+                    foundry.inventory.setStackInSlot(FUEL_SLOT, remaining);
+                }
             }
         }
 
-        if (foundry.burnTime > 0 && canWork) {
+        // The progress only moves if the fire in progress is hot enough for the recipe.
+        if (foundry.burnTime > 0 && canWork && Heat.levelOf(foundry.burnDuration) >= recipe.heat()) {
             foundry.progressMax = recipe.time();
             foundry.progress++;
             if (foundry.progress >= foundry.progressMax) {
@@ -163,7 +171,7 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
                 foundry.progress = 0;
             }
         } else if (foundry.progress > 0) {
-            // Nothing to melt, no fire or no room: the progress goes back down, like a furnace.
+            // Nothing to melt, no fire, no room or a fire too cold: the progress goes back down, like a furnace.
             foundry.progress = Math.max(foundry.progress - 2, 0);
         }
 

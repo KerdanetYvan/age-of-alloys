@@ -81,8 +81,8 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [*] **Menus (Menu/Container)** et **Screens (GUI)** : interface d'un bloc custom (E2)
 - [ ] Synchronisation client ↔ serveur : **networking / payloads** (E2) (les données du menu sont vues avec #87, pas encore les vrais paquets)
 - [ ] **Fluides** (si métal fondu) et capabilities de fluides (E2)
-- [ ] **Énergie / chaleur** : modéliser une machine qui a besoin de combustible (E2)
-- [ ] Concevoir un **système d'alliages** : ratios, températures, règles métier (E2)
+- [*] **Énergie / chaleur** : modéliser une machine qui a besoin de combustible (E2)
+- [*] Concevoir un **système d'alliages** : ratios, températures, règles métier (E2)
 - [ ] **Advancements** : guider le joueur dans la progression (E2)
 
 ## 8. Génération du monde

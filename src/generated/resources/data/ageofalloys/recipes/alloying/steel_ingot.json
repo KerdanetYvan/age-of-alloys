@@ -1,0 +1,19 @@
+{
+  "type": "ageofalloys:alloying",
+  "heat": 3,
+  "ingredients": [
+    {
+      "count": 4,
+      "tag": "forge:ingots/iron"
+    },
+    {
+      "count": 1,
+      "tag": "minecraft:coals"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "ageofalloys:steel_ingot"
+  },
+  "time": 200
+}

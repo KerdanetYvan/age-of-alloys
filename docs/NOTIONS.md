@@ -91,7 +91,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [x] **Configured Feature** vs **Placed Feature** (E3)
 - [ ] **Ore generation** : taille de veine, nombre d'essais, plage de hauteur, distribution (E3) (vu avec #111 : le trapèze est compris, la dispersion horizontale par `InSquarePlacement` est à revoir)
 - [x] **Biome modifiers** : ajouter ses minerais aux biomes existants (E3)
-- [ ] Équilibrage : rareté, profondeur, progression dans le jeu (E3)
+- [x] Équilibrage : rareté, profondeur, progression dans le jeu (E3)
 - [x] **Datagen** : générer les JSON par code plutôt qu'à la main (E1→E3)
 - [ ] Structures et biomes custom (optionnel) (E3+)
 - [x] Mondes existants : ce qui se passe quand on ajoute un mod à une sauvegarde (E3)

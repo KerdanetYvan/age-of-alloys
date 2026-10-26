@@ -22,5 +22,8 @@
   "item.ageofalloys.steel_shovel": "Steel Shovel",
   "item.ageofalloys.steel_hoe": "Steel Hoe",
   "item.ageofalloys.steel_sword": "Steel Sword",
-  "block.ageofalloys.alloy_foundry": "Alloy Foundry"
+  "block.ageofalloys.alloy_foundry": "Alloy Foundry",
+  "item.ageofalloys.raw_tin": "Raw Tin",
+  "block.ageofalloys.tin_ore": "Tin Ore",
+  "block.ageofalloys.deepslate_tin_ore": "Deepslate Tin Ore"
 }

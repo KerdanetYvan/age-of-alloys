@@ -7,6 +7,9 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 
 ## [Non publié]
 
+### Ajouté
+- Le minerai d'étain : un bloc dans la pierre et un dans l'ardoise des profondeurs, qui se minent à la pioche en pierre ou mieux et lâchent de l'étain brut (plus avec Fortune, ou le bloc lui-même avec Silk Touch). L'étain brut et les deux minerais se fondent en lingot d'étain au four et au haut fourneau. Ils sont dans l'onglet créatif, mais n'apparaissent pas encore dans le monde.
+
 ## [0.2.0] - 2026-10-26
 
 ### Ajouté

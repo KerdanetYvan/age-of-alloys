@@ -38,6 +38,21 @@ public enum Metal {
         return id + "_ingot";
     }
 
+    /** The ore in stone, for example {@code tin_ore}. */
+    public String oreName() {
+        return id + "_ore";
+    }
+
+    /** The ore in deepslate, for example {@code deepslate_tin_ore}. */
+    public String deepslateOreName() {
+        return "deepslate_" + id + "_ore";
+    }
+
+    /** The raw item an ore drops, which is melted into an ingot, for example {@code raw_tin}. */
+    public String rawName() {
+        return "raw_" + id;
+    }
+
     public String toolName(ToolType type) {
         return id + "_" + type.id();
     }

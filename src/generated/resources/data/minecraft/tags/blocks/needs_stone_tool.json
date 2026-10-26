@@ -1,5 +1,7 @@
 {
   "values": [
-    "ageofalloys:alloy_foundry"
+    "ageofalloys:alloy_foundry",
+    "ageofalloys:tin_ore",
+    "ageofalloys:deepslate_tin_ore"
   ]
 }

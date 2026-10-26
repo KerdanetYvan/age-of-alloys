@@ -68,13 +68,13 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [*] **Block.Properties** : dureté, résistance, son, outil requis (E2/E3)
 - [*] **Block entity** : un bloc qui possède des données/une logique (four, forge…) (E2)
 - [*] **Ticking** : exécuter de la logique à chaque tick (E2)
-- [*] **Loot tables** : ce qu'un bloc/ennemi lâche (E1/E3)
+- [*] **Loot tables** : ce qu'un bloc/ennemi lâche (E1/E3) (le butin d'un minerai, avec Fortune et Silk Touch, est vu avec #109)
 - [ ] Niveau d'outil requis pour miner (`needs_iron_tool` etc.) (E3)
 
 ## 7. Recettes et mécaniques d'alliage
 
 - [x] **Recipes** JSON en forme (*shaped*) : `pattern`, `key`, `result`, et leur génération par datagen (E1/E2)
-- [ ] **Recipes** sans forme, fourneau, haut fourneau, forge : *shapeless*, *smelting*, *blasting*, *smithing* (E2)
+- [ ] **Recipes** sans forme, fourneau, haut fourneau, forge : *shapeless*, *smelting*, *blasting*, *smithing* (E2) (le four et le haut fourneau sont vus avec #109, pas encore les recettes sans forme ni la forge)
 - [*] **Recipe types** et **recipe serializers** custom (E2)
 - [ ] Le **Smithing Table** (table de forge) et les templates (E2)
 - [*] **Inventaires** : `Container`, slots, **capabilities** d'items (E2)

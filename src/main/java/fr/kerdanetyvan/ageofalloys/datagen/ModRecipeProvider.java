@@ -12,6 +12,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -45,6 +46,24 @@ public class ModRecipeProvider extends RecipeProvider {
             .heat(1)
             .time(200)
             .save(writer);
+
+        // The four components are all required. The heat level asks for coal or better (1,600 ticks and more).
+        AlloyingRecipeBuilder.alloying(ModItems.DURALUMIN_INGOT.get(), 8)
+                .ingredient(ModTags.ingot(Metal.ALUMINUM), 5)
+                .ingredient(Tags.Items.INGOTS_COPPER, 1)
+                .ingredient(ModTags.ingot(Metal.MAGNESIUM), 1)
+                .ingredient(ModTags.ingot(Metal.MANGANESE), 1)
+                .heat(2)
+                .time(200)
+                .save(writer);
+
+        // The coal is the carbon of the steel. The heat level asks for a coal block, a lava bucket or better.
+        AlloyingRecipeBuilder.alloying(ModItems.STEEL_INGOT.get(), 4)
+                .ingredient(Tags.Items.INGOTS_IRON, 4)
+                .ingredient(ItemTags.COALS, 1)
+                .heat(3)
+                .time(200)
+                .save(writer);
     }
 
     private static void tool(Consumer<FinishedRecipe> writer, Metal metal, ToolType type, RecipeCategory category,

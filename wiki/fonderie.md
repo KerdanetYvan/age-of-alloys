@@ -17,6 +17,7 @@ La fonderie est le bloc qui **fond plusieurs lingots en un alliage**. On y met l
 | Brique de pierre | Seau | Brique de pierre |
 | Brique de pierre | _(vide)_ | Brique de pierre |
 | Pierre lisse | Pierre lisse | Pierre lisse |
+{: .craft-grid }
 
 Quatre briques de pierre, un seau et trois pierres lisses.
 

@@ -113,6 +113,7 @@ table {
 }
 th, td { padding: 9px 13px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
 thead th { background: var(--coal-deep); color: var(--bronze); font-family: var(--f-pixel); font-weight: 500; font-size: 1rem; white-space: nowrap; }
+.craft-grid thead { display: none; } /* the crafting grid has an empty header row */
 tbody tr:last-child td { border-bottom: 0; }
 td em { color: var(--muted); }
 

@@ -17,6 +17,7 @@ The foundry is the block that **melts several ingots into one alloy**. You put t
 | Stone bricks | Bucket | Stone bricks |
 | Stone bricks | _(empty)_ | Stone bricks |
 | Smooth stone | Smooth stone | Smooth stone |
+{: .craft-grid }
 
 Four stone bricks, a bucket and three smooth stones.
 

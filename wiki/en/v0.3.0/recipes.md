@@ -10,64 +10,49 @@ key: recipes
 
 # Recipes
 
-Every recipe of the mod in one place: the foundry, smelting the ores, the alloys, then the tools, weapons and armor. Crafting table recipes unlock as soon as you own an ingot of the metal.
+Every recipe of the mod, as on the game screen. Crafting table recipes unlock as soon as you own an ingot of the metal. Items in a slot take turns when several work.
 
 ## The foundry {#foundry}
 
-At a crafting table:
+At a crafting table. This recipe unlocks as soon as you own stone bricks. How it works: [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}).
 
-| | | |
-|---|---|---|
-| Stone bricks | Bucket | Stone bricks |
-| Stone bricks | _(empty)_ | Stone bricks |
-| Smooth stone | Smooth stone | Smooth stone |
-{: .craft-grid }
-
-Four stone bricks, a bucket and three smooth stones. This recipe unlocks as soon as you own stone bricks. How it works: [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}).
+<div class="cards">
+{% for r in site.data.recipes.bench %}{% include craft.html r=r %}{% endfor %}
+</div>
 
 ## Smelting the ores
 
-The raw item and the two ore blocks (stone and deepslate) are smelted into an ingot:
+The raw item and the two ore blocks (stone and deepslate) are smelted into an ingot: **10 s in a furnace, 5 s in a blast furnace.**
 
-| Where | Time |
-|---|---:|
-| Furnace | 10 s |
-| Blast furnace | 5 s |
+<div class="cards cards-small">
+{% for r in site.data.recipes.smelt %}{% include smelt.html r=r %}{% endfor %}
+</div>
 
 ## The alloys {#alloys}
 
-In [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}). Each recipe takes **10 seconds** (200 ticks) and asks for a **heat level**: see [heat]({{ '/en/v0.3.0/foundry/' | relative_url }}#heat).
+In [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}). Each recipe takes **10 seconds** and asks for a **heat level**: see [heat]({{ '/en/v0.3.0/foundry/' | relative_url }}#heat). The bottom slot is the fuel.
 
-| Alloy | Ingredients | Result | Heat |
-|---|---|---:|:-:|
-| [Bronze]({{ '/en/v0.3.0/bronze/' | relative_url }}) | 3 copper ingots + 1 tin ingot | 4 ingots | 1 |
-| [Duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }}) | 5 aluminum + 1 copper + 1 magnesium + 1 manganese | 8 ingots | 2 |
-| [Steel]({{ '/en/v0.3.0/steel/' | relative_url }}) | 4 iron ingots + 1 coal (or charcoal) | 4 ingots | 3 |
+<div class="cards">
+{% for r in site.data.recipes.foundry %}{% include foundry.html r=r %}{% endfor %}
+</div>
 
-Ingredients are matched by tag (`forge:ingots/<metal>`): a copper, tin or iron ingot, or an ingot from another mod that carries the same tag, works.
+Ingredients are matched by tag (`forge:ingots/<metal>`): a copper, tin or iron ingot, or an ingot from another mod that carries the same tag, works. Pages: [bronze]({{ '/en/v0.3.0/bronze/' | relative_url }}), [duralumin]({{ '/en/v0.3.0/duralumin/' | relative_url }}), [steel]({{ '/en/v0.3.0/steel/' | relative_url }}).
 
 ## Tools and weapons
 
-At a crafting table, with **ingots of the alloy** (bronze, duralumin or steel) and **sticks**. The shapes are Minecraft's: an iron tool is crafted the same way, with the ingot of the alloy instead.
+At a crafting table. The shapes are Minecraft's: an iron tool is crafted the same way. The ingots and the result take turns between bronze, duralumin and steel: **the shape is the same for all three**.
 
-| Item | Shape | Ingots | Sticks |
-|---|---|---:|---:|
-| Pickaxe | 3 ingots on top, 2 sticks in the middle column | 3 | 2 |
-| Axe | 2 ingots on top, 1 ingot and 1 stick in the middle row, 1 stick below | 3 | 2 |
-| Shovel | 1 ingot, 2 sticks below | 1 | 2 |
-| Hoe | 2 ingots on top, 2 sticks below | 2 | 2 |
-| Sword | 2 ingots one above the other, 1 stick below | 2 | 1 |
+<div class="cards">
+{% for r in site.data.recipes.tools %}{% include craft.html r=r %}{% endfor %}
+</div>
 
 ## Armor
 
-At a crafting table, with ingots of the alloy.
+At a crafting table, same principle.
 
-| Piece | Shape | Ingots |
-|---|---|---:|
-| Helmet | 5 ingots: a row of 3, then the two sides | 5 |
-| Chestplate | 8 ingots: everything except the middle of the top row | 8 |
-| Leggings | 7 ingots: a row of 3, then two columns | 7 |
-| Boots | 4 ingots: two columns of 2 | 4 |
+<div class="cards">
+{% for r in site.data.recipes.armor %}{% include craft.html r=r %}{% endfor %}
+</div>
 
 ## Repairing
 

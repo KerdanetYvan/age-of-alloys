@@ -1,0 +1,61 @@
+# id -> image (wiki/assets/items) and names. Mod names come from the lang files, Minecraft names are written here.
+alloy_foundry: { fr: "Fonderie d'alliages", en: "Alloy Foundry" }
+aluminum_ingot: { fr: "Lingot d'aluminium", en: "Aluminum Ingot" }
+aluminum_ore: { fr: "Minerai d'aluminium", en: "Aluminum Ore" }
+blast_furnace: { fr: "Haut fourneau", en: "Blast Furnace" }
+blaze_rod: { fr: "Bâton de blaze", en: "Blaze Rod" }
+bronze_axe: { fr: "Hache en bronze", en: "Bronze Axe" }
+bronze_boots: { fr: "Bottes en bronze", en: "Bronze Boots" }
+bronze_chestplate: { fr: "Plastron en bronze", en: "Bronze Chestplate" }
+bronze_helmet: { fr: "Casque en bronze", en: "Bronze Helmet" }
+bronze_hoe: { fr: "Houe en bronze", en: "Bronze Hoe" }
+bronze_ingot: { fr: "Lingot de bronze", en: "Bronze Ingot" }
+bronze_leggings: { fr: "Jambières en bronze", en: "Bronze Leggings" }
+bronze_pickaxe: { fr: "Pioche en bronze", en: "Bronze Pickaxe" }
+bronze_shovel: { fr: "Pelle en bronze", en: "Bronze Shovel" }
+bronze_sword: { fr: "Épée en bronze", en: "Bronze Sword" }
+bucket: { fr: "Seau", en: "Bucket" }
+charcoal: { fr: "Charbon de bois", en: "Charcoal" }
+coal: { fr: "Charbon", en: "Coal" }
+coal_block: { fr: "Bloc de charbon", en: "Block of Coal" }
+copper_ingot: { fr: "Lingot de cuivre", en: "Copper Ingot" }
+deepslate_aluminum_ore: { fr: "Minerai d'aluminium des abîmes", en: "Deepslate Aluminum Ore" }
+deepslate_magnesium_ore: { fr: "Minerai de magnésium des abîmes", en: "Deepslate Magnesium Ore" }
+deepslate_manganese_ore: { fr: "Minerai de manganèse des abîmes", en: "Deepslate Manganese Ore" }
+deepslate_tin_ore: { fr: "Minerai d'étain des abîmes", en: "Deepslate Tin Ore" }
+duralumin_axe: { fr: "Hache en duralumin", en: "Duralumin Axe" }
+duralumin_boots: { fr: "Bottes en duralumin", en: "Duralumin Boots" }
+duralumin_chestplate: { fr: "Plastron en duralumin", en: "Duralumin Chestplate" }
+duralumin_helmet: { fr: "Casque en duralumin", en: "Duralumin Helmet" }
+duralumin_hoe: { fr: "Houe en duralumin", en: "Duralumin Hoe" }
+duralumin_ingot: { fr: "Lingot de duralumin", en: "Duralumin Ingot" }
+duralumin_leggings: { fr: "Jambières en duralumin", en: "Duralumin Leggings" }
+duralumin_pickaxe: { fr: "Pioche en duralumin", en: "Duralumin Pickaxe" }
+duralumin_shovel: { fr: "Pelle en duralumin", en: "Duralumin Shovel" }
+duralumin_sword: { fr: "Épée en duralumin", en: "Duralumin Sword" }
+furnace: { fr: "Four", en: "Furnace" }
+iron_ingot: { fr: "Lingot de fer", en: "Iron Ingot" }
+lava_bucket: { fr: "Seau de lave", en: "Lava Bucket" }
+magnesium_ingot: { fr: "Lingot de magnésium", en: "Magnesium Ingot" }
+magnesium_ore: { fr: "Minerai de magnésium", en: "Magnesium Ore" }
+manganese_ingot: { fr: "Lingot de manganèse", en: "Manganese Ingot" }
+manganese_ore: { fr: "Minerai de manganèse", en: "Manganese Ore" }
+raw_aluminum: { fr: "Aluminium brut", en: "Raw Aluminum" }
+raw_magnesium: { fr: "Magnésium brut", en: "Raw Magnesium" }
+raw_manganese: { fr: "Manganèse brut", en: "Raw Manganese" }
+raw_tin: { fr: "Étain brut", en: "Raw Tin" }
+smooth_stone: { fr: "Pierre lisse", en: "Smooth Stone" }
+steel_axe: { fr: "Hache en acier", en: "Steel Axe" }
+steel_boots: { fr: "Bottes en acier", en: "Steel Boots" }
+steel_chestplate: { fr: "Plastron en acier", en: "Steel Chestplate" }
+steel_helmet: { fr: "Casque en acier", en: "Steel Helmet" }
+steel_hoe: { fr: "Houe en acier", en: "Steel Hoe" }
+steel_ingot: { fr: "Lingot d'acier", en: "Steel Ingot" }
+steel_leggings: { fr: "Jambières en acier", en: "Steel Leggings" }
+steel_pickaxe: { fr: "Pioche en acier", en: "Steel Pickaxe" }
+steel_shovel: { fr: "Pelle en acier", en: "Steel Shovel" }
+steel_sword: { fr: "Épée en acier", en: "Steel Sword" }
+stick: { fr: "Bâton", en: "Stick" }
+stone_bricks: { fr: "Briques de pierre", en: "Stone Bricks" }
+tin_ingot: { fr: "Lingot d'étain", en: "Tin Ingot" }
+tin_ore: { fr: "Minerai d'étain", en: "Tin Ore" }

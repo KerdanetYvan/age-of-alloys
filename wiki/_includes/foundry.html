@@ -1,0 +1,22 @@
+{%- comment -%} An alloy foundry recipe. r: an entry of recipes.yml (foundry). {%- endcomment -%}
+{%- assign r = include.r -%}
+{%- assign nav = site.data.nav[page.lang] -%}
+<figure class="card">
+  <figcaption>{{ site.data.icons[r.result][page.lang] }}</figcaption>
+  <div class="gui gui-foundry" aria-hidden="true">
+    {%- for input in r.inputs -%}
+      {%- case forloop.index0 -%}
+        {%- when 0 -%}{%- assign x = 6 -%}{%- assign y = 6 -%}
+        {%- when 1 -%}{%- assign x = 24 -%}{%- assign y = 6 -%}
+        {%- when 2 -%}{%- assign x = 6 -%}{%- assign y = 24 -%}
+        {%- else -%}{%- assign x = 24 -%}{%- assign y = 24 -%}
+      {%- endcase -%}
+      {%- assign iids = input[0] -%}{%- assign icount = input[1] -%}
+      {% include slot.html ids=iids x=x y=y n=icount %}
+    {%- endfor -%}
+    {% include slot.html ids=r.fuel x=60 y=42 %}
+    {% include slot.html ids=r.result x=120 y=24 n=r.count %}
+  </div>
+  <p class="card-text">{{ r.text[page.lang] }}</p>
+  <p class="card-text heat heat-{{ r.heat }}">{{ nav.heat }} {{ r.heat }} · {{ nav.ten }}</p>
+</figure>

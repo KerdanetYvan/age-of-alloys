@@ -7,6 +7,9 @@ fr:
   added: Ajouté
   changed: Modifié
   fixed: Corrigé
+  heat: Chaleur
+  ten: "10 s"
+  alloys: "bronze, duralumin et acier alternent"
   items:
     - { key: home, title: Accueil, url: / }
     - { key: howto, title: Comment jouer, url: /comment-jouer/ }
@@ -24,6 +27,9 @@ en:
   added: Added
   changed: Changed
   fixed: Fixed
+  heat: Heat
+  ten: "10 s"
+  alloys: "bronze, duralumin and steel in turn"
   items:
     - { key: home, title: Home, url: / }
     - { key: howto, title: How to play, url: /how-to-play/ }

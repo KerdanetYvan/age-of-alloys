@@ -44,3 +44,14 @@ Chaque page porte dans son en-tête : `version` (ex. `v0.3.0`, absent pour l'his
 4. Dans `wiki/_data/news.yml`, ajouter `v0.4.0` **en haut** (date, textes FR et EN), d'après la section du `CHANGELOG.md`.
 5. Dans `wiki/_data/versions.yml`, ajouter `v0.4.0` et déplacer `latest: true` dessus.
 6. Vérifier le build, comme pour toute PR (`Build wiki`).
+
+## Les recettes en images
+
+La page Recettes montre les interfaces du jeu (grille de l'établi, écran de la fonderie) avec les icônes aux bonnes cases.
+
+- `wiki/_data/recipes.yml` : les recettes, communes au français et à l'anglais (grille, ingrédients, quantités, chaleur). `A` dans une grille veut dire « un lingot d'alliage » : bronze, duralumin et acier alternent.
+- `wiki/_data/icons.yml` : pour chaque icône, le fichier de `wiki/assets/items/` et son nom en français et en anglais.
+- `wiki/_includes/` : `craft.html` (établi), `foundry.html` (fonderie), `smelt.html` (fonte), `slot.html` (une case).
+- `wiki/assets/gui/` : les images d'interface (écran de la fonderie du mod, établi de Minecraft), découpées et agrandies en CSS.
+- Origine des images : les textures du mod viennent de `src/main/resources/assets/ageofalloys/textures/` ; celles de Minecraft (bâton, lingots de cuivre et de fer, charbon, seau, briques de pierre, établi, etc.) sont extraites du jeu (`client-extra.jar`) et appartiennent à Mojang/Microsoft. Le pied de page précise que le site n'est pas officiel.
+- Si une recette change dans une version, copier `recipes.yml` en `recipes/<version>.yml` et lire le bon fichier dans la page de cette version.

@@ -1,0 +1,24 @@
+{%- comment -%} A crafting table recipe. r: an entry of recipes.yml (bench, tools or armor). {%- endcomment -%}
+{%- assign r = include.r -%}
+<figure class="card">
+  <figcaption>{{ r.title[page.lang] }}</figcaption>
+  <div class="gui gui-craft" aria-hidden="true">
+    {%- for cell in r.grid -%}
+      {%- if cell != "." -%}
+        {%- if cell == "A" -%}{%- assign ids = "bronze_ingot,duralumin_ingot,steel_ingot" -%}{%- else -%}{%- assign ids = cell -%}{%- endif -%}
+        {%- assign col = forloop.index0 | modulo: 3 -%}
+        {%- assign row = forloop.index0 | divided_by: 3 -%}
+        {%- assign x = col | times: 18 | plus: 4 -%}
+        {%- assign y = row | times: 18 | plus: 4 -%}
+        {% include slot.html ids=ids x=x y=y %}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if r.alloy_result -%}
+      {%- capture res -%}bronze_{{ r.alloy_result }},duralumin_{{ r.alloy_result }},steel_{{ r.alloy_result }}{%- endcapture -%}
+      {% include slot.html ids=res x=98 y=22 %}
+    {%- else -%}
+      {% include slot.html ids=r.result x=98 y=22 n=r.count %}
+    {%- endif -%}
+  </div>
+  <p class="card-text">{{ r.text[page.lang] }}</p>
+</figure>

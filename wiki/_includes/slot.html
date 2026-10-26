@@ -1,0 +1,9 @@
+{%- comment -%} One slot of an interface. ids: icon ids separated by commas (shown in turn), x/y: position in the crop, n: count. {%- endcomment -%}
+{%- assign list = include.ids | split: "," -%}
+{%- capture names -%}{%- for id in list -%}{{ site.data.icons[id][page.lang] }}{% unless forloop.last %} / {% endunless %}{%- endfor -%}{%- endcapture -%}
+<span class="slot n{{ list.size }}" style="--x:{{ include.x }};--y:{{ include.y }}" title="{{ names | strip }}">
+{%- for id in list -%}
+<img class="alt" src="{{ '/assets/items/' | append: id | append: '.png' | relative_url }}" alt="" width="16" height="16" style="--i:{{ forloop.index0 }}">
+{%- endfor -%}
+{%- if include.n and include.n > 1 -%}<b class="count">{{ include.n }}</b>{%- endif -%}
+</span>

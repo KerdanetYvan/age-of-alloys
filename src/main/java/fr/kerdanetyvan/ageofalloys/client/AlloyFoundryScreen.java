@@ -1,6 +1,7 @@
 package fr.kerdanetyvan.ageofalloys.client;
 
 import fr.kerdanetyvan.ageofalloys.AgeOfAlloys;
+import fr.kerdanetyvan.ageofalloys.content.Heat;
 import fr.kerdanetyvan.ageofalloys.menu.AlloyFoundryMenu;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -25,10 +26,13 @@ public class AlloyFoundryScreen extends AbstractContainerScreen<AlloyFoundryMenu
 
         // The flame empties from the top: draw only the bottom part of the full flame (14 pixels high in the texture).
         int burnDuration = menu.getBurnDuration();
-        int flameHeight = burnDuration > 0 ? menu.getBurnTime() * 14 / burnDuration : 0;
-        graphics.blit(TEXTURE, leftPos + 75, topPos + 36 + 14 - flameHeight, 176, 14 - flameHeight, 14, flameHeight);
+        // Rounded up, so that one line remains while the fire burns: it must not vanish before the fuel is gone.
+        int flameHeight = burnDuration > 0 ? (menu.getBurnTime() * 14 + burnDuration - 1) / burnDuration : 0;
+        // One flame per heat level, 14 pixels apart in the texture: orange, orange-red, blue.
+        int flameU = 176 + (Heat.levelOf(burnDuration) - 1) * 14;
+        graphics.blit(TEXTURE, leftPos + 75, topPos + 36 + 14 - flameHeight, flameU, 14 - flameHeight, 14, flameHeight);
 
-        // The arrow grows from left to right with the progress of the melting (empty until the recipe type exists).
+        // The arrow grows from left to right with the progress of the melting.
         int progressMax = menu.getProgressMax();
         int arrowWidth = progressMax > 0 ? menu.getProgress() * 24 / progressMax : 0;
         graphics.blit(TEXTURE, leftPos + 96, topPos + 34, 176, 14, arrowWidth, 17);

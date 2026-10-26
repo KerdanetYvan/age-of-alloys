@@ -14,14 +14,15 @@
 
 ## Concept
 
-Age of Alloys enrichit la progression de Minecraft avec des métaux composites : on ne se contente plus de fer, d'or et de diamant, on va **fondre, mélanger et forger** de nouveaux matériaux. La première bêta, la v0.1.0, apporte les métaux et leurs équipements ; la fabrication des alliages en survie vient ensuite.
+Age of Alloys enrichit la progression de Minecraft avec des métaux composites : on ne se contente plus de fer, d'or et de diamant, on va **fondre, mélanger et forger** de nouveaux matériaux. La bêta permet maintenant de fabriquer les alliages dans une fonderie d'alliages ; les métaux bruts dont ils sont faits ne sont pas encore générés dans le monde.
 
-## Ce que contient la v0.1.0
+## Ce que contient la v0.2.0
 
-Tout se trouve dans l'onglet créatif **Age of Alloys** :
+Tout se trouve dans l'onglet créatif **Age of Alloys**, et la fonderie et les outils se fabriquent aussi :
 
 - **7 lingots** : trois alliages (bronze, duralumin et acier) et les quatre métaux bruts dont ils sont faits (étain, aluminium, magnésium et manganèse).
-- **15 outils et armes** : une pioche, une hache, une pelle, une houe et une épée pour chaque alliage. Tous minent au niveau du fer.
+- **15 outils et armes** : une pioche, une hache, une pelle, une houe et une épée pour chaque alliage. Tous minent au niveau du fer, et se fabriquent avec des lingots et des bâtons.
+- **La fonderie d'alliages** : un bloc qui se fabrique avec quatre briques de pierre, trois pierres lisses et un seau. Elle fond le bronze, le duralumin et l'acier à partir des métaux bruts, et le combustible doit être assez chaud pour l'alliage : n'importe lequel pour le bronze, un charbon ou mieux pour le duralumin, un bloc de charbon ou un seau de lave pour l'acier.
 - Des noms en anglais et en français. Les lingots portent les tags `forge:ingots/<métal>`, ce qui permet aux autres mods et aux recettes de les reconnaître comme des lingots de leur métal.
 
 | Alliage | Rôle | Durabilité | Vitesse de minage |
@@ -49,16 +50,16 @@ Le détail et l'ordre sont dans la [roadmap](ROADMAP.md) (en français).
 Prérequis : Minecraft 1.20.1 et Forge 47.x (Java 17).
 
 1. Installer Forge pour Minecraft 1.20.1.
-2. Télécharger `ageofalloys-0.1.0.jar` depuis la page des [releases](https://github.com/KerdanetYvan/age-of-alloys/releases).
+2. Télécharger `ageofalloys-0.2.0.jar` depuis la page des [releases](https://github.com/KerdanetYvan/age-of-alloys/releases).
 3. Déposer le jar dans le dossier `mods` du jeu.
 
-La v0.1.0 est une pré-version (bêta) : attendez-vous à quelques aspérités.
+La v0.2.0 est une pré-version (bêta) : attendez-vous à quelques aspérités.
 
 ## Compatibilité
 
 | Minecraft | Loader | Statut |
 |-----------|--------|--------|
-| 1.20.1 | Forge 47.x (Java 17) | 🧪 Bêta (v0.1.0) |
+| 1.20.1 | Forge 47.x (Java 17) | 🧪 Bêta (v0.2.0) |
 
 Un portage vers NeoForge et des versions plus récentes est envisagé plus tard.
 

@@ -14,14 +14,15 @@
 
 ## Concept
 
-Age of Alloys deepens Minecraft's progression with composite metals: iron, gold and diamond are no longer enough, you will **smelt, mix and forge** brand new materials. The first beta, v0.1.0, brings the metals and their gear; making alloys in survival comes next.
+Age of Alloys deepens Minecraft's progression with composite metals: iron, gold and diamond are no longer enough, you will **smelt, mix and forge** brand new materials. The beta now lets you make the alloys in an alloy foundry; the raw metals they are made from are not generated in the world yet.
 
-## What's in v0.1.0
+## What's in v0.2.0
 
-Everything is in the **Age of Alloys** creative tab:
+Everything is in the **Age of Alloys** creative tab, and the foundry and the tools can also be crafted:
 
 - **7 ingots**: three alloys (bronze, duralumin and steel) and the four raw metals they are made from (tin, aluminum, magnesium and manganese).
-- **15 tools and weapons**: a pickaxe, an axe, a shovel, a hoe and a sword for each alloy. All of them mine at iron level.
+- **15 tools and weapons**: a pickaxe, an axe, a shovel, a hoe and a sword for each alloy. All of them mine at iron level, and they are crafted with ingots and sticks.
+- **The alloy foundry**: a block crafted from four stone bricks, three smooth stones and a bucket. It melts bronze, duralumin and steel from the raw metals, and the fuel must be hot enough for the alloy: any fuel for bronze, coal or better for duralumin, a coal block or a lava bucket for steel.
 - Names in English and French. The ingots are tagged `forge:ingots/<metal>`, so other mods and recipes recognize them as ingots of their metal.
 
 | Alloy | Role | Durability | Mining speed |
@@ -49,16 +50,16 @@ Details and order are in the [roadmap](ROADMAP.md) (in French).
 Requirements: Minecraft 1.20.1 and Forge 47.x (Java 17).
 
 1. Install Forge for Minecraft 1.20.1.
-2. Download `ageofalloys-0.1.0.jar` from the [releases](https://github.com/KerdanetYvan/age-of-alloys/releases) page.
+2. Download `ageofalloys-0.2.0.jar` from the [releases](https://github.com/KerdanetYvan/age-of-alloys/releases) page.
 3. Put the jar in the `mods` folder of your game.
 
-v0.1.0 is a pre-release (beta): expect rough edges.
+v0.2.0 is a pre-release (beta): expect rough edges.
 
 ## Compatibility
 
 | Minecraft | Loader | Status |
 |-----------|--------|--------|
-| 1.20.1 | Forge 47.x (Java 17) | 🧪 Beta (v0.1.0) |
+| 1.20.1 | Forge 47.x (Java 17) | 🧪 Beta (v0.2.0) |
 
 A port to NeoForge and newer Minecraft versions is planned for later.
 

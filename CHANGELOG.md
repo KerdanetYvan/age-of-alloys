@@ -7,6 +7,8 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 
 ## [Non publié]
 
+## [0.3.0] - 2026-10-26
+
 ### Ajouté
 - L'armure en bronze : un casque, un plastron, des jambières et des bottes en bronze, qui se fabriquent à l'établi avec des lingots de bronze (5, 8, 7 et 4). Elle protège comme l'armure de fer (15 points pour le jeu complet) mais dure plus longtemps (1 100 de durabilité au total contre 825), et se répare avec un lingot de bronze. Elle a ses icônes et ses textures portées en bronze.
 - Les armures en duralumin et en acier : un casque, un plastron, des jambières et des bottes pour chacune, fabriqués à l'établi avec des lingots de l'alliage (5, 8, 7 et 4). Le duralumin protège comme le fer (15 points) mais s'use vite (550 de durabilité au total) et se laisse bien enchanter ; l'acier protège presque comme le diamant (18 points, 1 de robustesse par pièce, 1 485 de durabilité au total). Elles se réparent avec un lingot de leur alliage. Elles ont leurs icônes et leurs textures portées : bleu-gris pour le duralumin, gris chaud pour l'acier.

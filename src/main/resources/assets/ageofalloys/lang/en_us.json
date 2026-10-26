@@ -34,5 +34,9 @@
   "block.ageofalloys.deepslate_magnesium_ore": "Deepslate Magnesium Ore",
   "item.ageofalloys.raw_manganese": "Raw Manganese",
   "block.ageofalloys.manganese_ore": "Manganese Ore",
-  "block.ageofalloys.deepslate_manganese_ore": "Deepslate Manganese Ore"
+  "block.ageofalloys.deepslate_manganese_ore": "Deepslate Manganese Ore",
+  "item.ageofalloys.bronze_helmet": "Bronze Helmet",
+  "item.ageofalloys.bronze_chestplate": "Bronze Chestplate",
+  "item.ageofalloys.bronze_leggings": "Bronze Leggings",
+  "item.ageofalloys.bronze_boots": "Bronze Boots"
 }

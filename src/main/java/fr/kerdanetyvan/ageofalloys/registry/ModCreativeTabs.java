@@ -47,6 +47,10 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.STEEL_SHOVEL.get());
                 output.accept(ModItems.STEEL_HOE.get());
                 output.accept(ModItems.STEEL_SWORD.get());
+                output.accept(ModItems.BRONZE_HELMET.get());
+                output.accept(ModItems.BRONZE_CHESTPLATE.get());
+                output.accept(ModItems.BRONZE_LEGGINGS.get());
+                output.accept(ModItems.BRONZE_BOOTS.get());
                 output.accept(ModItems.ALLOY_FOUNDRY.get());
             })
             .build());

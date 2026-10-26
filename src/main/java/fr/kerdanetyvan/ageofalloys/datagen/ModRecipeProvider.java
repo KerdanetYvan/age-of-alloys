@@ -17,6 +17,7 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -71,6 +72,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .heat(3)
                 .time(200)
                 .save(writer);
+
+        // The shapes of the vanilla armor, with the ingot of the alloy (X is an ingot).
+        armor(writer, Metal.BRONZE, ArmorItem.Type.HELMET, "XXX", "X X");
+        armor(writer, Metal.BRONZE, ArmorItem.Type.CHESTPLATE, "X X", "XXX", "XXX");
+        armor(writer, Metal.BRONZE, ArmorItem.Type.LEGGINGS, "XXX", "X X", "X X");
+        armor(writer, Metal.BRONZE, ArmorItem.Type.BOOTS, "X X", "X X");
 
         // The foundry looks like a crucible: walls of stone bricks, a bucket on top and a smooth stone base.
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ALLOY_FOUNDRY.get())
@@ -136,6 +143,27 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('S', Items.STICK)
                 .unlockedBy("has_" + metal.ingotName(), has(ingot))
                 .save(writer);
+    }
+
+    private static void armor(Consumer<FinishedRecipe> writer, Metal metal, ArmorItem.Type type, String... rows) {
+        TagKey<Item> ingot = ModTags.ingot(metal);
+        ShapedRecipeBuilder recipe = ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, itemNamed(metal.armorName(type)));
+        for (String row : rows) {
+            recipe.pattern(row);
+        }
+        recipe.define('X', ingot)
+                .unlockedBy("has_" + metal.ingotName(), has(ingot))
+                .save(writer);
+    }
+
+    /** Finds an item of the mod by its registered name, and fails loudly if it does not exist. */
+    private static Item itemNamed(String name) {
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID, name);
+        Item item = ForgeRegistries.ITEMS.getValue(id);
+        if (item == null || item == Items.AIR) {
+            throw new IllegalStateException("No item is registered as " + id);
+        }
+        return item;
     }
 
     /** Finds a tool by its registered name, and fails loudly if it does not exist. */

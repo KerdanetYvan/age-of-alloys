@@ -3,9 +3,8 @@ layout: default
 title: Fonderie
 permalink: /fonderie/
 alt: /en/foundry/
+lang: fr
 ---
-
-{% include nav_fr.md %}
 
 # La fonderie d'alliages
 

@@ -3,9 +3,8 @@ layout: default
 title: Recipes
 permalink: /en/recipes/
 alt: /recettes/
+lang: en
 ---
-
-{% include nav_en.md %}
 
 # Tool, weapon and armor recipes
 

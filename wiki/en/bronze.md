@@ -3,9 +3,8 @@ layout: default
 title: Bronze
 permalink: /en/bronze/
 alt: /bronze/
+lang: en
 ---
-
-{% include nav_en.md %}
 
 # Bronze
 

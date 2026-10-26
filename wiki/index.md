@@ -3,9 +3,8 @@ layout: default
 title: Accueil
 permalink: /
 alt: /en/
+lang: fr
 ---
-
-{% include nav_fr.md %}
 
 # Age of Alloys
 

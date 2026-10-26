@@ -3,9 +3,8 @@ layout: default
 title: Ores
 permalink: /en/ores/
 alt: /minerais/
+lang: en
 ---
-
-{% include nav_en.md %}
 
 # The ores
 

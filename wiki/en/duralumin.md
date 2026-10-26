@@ -3,9 +3,8 @@ layout: default
 title: Duralumin
 permalink: /en/duralumin/
 alt: /duralumin/
+lang: en
 ---
-
-{% include nav_en.md %}
 
 # Duralumin
 

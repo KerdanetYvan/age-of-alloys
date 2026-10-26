@@ -3,9 +3,8 @@ layout: default
 title: Steel
 permalink: /en/steel/
 alt: /acier/
+lang: en
 ---
-
-{% include nav_en.md %}
 
 # Steel
 

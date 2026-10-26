@@ -3,9 +3,8 @@ layout: default
 title: Foundry
 permalink: /en/foundry/
 alt: /fonderie/
+lang: en
 ---
-
-{% include nav_en.md %}
 
 # The alloy foundry
 

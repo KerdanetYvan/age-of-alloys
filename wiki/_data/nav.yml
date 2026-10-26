@@ -1,0 +1,22 @@
+fr:
+  home: /
+  other: English
+  items:
+    - { title: Accueil, url: / }
+    - { title: Minerais, url: /minerais/ }
+    - { title: Fonderie, url: /fonderie/ }
+    - { title: Bronze, url: /bronze/ }
+    - { title: Duralumin, url: /duralumin/ }
+    - { title: Acier, url: /acier/ }
+    - { title: Recettes, url: /recettes/ }
+en:
+  home: /en/
+  other: Français
+  items:
+    - { title: Home, url: /en/ }
+    - { title: Ores, url: /en/ores/ }
+    - { title: Foundry, url: /en/foundry/ }
+    - { title: Bronze, url: /en/bronze/ }
+    - { title: Duralumin, url: /en/duralumin/ }
+    - { title: Steel, url: /en/steel/ }
+    - { title: Recipes, url: /en/recipes/ }

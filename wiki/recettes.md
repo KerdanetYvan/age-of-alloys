@@ -3,9 +3,8 @@ layout: default
 title: Recettes
 permalink: /recettes/
 alt: /en/recipes/
+lang: fr
 ---
-
-{% include nav_fr.md %}
 
 # Les recettes d'outils, d'armes et d'armures
 

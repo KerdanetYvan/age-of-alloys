@@ -11,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -67,6 +68,22 @@ public final class ModItems {
     /** The item of the alloy foundry: the thing in the inventory that places the block. */
     public static final RegistryObject<Item> ALLOY_FOUNDRY = ITEMS.register("alloy_foundry",
             () -> new BlockItem(ModBlocks.ALLOY_FOUNDRY.get(), new Item.Properties()));
+
+    /** The raw tin an ore drops: it is melted into a tin ingot in a furnace. */
+    public static final RegistryObject<Item> RAW_TIN = raw(Metal.TIN);
+
+    /** The items of the tin ores, the things in the inventory that place the blocks. */
+    public static final RegistryObject<Item> TIN_ORE = blockItem(Metal.TIN.oreName(), ModBlocks.TIN_ORE);
+    public static final RegistryObject<Item> DEEPSLATE_TIN_ORE =
+            blockItem(Metal.TIN.deepslateOreName(), ModBlocks.DEEPSLATE_TIN_ORE);
+
+    private static RegistryObject<Item> raw(Metal metal) {
+        return ITEMS.register(metal.rawName(), () -> new Item(new Item.Properties()));
+    }
+
+    private static RegistryObject<Item> blockItem(String name, RegistryObject<Block> block) {
+        return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
 
     private static RegistryObject<Item> ingot(Metal metal) {
         return ITEMS.register(metal.ingotName(), () -> new Item(new Item.Properties()));

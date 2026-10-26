@@ -1,6 +1,7 @@
 package fr.kerdanetyvan.ageofalloys.datagen;
 
 import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
+import fr.kerdanetyvan.ageofalloys.registry.ModItems;
 import java.util.Set;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -15,6 +16,9 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.ALLOY_FOUNDRY.get());
+
+        add(ModBlocks.TIN_ORE.get(), createOreDrop(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get()));
+        add(ModBlocks.DEEPSLATE_TIN_ORE.get(), createOreDrop(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get()));
     }
 
     @Override

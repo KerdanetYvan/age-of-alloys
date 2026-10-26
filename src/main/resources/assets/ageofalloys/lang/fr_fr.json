@@ -22,5 +22,8 @@
   "item.ageofalloys.steel_shovel": "Pelle en acier",
   "item.ageofalloys.steel_hoe": "Houe en acier",
   "item.ageofalloys.steel_sword": "Épée en acier",
-  "block.ageofalloys.alloy_foundry": "Fonderie d'alliages"
+  "block.ageofalloys.alloy_foundry": "Fonderie d'alliages",
+  "item.ageofalloys.raw_tin": "Étain brut",
+  "block.ageofalloys.tin_ore": "Minerai d'étain",
+  "block.ageofalloys.deepslate_tin_ore": "Minerai d'étain des abîmes"
 }

@@ -24,6 +24,9 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.ALUMINUM_INGOT.get());
                 output.accept(ModItems.MAGNESIUM_INGOT.get());
                 output.accept(ModItems.MANGANESE_INGOT.get());
+                output.accept(ModItems.RAW_TIN.get());
+                output.accept(ModItems.TIN_ORE.get());
+                output.accept(ModItems.DEEPSLATE_TIN_ORE.get());
                 output.accept(ModItems.BRONZE_PICKAXE.get());
                 output.accept(ModItems.BRONZE_AXE.get());
                 output.accept(ModItems.BRONZE_SHOVEL.get());

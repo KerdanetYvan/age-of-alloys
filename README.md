@@ -31,14 +31,14 @@ Everything is in the **Age of Alloys** creative tab:
 | Steel | The best material of this version, just below diamond | 850 | 7 |
 | _Iron (vanilla, for reference)_ | | _250_ | _6_ |
 
-> **Beta:** for now, everything is obtained in creative mode or with commands. There are no recipes yet, and no way to make alloys in survival.
+> **Beta:** alloys can now be made in game, in the alloy foundry, but their raw materials (tin, aluminum, magnesium, manganese) cannot be found in the world yet: for now they come from creative mode or commands.
 
 ## Planned features
 
 - [x] **Alloys** and their gear (tools and weapons)
-- [ ] **Alloy creation** in game
+- [x] **Alloy creation** in game
 - [ ] **Raw materials** generated in the world
-- [ ] **Armor** for each alloy (later)
+- [ ] **Armor** for each alloy
 - [ ] **Compatibility** with popular mods
 - [ ] Full **wiki**
 

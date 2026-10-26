@@ -14,6 +14,9 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 - Le duralumin et l'acier se fondent dans la fonderie : 5 aluminium, 1 cuivre, 1 magnésium et 1 manganèse donnent 8 lingots de duralumin ; 4 fer et 1 charbon donnent 4 lingots d'acier. Chaque recette demande un niveau de chaleur : n'importe quel combustible pour le bronze, au moins un charbon (1 600 ticks) pour le duralumin, au moins un bloc de charbon ou un seau de lave (10 000 ticks) pour l'acier. Un combustible trop froid n'est pas consommé, et un seau de lave laisse un seau vide.
 - Recettes d'établi des 15 outils et armes (pioche, hache, pelle, houe et épée en bronze, duralumin et acier) : les lingots et des bâtons suffisent, avec les mêmes formes que les outils de Minecraft. Les recettes se débloquent dès qu'on possède un lingot du métal.
 
+### Modifié
+- La flamme et la flèche de l'interface de la fonderie sont redessinées dans le style de Minecraft. La flamme change de couleur selon la chaleur du combustible en cours (orange, rouge orangé, bleue) et garde une ligne tant que le feu brûle, au lieu de disparaître avant la fin du combustible.
+
 ## [0.1.0] - 2026-10-24
 
 ### Ajouté

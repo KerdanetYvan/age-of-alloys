@@ -64,37 +64,37 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 
 ## 6. Blocs et block entities
 
-- [*] **Block** vs **BlockState** vs **BlockItem** (E2/E3)
-- [*] **Block.Properties** : dureté, résistance, son, outil requis (E2/E3)
-- [*] **Block entity** : un bloc qui possède des données/une logique (four, forge…) (E2)
-- [*] **Ticking** : exécuter de la logique à chaque tick (E2)
-- [*] **Loot tables** : ce qu'un bloc/ennemi lâche (E1/E3) (le butin d'un minerai, avec Fortune et Silk Touch, est vu avec #109)
+- [x] **Block** vs **BlockState** vs **BlockItem** (E2/E3)
+- [x] **Block.Properties** : dureté, résistance, son, outil requis (E2/E3)
+- [x] **Block entity** : un bloc qui possède des données/une logique (four, forge…) (E2)
+- [x] **Ticking** : exécuter de la logique à chaque tick (E2)
+- [x] **Loot tables** : ce qu'un bloc/ennemi lâche (E1/E3) (le butin d'un minerai, avec Fortune et Silk Touch, est vu avec #109)
 - [ ] Niveau d'outil requis pour miner (`needs_iron_tool` etc.) (E3)
 
 ## 7. Recettes et mécaniques d'alliage
 
 - [x] **Recipes** JSON en forme (*shaped*) : `pattern`, `key`, `result`, et leur génération par datagen (E1/E2)
 - [ ] **Recipes** sans forme, fourneau, haut fourneau, forge : *shapeless*, *smelting*, *blasting*, *smithing* (E2) (le four et le haut fourneau sont vus avec #109, pas encore les recettes sans forme ni la forge)
-- [*] **Recipe types** et **recipe serializers** custom (E2)
+- [x] **Recipe types** et **recipe serializers** custom (E2)
 - [ ] Le **Smithing Table** (table de forge) et les templates (E2)
-- [*] **Inventaires** : `Container`, slots, **capabilities** d'items (E2)
-- [*] **Menus (Menu/Container)** et **Screens (GUI)** : interface d'un bloc custom (E2)
+- [x] **Inventaires** : `Container`, slots, **capabilities** d'items (E2)
+- [x] **Menus (Menu/Container)** et **Screens (GUI)** : interface d'un bloc custom (E2)
 - [ ] Synchronisation client ↔ serveur : **networking / payloads** (E2) (les données du menu sont vues avec #87, pas encore les vrais paquets)
 - [ ] **Fluides** (si métal fondu) et capabilities de fluides (E2)
-- [*] **Énergie / chaleur** : modéliser une machine qui a besoin de combustible (E2)
-- [*] Concevoir un **système d'alliages** : ratios, températures, règles métier (E2)
+- [x] **Énergie / chaleur** : modéliser une machine qui a besoin de combustible (E2)
+- [x] Concevoir un **système d'alliages** : ratios, températures, règles métier (E2)
 - [ ] **Advancements** : guider le joueur dans la progression (E2)
 
 ## 8. Génération du monde
 
-- [*] Pipeline de génération : biomes, relief, **features**, structures (E3)
-- [*] **Configured Feature** vs **Placed Feature** (E3)
+- [x] Pipeline de génération : biomes, relief, **features**, structures (E3)
+- [x] **Configured Feature** vs **Placed Feature** (E3)
 - [ ] **Ore generation** : taille de veine, nombre d'essais, plage de hauteur, distribution (E3) (vu avec #111 : le trapèze est compris, la dispersion horizontale par `InSquarePlacement` est à revoir)
-- [*] **Biome modifiers** : ajouter ses minerais aux biomes existants (E3)
+- [x] **Biome modifiers** : ajouter ses minerais aux biomes existants (E3)
 - [ ] Équilibrage : rareté, profondeur, progression dans le jeu (E3)
 - [x] **Datagen** : générer les JSON par code plutôt qu'à la main (E1→E3)
 - [ ] Structures et biomes custom (optionnel) (E3+)
-- [*] Mondes existants : ce qui se passe quand on ajoute un mod à une sauvegarde (E3)
+- [x] Mondes existants : ce qui se passe quand on ajoute un mod à une sauvegarde (E3)
 
 ## 9. Équilibrage et game design
 

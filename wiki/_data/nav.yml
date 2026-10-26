@@ -1,0 +1,40 @@
+fr:
+  prefix: ""
+  other: English
+  version: Version
+  latest: dernière
+  old: "Vous lisez la documentation de %current%, la dernière version est %latest%."
+  added: Ajouté
+  changed: Modifié
+  fixed: Corrigé
+  heat: Chaleur
+  ten: "10 s"
+  alloys: "bronze, duralumin et acier alternent"
+  items:
+    - { key: home, title: Accueil, url: / }
+    - { key: howto, title: Comment jouer, url: /comment-jouer/ }
+    - { key: ores, title: Minerais, url: /minerais/ }
+    - { key: foundry, title: Fonderie, url: /fonderie/ }
+    - { key: items, title: Objets, url: /objets/ }
+    - { key: recipes, title: Recettes, url: /recettes/ }
+    - { key: history, title: Historique, url: /historique/, root: true }
+en:
+  prefix: /en
+  other: Français
+  version: Version
+  latest: latest
+  old: "You are reading the documentation of %current%, the latest version is %latest%."
+  added: Added
+  changed: Changed
+  fixed: Fixed
+  heat: Heat
+  ten: "10 s"
+  alloys: "bronze, duralumin and steel in turn"
+  items:
+    - { key: home, title: Home, url: / }
+    - { key: howto, title: How to play, url: /how-to-play/ }
+    - { key: ores, title: Ores, url: /ores/ }
+    - { key: foundry, title: Foundry, url: /foundry/ }
+    - { key: items, title: Items, url: /items/ }
+    - { key: recipes, title: Recipes, url: /recipes/ }
+    - { key: history, title: History, url: /history/, root: true }

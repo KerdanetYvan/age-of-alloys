@@ -1,0 +1,18 @@
+<!doctype html>
+{% assign lang = page.lang | default: "fr" %}
+{% assign nav = site.data.nav[lang] %}
+{% assign latest = site.data.versions | where: "latest", true | first %}
+{% capture target %}{{ nav.prefix }}/{{ latest.id }}/{% endcapture %}
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <meta http-equiv="refresh" content="0; url={{ target | relative_url }}">
+  <link rel="canonical" href="{{ target | absolute_url }}">
+  <meta name="robots" content="noindex">
+</head>
+<body style="background:#131315;color:#ddd5cd;font-family:system-ui,sans-serif;padding:24px">
+  <p><a href="{{ target | relative_url }}" style="color:#f5b250">{{ site.title }} {{ latest.id }}</a></p>
+</body>
+</html>

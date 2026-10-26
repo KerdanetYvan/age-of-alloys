@@ -1,0 +1,85 @@
+# Recipes shown on the recipes page, shared by both languages.
+# Grid cells: an icon id, "." for an empty cell, "A" for "an alloy ingot" (bronze, duralumin or steel, shown in turn).
+# `alloy_result` is the tool or armor piece made from that alloy (bronze_<piece>, duralumin_<piece>, steel_<piece>).
+bench:
+  - id: foundry
+    title: { fr: "Fonderie d'alliages", en: "Alloy Foundry" }
+    grid: [stone_bricks, bucket, stone_bricks, stone_bricks, ".", stone_bricks, smooth_stone, smooth_stone, smooth_stone]
+    result: alloy_foundry
+    count: 1
+    text: { fr: "4 briques de pierre, 1 seau, 3 pierres lisses", en: "4 stone bricks, 1 bucket, 3 smooth stone" }
+tools:
+  - id: pickaxe
+    title: { fr: Pioche, en: Pickaxe }
+    grid: [A, A, A, ".", stick, ".", ".", stick, "."]
+    alloy_result: pickaxe
+    text: { fr: "3 lingots + 2 bâtons", en: "3 ingots + 2 sticks" }
+  - id: axe
+    title: { fr: Hache, en: Axe }
+    grid: [A, A, ".", A, stick, ".", ".", stick, "."]
+    alloy_result: axe
+    text: { fr: "3 lingots + 2 bâtons", en: "3 ingots + 2 sticks" }
+  - id: shovel
+    title: { fr: Pelle, en: Shovel }
+    grid: [".", A, ".", ".", stick, ".", ".", stick, "."]
+    alloy_result: shovel
+    text: { fr: "1 lingot + 2 bâtons", en: "1 ingot + 2 sticks" }
+  - id: hoe
+    title: { fr: Houe, en: Hoe }
+    grid: [A, A, ".", ".", stick, ".", ".", stick, "."]
+    alloy_result: hoe
+    text: { fr: "2 lingots + 2 bâtons", en: "2 ingots + 2 sticks" }
+  - id: sword
+    title: { fr: Épée, en: Sword }
+    grid: [".", A, ".", ".", A, ".", ".", stick, "."]
+    alloy_result: sword
+    text: { fr: "2 lingots + 1 bâton", en: "2 ingots + 1 stick" }
+armor:
+  - id: helmet
+    title: { fr: Casque, en: Helmet }
+    grid: [A, A, A, A, ".", A, ".", ".", "."]
+    alloy_result: helmet
+    text: { fr: "5 lingots", en: "5 ingots" }
+  - id: chestplate
+    title: { fr: Plastron, en: Chestplate }
+    grid: [A, ".", A, A, A, A, A, A, A]
+    alloy_result: chestplate
+    text: { fr: "8 lingots", en: "8 ingots" }
+  - id: leggings
+    title: { fr: Jambières, en: Leggings }
+    grid: [A, A, A, A, ".", A, A, ".", A]
+    alloy_result: leggings
+    text: { fr: "7 lingots", en: "7 ingots" }
+  - id: boots
+    title: { fr: Bottes, en: Boots }
+    grid: [A, ".", A, A, ".", A, ".", ".", "."]
+    alloy_result: boots
+    text: { fr: "4 lingots", en: "4 ingots" }
+# Foundry: inputs are [icon ids separated by commas, count]; fuel lists the fuels shown in turn.
+foundry:
+  - id: bronze
+    inputs: [["copper_ingot", 3], ["tin_ingot", 1]]
+    fuel: stick
+    heat: 1
+    result: bronze_ingot
+    count: 4
+    text: { fr: "3 lingots de cuivre + 1 lingot d'étain, n'importe quel combustible", en: "3 copper ingots + 1 tin ingot, any fuel" }
+  - id: duralumin
+    inputs: [["aluminum_ingot", 5], ["copper_ingot", 1], ["magnesium_ingot", 1], ["manganese_ingot", 1]]
+    fuel: "coal,charcoal,blaze_rod"
+    heat: 2
+    result: duralumin_ingot
+    count: 8
+    text: { fr: "5 aluminium + 1 cuivre + 1 magnésium + 1 manganèse, au moins un charbon", en: "5 aluminum + 1 copper + 1 magnesium + 1 manganese, at least a coal" }
+  - id: steel
+    inputs: [["iron_ingot", 4], ["coal,charcoal", 1]]
+    fuel: "coal_block,lava_bucket"
+    heat: 3
+    result: steel_ingot
+    count: 4
+    text: { fr: "4 lingots de fer + 1 charbon (ou charbon de bois), un bloc de charbon ou un seau de lave", en: "4 iron ingots + 1 coal (or charcoal), a coal block or a lava bucket" }
+smelt:
+  - { raw: raw_tin, ore: "tin_ore,deepslate_tin_ore", result: tin_ingot }
+  - { raw: raw_aluminum, ore: "aluminum_ore,deepslate_aluminum_ore", result: aluminum_ingot }
+  - { raw: raw_magnesium, ore: "magnesium_ore,deepslate_magnesium_ore", result: magnesium_ingot }
+  - { raw: raw_manganese, ore: "manganese_ore,deepslate_manganese_ore", result: manganese_ingot }

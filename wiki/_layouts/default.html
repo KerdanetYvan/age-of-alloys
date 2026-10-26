@@ -1,0 +1,59 @@
+<!doctype html>
+{% assign lang = page.lang | default: "fr" %}
+{% assign nav = site.data.nav[lang] %}
+{% assign versions = site.data.versions %}
+{% assign latest = versions | where: "latest", true | first %}
+{% assign ver = page.version | default: latest.id %}
+{% assign cur = page.nav | default: page.key %}
+{% assign base = nav.prefix | append: "/" | append: ver %}
+{% assign home = base | append: "/" %}
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.url != home %}{{ page.title }} · {% endif %}{{ site.title }}{% if page.version %} {{ page.version }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="theme-color" content="#131315">
+  <link rel="icon" href="{{ '/assets/logo.png' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Pixelify+Sans:wght@500;700&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="hero">
+    <a href="{{ home | relative_url }}"><img class="banner" src="{{ '/assets/banner.png' | relative_url }}" alt="Age of Alloys: {{ site.description }}"></a>
+  </header>
+  <nav class="nav" aria-label="Navigation">
+    <ul>
+      {% for item in nav.items %}
+      {% if item.root %}{% assign url = nav.prefix | append: item.url %}{% else %}{% assign url = base | append: item.url %}{% endif %}
+      <li><a href="{{ url | relative_url }}"{% if url == page.url %} aria-current="page"{% elsif item.key == cur %} aria-current="true"{% endif %}>{{ item.title }}</a></li>
+      {% endfor %}
+      {% if page.version %}<li class="switch">
+        <label for="version">{{ nav.version }}</label>
+        <select id="version" onchange="location.href = this.value">
+          {% for v in versions %}
+          {% assign target = site.pages | where: "version", v.id | where: "key", page.key | where: "lang", lang | first %}
+          {% if target %}{% assign dest = target.url %}{% else %}{% capture dest %}{{ nav.prefix }}/{{ v.id }}/{% endcapture %}{% endif %}
+          <option value="{{ dest | relative_url }}"{% if v.id == page.version %} selected{% endif %}>{{ v.id }}{% if v.latest %} ({{ nav.latest }}){% endif %}</option>
+          {% endfor %}
+        </select>
+        <noscript>{% for v in versions %}<a href="{{ nav.prefix | append: '/' | append: v.id | append: '/' | relative_url }}">{{ v.id }}</a> {% endfor %}</noscript>
+      </li>{% endif %}
+      <li class="lang"><a href="{{ page.alt | relative_url }}">{{ nav.other }}</a></li>
+    </ul>
+  </nav>
+  <div class="flames" aria-hidden="true"></div>
+  {% if page.version and page.version != latest.id %}
+  <p class="old">{{ nav.old | replace: "%current%", page.version | replace: "%latest%", latest.id }} <a href="{{ nav.prefix | append: '/' | append: latest.id | append: '/' | relative_url }}">{{ latest.id }}</a></p>
+  {% endif %}
+  <main class="page">
+    {{ content }}
+  </main>
+  <footer class="foot">
+    <a href="https://github.com/KerdanetYvan/age-of-alloys">GitHub</a> · <a href="https://github.com/KerdanetYvan/age-of-alloys/releases">Releases</a>
+    <p>© 2026 Kerdanet Yvan, All Rights Reserved. {% if lang == "fr" %}Certaines textures dérivent de celles de Minecraft (propriété de Mojang/Microsoft), et les recettes montrent des textures du jeu. Produit non officiel : ni approuvé par Mojang ou Microsoft, ni associé à eux.{% else %}Some textures are derived from Minecraft's (property of Mojang/Microsoft), and the recipes show textures from the game. Not an official Minecraft product: not approved by or associated with Mojang or Microsoft.{% endif %}</p>
+  </footer>
+</body>
+</html>

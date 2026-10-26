@@ -1,0 +1,52 @@
+---
+layout: default
+title: Steel
+permalink: /en/v0.3.0/steel/
+alt: /v0.3.0/acier/
+lang: en
+version: v0.3.0
+key: steel
+nav: items
+---
+
+# Steel
+
+Steel is the **best alloy** of the mod: one step below diamond on every criterion. In real life it is iron with a little carbon; here, coal is the carbon.
+
+## Making it
+
+It is melted in [the foundry]({{ '/en/v0.3.0/foundry/' | relative_url }}), with a **heat 3** fuel (a coal block or a lava bucket): see [the recipe]({{ '/en/v0.3.0/recipes/' | relative_url }}#alloys).
+
+## Tools and weapons
+
+All of them mine at iron level. Shapes and amounts: [the recipes]({{ '/en/v0.3.0/recipes/' | relative_url }}).
+
+| | Steel | _Iron (reference)_ |
+|---|---:|---:|
+| Durability | 850 | _250_ |
+| Mining speed | 7 | _6_ |
+| Enchantability | 9 | _14_ |
+| Sword damage | 6.5 | _6_ |
+| Sword attack speed | 1.6 | _1.6_ |
+
+## Armor
+
+It protects almost like diamond and has toughness.
+
+| Piece | Protection | Durability |
+|---|---:|---:|
+| Helmet | 3 | 297 |
+| Chestplate | 7 | 432 |
+| Leggings | 5 | 405 |
+| Boots | 3 | 351 |
+| **Full set** | **18** | **1,485** |
+
+Toughness: 1 per piece. Enchantability: 9.
+
+| | Steel | _Iron_ | _Diamond_ |
+|---|---:|---:|---:|
+| Protection (full set) | 18 | _15_ | _20_ |
+| Durability (full set) | 1,485 | _825_ | _1,815_ |
+| Toughness (per piece) | 1 | _0_ | _2_ |
+
+Repair it at an anvil with a steel ingot.

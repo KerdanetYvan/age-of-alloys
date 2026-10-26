@@ -1,0 +1,14 @@
+{%- assign release_news = site.data.news[include.version] -%}
+{%- assign text = release_news[page.lang] -%}
+{%- assign nav = site.data.nav[page.lang] -%}
+<ul class="news">
+{%- for line in text.added %}
+  <li><span class="tag tag-added">{{ nav.added }}</span> {{ line }}</li>
+{%- endfor %}
+{%- for line in text.changed %}
+  <li><span class="tag tag-changed">{{ nav.changed }}</span> {{ line }}</li>
+{%- endfor %}
+{%- for line in text.fixed %}
+  <li><span class="tag tag-fixed">{{ nav.fixed }}</span> {{ line }}</li>
+{%- endfor %}
+</ul>

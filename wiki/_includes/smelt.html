@@ -1,0 +1,11 @@
+{%- comment -%} One smelting line. r: an entry of recipes.yml (smelt). {%- endcomment -%}
+{%- assign r = include.r -%}
+{%- assign ins = r.raw | append: "," | append: r.ore -%}
+{%- assign ins_list = ins | split: "," -%}
+<figure class="card card-small">
+  <figcaption>{{ site.data.icons[r.result][page.lang] }}</figcaption>
+  <div class="flow" aria-hidden="true">
+    {% include slot.html ids=ins %}<span class="arrow">&rarr;</span>{% include slot.html ids=r.result %}
+  </div>
+  <p class="card-text">{% for id in ins_list %}{{ site.data.icons[id][page.lang] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+</figure>

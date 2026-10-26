@@ -64,6 +64,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .heat(3)
                 .time(200)
                 .save(writer);
+
+        // The foundry looks like a crucible: walls of stone bricks, a bucket on top and a smooth stone base.
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ALLOY_FOUNDRY.get())
+                .pattern("XSX")
+                .pattern("X X")
+                .pattern("PPP")
+                .define('X', Items.STONE_BRICKS)
+                .define('S', Items.BUCKET)
+                .define('P', Items.SMOOTH_STONE)
+                .unlockedBy("has_stone_bricks", has(Items.STONE_BRICKS))
+                .save(writer);
     }
 
     private static void tool(Consumer<FinishedRecipe> writer, Metal metal, ToolType type, RecipeCategory category,

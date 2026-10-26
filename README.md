@@ -50,7 +50,7 @@ Everything is in the **Age of Alloys** creative tab, and it can all be obtained 
 - [x] **Raw materials** generated in the world
 - [x] **Armor** for each alloy
 - [ ] **Compatibility** with popular mods
-- [ ] Full **wiki**
+- [x] Full **wiki**
 
 Details and order are in the [roadmap](ROADMAP.md) (in French).
 
@@ -74,6 +74,7 @@ A port to NeoForge and newer Minecraft versions is planned for later.
 
 ## Documentation
 
+- [Wiki](https://kerdanetyvan.github.io/age-of-alloys/en/) (recipes, ores, alloys)
 - [Roadmap](ROADMAP.md) (French)
 - [Changelog](CHANGELOG.md)
 - [Contributing](CONTRIBUTING.md) (French)

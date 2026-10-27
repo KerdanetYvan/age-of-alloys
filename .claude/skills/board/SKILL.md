@@ -7,7 +7,7 @@ description: Audit the consistency between the code, the Git repo and the GitHub
 
 Compares three sources (code, Git, GitHub board) and reports the gaps. **Read-only until the user approves a fix.** Everything the user reads is in French (see `CLAUDE.md`).
 
-Project: number `6`, owner `KerdanetYvan`, id `PVT_kwHOCjZVkc4BnnU1`. Status field id `PVTSSF_lAHOCjZVkc4BnnU1zhmLFhg`. Repo `KerdanetYvan/age-of-alloys`. Statuses: `Backlog`, `En cours`, `Review`, `Fait`.
+Project: number `6`, owner `KerdanetYvan`, id `PVT_kwHOCjZVkc4BnnU1`. Status field id `PVTSSF_lAHOCjZVkc4BnnU1zhmLFhg`. Repo `KerdanetYvan/age-of-alloys`. Statuses: `Idées`, `Backlog`, `En cours`, `Review`, `Fait`.
 
 ## Subcommands
 
@@ -42,11 +42,12 @@ Each finding gets a number and a proposed correction.
 4. Ticket "En cours" with no activity for more than 14 days: flag as stale.
 5. Branch or PR with no matching ticket: propose `new-ticket`.
 6. Shipped code with no ticket: an item (or family of items) in `ModItems` that no issue or PR mentions: propose `new-ticket`.
-7. Ticket without label, without milestone, or missing from the board: propose the fix (`gh issue edit`, `gh project item-add`).
+7. Ticket without label, without milestone, or missing from the board: propose the fix (`gh issue edit`, `gh project item-add`). A ticket in "Idées" needs no milestone.
 8. Parent whose sub-issues are all closed but still open: propose closing it. Parent "En cours" with no sub-issue "En cours": flag it.
 9. `ROADMAP.md`: a step marked done while its milestone still has open tickets, or the opposite.
 10. `TODO` / `FIXME` in the code with no ticket: propose `new-ticket`.
 11. `docs/NOTIONS.md`: notions marked `[*]` waiting for the user to validate; remind them.
+12. Ideas: a ticket in "Idées" without the label `type: idea`, or with a milestone, is misplaced; a ticket in any other status that still has `type: idea` was picked without being promoted. Propose the fix (see "Ideas" in `new-ticket`).
 
 ## 3. Split analysis
 
@@ -56,7 +57,7 @@ Propose the breakdown (French title, label and one line per sub-issue, same mile
 
 ## 4. Next
 
-Among "Backlog" tickets, rank by: oldest unfinished milestone, then sub-issue order, then size (small first). Give the top 3 with one sentence each and suggest `start-ticket <n>`. Start nothing.
+Among "Backlog" tickets, rank by: oldest unfinished milestone, then sub-issue order, then size (small first). Give the top 3 with one sentence each and suggest `start-ticket <n>`. If "Backlog" is empty, give instead the 3 ideas of "Idées" that look the most ready (small, clear, close to what players asked for), with one sentence each, and say that the owner must pick one (which promotes it, see `new-ticket`) before `start-ticket`. Start nothing.
 
 ## 5. Report format
 

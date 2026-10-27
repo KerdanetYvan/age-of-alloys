@@ -2,11 +2,20 @@ package fr.kerdanetyvan.ageofalloys.recipe;
 
 import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
 import fr.kerdanetyvan.ageofalloys.registry.ModRecipeTypes;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.locale.Language;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.Container;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
@@ -27,6 +36,8 @@ public class AlloyingRecipe implements Recipe<Container> {
     private final ItemStack result;
     private final int heat;
     private final int time;
+    /** The result with its description, built the first time the recipe book asks for it. */
+    private ItemStack described;
 
     public AlloyingRecipe(ResourceLocation id, List<AlloyIngredient> ingredients, ItemStack result, int heat,
             int time) {
@@ -84,9 +95,50 @@ public class AlloyingRecipe implements Recipe<Container> {
         return true;
     }
 
+    /**
+     * The result as the recipe book shows it: the item with a description (its ingredients, the heat and
+     * the melting time) as lore. The book only displays this item and its tooltip, so this is how the
+     * quantities reach the player. What the foundry really produces is {@link #result()}.
+     */
     @Override
     public ItemStack getResultItem(RegistryAccess registryAccess) {
-        return result;
+        if (described != null) {
+            return described;
+        }
+        List<Component> lines = new ArrayList<>();
+        for (AlloyIngredient ingredient : ingredients) {
+            ItemStack[] items = Ingredient.of(ingredient.tag()).getItems();
+            if (items.length == 0) {
+                // The tags are not loaded yet: show the plain result, and describe it on a later call.
+                return result;
+            }
+            lines.add(Component.translatable("tooltip.ageofalloys.recipe_book.ingredient", ingredient.count(),
+                    ingredientName(ingredient.tag(), items[0])));
+        }
+        lines.add(Component.translatable("tooltip.ageofalloys.recipe_book.heat." + heat));
+        String seconds = time % 20 == 0 ? String.valueOf(time / 20) : String.format(Locale.ROOT, "%.1f", time / 20.0);
+        lines.add(Component.translatable("tooltip.ageofalloys.recipe_book.time", seconds));
+
+        ListTag lore = new ListTag();
+        for (Component line : lines) {
+            // Lore is purple and italic by default: plain gray text reads better here.
+            lore.add(StringTag.valueOf(Component.Serializer.toJson(
+                    line.copy().withStyle(style -> style.withColor(ChatFormatting.GRAY).withItalic(false)))));
+        }
+        ItemStack stack = result.copy();
+        stack.getOrCreateTagElement("display").put("Lore", lore);
+        described = stack;
+        return stack;
+    }
+
+    /**
+     * The name of an ingredient: a language key for the tag when the mod has one (for example "coal or
+     * charcoal"), else the name of the first item of the tag.
+     */
+    private static Component ingredientName(TagKey<Item> tag, ItemStack first) {
+        ResourceLocation id = tag.location();
+        String key = "tag.item." + id.getNamespace() + "." + id.getPath().replace('/', '.');
+        return Language.getInstance().has(key) ? Component.translatable(key) : first.getHoverName();
     }
 
     @Override

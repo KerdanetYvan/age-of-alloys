@@ -46,5 +46,12 @@
   "item.ageofalloys.steel_helmet": "Casque en acier",
   "item.ageofalloys.steel_chestplate": "Plastron en acier",
   "item.ageofalloys.steel_leggings": "Jambières en acier",
-  "item.ageofalloys.steel_boots": "Bottes en acier"
+  "item.ageofalloys.steel_boots": "Bottes en acier",
+  "gui.ageofalloys.recipe_book.meltable": "Seulement ce qui peut être fondu",
+  "tooltip.ageofalloys.recipe_book.ingredient": "%1$s × %2$s",
+  "tooltip.ageofalloys.recipe_book.heat.1": "Chaleur : n'importe quel combustible",
+  "tooltip.ageofalloys.recipe_book.heat.2": "Chaleur : charbon ou mieux",
+  "tooltip.ageofalloys.recipe_book.heat.3": "Chaleur : bloc de charbon, seau de lave ou mieux",
+  "tooltip.ageofalloys.recipe_book.time": "Durée de fonte : %s s",
+  "tag.item.minecraft.coals": "Charbon ou charbon de bois"
 }

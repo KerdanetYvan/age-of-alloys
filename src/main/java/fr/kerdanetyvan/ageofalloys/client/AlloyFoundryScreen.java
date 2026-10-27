@@ -4,19 +4,53 @@ import fr.kerdanetyvan.ageofalloys.AgeOfAlloys;
 import fr.kerdanetyvan.ageofalloys.content.Heat;
 import fr.kerdanetyvan.ageofalloys.menu.AlloyFoundryMenu;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
+import net.minecraft.client.gui.screens.recipebook.RecipeUpdateListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.Slot;
 import org.jetbrains.annotations.NotNull;
 
-/** The screen of the alloy foundry. Client only: it draws what the menu holds, and decides nothing. */
-public class AlloyFoundryScreen extends AbstractContainerScreen<AlloyFoundryMenu> {
+/**
+ * The screen of the alloy foundry. Client only: it draws what the menu holds, and decides nothing. It
+ * hosts the recipe book the way the furnace screen does: the book gets the clicks and the keys first, and
+ * the window moves to the right while the book is open.
+ */
+public class AlloyFoundryScreen extends AbstractContainerScreen<AlloyFoundryMenu> implements RecipeUpdateListener {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(AgeOfAlloys.MOD_ID, "textures/gui/alloy_foundry.png");
+    /** The button of the furnace and of the crafting table, from Minecraft's own textures. */
+    private static final ResourceLocation RECIPE_BUTTON = new ResourceLocation("textures/gui/recipe_button.png");
+
+    private final AlloyFoundryRecipeBookComponent recipeBook = new AlloyFoundryRecipeBookComponent();
+    private boolean widthTooNarrow;
 
     public AlloyFoundryScreen(AlloyFoundryMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        widthTooNarrow = width < 379;
+        recipeBook.init(width, height, minecraft, widthTooNarrow, menu);
+        leftPos = recipeBook.updateScreenPosition(width, imageWidth);
+        // Top right of the window: the left side is taken by the four inputs, where the furnace has its button.
+        addRenderableWidget(new ImageButton(leftPos + 148, topPos + 6, 20, 18, 0, 0, 19, RECIPE_BUTTON, button -> {
+            recipeBook.toggleVisibility();
+            leftPos = recipeBook.updateScreenPosition(width, imageWidth);
+            button.setPosition(leftPos + 148, topPos + 6);
+        }));
+    }
+
+    @Override
+    protected void containerTick() {
+        super.containerTick();
+        recipeBook.tick();
     }
 
     @Override
@@ -41,7 +75,57 @@ public class AlloyFoundryScreen extends AbstractContainerScreen<AlloyFoundryMenu
     @Override
     public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         renderBackground(graphics);
-        super.render(graphics, mouseX, mouseY, partialTick);
+        if (recipeBook.isVisible() && widthTooNarrow) {
+            // No room beside the window: the book replaces the slots instead of sitting next to them.
+            renderBg(graphics, partialTick, mouseX, mouseY);
+            recipeBook.render(graphics, mouseX, mouseY, partialTick);
+        } else {
+            recipeBook.render(graphics, mouseX, mouseY, partialTick);
+            super.render(graphics, mouseX, mouseY, partialTick);
+        }
         renderTooltip(graphics, mouseX, mouseY);
+        recipeBook.renderTooltip(graphics, leftPos, topPos, mouseX, mouseY);
+    }
+
+    @Override
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        if (recipeBook.mouseClicked(mouseX, mouseY, button)) {
+            return true;
+        }
+        return widthTooNarrow && recipeBook.isVisible() || super.mouseClicked(mouseX, mouseY, button);
+    }
+
+    @Override
+    protected void slotClicked(@NotNull Slot slot, int slotId, int mouseButton, @NotNull ClickType type) {
+        super.slotClicked(slot, slotId, mouseButton, type);
+        recipeBook.slotClicked(slot);
+    }
+
+    @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        return !recipeBook.keyPressed(keyCode, scanCode, modifiers) && super.keyPressed(keyCode, scanCode, modifiers);
+    }
+
+    @Override
+    public boolean charTyped(char codePoint, int modifiers) {
+        return recipeBook.charTyped(codePoint, modifiers) || super.charTyped(codePoint, modifiers);
+    }
+
+    @Override
+    protected boolean hasClickedOutside(double mouseX, double mouseY, int guiLeft, int guiTop, int mouseButton) {
+        boolean outsideWindow = mouseX < guiLeft || mouseY < guiTop
+                || mouseX >= guiLeft + imageWidth || mouseY >= guiTop + imageHeight;
+        return recipeBook.hasClickedOutside(mouseX, mouseY, leftPos, topPos, imageWidth, imageHeight, mouseButton)
+                && outsideWindow;
+    }
+
+    @Override
+    public void recipesUpdated() {
+        recipeBook.recipesUpdated();
+    }
+
+    @Override
+    public @NotNull RecipeBookComponent getRecipeBookComponent() {
+        return recipeBook;
     }
 }

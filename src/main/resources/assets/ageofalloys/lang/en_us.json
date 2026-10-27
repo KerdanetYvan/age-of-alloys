@@ -46,5 +46,12 @@
   "item.ageofalloys.steel_helmet": "Steel Helmet",
   "item.ageofalloys.steel_chestplate": "Steel Chestplate",
   "item.ageofalloys.steel_leggings": "Steel Leggings",
-  "item.ageofalloys.steel_boots": "Steel Boots"
+  "item.ageofalloys.steel_boots": "Steel Boots",
+  "gui.ageofalloys.recipe_book.meltable": "Only what can be melted",
+  "tooltip.ageofalloys.recipe_book.ingredient": "%1$s × %2$s",
+  "tooltip.ageofalloys.recipe_book.heat.1": "Heat: any fuel",
+  "tooltip.ageofalloys.recipe_book.heat.2": "Heat: coal or better",
+  "tooltip.ageofalloys.recipe_book.heat.3": "Heat: coal block, lava bucket or better",
+  "tooltip.ageofalloys.recipe_book.time": "Melting time: %s s",
+  "tag.item.minecraft.coals": "Coal or charcoal"
 }

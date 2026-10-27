@@ -9,7 +9,15 @@ import fr.kerdanetyvan.ageofalloys.registry.ModRecipeTypes;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRewards;
+import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -67,11 +75,25 @@ public class AlloyingRecipeBuilder {
             throw new IllegalStateException("An alloying recipe takes 1 to " + AlloyingRecipe.INPUT_SLOTS
                     + " ingredients: " + id);
         }
-        writer.accept(new Result(id, ingredients, result, count, heat, time));
+        // The recipe unlocks in the recipe book as soon as the player holds an item of any of its ingredients
+        // (the requirements are "or"), or when the recipe is given by a command.
+        Advancement.Builder advancement = Advancement.Builder.recipeAdvancement()
+                .parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT)
+                .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
+                .rewards(AdvancementRewards.Builder.recipe(id))
+                .requirements(RequirementsStrategy.OR);
+        for (AlloyIngredient ingredient : ingredients) {
+            advancement.addCriterion("has_" + ingredient.tag().location().getPath().replace('/', '_'),
+                    InventoryChangeTrigger.TriggerInstance.hasItems(
+                            ItemPredicate.Builder.item().of(ingredient.tag()).build()));
+        }
+        ResourceLocation advancementId = ResourceLocation.fromNamespaceAndPath(id.getNamespace(),
+                "recipes/" + RecipeCategory.MISC.getFolderName() + "/" + id.getPath());
+        writer.accept(new Result(id, ingredients, result, count, heat, time, advancement, advancementId));
     }
 
     private record Result(ResourceLocation id, List<AlloyIngredient> ingredients, Item result, int count, int heat,
-            int time) implements FinishedRecipe {
+            int time, Advancement.Builder advancement, ResourceLocation advancementId) implements FinishedRecipe {
         @Override
         public void serializeRecipeData(JsonObject json) {
             JsonArray array = new JsonArray();
@@ -99,15 +121,14 @@ public class AlloyingRecipeBuilder {
             return ModRecipeTypes.ALLOYING_SERIALIZER.get();
         }
 
-        // The foundry has no recipe book, so there is no advancement to unlock the recipe.
         @Override
         public @Nullable JsonObject serializeAdvancement() {
-            return null;
+            return advancement.serializeToJson();
         }
 
         @Override
         public @Nullable ResourceLocation getAdvancementId() {
-            return null;
+            return advancementId;
         }
     }
 }

@@ -3,18 +3,26 @@ package fr.kerdanetyvan.ageofalloys.menu;
 import fr.kerdanetyvan.ageofalloys.block.AlloyFoundryBlockEntity;
 import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
 import fr.kerdanetyvan.ageofalloys.registry.ModMenuTypes;
+import fr.kerdanetyvan.ageofalloys.registry.ModRecipeBookTypes;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.RecipeBookMenu;
+import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.IItemHandler;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -22,7 +30,7 @@ import org.jetbrains.annotations.NotNull;
  * to the real inventory, the client one is a copy that the server keeps up to date. The drawing is
  * done by the screen, which only exists on the client.
  */
-public class AlloyFoundryMenu extends AbstractContainerMenu {
+public class AlloyFoundryMenu extends RecipeBookMenu<Container> {
     // Indexes of the values the server sends to the client along with the slots.
     public static final int DATA_BURN_TIME = 0;
     public static final int DATA_BURN_DURATION = 1;
@@ -35,6 +43,9 @@ public class AlloyFoundryMenu extends AbstractContainerMenu {
 
     private final ContainerLevelAccess access;
     private final ContainerData data;
+    private final Level level;
+    /** The inventory seen as a vanilla container, which is what the recipes and the recipe book read. */
+    private final Container inputs;
 
     /** Client side: called by the menu type, with an empty copy that the server fills. */
     public AlloyFoundryMenu(int id, Inventory playerInventory, FriendlyByteBuf buf) {
@@ -43,11 +54,13 @@ public class AlloyFoundryMenu extends AbstractContainerMenu {
     }
 
     /** Server side: wired to the real inventory of the foundry. */
-    public AlloyFoundryMenu(int id, Inventory playerInventory, IItemHandler handler, ContainerData data,
+    public AlloyFoundryMenu(int id, Inventory playerInventory, IItemHandlerModifiable handler, ContainerData data,
                             ContainerLevelAccess access) {
         super(ModMenuTypes.ALLOY_FOUNDRY.get(), id);
         this.access = access;
         this.data = data;
+        this.level = playerInventory.player.level();
+        this.inputs = new RecipeWrapper(handler);
 
         // The foundry slots come first (0 to 5): quick moving relies on this order.
         addSlot(new SlotItemHandler(handler, 0, 20, 17));
@@ -133,5 +146,62 @@ public class AlloyFoundryMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(@NotNull Player player) {
         return stillValid(access, player, ModBlocks.ALLOY_FOUNDRY.get());
+    }
+
+    // The recipe book part. The book is for looking recipes up: our ingredients are tags with quantities,
+    // so a click on a recipe places nothing (see handlePlacement) and most of these methods stay simple.
+
+    /** Tells the book what the player could use: the bag (added by the book) and the four inputs. */
+    @Override
+    public void fillCraftSlotsStackedContents(@NotNull StackedContents contents) {
+        for (int slot = 0; slot < AlloyFoundryBlockEntity.INPUT_SLOTS; slot++) {
+            contents.accountSimpleStack(inputs.getItem(slot));
+        }
+    }
+
+    /** Only used to empty the grid before placing a recipe, which this menu never does. */
+    @Override
+    public void clearCraftingContent() {
+    }
+
+    @Override
+    public boolean recipeMatches(@NotNull Recipe<? super Container> recipe) {
+        return recipe.matches(inputs, level);
+    }
+
+    @Override
+    public int getResultSlotIndex() {
+        return AlloyFoundryBlockEntity.OUTPUT_SLOT;
+    }
+
+    @Override
+    public int getGridWidth() {
+        return 2;
+    }
+
+    @Override
+    public int getGridHeight() {
+        return 2;
+    }
+
+    @Override
+    public int getSize() {
+        return FOUNDRY_SLOTS;
+    }
+
+    @Override
+    public @NotNull RecipeBookType getRecipeBookType() {
+        return ModRecipeBookTypes.ALLOY_FOUNDRY;
+    }
+
+    /** Like the furnace: everything but the fuel slot is a slot the book may empty back to the bag. */
+    @Override
+    public boolean shouldMoveToInventory(int slot) {
+        return slot != AlloyFoundryBlockEntity.FUEL_SLOT;
+    }
+
+    /** No placement aid: the server ignores the click of the book on a recipe. */
+    @Override
+    public void handlePlacement(boolean placeAll, @NotNull Recipe<?> recipe, @NotNull ServerPlayer player) {
     }
 }

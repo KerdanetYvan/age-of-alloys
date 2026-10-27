@@ -40,7 +40,7 @@
 |---|---|---|---|
 | Bronze | 3 cuivre + 1 étain | 4 lingots | La proportion déjà prévue dans [starter-alloys.md](starter-alloys.md) |
 | Duralumin | 5 aluminium + 1 cuivre + 1 magnésium + 1 manganèse | 8 lingots | Les quatre composants sont requis. L'aluminium domine ; les proportions réelles (94 / 4 / 1 / 0,5 %) sont simplifiées pour que les petites quantités restent jouables |
-| Acier | 4 fer + 1 charbon | 4 lingots | Le charbon est le tag `minecraft:coals` (charbon et charbon de bois) |
+| Acier | 4 fer + 1 charbon | 4 lingots | Le charbon est le tag `ageofalloys:coal` (le charbon seul, pas le charbon de bois) |
 
 - **Temps de fonte** : 200 ticks (10 secondes) par lot au départ.
 - Une recette consomme un lot entier d'un coup : les entrées doivent donc contenir au moins les quantités indiquées (la fonderie travaille par lots).

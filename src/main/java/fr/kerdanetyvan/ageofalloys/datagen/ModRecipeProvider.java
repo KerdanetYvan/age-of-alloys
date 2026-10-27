@@ -15,7 +15,6 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -65,10 +64,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .time(200)
                 .save(writer);
 
-        // The coal is the carbon of the steel. The heat level asks for a coal block, a lava bucket or better.
+        // The coal is the carbon of the steel, not the charcoal. The heat level asks for a coal block, a lava bucket or better.
         AlloyingRecipeBuilder.alloying(ModItems.STEEL_INGOT.get(), 4)
                 .ingredient(Tags.Items.INGOTS_IRON, 4)
-                .ingredient(ItemTags.COALS, 1)
+                .ingredient(ModTags.COAL, 1)
                 .heat(3)
                 .time(200)
                 .save(writer);

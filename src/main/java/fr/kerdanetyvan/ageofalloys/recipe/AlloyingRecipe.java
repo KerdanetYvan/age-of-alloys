@@ -25,7 +25,8 @@ import net.minecraft.world.level.Level;
 
 /**
  * A recipe of the alloy foundry: up to four tag ingredients with a quantity, melted into a result.
- * The first slots of the container it is given are the inputs of the foundry.
+ * The first slots of the container it is given are the inputs of the foundry. The inputs must hold
+ * nothing but the ingredients of the recipe: an item that is not one of them blocks it.
  */
 public class AlloyingRecipe implements Recipe<Container> {
     /** How many input slots of the container the recipe reads (the foundry has four). */
@@ -70,6 +71,12 @@ public class AlloyingRecipe implements Recipe<Container> {
 
     @Override
     public boolean matches(Container inputs, Level level) {
+        for (int slot = 0; slot < INPUT_SLOTS; slot++) {
+            ItemStack stack = inputs.getItem(slot);
+            if (!stack.isEmpty() && !isIngredient(stack)) {
+                return false;
+            }
+        }
         for (AlloyIngredient ingredient : ingredients) {
             int total = 0;
             for (int slot = 0; slot < INPUT_SLOTS; slot++) {
@@ -83,6 +90,16 @@ public class AlloyingRecipe implements Recipe<Container> {
             }
         }
         return true;
+    }
+
+    /** Whether a stack belongs to one of the ingredients of the recipe. */
+    private boolean isIngredient(ItemStack stack) {
+        for (AlloyIngredient ingredient : ingredients) {
+            if (ingredient.accepts(stack)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

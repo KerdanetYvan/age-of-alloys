@@ -1,0 +1,38 @@
+{
+  "parent": "ageofalloys:first_alloy",
+  "criteria": {
+    "has_steel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.ageofalloys.almost_diamond.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "ageofalloys:steel_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.ageofalloys.almost_diamond.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_steel_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

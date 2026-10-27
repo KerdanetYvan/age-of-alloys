@@ -1,0 +1,68 @@
+{
+  "parent": "ageofalloys:almost_diamond",
+  "criteria": {
+    "has_bronze_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_duralumin_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:duralumin_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.ageofalloys.best_of_every_metal.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "ageofalloys:bronze_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.ageofalloys.best_of_every_metal.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bronze_ingot"
+    ],
+    [
+      "has_duralumin_ingot"
+    ],
+    [
+      "has_steel_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

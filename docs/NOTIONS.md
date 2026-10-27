@@ -83,7 +83,7 @@ Légende des étapes du projet : **E1** items · **E2** mécaniques d'alliage ·
 - [ ] **Fluides** (si métal fondu) et capabilities de fluides (E2)
 - [x] **Énergie / chaleur** : modéliser une machine qui a besoin de combustible (E2)
 - [x] Concevoir un **système d'alliages** : ratios, températures, règles métier (E2)
-- [ ] **Advancements** : guider le joueur dans la progression (E2)
+- [*] **Advancements** : guider le joueur dans la progression (E2)
 
 ## 8. Génération du monde
 

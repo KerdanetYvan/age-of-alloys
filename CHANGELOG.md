@@ -14,6 +14,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ### Corrigé
 - La fonderie ne fond plus quand un objet étranger à la recette se trouve dans ses entrées : du minerai de fer posé avec l'étain et le cuivre bloque désormais le bronze, jusqu'à ce qu'on le retire. Le livre de recettes tient compte de la même règle.
 - L'acier se fabrique avec du charbon, plus avec du charbon de bois.
+- La recette de la fonderie d'alliages se débloque dès qu'on possède des briques de pierre, un seau ou de la pierre lisse, et plus seulement des briques de pierre.
 
 ## [0.3.0] - 2026-10-26
 

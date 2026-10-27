@@ -92,6 +92,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('S', Items.BUCKET)
                 .define('P', Items.SMOOTH_STONE)
                 .unlockedBy("has_stone_bricks", has(Items.STONE_BRICKS))
+                .unlockedBy("has_bucket", has(Items.BUCKET))
+                .unlockedBy("has_smooth_stone", has(Items.SMOOTH_STONE))
                 .save(writer);
 
         // The raw item and both ores of each raw metal melt into its ingot, in a furnace and in a blast furnace.

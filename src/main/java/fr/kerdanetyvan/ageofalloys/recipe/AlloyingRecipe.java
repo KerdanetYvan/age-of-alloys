@@ -1,11 +1,14 @@
 package fr.kerdanetyvan.ageofalloys.recipe;
 
+import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
 import fr.kerdanetyvan.ageofalloys.registry.ModRecipeTypes;
 import java.util.List;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -101,9 +104,22 @@ public class AlloyingRecipe implements Recipe<Container> {
         return ModRecipeTypes.ALLOYING.get();
     }
 
-    /** The foundry has no recipe book, so the recipe does not take part in it. */
+    /**
+     * The ingredients as the recipe book sees them: one vanilla ingredient per tag, without the quantity
+     * (the book only needs to know what the recipe is made of). A recipe without any is hidden by the book.
+     */
     @Override
-    public boolean isSpecial() {
-        return true;
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> list = NonNullList.create();
+        for (AlloyIngredient ingredient : ingredients) {
+            list.add(Ingredient.of(ingredient.tag()));
+        }
+        return list;
+    }
+
+    /** The icon of the "recipe unlocked" toast. */
+    @Override
+    public ItemStack getToastSymbol() {
+        return new ItemStack(ModBlocks.ALLOY_FOUNDRY.get());
     }
 }

@@ -7,6 +7,7 @@ import fr.kerdanetyvan.ageofalloys.registry.ModBlocks;
 import fr.kerdanetyvan.ageofalloys.registry.ModCreativeTabs;
 import fr.kerdanetyvan.ageofalloys.registry.ModItems;
 import fr.kerdanetyvan.ageofalloys.registry.ModMenuTypes;
+import fr.kerdanetyvan.ageofalloys.registry.ModRecipeBookTypes;
 import fr.kerdanetyvan.ageofalloys.registry.ModRecipeTypes;
 import fr.kerdanetyvan.ageofalloys.registry.ModTiers;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +28,9 @@ public class AgeOfAlloys {
 
     public AgeOfAlloys(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        // Before everything else: the recipe book type extends a vanilla enum, which must happen early.
+        ModRecipeBookTypes.register();
 
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);

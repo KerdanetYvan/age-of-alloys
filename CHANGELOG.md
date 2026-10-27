@@ -8,7 +8,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ## [Non publié]
 
 ### Ajouté
-- Le livre de recettes de la fonderie d'alliages : un bouton en haut à droite de l'interface l'ouvre à côté de la fenêtre, comme celui du four. Il montre les recettes débloquées, une recette se débloquant dès qu'on possède un de ses ingrédients (un lingot de cuivre ou d'étain pour le bronze, par exemple). En survolant une recette, on voit ses ingrédients avec leurs quantités, la chaleur requise et la durée de fonte. Il sert à consulter : cliquer sur une recette ne place rien dans les emplacements.
+- Le livre de recettes de la fonderie d'alliages : un bouton à gauche de l'interface, sous les entrées, l'ouvre à côté de la fenêtre, comme celui du four. Il montre les recettes débloquées, une recette se débloquant dès qu'on possède un de ses ingrédients (un lingot de cuivre ou d'étain pour le bronze, par exemple). En survolant une recette, on voit ses ingrédients avec leurs quantités, la chaleur requise et la durée de fonte. Il sert à consulter : cliquer sur une recette ne place rien dans les emplacements.
 
 ## [0.3.0] - 2026-10-26
 

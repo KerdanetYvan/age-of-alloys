@@ -26,6 +26,10 @@ public class AlloyFoundryScreen extends AbstractContainerScreen<AlloyFoundryMenu
     /** The button of the furnace and of the crafting table, from Minecraft's own textures. */
     private static final ResourceLocation RECIPE_BUTTON = new ResourceLocation("textures/gui/recipe_button.png");
 
+    /** Position of the recipe book button in the window. */
+    private static final int BUTTON_X = 20;
+    private static final int BUTTON_Y = 54;
+
     private final AlloyFoundryRecipeBookComponent recipeBook = new AlloyFoundryRecipeBookComponent();
     private boolean widthTooNarrow;
 
@@ -39,11 +43,11 @@ public class AlloyFoundryScreen extends AbstractContainerScreen<AlloyFoundryMenu
         widthTooNarrow = width < 379;
         recipeBook.init(width, height, minecraft, widthTooNarrow, menu);
         leftPos = recipeBook.updateScreenPosition(width, imageWidth);
-        // Top right of the window: the left side is taken by the four inputs, where the furnace has its button.
-        addRenderableWidget(new ImageButton(leftPos + 148, topPos + 6, 20, 18, 0, 0, 19, RECIPE_BUTTON, button -> {
+        // On the left, next to where the book opens. Under the four inputs, which sit where the furnace has its button.
+        addRenderableWidget(new ImageButton(leftPos + BUTTON_X, topPos + BUTTON_Y, 20, 18, 0, 0, 19, RECIPE_BUTTON, button -> {
             recipeBook.toggleVisibility();
             leftPos = recipeBook.updateScreenPosition(width, imageWidth);
-            button.setPosition(leftPos + 148, topPos + 6);
+            button.setPosition(leftPos + BUTTON_X, topPos + BUTTON_Y);
         }));
     }
 

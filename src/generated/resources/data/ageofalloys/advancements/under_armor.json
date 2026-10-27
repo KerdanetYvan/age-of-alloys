@@ -1,0 +1,110 @@
+{
+  "parent": "ageofalloys:alloy_tools",
+  "criteria": {
+    "has_bronze_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_helmet"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:bronze_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:bronze_leggings"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:bronze_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_duralumin_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:duralumin_helmet"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:duralumin_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:duralumin_leggings"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:duralumin_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_helmet"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:steel_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:steel_leggings"
+            ]
+          },
+          {
+            "items": [
+              "ageofalloys:steel_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.ageofalloys.under_armor.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "ageofalloys:steel_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.ageofalloys.under_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bronze_armor",
+      "has_duralumin_armor",
+      "has_steel_armor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

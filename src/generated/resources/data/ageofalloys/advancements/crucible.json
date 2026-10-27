@@ -1,0 +1,38 @@
+{
+  "parent": "ageofalloys:prospector",
+  "criteria": {
+    "has_alloy_foundry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:alloy_foundry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.ageofalloys.crucible.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "ageofalloys:alloy_foundry"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.ageofalloys.crucible.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_alloy_foundry"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

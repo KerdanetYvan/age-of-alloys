@@ -1,0 +1,221 @@
+{
+  "parent": "ageofalloys:first_alloy",
+  "criteria": {
+    "has_bronze_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bronze_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_hoe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bronze_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bronze_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_shovel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bronze_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_duralumin_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:duralumin_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_duralumin_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:duralumin_hoe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_duralumin_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:duralumin_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_duralumin_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:duralumin_shovel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_duralumin_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:duralumin_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_hoe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_pickaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_shovel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:steel_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.ageofalloys.alloy_tools.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "ageofalloys:bronze_pickaxe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.ageofalloys.alloy_tools.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bronze_pickaxe",
+      "has_bronze_axe",
+      "has_bronze_shovel",
+      "has_bronze_hoe",
+      "has_bronze_sword",
+      "has_duralumin_pickaxe",
+      "has_duralumin_axe",
+      "has_duralumin_shovel",
+      "has_duralumin_hoe",
+      "has_duralumin_sword",
+      "has_steel_pickaxe",
+      "has_steel_axe",
+      "has_steel_shovel",
+      "has_steel_hoe",
+      "has_steel_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

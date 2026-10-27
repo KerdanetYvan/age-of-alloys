@@ -1,0 +1,77 @@
+{
+  "criteria": {
+    "has_raw_aluminum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:raw_aluminum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_raw_magnesium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:raw_magnesium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_raw_manganese": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:raw_manganese"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_raw_tin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:raw_tin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": {
+      "translate": "advancements.ageofalloys.prospector.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "ageofalloys:raw_tin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.ageofalloys.prospector.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_tin",
+      "has_raw_aluminum",
+      "has_raw_magnesium",
+      "has_raw_manganese"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

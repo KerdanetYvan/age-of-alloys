@@ -1,0 +1,38 @@
+{
+  "parent": "ageofalloys:crucible",
+  "criteria": {
+    "has_bronze_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ageofalloys:bronze_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.ageofalloys.first_alloy.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "ageofalloys:bronze_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.ageofalloys.first_alloy.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_bronze_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

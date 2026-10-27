@@ -1,6 +1,6 @@
 ---
 name: new-ticket
-description: Create a GitHub issue for this repo with the right label, milestone and bilingual body, add it to the project board in "Backlog", and optionally attach it as a sub-issue of a bigger parent issue. Use when the user wants to track a task, bug, idea or learning topic, when a change has no ticket yet, or when a big issue must be split into smaller ones.
+description: Create a GitHub issue for this repo with the right label, milestone and bilingual body, add it to the project board in "Backlog" (or in "Idées" for an idea that is not decided yet), and optionally attach it as a sub-issue of a bigger parent issue. Use when the user wants to track a task, bug, idea or learning topic, when a change has no ticket yet, or when a big issue must be split into smaller ones.
 ---
 
 # Create a ticket
@@ -33,8 +33,8 @@ Project: number `6`, owner `KerdanetYvan`, id `PVT_kwHOCjZVkc4BnnU1`, Status fie
   - [ ] ...
   ```
   Adapt the section names to the type: bug (version, environment, steps, logs), learning (concepts with links to `docs/NOTIONS.md` sections, understanding check). See `.github/ISSUE_TEMPLATE/`.
-- **Label**: `type: feature`, `type: bug`, `type: docs`, `type: chore`, `type: assets`, `type: learning`.
-- **Milestone**: `Step 0 - Foundations`, `Step 1 - Items`, `Step 2 - Mechanics`, `Step 3 - World`, `Step 4 - Compatibility`.
+- **Label**: `type: feature`, `type: bug`, `type: docs`, `type: chore`, `type: assets`, `type: learning`, and `type: idea` for an idea (see "Ideas").
+- **Milestone**: `Step 0 - Foundations`, `Step 1 - Items`, `Step 2 - Mechanics`, `Step 3 - World`, `Step 4 - Compatibility`. An idea has none.
 
 Commits, branch names and PR titles stay in English (see `commit`, `start-ticket`, `open-pr`).
 
@@ -48,6 +48,15 @@ gh project item-edit --id "$ITEM" --project-id PVT_kwHOCjZVkc4BnnU1 --field-id P
 ```
 
 Write the body to a file in the session scratchpad and use `--body-file`. Report the number and a markdown link.
+
+## Ideas
+
+An idea is something the owner would like but has not decided to build (a tester's suggestion, a thought for later). It does not go to "Backlog": it waits in the "Idées" column until it is picked, for example when the backlog is empty or after feedback.
+
+- Same creation commands as above, with three differences: label `type: idea`, **no `--milestone`**, and the status option `Idées` instead of `Backlog` (`select(.name=="Idées")`).
+- Title in French, short. Body in French then English, lighter than a normal ticket: `Résumé` / `Pourquoi c'est intéressant` / `Questions ouvertes` (and the English equivalents). No definition of done: it is written when the idea is picked.
+- No sub-issues while it is an idea, even a big one: it is split when it is picked.
+- **Promoting an idea** (the owner picks it): ask for the type and the milestone, then `gh issue edit <n> --add-label "<type label>" --remove-label "type: idea" --milestone "<milestone>"`, complete the body with a definition of done, and move it to "Backlog". `start-ticket` does not start an idea that was not promoted.
 
 ## Sub-issues (splitting a big issue)
 

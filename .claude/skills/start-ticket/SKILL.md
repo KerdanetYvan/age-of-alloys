@@ -11,7 +11,7 @@ Project: GitHub Projects v2 number `6`, owner `KerdanetYvan`, id `PVT_kwHOCjZVkc
 
 ## Steps
 
-1. **Read the ticket**: `gh issue view <n> --json number,title,labels,milestone,state,body`. If the issue is closed or unknown, stop and tell the user.
+1. **Read the ticket**: `gh issue view <n> --json number,title,labels,milestone,state,body`. If the issue is closed or unknown, stop and tell the user. If it has the label `type: idea` (it is still in the "Idées" column), stop too: promote it with the user first (type, milestone, definition of done; see "Ideas" in `new-ticket`), then continue.
 2. **Move the ticket to "En cours"**:
    ```bash
    OPT=$(gh api graphql -f query='query{node(id:"PVT_kwHOCjZVkc4BnnU1"){... on ProjectV2{field(name:"Status"){... on ProjectV2SingleSelectField{options{id name}}}}}}' --jq '.data.node.field.options[]|select(.name=="En cours")|.id')

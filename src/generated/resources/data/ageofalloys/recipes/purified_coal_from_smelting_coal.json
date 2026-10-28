@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 400,
+  "experience": 0.1,
+  "group": "purified_coal",
+  "ingredient": {
+    "item": "minecraft:coal"
+  },
+  "result": "ageofalloys:purified_coal"
+}

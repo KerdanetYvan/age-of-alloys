@@ -34,13 +34,13 @@
 
 ## 3. Recettes et ratios
 
-**Règle de conservation du métal** : le nombre de lingots obtenus égale le nombre de lingots de métal consommés. Le carbone de l'acier est le charbon, qui s'incorpore à l'alliage : il n'est pas compté comme un métal.
+**Règle de conservation du métal** : le nombre de lingots obtenus égale le nombre de lingots de métal consommés. Le carbone de l'acier est le charbon purifié, qui s'incorpore à l'alliage : il n'est pas compté comme un métal. L'acier fait exception à l'équilibre 1 pour 1 entre fer et lingots : 4 fer donnent 1 lingot (#164).
 
 | Alliage | Entrées | Résultat | Remarque |
 |---|---|---|---|
 | Bronze | 3 cuivre + 1 étain | 4 lingots | La proportion déjà prévue dans [starter-alloys.md](starter-alloys.md) |
 | Duralumin | 5 aluminium + 1 cuivre + 1 magnésium + 1 manganèse | 8 lingots | Les quatre composants sont requis. L'aluminium domine ; les proportions réelles (94 / 4 / 1 / 0,5 %) sont simplifiées pour que les petites quantités restent jouables |
-| Acier | 4 fer + 1 charbon | 4 lingots | Le charbon est le tag `ageofalloys:coal` (le charbon seul, pas le charbon de bois) |
+| Acier | 4 fer + 1 charbon purifié | 1 lingot | Le charbon purifié est le tag `ageofalloys:purified_coal`. Il se fabrique avec du charbon (pas du charbon de bois), cuit au four (400 ticks) ou au haut fourneau (200 ticks) |
 
 - **Temps de fonte** : 200 ticks (10 secondes) par lot au départ.
 - Une recette consomme un lot entier d'un coup : les entrées doivent donc contenir au moins les quantités indiquées (la fonderie travaille par lots).
@@ -50,7 +50,7 @@
 
 **Ordre de progression** : bronze, puis duralumin, puis acier.
 
-**Le problème à résoudre.** Les ingrédients de l'acier (fer et charbon) sont les plus faciles à trouver, alors que l'acier est le meilleur matériau de la première version. Sans autre frein, on pourrait faire de l'acier avant le bronze. Les métaux rares, eux, freinent déjà le duralumin (aluminium, magnésium et manganèse sont à chercher dans le monde, étape 3).
+**Le problème à résoudre.** Les ingrédients de l'acier (fer et charbon) sont les plus faciles à trouver, alors que l'acier est le meilleur matériau de la première version. Sans autre frein, on pourrait faire de l'acier avant le bronze. La chaleur est un frein ; depuis #164, l'étape du charbon purifié et le rendement de 1 lingot pour 4 fer en sont d'autres. Les métaux rares, eux, freinent déjà le duralumin (aluminium, magnésium et manganèse sont à chercher dans le monde, étape 3).
 
 **Piste retenue : un niveau de chaleur.**
 - Chaque recette demande un niveau de chaleur de 1, 2 ou 3.

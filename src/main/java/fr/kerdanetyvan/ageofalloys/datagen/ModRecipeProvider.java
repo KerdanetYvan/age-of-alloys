@@ -64,10 +64,11 @@ public class ModRecipeProvider extends RecipeProvider {
                 .time(200)
                 .save(writer);
 
-        // The coal is the carbon of the steel, not the charcoal. The heat level asks for a coal block, a lava bucket or better.
-        AlloyingRecipeBuilder.alloying(ModItems.STEEL_INGOT.get(), 4)
+        // The purified coal is the carbon of the steel: four iron ingots and one purified coal make one ingot.
+        // The heat level asks for a coal block, a lava bucket or better.
+        AlloyingRecipeBuilder.alloying(ModItems.STEEL_INGOT.get(), 1)
                 .ingredient(Tags.Items.INGOTS_IRON, 4)
-                .ingredient(ModTags.COAL, 1)
+                .ingredient(ModTags.PURIFIED_COAL, 1)
                 .heat(3)
                 .time(200)
                 .save(writer);
@@ -107,6 +108,11 @@ public class ModRecipeProvider extends RecipeProvider {
             smelting(writer, sources, RecipeCategory.MISC, ingot, 0.7F, 200, metal.ingotName());
             blasting(writer, sources, RecipeCategory.MISC, ingot, 0.7F, 100, metal.ingotName());
         }
+
+        // Coal is cooked for a long time into purified coal. Charcoal does not work: it is already half cooked wood.
+        List<ItemLike> coal = List.of(Items.COAL);
+        smelting(writer, coal, RecipeCategory.MISC, ModItems.PURIFIED_COAL.get(), 0.1F, 400, "purified_coal");
+        blasting(writer, coal, RecipeCategory.MISC, ModItems.PURIFIED_COAL.get(), 0.1F, 200, "purified_coal");
     }
 
     /**

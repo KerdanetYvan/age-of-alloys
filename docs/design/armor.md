@@ -74,7 +74,7 @@ Avec les recettes de la fonderie ([alloy-creation.md](alloy-creation.md)), 24 li
 |---|---:|---:|---|
 | Bronze | 6 | 24 | 18 cuivre et 6 étain |
 | Duralumin | 3 | 24 | 15 aluminium, 3 cuivre, 3 magnésium et 3 manganèse |
-| Acier | 6 | 24 | 24 fer et 6 charbon |
+| Acier | 24 | 24 | 96 fer et 24 charbon purifié |
 
 À titre de comparaison, un jeu d'outils complet demande 11 lingots.
 

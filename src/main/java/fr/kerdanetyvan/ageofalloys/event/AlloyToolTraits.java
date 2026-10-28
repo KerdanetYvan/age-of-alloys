@@ -5,7 +5,12 @@ import fr.kerdanetyvan.ageofalloys.content.ToolTrait;
 import fr.kerdanetyvan.ageofalloys.registry.ModTiers;
 import java.util.UUID;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.AxeItem;
@@ -19,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -91,6 +97,29 @@ public final class AlloyToolTraits {
             event.addModifier(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(STEEL_KNOCKBACK_ID,
                     "Steel weapon knockback", ToolTrait.STEEL_ATTACK_KNOCKBACK_BONUS,
                     AttributeModifier.Operation.ADDITION));
+        }
+    }
+
+    /**
+     * Stun. A hit of a steel sword or axe has a chance to slow the target for a moment. Only a hit made by hand
+     * counts: the one who causes the damage is also the one who strikes, so not an arrow, nor thorns. Server side
+     * only, where the damage is dealt. Creatures that hold a steel weapon stun too.
+     */
+    @SubscribeEvent
+    public static void onLivingHurt(LivingHurtEvent event) {
+        LivingEntity target = event.getEntity();
+        DamageSource source = event.getSource();
+        if (target.level().isClientSide() || source.is(DamageTypes.THORNS)
+                || source.getDirectEntity() != source.getEntity()
+                || !(source.getEntity() instanceof LivingEntity attacker)) {
+            return;
+        }
+        Item weapon = attacker.getMainHandItem().getItem();
+        boolean steelWeapon = (weapon instanceof SwordItem sword && sword.getTier() == ModTiers.STEEL)
+                || (weapon instanceof AxeItem axe && axe.getTier() == ModTiers.STEEL);
+        if (steelWeapon && target.getRandom().nextFloat() < ToolTrait.STEEL_STUN_CHANCE) {
+            target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,
+                    ToolTrait.STEEL_STUN_DURATION_TICKS, ToolTrait.STEEL_STUN_AMPLIFIER), attacker);
         }
     }
 

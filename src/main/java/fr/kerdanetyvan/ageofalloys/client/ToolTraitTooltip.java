@@ -6,7 +6,10 @@ import fr.kerdanetyvan.ageofalloys.registry.ModTiers;
 import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,10 +32,17 @@ public final class ToolTraitTooltip {
                 addTrait(tooltip, "steel.mining", ToolTrait.displayedPercent(ToolTrait.STEEL_STONE_MINING_MULTIPLIER));
             }
         }
+        // The stun is a trait of the steel weapons; the axe is both a tool and a weapon, so it gets both lines.
+        Item item = event.getItemStack().getItem();
+        if ((item instanceof SwordItem sword && sword.getTier() == ModTiers.STEEL)
+                || (item instanceof AxeItem axe && axe.getTier() == ModTiers.STEEL)) {
+            addTrait(tooltip, "steel.stun", ToolTrait.stunChancePercent(), ToolTrait.stunWholeSeconds(),
+                    ToolTrait.stunTenthOfSecond());
+        }
     }
 
-    private static void addTrait(List<Component> tooltip, String key, int value) {
-        tooltip.add(Component.translatable("tooltip." + AgeOfAlloys.MOD_ID + ".trait." + key, value)
+    private static void addTrait(List<Component> tooltip, String key, Object... values) {
+        tooltip.add(Component.translatable("tooltip." + AgeOfAlloys.MOD_ID + ".trait." + key, values)
                 .withStyle(ChatFormatting.BLUE));
     }
 

@@ -13,13 +13,14 @@ import net.minecraft.world.item.ArmorItem;
  * @param durabilityMultiplier the durability of a piece is this multiplier times a number of its own
  * @param toughness           reduces the big hits taken at once
  * @param knockbackResistance resistance to being pushed back by a hit
+ * @param movementSpeedBonus  change of the speed of the wearer, per piece, as a share of the base speed (0.03 is +3 %)
  * @param enchantmentValue    enchantability: the higher, the better the enchantments offered
  */
-public record ArmorStats(int boots, int leggings, int chestplate, int helmet, int durabilityMultiplier, float toughness, float knockbackResistance, int enchantmentValue) {
+public record ArmorStats(int boots, int leggings, int chestplate, int helmet, int durabilityMultiplier, float toughness, float knockbackResistance, double movementSpeedBonus, int enchantmentValue) {
 
-    public static final ArmorStats BRONZE = new ArmorStats(2, 5, 6, 2, 20, 0.0F, 0.0F, 10);
-    public static final ArmorStats DURALUMIN = new ArmorStats(2, 5, 6, 2, 13, 0.0F, 0.0F, 22);
-    public static final ArmorStats STEEL = new ArmorStats(3, 5, 7, 3, 27, 1.0F, 0.0F, 9);
+    public static final ArmorStats BRONZE = new ArmorStats(2, 5, 6, 2, 20, 0.0F, 0.0F, 0.0, 10);
+    public static final ArmorStats DURALUMIN = new ArmorStats(2, 5, 6, 2, 13, 0.0F, 0.0F, 0.03, 22);
+    public static final ArmorStats STEEL = new ArmorStats(3, 5, 7, 3, 27, 1.0F, 0.05F, -0.01, 9);
 
     /** The protection of a piece. */
     public int protection(ArmorItem.Type type) {

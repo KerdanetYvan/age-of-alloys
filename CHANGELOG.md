@@ -8,6 +8,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ## [Non publié]
 
 ### Ajouté
+- Les armures d'alliage ont chacune leur caractère : chaque pièce en duralumin accélère de 3 % (12 % avec le jeu complet), et chaque pièce en acier résiste un peu au recul (0,2 avec le jeu complet) mais ralentit de 1 % (4 % avec le jeu complet). Le bronze ne change pas. Ces effets s'affichent dans l'info-bulle de la pièce.
 - Les blocs de métal : un bloc de 9 lingots pour chacun des sept métaux (étain, aluminium, magnésium, manganèse, bronze, duralumin et acier) et un bloc de 9 objets bruts pour l'étain, l'aluminium, le magnésium et le manganèse. À l'établi, 9 objets font un bloc et un bloc rend 9 objets. Ils se minent à la pioche, comme les blocs de fer (en pierre, ou en fer pour le magnésium et le manganèse), et sont dans l'onglet créatif.
 - Le charbon purifié : un charbon cuit longtemps au four (20 secondes) ou au haut fourneau (10 secondes), qui apporte le carbone de l'acier. Il est dans l'onglet créatif. Le charbon de bois n'en donne pas.
 - Les succès d'Age of Alloys : une page de succès qui apparaît quand on ramasse son premier métal brut, et guide le joueur du minerai aux alliages, aux outils et aux armures en 9 étapes (le tour des métaux, la fonderie, le bronze, le duralumin, l'acier, les outils, l'armure et un défi final). Leurs textes sont en anglais et en français et donnent des indices sans révéler les recettes, qu'on trouve dans le livre de recettes de la fonderie.

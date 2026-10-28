@@ -69,4 +69,9 @@ public final class AlloyArmorMaterial implements ArmorMaterial {
     public float getKnockbackResistance() {
         return stats.knockbackResistance();
     }
+
+    /** The change of speed that each piece gives to its wearer, as a share of the base speed. */
+    public double movementSpeedBonus() {
+        return stats.movementSpeedBonus();
+    }
 }

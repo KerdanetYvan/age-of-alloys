@@ -37,8 +37,8 @@ Tout se trouve dans l'onglet créatif **Age of Alloys**, et tout s'obtient aussi
 | Armure | Rôle | Protection (jeu complet) | Durabilité (jeu complet) | Robustesse (par pièce) |
 |---|---|---:|---:|---:|
 | Bronze | Comme le fer, mais elle dure plus longtemps | 15 | 1 100 | 0 |
-| Duralumin | Comme le fer, un peu moins durable ; la meilleure enchantabilité | 15 | 715 | 0 |
-| Acier | Juste en dessous du diamant | 18 | 1 485 | 1 |
+| Duralumin | Comme le fer, un peu moins durable mais un peu plus rapide ; la meilleure enchantabilité | 15 | 715 | 0 |
+| Acier | Juste en dessous du diamant, un peu lourd mais plus dur à repousser | 18 | 1 485 | 1 |
 | _Fer (vanilla, pour repère)_ | | _15_ | _825_ | _0_ |
 
 > **Bêta :** toute la boucle fonctionne en survie (trouver les minerais, fondre les lingots, fabriquer les alliages, façonner outils et armures), mais le mod est encore en test : attendez-vous à quelques aspérités. La compatibilité avec d'autres mods, les succès et un livre de recettes pour la fonderie viendront plus tard.

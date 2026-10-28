@@ -37,13 +37,13 @@ Lecture :
 
 ## 3. Nos valeurs
 
-| Alliage | Protection | Total | Multiplicateur | Durabilité par pièce | Enchantabilité | Résistance |
-|---|---|---:|---:|---|---:|---:|
-| **Bronze** | 2, 5, 6, 2 | 15 | 20 | 260, 300, 320, 220 | 10 | 0 |
-| **Duralumin** | 2, 5, 6, 2 | 15 | 13 | 169, 195, 208, 143 | 22 | 0 |
-| **Acier** | 3, 5, 7, 3 | 18 | 27 | 351, 405, 432, 297 | 9 | 1 |
+| Alliage | Protection | Total | Multiplicateur | Durabilité par pièce | Enchantabilité | Résistance | Recul | Vitesse |
+|---|---|---:|---:|---|---:|---:|---:|---:|
+| **Bronze** | 2, 5, 6, 2 | 15 | 20 | 260, 300, 320, 220 | 10 | 0 | 0 | 0 |
+| **Duralumin** | 2, 5, 6, 2 | 15 | 13 | 169, 195, 208, 143 | 22 | 0 | 0 | +3 % |
+| **Acier** | 3, 5, 7, 3 | 18 | 27 | 351, 405, 432, 297 | 9 | 1 | 0,05 | −1 % |
 
-La durabilité par pièce est donnée dans l'ordre bottes, jambières, plastron, casque. Aucune de nos armures n'a de résistance au recul.
+La durabilité par pièce est donnée dans l'ordre bottes, jambières, plastron, casque. La résistance au recul et la vitesse sont **par pièce** (le jeu complet d'acier donne 0,2 de recul et −4 % de vitesse, celui de duralumin +12 % de vitesse) : ces attributs et les bonus de set sont décrits dans [alloy-traits.md](alloy-traits.md) (#168, #172). Le bronze n'en a pas.
 
 **Durabilité d'un jeu complet** : fer 825, **bronze 1 100**, **duralumin 715**, **acier 1 485**, diamant 1 815.
 

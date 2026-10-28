@@ -37,8 +37,8 @@ Everything is in the **Age of Alloys** creative tab, and it can all be obtained 
 | Armor | Role | Protection (full set) | Durability (full set) | Toughness (per piece) |
 |---|---|---:|---:|---:|
 | Bronze | Like iron, but it lasts longer | 15 | 1,100 | 0 |
-| Duralumin | Like iron, a bit less durable; the best enchantability | 15 | 715 | 0 |
-| Steel | Just below diamond | 18 | 1,485 | 1 |
+| Duralumin | Like iron, a bit less durable and a bit faster to run in; the best enchantability | 15 | 715 | 0 |
+| Steel | Just below diamond, a bit heavy but harder to knock back | 18 | 1,485 | 1 |
 | _Iron (vanilla, for reference)_ | | _15_ | _825_ | _0_ |
 
 > **Beta:** the whole loop works in survival (find the ores, melt the ingots, make the alloys, craft tools and armor), but the mod is still being tested: expect rough edges. Compatibility with other mods, advancements and a recipe book for the foundry come later.

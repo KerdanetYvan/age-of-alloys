@@ -41,8 +41,8 @@
 À confirmer au moment du code. Les nombres (valeurs des traits) vont dans `content`, code neutre sans Forge (comme `ArmorStats` ou `ToolStats`), et tout ce qui touche au jeu va dans un paquet propre à Forge (voir [../architecture.md](../architecture.md)).
 
 **Attributs.**
-- Une sous-classe de l'armure (par exemple `AlloyArmorItem`, qui remplace l'`ArmorItem` simple de `ModItems.armor(...)`) ajoute les modificateurs en plus de ceux du matériau (protection, résistance).
-- La **résistance au recul de l'acier n'a pas besoin de code** : `ArmorStats` la porte déjà (`knockbackResistance`, 0 pour l'instant). Il suffit de la passer à 0,05 pour l'acier.
+- La sous-classe de l'armure `AlloyArmorItem` (faite en #172) remplace l'`ArmorItem` simple dans `ModItems.armor(...)` et ajoute les modificateurs en plus de ceux du matériau (protection, résistance). Elle vit dans `content` : tout ce qu'elle utilise est vanilla, sans Forge.
+- La **résistance au recul de l'acier n'a pas besoin de code** : `ArmorStats` la porte déjà (`knockbackResistance`), passée à 0,05 pour l'acier (#172). La vitesse est un nouveau champ de `ArmorStats`, `movementSpeedBonus`.
 - La vitesse est un modificateur de l'attribut de vitesse de déplacement, en pourcentage de la valeur de base. Chaque modificateur demande un **identifiant unique par pièce et par attribut**, sans quoi les pièces s'écraseraient entre elles.
 
 **Détection du set.** Une règle unique, utilisée par les trois effets : l'entité porte quatre pièces dont le matériau est celui du même alliage (on lit les emplacements d'armure). Cette règle s'applique à toute créature qui porte l'armure, pas seulement au joueur, comme la protection vanilla.

@@ -1,13 +1,14 @@
 package fr.kerdanetyvan.ageofalloys.registry;
 
 import fr.kerdanetyvan.ageofalloys.AgeOfAlloys;
+import fr.kerdanetyvan.ageofalloys.content.AlloyArmorItem;
+import fr.kerdanetyvan.ageofalloys.content.AlloyArmorMaterial;
 import fr.kerdanetyvan.ageofalloys.content.Metal;
 import fr.kerdanetyvan.ageofalloys.content.ToolType;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.function.Supplier;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.HoeItem;
@@ -208,8 +209,8 @@ public final class ModItems {
         return INGOTS.get(metal);
     }
 
-    private static RegistryObject<Item> armor(Metal metal, ArmorMaterial material, ArmorItem.Type type) {
-        return ITEMS.register(metal.armorName(type), () -> new ArmorItem(material, type, new Item.Properties()));
+    private static RegistryObject<Item> armor(Metal metal, AlloyArmorMaterial material, ArmorItem.Type type) {
+        return ITEMS.register(metal.armorName(type), () -> new AlloyArmorItem(material, type, new Item.Properties()));
     }
 
     private static RegistryObject<Item> tool(Metal metal, ToolType type, Supplier<Item> factory) {

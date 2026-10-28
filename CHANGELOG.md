@@ -8,6 +8,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ## [Non publié]
 
 ### Ajouté
+- L'épée et la hache en acier repoussent un peu plus fort : un bonus de recul d'attaque de 0,2 quand on les tient en main (environ un quart de recul en plus pour un coup simple). Le jeu l'affiche dans leur info-bulle.
 - L'épée et la hache en duralumin portent un demi-bloc plus loin (3,5 blocs au lieu de 3) quand on les tient en main. Le jeu l'affiche dans leur info-bulle comme un bonus de portée.
 - Les outils d'alliage minent plus vite certains blocs, avec une ligne bleue dans leur info-bulle : les outils en duralumin sont deux fois plus rapides sur la roche (pierre, granite, diorite, andésite, tuf) et sur tous les minerais, sauf sur l'ardoise des abîmes elle-même ; les outils en acier sont 25 % plus rapides sur la pierre et sur l'ardoise. Le bronze ne change pas.
 - Les bonus des ensembles d'armure d'alliage, avec les quatre pièces portées : le duralumin réduit de 30 % les dégâts de chute, l'acier réduit de moitié les dégâts de feu, et le bronze répare lentement ses pièces abîmées (1 de durabilité par pièce toutes les 3 minutes).

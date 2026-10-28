@@ -30,8 +30,8 @@ Everything is in the **Age of Alloys** creative tab, and it can all be obtained 
 | Alloy | Role | Durability | Mining speed |
 |---|---|---:|---:|
 | Bronze | A sturdy mid-game tool, more durable than iron | 400 | 6 |
-| Duralumin | The fast miner: quick and highly enchantable, with a sword that hits 2.0 times per second | 300 | 9 |
-| Steel | The best material of this version, just below diamond | 1,000 | 7.5 |
+| Duralumin | The fast miner: quick and highly enchantable, twice as fast on rock and ores, with a sword that hits 2.0 times per second | 300 | 9 |
+| Steel | The best material of this version, just below diamond, a bit faster on stone and deepslate | 1,000 | 7.5 |
 | _Iron (vanilla, for reference)_ | | _250_ | _6_ |
 
 | Armor | Role | Protection (full set) | Durability (full set) | Toughness (per piece) |

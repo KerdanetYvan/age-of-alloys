@@ -41,20 +41,20 @@
 
 | Alliage | Outils (pioche, hache, pelle, houe) | Armes (épée, hache) |
 |---|---|---|
-| **Duralumin** | minage ×1,25 sur les **minerais** | +0,5 de **portée d'attaque** |
+| **Duralumin** | minage ×2 sur la **roche et les minerais** (pas sur l'ardoise elle-même) | +0,5 de **portée d'attaque** |
 | **Bronze** | aucun | aucun |
 | **Acier** | minage ×1,25 sur la **pierre et l'ardoise** | +20 % de **recul infligé** et 15 % de chance d'**étourdir** la cible (Lenteur IV, 2,5 s) |
 
 La hache est à la fois un outil et une arme : elle reçoit les deux traits de son alliage.
 
 **Pourquoi ces choix :**
-- Le **duralumin** est l'alliage du mineur pressé. Sa vitesse de base (9) est déjà la plus haute ; le bonus sur les minerais la pousse à 11,25 là où l'on creuse le plus, donc la pioche en duralumin est faite pour chercher. La portée d'attaque (+0,5, pour 3 de base) donne à son épée, qui frappe déjà 2 fois par seconde, un petit avantage de placement, sans toucher à ses dégâts. Elle est à surveiller avec sa cadence.
+- Le **duralumin** est l'alliage du mineur pressé. Sa vitesse de base (9) est déjà la plus haute ; le bonus (×2) la pousse à 18 sur la roche et sur tous les minerais, là où l'on creuse le plus, donc la pioche en duralumin est faite pour chercher. L'ardoise des abîmes n'est pas accélérée : c'est le petit domaine propre de l'acier. La portée d'attaque (+0,5, pour 3 de base) donne à son épée, qui frappe déjà 2 fois par seconde, un petit avantage de placement, sans toucher à ses dégâts. Elle est à surveiller avec sa cadence.
 - Le **bronze** n'a pas de trait d'outil : sa durabilité déjà élevée est son trait, et son armure a déjà la réparation lente. Si on lui en trouve un plus tard, ce sera une décision à part.
 - L'**acier** est l'alliage de la force. Sa pioche (7,5 de base) monte à environ 9,4 sur la pierre et l'ardoise, au-dessus du diamant (8) sur ce seul type de bloc, ce qui reste cohérent avec « juste en dessous du diamant » partout ailleurs. Le recul supplémentaire de l'épée et de la hache (+20 %) donne un coup lourd, et l'étourdissement (une chance sur sept environ à chaque coup) le prolonge : la cible est ralentie assez longtemps pour fuir ou enchaîner un coup de plus.
 
-**Ordres de grandeur** : pioche en duralumin 9 → 11,25 sur un minerai ; pioche en acier 7,5 → 9,4 sur la pierre ; épée en duralumin 3 + 0,5 de portée (3,5 blocs, hors Rapidité) ; étourdissement de l'acier : Lenteur IV, soit −60 % de vitesse pendant 50 ticks (2,5 secondes), avec une chance de 15 % par coup.
+**Ordres de grandeur** : pioche en duralumin 9 → 18 sur la roche et sur un minerai (l'or, le plus rapide du jeu de base, est à 12) ; pioche en acier 7,5 → 9,4 sur la pierre ; épée en duralumin 3 + 0,5 de portée (3,5 blocs, hors Rapidité) ; étourdissement de l'acier : Lenteur IV, soit −60 % de vitesse pendant 50 ticks (2,5 secondes), avec une chance de 15 % par coup.
 
-**Textes des info-bulles** (une ligne par objet concerné) : « Mineur pressé : minerais +25 % » (outils en duralumin), « Longue portée : +0,5 » (épée et hache en duralumin), « Tailleur de pierre : pierre +25 % » (outils en acier), « Coup lourd : +20 % de recul » et « Coup étourdissant : 15 % de chance de ralentir la cible (2,5 s) » (épée et hache en acier).
+**Textes des info-bulles** (une ligne par objet concerné) : « Mineur pressé : roche et minerais +100 % » (outils en duralumin), « Longue portée : +0,5 » (épée et hache en duralumin), « Tailleur de pierre : pierre et ardoise +25 % » (outils en acier), « Coup lourd : +20 % de recul » et « Coup étourdissant : 15 % de chance de ralentir la cible (2,5 s) » (épée et hache en acier).
 
 ## 5. Détail technique prévu
 
@@ -82,8 +82,8 @@ La hache est à la fois un outil et une arme : elle reçoit les deux traits de s
 
 | Trait | Moyen | Ce qu'on fait |
 |---|---|---|
-| Minage ×1,25 sur les minerais (duralumin) | l'événement de vitesse de minage du joueur (`PlayerEvent.BreakSpeed`) | si l'objet tenu est un outil en duralumin et si le bloc visé est dans l'étiquette `forge:ores` (nos minerais y sont déjà), on multiplie la vitesse par 1,25 |
-| Minage ×1,25 sur la pierre et l'ardoise (acier) | le même événement | si l'objet tenu est un outil en acier et si le bloc est dans l'étiquette vanilla `BASE_STONE_OVERWORLD` (pierre, granite, diorite, andésite, tuf, ardoise), on multiplie la vitesse par 1,25 |
+| Minage ×2 sur la roche et les minerais (duralumin) | l'événement de vitesse de minage du joueur (`PlayerEvent.BreakSpeed`), classe `AlloyToolTraits` du paquet `event` (faite en #180) | si l'objet tenu est un outil en duralumin, si c'est le bon outil pour ce bloc, et si le bloc est dans l'étiquette `forge:ores` (nos minerais y sont déjà) ou dans `BASE_STONE_OVERWORLD` sans être de l'ardoise, on multiplie la vitesse par 2 |
+| Minage ×1,25 sur la pierre et l'ardoise (acier) | le même événement (#180) | si l'objet tenu est un outil en acier et si le bloc est dans l'étiquette vanilla `BASE_STONE_OVERWORLD` (pierre, granite, diorite, andésite, tuf, ardoise), on multiplie la vitesse par 1,25 |
 | Portée d'attaque +0,5 (duralumin) | l'événement des modificateurs d'attribut d'objet (Forge), avec l'attribut de portée d'attaque que Forge ajoute | on ajoute un modificateur de +0,5, avec un identifiant unique, à l'épée et à la hache en duralumin, dans la main principale |
 | Recul +20 % (acier) | à trancher au moment du code (voir ci-dessous) | l'épée et la hache en acier repoussent 20 % plus fort |
 | Étourdissement 15 % (acier) | l'événement de coup reçu (`LivingHurtEvent`), qui donne l'attaquant et la cible | si l'attaquant tient une épée ou une hache en acier et si un tirage au sort à 15 % réussit, on ajoute à la cible l'effet Lenteur IV (`MobEffects.MOVEMENT_SLOWDOWN`, amplificateur 3) pendant 50 ticks |
@@ -105,7 +105,7 @@ La hache est à la fois un outil et une arme : elle reçoit les deux traits de s
 - **Protection et enchantements** : les traits d'armure s'ajoutent, ils ne remplacent rien. Le feu −50 % de l'acier se multiplie avec Protection contre le feu (on réduit le montant avant l'armure et les enchantements). Les dégâts de chute −30 % se multiplient avec Chute amortie.
 - **Vitesse** : la vitesse de base du joueur est de 0,1. Le jeu complet en duralumin (+12 %) reste modeste devant une potion de Rapidité (+20 % par niveau) et l'acier (−4 %) reste à peine perceptible : l'effet doit être senti sans être pénalisant.
 - **Résistance au recul** : l'acier à 0,2 reste loin de la netherite (0,4). Le diamant n'en a pas.
-- **Vitesse de minage** : le bonus de ×1,25 multiplie la vitesse déjà calculée, donc il s'ajoute à Efficacité et à Rapidité (qui augmentent la vitesse de base) sans les remplacer. Il ne change pas ce qu'un outil peut casser : le niveau de minage reste celui du fer.
+- **Vitesse de minage** : le bonus (×2 pour le duralumin, ×1,25 pour l'acier) multiplie la vitesse déjà calculée, donc il s'ajoute à Efficacité et à Rapidité (qui augmentent la vitesse de base) sans les remplacer. Il ne change pas ce qu'un outil peut casser : le niveau de minage reste celui du fer.
 - **Portée d'attaque** : +0,5 sur 3 blocs reste modeste, et ne remplace pas la portée en création (5 blocs).
 - **Recul infligé** : il s'additionne à l'enchantement Recul.
 - **Étourdissement** : la Lenteur IV s'applique aux créatures comme aux joueurs. Une cible déjà sous Lenteur garde l'effet le plus fort ou le plus long (le jeu ne cumule pas deux effets du même type) ; une créature qui résiste à la lenteur y résiste toujours. Contre les joueurs, −60 % pendant 2,5 secondes reste un fort ralentissement et non une immobilisation, ce qui garde le combat jouable.
@@ -135,7 +135,7 @@ Un ticket, une branche, une PR chacun.
 
 | Ticket (à créer) | Contenu |
 |---|---|
-| Ajouter la vitesse de minage des traits d'outil | Les nombres dans `content`, la première classe d'événements d'outil, le minage ×1,25 du duralumin (minerais) et de l'acier (pierre), les lignes d'info-bulle de ces deux traits. Il pose la technique. |
+| Ajouter la vitesse de minage des traits d'outil | Les nombres dans `content`, la première classe d'événements d'outil, le minage ×2 du duralumin (roche et minerais) et ×1,25 de l'acier (pierre et ardoise), les lignes d'info-bulle de ces deux traits. Il pose la technique (fait en #180). |
 | Ajouter la portée d'attaque du duralumin | Le modificateur d'attribut de portée d'attaque sur l'épée et la hache, et sa ligne d'info-bulle. |
 | Ajouter le recul de l'acier | Le recul supplémentaire de l'épée et de la hache en acier, la piste à trancher en codant, et sa ligne d'info-bulle. |
 | Ajouter l'étourdissement de l'acier | Le tirage au sort à 15 % et la Lenteur IV pendant 2,5 secondes à chaque coup d'une épée ou d'une hache en acier, et sa ligne d'info-bulle. |

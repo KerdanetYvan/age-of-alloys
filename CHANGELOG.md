@@ -7,6 +7,8 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 
 ## [Non publié]
 
+## [0.4.0] - 2026-10-28
+
 ### Ajouté
 - Chaque coup de l'épée et de la hache en acier a 15 % de chance (environ un coup sur sept) d'étourdir la cible : elle est ralentie de 60 % pendant 2,5 secondes. Seuls les coups portés à la main comptent, pas les flèches. Une ligne bleue de leur info-bulle l'annonce.
 - L'épée et la hache en acier repoussent un peu plus fort : un bonus de recul d'attaque de 0,2 quand on les tient en main (environ un quart de recul en plus pour un coup simple). Le jeu l'affiche dans leur info-bulle.
@@ -22,8 +24,6 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 
 ### Modifié
 - Le minerai d'aluminium dans la pierre est plus contrasté : ses veines, d'un bleu-gris plus sombre, se détachent mieux de la pierre et ne se confondent plus avec le magnésium.
-
-### Modifié
 - Le duralumin est un vrai outil de vitesse : ses outils sont plus durables (300 au lieu de 200), minent plus vite (9 au lieu de 7,5), frappent un peu plus fort (+1 de dégâts) et s'enchantent bien mieux (22 au lieu de 15, comme l'or). Son armure dure plus longtemps (715 au total au lieu de 550) et s'enchante aussi mieux (22 au lieu de 15).
 - Les outils en acier se rapprochent du diamant : 1 000 de durabilité au lieu de 850 et une vitesse de minage de 7,5 au lieu de 7.
 - L'acier est plus exigeant : il se fabrique avec 4 lingots de fer et 1 charbon purifié pour 1 lingot, au lieu de 4 lingots de fer et 1 charbon pour 4 lingots. Une armure complète en acier demande ainsi 96 lingots de fer.

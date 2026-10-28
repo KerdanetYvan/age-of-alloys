@@ -23,8 +23,12 @@ Everything is in the **Age of Alloys** creative tab, and it can all be obtained 
 - **4 ores**: tin, aluminum, magnesium and manganese, found in stone and deepslate in every biome of the Overworld. Each drops a raw item that melts into an ingot in a furnace or a blast furnace. Aluminum and tin are mined with a stone pickaxe, magnesium and manganese need an iron-level pickaxe. Ores only generate in chunks created after this version: explore a new area or create a new world.
 - **7 ingots**: three alloys (bronze, duralumin and steel) and the four raw metals they are made from (tin, aluminum, magnesium and manganese).
 - **15 tools and weapons**: a pickaxe, an axe, a shovel, a hoe and a sword for each alloy. All of them mine at iron level, and they are crafted with ingots and sticks.
-- **The alloy foundry**: a block crafted from four stone bricks, three smooth stones and a bucket. It melts bronze, duralumin and steel from the raw metals, and the fuel must be hot enough for the alloy: any fuel for bronze, coal or better for duralumin, a coal block or a lava bucket for steel.
+- **The alloy foundry**: a block crafted from four stone bricks, three smooth stones and a bucket. It melts bronze, duralumin and steel from the raw metals, and the fuel must be hot enough for the alloy: any fuel for bronze, coal or better for duralumin, a coal block or a lava bucket for steel. The hotter a fuel, the faster the foundry burns it. A recipe book next to its screen shows the recipes you have unlocked.
+- **Purified coal**: coal cooked in a furnace or a blast furnace. Steel needs it: 4 iron ingots and 1 purified coal make 1 steel ingot.
+- **11 blocks**: a block of nine ingots for each of the seven metals and a block of nine raw items for each of the four raw metals, crafted both ways.
 - **12 pieces of armor**: a helmet, a chestplate, leggings and boots for each alloy, crafted with ingots in the shapes of the vanilla armor and repaired with the ingot of their alloy.
+- **Alloy traits**: each alloy has its own character. Duralumin armor makes you faster and the full set softens falls, bronze armor slowly mends itself with the full set, steel armor resists knockback and the full set halves fire damage. Duralumin tools mine rock and ores twice as fast and its sword reaches further, steel tools mine stone and deepslate faster and its sword pushes harder and sometimes stuns.
+- **Advancements**: an Age of Alloys tab that guides you from the first raw metal to the alloys, the tools and the armor.
 - Names in English and French. The ingots are tagged `forge:ingots/<metal>`, so other mods and recipes recognize them as ingots of their metal.
 
 | Alloy | Role | Durability | Mining speed |
@@ -41,7 +45,7 @@ Everything is in the **Age of Alloys** creative tab, and it can all be obtained 
 | Steel | Just below diamond, a bit heavy but harder to knock back, and the full set halves fire damage | 18 | 1,485 | 1 |
 | _Iron (vanilla, for reference)_ | | _15_ | _825_ | _0_ |
 
-> **Beta:** the whole loop works in survival (find the ores, melt the ingots, make the alloys, craft tools and armor), but the mod is still being tested: expect rough edges. Compatibility with other mods, advancements and a recipe book for the foundry come later.
+> **Beta:** the whole loop works in survival (find the ores, melt the ingots, make the alloys, craft tools and armor), but the mod is still being tested: expect rough edges. Compatibility with other mods comes later.
 
 ## Planned features
 
@@ -59,16 +63,16 @@ Details and order are in the [roadmap](ROADMAP.md) (in French).
 Requirements: Minecraft 1.20.1 and Forge 47.x (Java 17).
 
 1. Install Forge for Minecraft 1.20.1.
-2. Download `ageofalloys-0.3.0.jar` from the [releases](https://github.com/KerdanetYvan/age-of-alloys/releases) page.
+2. Download `ageofalloys-0.4.0.jar` from the [releases](https://github.com/KerdanetYvan/age-of-alloys/releases) page.
 3. Put the jar in the `mods` folder of your game.
 
-v0.3.0 is a pre-release (beta): expect rough edges.
+v0.4.0 is a pre-release (beta): expect rough edges.
 
 ## Compatibility
 
 | Minecraft | Loader | Status |
 |-----------|--------|--------|
-| 1.20.1 | Forge 47.x (Java 17) | 🧪 Beta (v0.3.0) |
+| 1.20.1 | Forge 47.x (Java 17) | 🧪 Beta (v0.4.0) |
 
 A port to NeoForge and newer Minecraft versions is planned for later.
 

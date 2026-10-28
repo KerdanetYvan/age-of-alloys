@@ -23,8 +23,12 @@ Tout se trouve dans l'onglet créatif **Age of Alloys**, et tout s'obtient aussi
 - **4 minerais** : l'étain, l'aluminium, le magnésium et le manganèse, dans la pierre et l'ardoise des profondeurs de tous les biomes du monde normal. Chacun lâche un objet brut qui se fond en lingot au four ou au haut fourneau. L'aluminium et l'étain se minent à la pioche en pierre, le magnésium et le manganèse demandent une pioche de niveau fer. Les minerais ne se génèrent que dans les chunks créés après cette version : il faut explorer une zone neuve ou créer un nouveau monde.
 - **7 lingots** : trois alliages (bronze, duralumin et acier) et les quatre métaux bruts dont ils sont faits (étain, aluminium, magnésium et manganèse).
 - **15 outils et armes** : une pioche, une hache, une pelle, une houe et une épée pour chaque alliage. Tous minent au niveau du fer, et se fabriquent avec des lingots et des bâtons.
-- **La fonderie d'alliages** : un bloc qui se fabrique avec quatre briques de pierre, trois pierres lisses et un seau. Elle fond le bronze, le duralumin et l'acier à partir des métaux bruts, et le combustible doit être assez chaud pour l'alliage : n'importe lequel pour le bronze, un charbon ou mieux pour le duralumin, un bloc de charbon ou un seau de lave pour l'acier.
+- **La fonderie d'alliages** : un bloc qui se fabrique avec quatre briques de pierre, trois pierres lisses et un seau. Elle fond le bronze, le duralumin et l'acier à partir des métaux bruts, et le combustible doit être assez chaud pour l'alliage : n'importe lequel pour le bronze, un charbon ou mieux pour le duralumin, un bloc de charbon ou un seau de lave pour l'acier. Plus un combustible est chaud, plus vite la fonderie le brûle. Un livre de recettes à côté de son écran montre les recettes débloquées.
+- **Le charbon purifié** : du charbon cuit au four ou au haut fourneau. L'acier en demande : 4 lingots de fer et 1 charbon purifié donnent 1 lingot d'acier.
+- **11 blocs** : un bloc de neuf lingots pour chacun des sept métaux et un bloc de neuf objets bruts pour chacun des quatre métaux bruts, qui se fabriquent dans les deux sens.
 - **12 pièces d'armure** : un casque, un plastron, des jambières et des bottes pour chaque alliage, qui se fabriquent avec des lingots selon les formes de l'armure de Minecraft et se réparent avec le lingot de leur alliage.
+- **Les traits d'alliage** : chaque alliage a son caractère. L'armure en duralumin rend plus rapide et le jeu complet amortit les chutes, l'armure en bronze se répare lentement avec le jeu complet, l'armure en acier résiste au recul et le jeu complet divise par deux les dégâts de feu. Les outils en duralumin minent la roche et les minerais deux fois plus vite et son épée porte plus loin, les outils en acier minent plus vite la pierre et l'ardoise et son épée repousse plus fort et étourdit parfois.
+- **Les succès** : un onglet Age of Alloys qui guide du premier métal brut aux alliages, aux outils et aux armures.
 - Des noms en anglais et en français. Les lingots portent les tags `forge:ingots/<métal>`, ce qui permet aux autres mods et aux recettes de les reconnaître comme des lingots de leur métal.
 
 | Alliage | Rôle | Durabilité | Vitesse de minage |
@@ -41,7 +45,7 @@ Tout se trouve dans l'onglet créatif **Age of Alloys**, et tout s'obtient aussi
 | Acier | Juste en dessous du diamant, un peu lourd mais plus dur à repousser, et le jeu complet divise par deux les dégâts de feu | 18 | 1 485 | 1 |
 | _Fer (vanilla, pour repère)_ | | _15_ | _825_ | _0_ |
 
-> **Bêta :** toute la boucle fonctionne en survie (trouver les minerais, fondre les lingots, fabriquer les alliages, façonner outils et armures), mais le mod est encore en test : attendez-vous à quelques aspérités. La compatibilité avec d'autres mods, les succès et un livre de recettes pour la fonderie viendront plus tard.
+> **Bêta :** toute la boucle fonctionne en survie (trouver les minerais, fondre les lingots, fabriquer les alliages, façonner outils et armures), mais le mod est encore en test : attendez-vous à quelques aspérités. La compatibilité avec d'autres mods viendra plus tard.
 
 ## Fonctionnalités prévues
 
@@ -59,16 +63,16 @@ Le détail et l'ordre sont dans la [roadmap](ROADMAP.md) (en français).
 Prérequis : Minecraft 1.20.1 et Forge 47.x (Java 17).
 
 1. Installer Forge pour Minecraft 1.20.1.
-2. Télécharger `ageofalloys-0.3.0.jar` depuis la page des [releases](https://github.com/KerdanetYvan/age-of-alloys/releases).
+2. Télécharger `ageofalloys-0.4.0.jar` depuis la page des [releases](https://github.com/KerdanetYvan/age-of-alloys/releases).
 3. Déposer le jar dans le dossier `mods` du jeu.
 
-La v0.3.0 est une pré-version (bêta) : attendez-vous à quelques aspérités.
+La v0.4.0 est une pré-version (bêta) : attendez-vous à quelques aspérités.
 
 ## Compatibilité
 
 | Minecraft | Loader | Statut |
 |-----------|--------|--------|
-| 1.20.1 | Forge 47.x (Java 17) | 🧪 Bêta (v0.3.0) |
+| 1.20.1 | Forge 47.x (Java 17) | 🧪 Bêta (v0.4.0) |
 
 Un portage vers NeoForge et des versions plus récentes est envisagé plus tard.
 

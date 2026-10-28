@@ -21,6 +21,7 @@ crash-reports/
 bin/
 *.ipr
 *.iws
+.impeccable
 
 # Datagen cache
 src/generated/resources/.cache/

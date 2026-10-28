@@ -67,6 +67,7 @@
   "tooltip.ageofalloys.recipe_book.time": "Durée de fonte : %s s",
   "tooltip.ageofalloys.trait.duralumin.mining": "Mineur pressé : roche et minerais +%s %%",
   "tooltip.ageofalloys.trait.steel.mining": "Tailleur de pierre : pierre et ardoise +%s %%",
+  "tooltip.ageofalloys.trait.steel.stun": "Coup étourdissant : %s %% de chance de ralentir la cible (%s,%s s)",
   "tooltip.ageofalloys.set.bronze.title": "Ensemble de bronze (%s/4)",
   "tooltip.ageofalloys.set.bronze.effect": "Chaque pièce regagne 1 de durabilité toutes les %s minutes",
   "tooltip.ageofalloys.set.duralumin.title": "Ensemble de duralumin (%s/4)",

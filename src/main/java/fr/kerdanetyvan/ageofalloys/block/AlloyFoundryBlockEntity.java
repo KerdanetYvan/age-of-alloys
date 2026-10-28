@@ -140,7 +140,8 @@ public class AlloyFoundryBlockEntity extends BlockEntity implements MenuProvider
     /** Runs 20 times per second on the server. */
     public static void serverTick(Level level, BlockPos pos, BlockState state, AlloyFoundryBlockEntity foundry) {
         if (foundry.burnTime > 0) {
-            foundry.burnTime--;
+            // A hotter fire burns its fuel faster: level 1 as is, level 2 twice as fast, level 3 three times.
+            foundry.burnTime = Math.max(foundry.burnTime - Heat.burnSpeed(foundry.burnDuration), 0);
         }
 
         AlloyingRecipe recipe = foundry.recipeCheck.getRecipeFor(foundry.recipeInputs, level).orElse(null);

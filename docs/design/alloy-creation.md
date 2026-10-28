@@ -63,6 +63,14 @@
 | 3 | au moins 10 000 ticks | bloc de charbon, seau de lave | Acier |
 
 - Un combustible d'un niveau supérieur convient aussi aux recettes d'un niveau inférieur.
+- **Un feu chaud brûle vite (#163).** Dans la fonderie, la réserve du combustible baisse de son niveau de chaleur à chaque tick : niveau 1 normalement, niveau 2 deux fois plus vite, niveau 3 trois fois plus vite. Le four ne change pas.
+
+| Combustible | Niveau | Durée du jeu | Durée dans la fonderie | Lots de 200 ticks |
+|---|---|---|---|---|
+| Planches, bâtons | 1 | inchangée | inchangée | inchangé |
+| Charbon, charbon de bois | 2 | 1 600 | 800 | 4 |
+| Bloc de charbon | 3 | 16 000 | 5 333 | 26 |
+| Seau de lave | 3 | 20 000 | 6 667 | 33 |
 
 **Risque.** Le niveau de chaleur est la partie la plus incertaine de ce document : il ajoute une règle à implémenter et à expliquer au joueur. Il est isolé dans le ticket des recettes avancées (section 7, ticket 5) : s'il complique trop, on le retire sans toucher à la fonderie ni au bronze. Deux points à régler à l'équilibrage : le seau de lave laisse un seau vide à rendre, et la valeur exacte des seuils.
 
@@ -70,6 +78,7 @@
 - Le niveau du feu en cours se lit dans la durée du combustible qui brûle (`burnDuration`, déjà sauvegardée) : aucun champ de plus.
 - La règle s'applique à deux endroits : au **rallumage**, un combustible trop froid pour la recette n'est **pas consommé** ; pendant la **fonte**, la progression n'avance que si le feu en cours est assez chaud (sinon elle redescend, comme sans recette).
 - Le seau de lave laisse un **seau vide** dans l'emplacement du combustible, comme un four ; un entonnoir sur un côté peut le retirer.
+- Pour la durée de combustion (#163), `burnDuration` et `burnTime` gardent la durée du jeu : seule la baisse de `burnTime` change (`Heat.burnSpeed`). Le niveau, lu dans `burnDuration`, la flamme de l'écran et la sauvegarde restent donc inchangés.
 - Aucun retour n'est donné au joueur quand un combustible est trop froid : à surveiller en jouant (info-bulle ou succès, hors de ce ticket).
 
 ## 5. Format de la recette

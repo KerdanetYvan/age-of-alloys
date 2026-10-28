@@ -6,14 +6,14 @@
 
 **Un créneau par armure.** Comme pour les outils, chaque armure prend sa place sur la courbe de puissance du jeu de base (cuir, mailles, or, fer, diamant, netherite), et **aucune n'invalide une armure de Minecraft**. En particulier, l'acier reste nettement sous le diamant.
 
-**Les rôles suivent ceux des outils** ([starter-alloys.md](starter-alloys.md)) : le bronze est durable, le duralumin s'use vite, l'acier est le plus puissant.
+**Les rôles suivent ceux des outils** ([starter-alloys.md](starter-alloys.md)) : le bronze est durable, le duralumin est rapide et très enchantable, l'acier est le plus puissant.
 
 **Choix arrêtés** (avec l'utilisateur) :
 
 | Alliage | Rôle de l'armure |
 |---|---|
 | Bronze | Comme le fer en protection, mais plus durable |
-| Duralumin | Comme le fer en protection, mais fragile |
+| Duralumin | Comme le fer en protection, un peu moins durable, très enchantable |
 | Acier | Proche du diamant, nettement dessous |
 
 ## 2. Repères de Minecraft
@@ -40,16 +40,16 @@ Lecture :
 | Alliage | Protection | Total | Multiplicateur | Durabilité par pièce | Enchantabilité | Résistance |
 |---|---|---:|---:|---|---:|---:|
 | **Bronze** | 2, 5, 6, 2 | 15 | 20 | 260, 300, 320, 220 | 10 | 0 |
-| **Duralumin** | 2, 5, 6, 2 | 15 | 10 | 130, 150, 160, 110 | 15 | 0 |
+| **Duralumin** | 2, 5, 6, 2 | 15 | 13 | 169, 195, 208, 143 | 22 | 0 |
 | **Acier** | 3, 5, 7, 3 | 18 | 27 | 351, 405, 432, 297 | 9 | 1 |
 
 La durabilité par pièce est donnée dans l'ordre bottes, jambières, plastron, casque. Aucune de nos armures n'a de résistance au recul.
 
-**Durabilité d'un jeu complet** : fer 825, **bronze 1 100**, **duralumin 550**, **acier 1 485**, diamant 1 815.
+**Durabilité d'un jeu complet** : fer 825, **bronze 1 100**, **duralumin 715**, **acier 1 485**, diamant 1 815.
 
 **Pourquoi ces choix :**
 - Le **bronze** a la protection du fer (15 points) avec une durabilité de ×20 au lieu de ×15 : l'armure de milieu de partie qui dure, comme ses outils (400 de durabilité contre 250).
-- Le **duralumin** a aussi la protection du fer, mais une durabilité de ×10 : elle protège bien sur le moment et s'use vite, dans l'esprit de ses outils (rapides mais fragiles, 200 contre 250). L'enchantabilité de 15 est la plus haute des trois, comme pour ses outils.
+- Le **duralumin** a aussi la protection du fer, mais une durabilité de ×13, un peu sous celle du fer (×15) : elle protège bien sur le moment et s'use un peu plus vite, dans l'esprit de ses outils (rapides mais moins durables, 300 contre 250 pour le fer, qui reste sa référence). L'enchantabilité de 22 est la plus haute des trois, comme pour ses outils.
 - L'**acier** monte à 18 points (contre 20 pour le diamant), avec une résistance de 1 (le diamant a 2) et une durabilité de ×27 (le diamant a ×33) : un cran sous le diamant sur chaque critère. Son enchantabilité de 9 est la plus basse des trois, comme pour ses outils.
 
 **Objet de réparation** : le lingot de l'alliage (le tag `forge:ingots/<alliage>`, comme pour les outils).

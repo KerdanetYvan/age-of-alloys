@@ -32,6 +32,7 @@ Conséquence : plus on met de choses **en données** (JSON), moins il y a de cod
 | `menu` | Menus (emplacements, règles, déplacement rapide) des blocs qui ont une interface | Oui |
 | `recipe` | Le type de recette d'alliage : la recette, ses ingrédients (un tag et une quantité) et son sérialiseur | Non (types `net.minecraft.*` seulement), mais cette règle n'est pas vérifiée automatiquement |
 | `registry` | Enregistrement des objets (`DeferredRegister`, `RegistryObject`), enregistrement du tier auprès de Forge | Oui |
+| `event` | Les gestionnaires d'événements du jeu (par exemple les effets des ensembles d'armure) | Oui, **des deux côtés** : ils doivent aussi tourner sur un serveur dédié |
 | `client` | Tout ce qui touche à l'affichage (écrans, rendu) | Oui, **côté client seulement** (voir la leçon sur les côtés) |
 | `datagen` | Génération des fichiers JSON | Oui |
 

@@ -47,7 +47,7 @@
 
 **Détection du set** (faite en #173, classe `AlloySet` dans `content`). Une règle unique, utilisée par les trois effets, et un emplacement ne compte que si la pièce est à sa place (un plastron posé dans l'emplacement du casque par une commande ne compte pas) : l'entité porte quatre pièces dont le matériau est celui du même alliage (on lit les emplacements d'armure). Cette règle s'applique à toute créature qui porte l'armure, pas seulement au joueur, comme la protection vanilla.
 
-**Effets de set**, par événements du jeu (Forge) :
+**Effets de set** (faits en #174, classe `AlloySetEffects` du paquet `event`, abonnée aux deux côtés pour tourner aussi sur un serveur dédié), par événements du jeu (Forge) :
 
 | Effet | Événement | Ce qu'on fait |
 |---|---|---|

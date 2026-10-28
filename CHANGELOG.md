@@ -8,6 +8,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ## [Non publié]
 
 ### Ajouté
+- Les pièces d'armure d'alliage annoncent dans leur info-bulle le bonus de l'ensemble complet : « Ensemble de duralumin (2/4) » avec la ligne du bonus, en vert quand on porte les quatre pièces et en gris sinon.
 - Les armures d'alliage ont chacune leur caractère : chaque pièce en duralumin accélère de 3 % (12 % avec le jeu complet), et chaque pièce en acier résiste un peu au recul (0,2 avec le jeu complet) mais ralentit de 1 % (4 % avec le jeu complet). Le bronze ne change pas. Ces effets s'affichent dans l'info-bulle de la pièce.
 - Les blocs de métal : un bloc de 9 lingots pour chacun des sept métaux (étain, aluminium, magnésium, manganèse, bronze, duralumin et acier) et un bloc de 9 objets bruts pour l'étain, l'aluminium, le magnésium et le manganèse. À l'établi, 9 objets font un bloc et un bloc rend 9 objets. Ils se minent à la pioche, comme les blocs de fer (en pierre, ou en fer pour le magnésium et le manganèse), et sont dans l'onglet créatif.
 - Le charbon purifié : un charbon cuit longtemps au four (20 secondes) ou au haut fourneau (10 secondes), qui apporte le carbone de l'acier. Il est dans l'onglet créatif. Le charbon de bois n'en donne pas.

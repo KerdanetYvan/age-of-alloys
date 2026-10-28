@@ -45,7 +45,7 @@
 - La **résistance au recul de l'acier n'a pas besoin de code** : `ArmorStats` la porte déjà (`knockbackResistance`), passée à 0,05 pour l'acier (#172). La vitesse est un nouveau champ de `ArmorStats`, `movementSpeedBonus`.
 - La vitesse est un modificateur de l'attribut de vitesse de déplacement, en pourcentage de la valeur de base. Chaque modificateur demande un **identifiant unique par pièce et par attribut**, sans quoi les pièces s'écraseraient entre elles.
 
-**Détection du set.** Une règle unique, utilisée par les trois effets : l'entité porte quatre pièces dont le matériau est celui du même alliage (on lit les emplacements d'armure). Cette règle s'applique à toute créature qui porte l'armure, pas seulement au joueur, comme la protection vanilla.
+**Détection du set** (faite en #173, classe `AlloySet` dans `content`). Une règle unique, utilisée par les trois effets, et un emplacement ne compte que si la pièce est à sa place (un plastron posé dans l'emplacement du casque par une commande ne compte pas) : l'entité porte quatre pièces dont le matériau est celui du même alliage (on lit les emplacements d'armure). Cette règle s'applique à toute créature qui porte l'armure, pas seulement au joueur, comme la protection vanilla.
 
 **Effets de set**, par événements du jeu (Forge) :
 
@@ -60,7 +60,7 @@
 
 ## 5. Info-bulles
 
-- Chaque pièce affiche son trait en une ligne grise : l'attribut (ligne ordinaire du jeu) et, sous la pièce, le bonus de set (« Ensemble de duralumin (4/4) : dégâts de chute −30 % »).
+- Chaque pièce affiche son trait : l'attribut (ligne ordinaire du jeu) puis, sous les attributs, un titre « Ensemble de duralumin (n/4) » et la ligne du bonus de set (« Dégâts de chute réduits de 30 % »). Le chiffre est calculé à partir des nombres de la classe `SetBonus` (`content`), qui porte aussi les nombres des effets.
 - Le bonus de set s'affiche **activé ou grisé** selon ce que porte le joueur. Cela demande de lire l'équipement du joueur côté client : on le fait dans un gestionnaire d'info-bulle du paquet `client` (l'événement d'info-bulle donne le joueur), pas dans l'objet lui-même, pour ne pas faire planter un serveur sans client.
 - Les textes sont des clés de traduction, en anglais et en français, comme tous les noms du mod.
 

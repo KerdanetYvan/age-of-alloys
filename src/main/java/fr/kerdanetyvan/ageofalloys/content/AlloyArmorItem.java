@@ -31,10 +31,12 @@ public class AlloyArmorItem extends ArmorItem {
         SPEED_MODIFIER_IDS.put(Type.HELMET, UUID.fromString("5d3c7a42-81f4-4b1e-9a60-3e2b7c914a04"));
     }
 
+    private final AlloyArmorMaterial alloyMaterial;
     private final Multimap<Attribute, AttributeModifier> modifiers;
 
     public AlloyArmorItem(AlloyArmorMaterial material, Type type, Properties properties) {
         super(material, type, properties);
+        this.alloyMaterial = material;
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         // What the armor already gives: protection, toughness and knockback resistance.
         builder.putAll(super.getDefaultAttributeModifiers(type.getSlot()));
@@ -45,6 +47,11 @@ public class AlloyArmorItem extends ArmorItem {
                     "Armor movement speed", speedBonus, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         this.modifiers = builder.build();
+    }
+
+    /** The material of this piece, as an alloy material (the same object for the four pieces of a set). */
+    public AlloyArmorMaterial alloyMaterial() {
+        return alloyMaterial;
     }
 
     @Override

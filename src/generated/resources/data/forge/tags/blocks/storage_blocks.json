@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#forge:storage_blocks/bronze",
+    "#forge:storage_blocks/duralumin",
+    "#forge:storage_blocks/steel",
+    "#forge:storage_blocks/tin",
+    "#forge:storage_blocks/raw_tin",
+    "#forge:storage_blocks/aluminum",
+    "#forge:storage_blocks/raw_aluminum",
+    "#forge:storage_blocks/magnesium",
+    "#forge:storage_blocks/raw_magnesium",
+    "#forge:storage_blocks/manganese",
+    "#forge:storage_blocks/raw_manganese"
+  ]
+}

@@ -1,6 +1,17 @@
 {
   "values": [
     "ageofalloys:alloy_foundry",
+    "ageofalloys:bronze_block",
+    "ageofalloys:duralumin_block",
+    "ageofalloys:steel_block",
+    "ageofalloys:tin_block",
+    "ageofalloys:raw_tin_block",
+    "ageofalloys:aluminum_block",
+    "ageofalloys:raw_aluminum_block",
+    "ageofalloys:magnesium_block",
+    "ageofalloys:raw_magnesium_block",
+    "ageofalloys:manganese_block",
+    "ageofalloys:raw_manganese_block",
     "ageofalloys:tin_ore",
     "ageofalloys:deepslate_tin_ore",
     "ageofalloys:aluminum_ore",

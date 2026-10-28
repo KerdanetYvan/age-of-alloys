@@ -18,6 +18,14 @@ public class ModBlockLootSubProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.ALLOY_FOUNDRY.get());
 
+        // Every block drops itself.
+        for (Metal metal : Metal.values()) {
+            dropSelf(ModBlocks.metalBlockOf(metal).get());
+            if (metal.kind() == Metal.Kind.RAW) {
+                dropSelf(ModBlocks.rawBlockOf(metal).get());
+            }
+        }
+
         // Every ore drops the raw item of its metal (more with Fortune), or itself with Silk Touch.
         for (Metal metal : Metal.values()) {
             if (metal.kind() == Metal.Kind.RAW) {

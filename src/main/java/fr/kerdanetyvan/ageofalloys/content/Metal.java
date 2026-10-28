@@ -63,6 +63,16 @@ public enum Metal {
         return "raw_" + id;
     }
 
+    /** The block of nine ingots, for example {@code tin_block}. */
+    public String blockName() {
+        return id + "_block";
+    }
+
+    /** The block of nine raw items, for example {@code raw_tin_block}. */
+    public String rawBlockName() {
+        return "raw_" + id + "_block";
+    }
+
     /** The name of an armor piece, for example {@code bronze_helmet}. */
     public String armorName(ArmorItem.Type type) {
         return id + "_" + type.getName();

@@ -27,10 +27,14 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.MANGANESE_INGOT.get());
                 output.accept(ModItems.PURIFIED_COAL.get());
                 for (Metal metal : Metal.values()) {
+                    output.accept(ModItems.metalBlockItemOf(metal).get());
+                }
+                for (Metal metal : Metal.values()) {
                     if (metal.kind() == Metal.Kind.RAW) {
                         output.accept(ModItems.rawOf(metal).get());
                         output.accept(ModItems.oreItemOf(metal).get());
                         output.accept(ModItems.deepslateOreItemOf(metal).get());
+                        output.accept(ModItems.rawBlockItemOf(metal).get());
                     }
                 }
                 output.accept(ModItems.BRONZE_PICKAXE.get());

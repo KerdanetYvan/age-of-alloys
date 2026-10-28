@@ -91,6 +91,8 @@ Chaque minerai se mine avec une pioche (le tag `mineable/pickaxe`). Le niveau re
 
 Nos trois alliages minent au **niveau du fer**. Le bronze, le duralumin et l'acier doivent donc extraire le magnésium et le manganèse. **Vérifié en jeu avec #110** : une pioche de fer, de bronze, de duralumin ou d'acier lâche l'objet brut du magnésium et du manganèse, alors qu'une pioche en bois ou en pierre ne lâche rien. Nos alliages ont pourtant leur propre tag de niveau (`needs_bronze_tool`…), mais ils sont rangés au niveau du fer, donc ils ouvrent aussi `needs_iron_tool`.
 
+**Les blocs de stockage (#158).** Chaque métal a un bloc de 9 lingots (étain, aluminium, magnésium, manganèse, et les trois alliages : bronze, duralumin, acier) et chaque métal brut un bloc de 9 objets bruts : 11 blocs en tout (`<métal>_block`, `raw_<métal>_block`). Ils ont les propriétés du bloc de fer et du bloc brut de fer de Minecraft (dureté 5, résistance 6, pioche requise, son métallique pour les lingots). Le niveau de pioche suit celui des minerais : pierre, sauf le magnésium et le manganèse (fer). Les recettes vont dans les deux sens (9 objets font un bloc, un bloc rend 9 objets) et se débloquent avec l'objet. Les blocs rejoignent les tags partagés `forge:storage_blocks`, `forge:storage_blocks/<métal>` et `forge:storage_blocks/raw_<métal>`. Ils ne servent pas encore de base de balise (idée #150).
+
 ## 7. Notions à apprendre
 
 Toutes sont dans [NOTIONS.md](../NOTIONS.md), section 8 « Génération du monde ». Chaque ticket ne s'occupe que de quelques-unes, avec une leçon avant le code, comme pour la fonderie.
@@ -123,7 +125,6 @@ Un ticket, une branche, une PR chacun. L'ordre compte.
 
 ## 9. Hors périmètre et à décider plus tard
 
-- Les **blocs de stockage** (bloc de lingots, bloc d'objets bruts) et leurs recettes.
 - Les minerais dans le **Nether** ou l'**End**.
 - Des **biomes thématiques** (par exemple l'étain en montagne) : on part sur « partout », on pourra affiner.
 - Des **structures** qui contiennent des minerais, et des biomes ou structures propres au mod.

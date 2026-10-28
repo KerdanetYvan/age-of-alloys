@@ -51,6 +51,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
             }
         }
 
+        // The items of the blocks of ingots and of raw items, for the same shared tags as the blocks.
+        copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
+        for (Metal metal : Metal.values()) {
+            copy(ModTags.storageBlock(metal), ModTags.storageBlockItem(metal));
+            if (metal.kind() == Metal.Kind.RAW) {
+                copy(ModTags.rawStorageBlock(metal), ModTags.rawStorageBlockItem(metal));
+            }
+        }
+
         tag(ItemTags.PICKAXES).add(ModItems.BRONZE_PICKAXE.get(), ModItems.DURALUMIN_PICKAXE.get(),
                 ModItems.STEEL_PICKAXE.get());
         tag(ItemTags.AXES).add(ModItems.BRONZE_AXE.get(), ModItems.DURALUMIN_AXE.get(),

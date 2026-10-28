@@ -22,6 +22,14 @@ public final class Heat {
         }
     }
 
+    /**
+     * How many ticks of fuel the foundry burns each game tick: its heat level. A hotter fire burns its fuel
+     * faster, so a coal block lasts a third of its burn time (see docs/design/alloy-creation.md, section 4).
+     */
+    public static int burnSpeed(int burnTicks) {
+        return levelOf(burnTicks);
+    }
+
     private Heat() {
     }
 }

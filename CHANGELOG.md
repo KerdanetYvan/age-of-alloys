@@ -14,6 +14,9 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ### Modifié
 - Le minerai d'aluminium dans la pierre est plus contrasté : ses veines, d'un bleu-gris plus sombre, se détachent mieux de la pierre et ne se confondent plus avec le magnésium.
 
+### Modifié
+- Dans la fonderie d'alliages, les combustibles chauds brûlent plus vite : le charbon et le charbon de bois deux fois plus vite, le bloc de charbon et le seau de lave trois fois plus vite. Un bloc de charbon fait ainsi 26 lots de fonte au lieu de 80. Les combustibles les moins chauds (planches, bâtons) et le four ne changent pas.
+
 ### Corrigé
 - La fonderie ne fond plus quand un objet étranger à la recette se trouve dans ses entrées : du minerai de fer posé avec l'étain et le cuivre bloque désormais le bronze, jusqu'à ce qu'on le retire. Le livre de recettes tient compte de la même règle.
 - L'acier se fabrique avec du charbon, plus avec du charbon de bois.

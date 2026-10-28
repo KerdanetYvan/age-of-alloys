@@ -1,0 +1,6 @@
+{%- comment -%} The picture strip at the top of an alloy sheet: the ingot, the block and the whole gear. alloy: bronze, duralumin or steel. {%- endcomment -%}
+{%- assign a = site.data.alloys[include.alloy] -%}
+<div class="hero-alloy" aria-hidden="true">
+  <span class="hero-main">{% include icon.html id=a.ingot s=6 %}{% include icon.html id=a.block s=4 %}</span>
+  <span class="gear">{%- for g in a.gear -%}{% include icon.html id=g s=3 %}{%- endfor -%}</span>
+</div>

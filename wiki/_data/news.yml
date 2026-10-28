@@ -1,5 +1,41 @@
 # News shown on the home page of a version and on the history page, newest first.
 # Short lines written for players, in both languages (CHANGELOG.md stays the detailed source, in French).
+v0.4.0:
+  date: 2026-10-28
+  fr:
+    added:
+      - "Un guide en jeu : l'onglet de succès Age of Alloys, qui apparaît au premier métal brut et mène du minerai aux alliages, aux outils et aux armures en neuf étapes."
+      - "Le livre de recettes de la fonderie : un bouton à côté de son interface montre les recettes débloquées, avec leurs ingrédients, la chaleur et la durée de fonte."
+      - "Le charbon purifié : du charbon cuit au four ou au haut fourneau, qui apporte le carbone de l'acier."
+      - "Onze blocs : un bloc de neuf lingots pour chacun des sept métaux, et un bloc de neuf objets bruts pour l'étain, l'aluminium, le magnésium et le manganèse."
+      - "Un caractère pour chaque alliage : le duralumin accélère et amortit les chutes, le bronze se répare lentement, l'acier résiste au recul et au feu."
+      - "Les outils aussi : le duralumin mine deux fois plus vite la roche et les minerais et son épée porte plus loin, l'acier mine plus vite la pierre et l'ardoise, repousse plus fort et étourdit parfois."
+    changed:
+      - "L'acier est plus exigeant : 4 lingots de fer et 1 charbon purifié donnent 1 lingot d'acier."
+      - "Le duralumin devient un vrai outil de vitesse : plus durable, plus rapide et bien plus enchantable, outils comme armure. Les outils en acier sont un peu plus durables et rapides."
+      - "Dans la fonderie, un combustible plus chaud brûle plus vite : le charbon deux fois, le bloc de charbon et le seau de lave trois fois."
+      - "Le minerai d'aluminium dans la pierre se repère mieux."
+    fixed:
+      - "La fonderie ne fond plus quand un objet étranger à la recette se trouve dans ses entrées."
+      - "L'acier ne se fabrique plus avec du charbon de bois."
+      - "La recette de la fonderie se débloque aussi avec un seau ou de la pierre lisse."
+  en:
+    added:
+      - "A guide in the game: the Age of Alloys advancement tab, which appears with your first raw metal and leads you from the ores to the alloys, the tools and the armor in nine steps."
+      - "The foundry recipe book: a button next to its screen shows the recipes you have unlocked, with their ingredients, the heat and the melting time."
+      - "Purified coal: coal cooked in a furnace or a blast furnace, which brings the carbon of steel."
+      - "Eleven blocks: a block of nine ingots for each of the seven metals, and a block of nine raw items for tin, aluminum, magnesium and manganese."
+      - "A character for each alloy: duralumin speeds you up and softens falls, bronze slowly mends itself, steel resists knockback and fire."
+      - "Tools too: duralumin mines rock and ores twice as fast and its sword reaches further, steel mines stone and deepslate faster, pushes harder and sometimes stuns."
+    changed:
+      - "Steel is more demanding: 4 iron ingots and 1 purified coal make 1 steel ingot."
+      - "Duralumin becomes a real speed tool: more durable, faster and much more enchantable, tools and armor alike. Steel tools are a bit more durable and faster."
+      - "In the foundry, a hotter fuel burns faster: coal twice as fast, a coal block and a lava bucket three times."
+      - "Aluminum ore in stone is easier to spot."
+    fixed:
+      - "The foundry no longer melts when an item that is not part of the recipe sits in its inputs."
+      - "Steel can no longer be made with charcoal."
+      - "The foundry recipe also unlocks with a bucket or smooth stone."
 v0.3.0:
   date: 2026-10-26
   fr:

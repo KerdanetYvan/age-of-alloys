@@ -1,0 +1,14 @@
+{%- comment -%} The numbers of the tools and the sword of an alloy, with the iron reference. alloy: bronze, duralumin or steel. {%- endcomment -%}
+{%- assign a = site.data.alloys[include.alloy].tools -%}
+{%- assign r = site.data.alloys.iron.tools -%}
+{%- assign nav = site.data.nav[page.lang] -%}
+<div class="stats">
+  <div class="stat"><span class="stat-label">{{ nav.s_durability }}</span><strong>{{ a.durability[page.lang] | default: a.durability }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ r.durability[page.lang] | default: r.durability }}</span></div>
+  <div class="stat"><span class="stat-label">{{ nav.s_speed }}</span><strong>{{ a.speed[page.lang] | default: a.speed }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ r.speed[page.lang] | default: r.speed }}</span></div>
+  {%- if a.special %}
+  <div class="stat stat-special"><span class="stat-label">{{ a.special.label[page.lang] }}</span><strong>{{ a.special.value[page.lang] | default: a.special.value }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ r.speed[page.lang] | default: r.speed }}</span></div>
+  {%- endif %}
+  <div class="stat"><span class="stat-label">{{ nav.s_enchant }}</span><strong>{{ a.enchant[page.lang] | default: a.enchant }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ r.enchant[page.lang] | default: r.enchant }}</span></div>
+  <div class="stat"><span class="stat-label">{{ nav.s_damage }}</span><strong>{{ a.damage[page.lang] | default: a.damage }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ r.damage[page.lang] | default: r.damage }}</span></div>
+  <div class="stat"><span class="stat-label">{{ nav.s_attack }}</span><strong>{{ a.attack[page.lang] | default: a.attack }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ r.attack[page.lang] | default: r.attack }}</span></div>
+</div>

@@ -1,0 +1,34 @@
+# The character of each alloy, shown as tiles. `icon` is the item that illustrates the trait.
+bronze:
+  - icon: bronze_chestplate
+    title: { fr: "Ensemble qui se répare", en: "Self-mending set" }
+    text: { fr: "Avec les quatre pièces d'armure, chaque pièce abîmée regagne 1 point de durabilité toutes les 3 minutes. C'est lent : de quoi entretenir l'armure, pas de quoi la réparer en une journée.", en: "With the four armor pieces, each damaged piece regains 1 point of durability every 3 minutes. It is slow: enough to maintain the armor, not to repair it in a day." }
+  - icon: bronze_pickaxe
+    title: { fr: "Durable", en: "Durable" }
+    text: { fr: "Pas de bonus d'outil : sa durabilité, plus de deux fois celle du fer, est son atout.", en: "No tool bonus: its durability, more than twice that of iron, is its strength." }
+duralumin:
+  - icon: duralumin_boots
+    title: { fr: "Pas léger", en: "Light step" }
+    text: { fr: "Chaque pièce d'armure rend 3 % plus rapide : 12 % avec le jeu complet.", en: "Each armor piece makes you 3% faster: 12% with the full set." }
+  - icon: duralumin_chestplate
+    title: { fr: "Ensemble léger", en: "Light set" }
+    text: { fr: "Avec les quatre pièces, les dégâts de chute baissent de 30 %.", en: "With the four pieces, fall damage goes down by 30%." }
+  - icon: duralumin_pickaxe
+    title: { fr: "Mineur pressé", en: "Hurried Miner" }
+    text: { fr: "Les outils minent la roche et tous les minerais deux fois plus vite (pas l'ardoise des abîmes elle-même).", en: "The tools mine rock and every ore twice as fast (not deepslate itself)." }
+  - icon: duralumin_sword
+    title: { fr: "Longue portée", en: "Long reach" }
+    text: { fr: "L'épée et la hache portent un demi-bloc plus loin : 3,5 blocs au lieu de 3.", en: "The sword and the axe reach half a block further: 3.5 blocks instead of 3." }
+steel:
+  - icon: steel_boots
+    title: { fr: "Pas lourd", en: "Heavy step" }
+    text: { fr: "Chaque pièce d'armure résiste un peu au recul (0,05) mais ralentit de 1 %.", en: "Each armor piece resists knockback a little (0.05) but slows you by 1%." }
+  - icon: steel_chestplate
+    title: { fr: "Ensemble forgé", en: "Forged set" }
+    text: { fr: "Avec les quatre pièces, les dégâts de feu sont divisés par deux.", en: "With the four pieces, fire damage is halved." }
+  - icon: steel_pickaxe
+    title: { fr: "Tailleur de pierre", en: "Stonecutter" }
+    text: { fr: "Les outils minent la pierre et l'ardoise des abîmes 25 % plus vite.", en: "The tools mine stone and deepslate 25% faster." }
+  - icon: steel_sword
+    title: { fr: "Coup étourdissant", en: "Stunning Blow" }
+    text: { fr: "L'épée et la hache repoussent un peu plus fort, et chaque coup a 15 % de chance de ralentir la cible de 60 % pendant 2,5 secondes.", en: "The sword and the axe push a little harder, and each hit has a 15% chance to slow the target by 60% for 2.5 seconds." }

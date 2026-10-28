@@ -1,6 +1,6 @@
 {%- comment -%} One smelting line. r: an entry of recipes.yml (smelt). {%- endcomment -%}
 {%- assign r = include.r -%}
-{%- assign ins = r.raw | append: "," | append: r.ore -%}
+{%- if r.ore -%}{%- assign ins = r.raw | append: "," | append: r.ore -%}{%- else -%}{%- assign ins = r.raw -%}{%- endif -%}
 {%- assign ins_list = ins | split: "," -%}
 <figure class="card card-small">
   <figcaption>{{ site.data.icons[r.result][page.lang] }}</figcaption>

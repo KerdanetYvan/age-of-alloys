@@ -1,0 +1,9 @@
+{%- comment -%} The card of an alloy: its ingot, its role, its gear and its key numbers, linking to its sheet. alloy: bronze, duralumin or steel. {%- endcomment -%}
+{%- assign a = site.data.alloys[include.alloy] -%}
+{%- assign nav = site.data.nav[page.lang] -%}
+{%- assign url = nav.prefix | append: "/" | append: page.version | append: a.page[page.lang] -%}
+<a class="alloy-card" href="{{ url | relative_url }}">
+  <span class="alloy-top">{% include icon.html id=a.ingot s=5 %}<span><strong class="alloy-name">{{ a.name[page.lang] }}</strong><span class="alloy-role">{{ a.role[page.lang] }}</span></span></span>
+  <span class="gear">{%- for g in a.gear -%}{% include icon.html id=g s=2 %}{%- endfor -%}</span>
+  <span class="chips"><span class="chip heat-{{ a.heat }}">{{ nav.heat }} {{ a.heat }}</span><span class="chip">{% include icon.html id=a.ingot s=1 %} {{ a.batch }} {{ nav.batch }}</span></span>
+</a>

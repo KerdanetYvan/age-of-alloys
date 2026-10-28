@@ -1,0 +1,3 @@
+{%- comment -%} One item icon. id: an icon id (see icons.yml), s: the zoom of the 16 px picture (3 by default). {%- endcomment -%}
+{%- assign s = include.s | default: 3 -%}
+<img class="icon" src="{{ '/assets/items/' | append: include.id | append: '.png' | relative_url }}" alt="" width="{{ s | times: 16 }}" height="{{ s | times: 16 }}" title="{{ site.data.icons[include.id][page.lang] }}">

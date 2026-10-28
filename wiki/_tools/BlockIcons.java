@@ -28,6 +28,17 @@ public class BlockIcons {
         {"deepslate_magnesium_ore", "aoa:deepslate_magnesium_ore", "aoa:deepslate_magnesium_ore", "aoa:deepslate_magnesium_ore"},
         {"manganese_ore", "aoa:manganese_ore", "aoa:manganese_ore", "aoa:manganese_ore"},
         {"deepslate_manganese_ore", "aoa:deepslate_manganese_ore", "aoa:deepslate_manganese_ore", "aoa:deepslate_manganese_ore"},
+        {"tin_block", "aoa:tin_block", "aoa:tin_block", "aoa:tin_block"},
+        {"aluminum_block", "aoa:aluminum_block", "aoa:aluminum_block", "aoa:aluminum_block"},
+        {"magnesium_block", "aoa:magnesium_block", "aoa:magnesium_block", "aoa:magnesium_block"},
+        {"manganese_block", "aoa:manganese_block", "aoa:manganese_block", "aoa:manganese_block"},
+        {"bronze_block", "aoa:bronze_block", "aoa:bronze_block", "aoa:bronze_block"},
+        {"duralumin_block", "aoa:duralumin_block", "aoa:duralumin_block", "aoa:duralumin_block"},
+        {"steel_block", "aoa:steel_block", "aoa:steel_block", "aoa:steel_block"},
+        {"raw_tin_block", "aoa:raw_tin_block", "aoa:raw_tin_block", "aoa:raw_tin_block"},
+        {"raw_aluminum_block", "aoa:raw_aluminum_block", "aoa:raw_aluminum_block", "aoa:raw_aluminum_block"},
+        {"raw_magnesium_block", "aoa:raw_magnesium_block", "aoa:raw_magnesium_block", "aoa:raw_magnesium_block"},
+        {"raw_manganese_block", "aoa:raw_manganese_block", "aoa:raw_manganese_block", "aoa:raw_manganese_block"},
     };
 
     public static void main(String[] args) throws Exception {

@@ -1,0 +1,17 @@
+{%- comment -%} The four armor pieces of an alloy with their numbers, then the full set against iron and diamond. alloy: bronze, duralumin or steel. {%- endcomment -%}
+{%- assign a = site.data.alloys[include.alloy] -%}
+{%- assign nav = site.data.nav[page.lang] -%}
+{%- assign names = "helmet,chestplate,leggings,boots" | split: "," -%}
+<div class="armor">
+  {%- for n in names -%}
+  {%- assign piece = a.armor.pieces[n] -%}
+  {%- assign iid = include.alloy | append: "_" | append: n %}
+  <div class="piece">{% include icon.html id=iid s=4 %}<strong>{{ nav.pieces[n] }}</strong><span>{{ nav.s_protection }} {{ piece[0] }}</span><span>{{ nav.s_durability }} {{ piece[1] }}</span></div>
+  {%- endfor %}
+</div>
+<div class="stats">
+  <div class="stat stat-special"><span class="stat-label">{{ nav.s_protection }} · {{ nav.full_set }}</span><strong>{{ a.armor.total[0] }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ site.data.alloys.iron.armor.total[0] }} · {{ nav.ref_diamond }} {{ site.data.alloys.diamond.armor.total[0] }}</span></div>
+  <div class="stat"><span class="stat-label">{{ nav.s_durability }} · {{ nav.full_set }}</span><strong>{{ a.armor.total[1] }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ site.data.alloys.iron.armor.total[1] }} · {{ nav.ref_diamond }} {{ site.data.alloys.diamond.armor.total[1] }}</span></div>
+  <div class="stat"><span class="stat-label">{{ nav.s_toughness }} · {{ nav.per_piece }}</span><strong>{{ a.armor.toughness }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ site.data.alloys.iron.armor.toughness }} · {{ nav.ref_diamond }} {{ site.data.alloys.diamond.armor.toughness }}</span></div>
+  <div class="stat"><span class="stat-label">{{ nav.s_enchant }}</span><strong>{{ a.armor.enchant }}</strong><span class="stat-ref">{{ nav.ref_iron }} {{ site.data.alloys.iron.armor.enchant }} · {{ nav.ref_diamond }} {{ site.data.alloys.diamond.armor.enchant }}</span></div>
+</div>

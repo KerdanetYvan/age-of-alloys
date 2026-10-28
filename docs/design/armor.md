@@ -117,7 +117,7 @@ Un ticket, une branche, une PR chacun. L'ordre compte.
 ## 8. Hors périmètre et à décider plus tard
 
 - Les **finitions d'armure** (*armor trims*) de Minecraft, qui se posent sur une armure à la table de forge.
-- Les **bonus d'ensemble** (un effet si on porte les quatre pièces).
+- Les **bonus d'ensemble** (un effet si on porte les quatre pièces) : décrits dans [alloy-traits.md](alloy-traits.md) (#168).
 - Des **enchantements** propres au mod.
 - Des armures pour d'autres créatures (chevaux, loups).
 - L'**intégration** avec d'autres mods (étape 4).

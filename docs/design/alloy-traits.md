@@ -54,7 +54,7 @@ La hache est à la fois un outil et une arme : elle reçoit les deux traits de s
 
 **Ordres de grandeur** : pioche en duralumin 9 → 18 sur la roche et sur un minerai (l'or, le plus rapide du jeu de base, est à 12) ; pioche en acier 7,5 → 9,4 sur la pierre ; épée en duralumin 3 + 0,5 de portée (3,5 blocs, hors Rapidité) ; étourdissement de l'acier : Lenteur IV, soit −60 % de vitesse pendant 50 ticks (2,5 secondes), avec une chance de 15 % par coup.
 
-**Textes des info-bulles** (une ligne par objet concerné) : « Mineur pressé : roche et minerais +100 % » (outils en duralumin), « Longue portée : +0,5 » (épée et hache en duralumin), « Tailleur de pierre : pierre et ardoise +25 % » (outils en acier), « Coup lourd : +20 % de recul » et « Coup étourdissant : 15 % de chance de ralentir la cible (2,5 s) » (épée et hache en acier).
+**Textes des info-bulles** (une ligne par objet concerné) : « Mineur pressé : roche et minerais +100 % » (outils en duralumin), « Tailleur de pierre : pierre et ardoise +25 % » (outils en acier), « Coup lourd : +20 % de recul » et « Coup étourdissant : 15 % de chance de ralentir la cible (2,5 s) » (épée et hache en acier).
 
 ## 5. Détail technique prévu
 
@@ -84,7 +84,7 @@ La hache est à la fois un outil et une arme : elle reçoit les deux traits de s
 |---|---|---|
 | Minage ×2 sur la roche et les minerais (duralumin) | l'événement de vitesse de minage du joueur (`PlayerEvent.BreakSpeed`), classe `AlloyToolTraits` du paquet `event` (faite en #180) | si l'objet tenu est un outil en duralumin, si c'est le bon outil pour ce bloc, et si le bloc est dans l'étiquette `forge:ores` (nos minerais y sont déjà) ou dans `BASE_STONE_OVERWORLD` sans être de l'ardoise, on multiplie la vitesse par 2 |
 | Minage ×1,25 sur la pierre et l'ardoise (acier) | le même événement (#180) | si l'objet tenu est un outil en acier et si le bloc est dans l'étiquette vanilla `BASE_STONE_OVERWORLD` (pierre, granite, diorite, andésite, tuf, ardoise), on multiplie la vitesse par 1,25 |
-| Portée d'attaque +0,5 (duralumin) | l'événement des modificateurs d'attribut d'objet (Forge), avec l'attribut de portée d'attaque que Forge ajoute | on ajoute un modificateur de +0,5, avec un identifiant unique, à l'épée et à la hache en duralumin, dans la main principale |
+| Portée d'attaque +0,5 (duralumin) | l'événement des modificateurs d'attribut d'objet (Forge, `ItemAttributeModifierEvent`), avec l'attribut de portée d'attaque que Forge ajoute (`ForgeMod.ENTITY_REACH`), même classe `AlloyToolTraits` (faite en #181) | on ajoute un modificateur en addition de +0,5, avec un identifiant unique, à l'épée et à la hache en duralumin, dans la main principale. La ligne d'info-bulle est celle que le jeu affiche d'office pour un attribut : pas de ligne bleue pour ce trait |
 | Recul +20 % (acier) | à trancher au moment du code (voir ci-dessous) | l'épée et la hache en acier repoussent 20 % plus fort |
 | Étourdissement 15 % (acier) | l'événement de coup reçu (`LivingHurtEvent`), qui donne l'attaquant et la cible | si l'attaquant tient une épée ou une hache en acier et si un tirage au sort à 15 % réussit, on ajoute à la cible l'effet Lenteur IV (`MobEffects.MOVEMENT_SLOWDOWN`, amplificateur 3) pendant 50 ticks |
 
@@ -136,7 +136,7 @@ Un ticket, une branche, une PR chacun.
 | Ticket (à créer) | Contenu |
 |---|---|
 | Ajouter la vitesse de minage des traits d'outil | Les nombres dans `content`, la première classe d'événements d'outil, le minage ×2 du duralumin (roche et minerais) et ×1,25 de l'acier (pierre et ardoise), les lignes d'info-bulle de ces deux traits. Il pose la technique (fait en #180). |
-| Ajouter la portée d'attaque du duralumin | Le modificateur d'attribut de portée d'attaque sur l'épée et la hache, et sa ligne d'info-bulle. |
+| Ajouter la portée d'attaque du duralumin | Le modificateur d'attribut de portée d'attaque sur l'épée et la hache (fait en #181 ; sa ligne d'info-bulle est la ligne d'attribut du jeu). |
 | Ajouter le recul de l'acier | Le recul supplémentaire de l'épée et de la hache en acier, la piste à trancher en codant, et sa ligne d'info-bulle. |
 | Ajouter l'étourdissement de l'acier | Le tirage au sort à 15 % et la Lenteur IV pendant 2,5 secondes à chaque coup d'une épée ou d'une hache en acier, et sa ligne d'info-bulle. |
 

@@ -32,6 +32,9 @@ public final class ModBlocks {
     // The ores of each raw metal, in stone and in deepslate. The tables come first: the constants below fill them.
     private static final Map<Metal, RegistryObject<Block>> ORES = new EnumMap<>(Metal.class);
     private static final Map<Metal, RegistryObject<Block>> DEEPSLATE_ORES = new EnumMap<>(Metal.class);
+    // The blocks of nine ingots (every metal) and of nine raw items (the raw metals).
+    private static final Map<Metal, RegistryObject<Block>> METAL_BLOCKS = new EnumMap<>(Metal.class);
+    private static final Map<Metal, RegistryObject<Block>> RAW_BLOCKS = new EnumMap<>(Metal.class);
 
     // The ores have the properties of the vanilla copper ores: hard, and they only drop with the right tool.
     public static final RegistryObject<Block> TIN_ORE = ore(Metal.TIN, false);
@@ -42,6 +45,20 @@ public final class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_MAGNESIUM_ORE = ore(Metal.MAGNESIUM, true);
     public static final RegistryObject<Block> MANGANESE_ORE = ore(Metal.MANGANESE, false);
     public static final RegistryObject<Block> DEEPSLATE_MANGANESE_ORE = ore(Metal.MANGANESE, true);
+
+    // The blocks have the properties of the vanilla iron block and of the raw iron block.
+    public static final RegistryObject<Block> BRONZE_BLOCK = metalBlock(Metal.BRONZE);
+    public static final RegistryObject<Block> DURALUMIN_BLOCK = metalBlock(Metal.DURALUMIN);
+    public static final RegistryObject<Block> STEEL_BLOCK = metalBlock(Metal.STEEL);
+    public static final RegistryObject<Block> TIN_BLOCK = metalBlock(Metal.TIN);
+    public static final RegistryObject<Block> ALUMINUM_BLOCK = metalBlock(Metal.ALUMINUM);
+    public static final RegistryObject<Block> MAGNESIUM_BLOCK = metalBlock(Metal.MAGNESIUM);
+    public static final RegistryObject<Block> MANGANESE_BLOCK = metalBlock(Metal.MANGANESE);
+
+    public static final RegistryObject<Block> RAW_TIN_BLOCK = rawBlock(Metal.TIN);
+    public static final RegistryObject<Block> RAW_ALUMINUM_BLOCK = rawBlock(Metal.ALUMINUM);
+    public static final RegistryObject<Block> RAW_MAGNESIUM_BLOCK = rawBlock(Metal.MAGNESIUM);
+    public static final RegistryObject<Block> RAW_MANGANESE_BLOCK = rawBlock(Metal.MANGANESE);
 
     private static RegistryObject<Block> ore(Metal metal, boolean deepslate) {
         RegistryObject<Block> block;
@@ -60,6 +77,35 @@ public final class ModBlocks {
             ORES.put(metal, block);
         }
         return block;
+    }
+
+    private static RegistryObject<Block> metalBlock(Metal metal) {
+        RegistryObject<Block> block = BLOCKS.register(metal.blockName(), () -> new Block(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.METAL)
+                .requiresCorrectToolForDrops()
+                .strength(5.0F, 6.0F)
+                .sound(SoundType.METAL)));
+        METAL_BLOCKS.put(metal, block);
+        return block;
+    }
+
+    private static RegistryObject<Block> rawBlock(Metal metal) {
+        RegistryObject<Block> block = BLOCKS.register(metal.rawBlockName(), () -> new Block(BlockBehaviour.Properties.of()
+                .mapColor(MapColor.STONE)
+                .requiresCorrectToolForDrops()
+                .strength(5.0F, 6.0F)));
+        RAW_BLOCKS.put(metal, block);
+        return block;
+    }
+
+    /** The block of nine ingots of a metal, for example the tin block. */
+    public static RegistryObject<Block> metalBlockOf(Metal metal) {
+        return METAL_BLOCKS.get(metal);
+    }
+
+    /** The block of nine raw items of a raw metal, for example the raw tin block. */
+    public static RegistryObject<Block> rawBlockOf(Metal metal) {
+        return RAW_BLOCKS.get(metal);
     }
 
     /** The ore of a raw metal in stone, for example the tin ore. */

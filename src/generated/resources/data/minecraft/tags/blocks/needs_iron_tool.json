@@ -1,5 +1,9 @@
 {
   "values": [
+    "ageofalloys:magnesium_block",
+    "ageofalloys:raw_magnesium_block",
+    "ageofalloys:manganese_block",
+    "ageofalloys:raw_manganese_block",
     "ageofalloys:magnesium_ore",
     "ageofalloys:deepslate_magnesium_ore",
     "ageofalloys:manganese_ore",

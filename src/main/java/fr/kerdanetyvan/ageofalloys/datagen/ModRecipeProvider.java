@@ -13,6 +13,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -113,6 +114,14 @@ public class ModRecipeProvider extends RecipeProvider {
         List<ItemLike> coal = List.of(Items.COAL);
         smelting(writer, coal, RecipeCategory.MISC, ModItems.PURIFIED_COAL.get(), 0.1F, 400, "purified_coal");
         blasting(writer, coal, RecipeCategory.MISC, ModItems.PURIFIED_COAL.get(), 0.1F, 200, "purified_coal");
+
+        // Nine ingots make a block and a block makes nine ingots; the same for the raw items.
+        for (Metal metal : Metal.values()) {
+            storage(writer, ModItems.ingotOf(metal).get(), ModItems.metalBlockItemOf(metal).get());
+            if (metal.kind() == Metal.Kind.RAW) {
+                storage(writer, ModItems.rawOf(metal).get(), ModItems.rawBlockItemOf(metal).get());
+            }
+        }
     }
 
     /**
@@ -142,6 +151,22 @@ public class ModRecipeProvider extends RecipeProvider {
                     .save(writer, ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID,
                             getItemName(result) + "_from_" + how + "_" + getItemName(ingredient)));
         }
+    }
+
+    /** Nine of an item make a block (shaped), and the block makes nine of the item (shapeless). */
+    private static void storage(Consumer<FinishedRecipe> writer, ItemLike unpacked, ItemLike packed) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, packed)
+                .define('#', unpacked)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy(getHasName(unpacked), has(unpacked))
+                .save(writer, ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID, getItemName(packed)));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, unpacked, 9)
+                .requires(packed)
+                .unlockedBy(getHasName(packed), has(packed))
+                .save(writer, ResourceLocation.fromNamespaceAndPath(AgeOfAlloys.MOD_ID,
+                        getItemName(unpacked) + "_from_" + getItemName(packed)));
     }
 
     private static void tool(Consumer<FinishedRecipe> writer, Metal metal, ToolType type, RecipeCategory category,

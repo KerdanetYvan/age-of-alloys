@@ -32,6 +32,8 @@ public final class ModItems {
     private static final Map<Metal, RegistryObject<Item>> ORE_ITEMS = new EnumMap<>(Metal.class);
     private static final Map<Metal, RegistryObject<Item>> DEEPSLATE_ORE_ITEMS = new EnumMap<>(Metal.class);
     private static final Map<Metal, RegistryObject<Item>> INGOTS = new EnumMap<>(Metal.class);
+    private static final Map<Metal, RegistryObject<Item>> METAL_BLOCK_ITEMS = new EnumMap<>(Metal.class);
+    private static final Map<Metal, RegistryObject<Item>> RAW_BLOCK_ITEMS = new EnumMap<>(Metal.class);
 
     public static final RegistryObject<Item> TIN_INGOT = ingot(Metal.TIN);
     public static final RegistryObject<Item> BRONZE_INGOT = ingot(Metal.BRONZE);
@@ -128,6 +130,20 @@ public final class ModItems {
     public static final RegistryObject<Item> MANGANESE_ORE = oreItem(Metal.MANGANESE, false);
     public static final RegistryObject<Item> DEEPSLATE_MANGANESE_ORE = oreItem(Metal.MANGANESE, true);
 
+    /** The items of the blocks of nine ingots and of nine raw items. */
+    public static final RegistryObject<Item> BRONZE_BLOCK = metalBlockItem(Metal.BRONZE);
+    public static final RegistryObject<Item> DURALUMIN_BLOCK = metalBlockItem(Metal.DURALUMIN);
+    public static final RegistryObject<Item> STEEL_BLOCK = metalBlockItem(Metal.STEEL);
+    public static final RegistryObject<Item> TIN_BLOCK = metalBlockItem(Metal.TIN);
+    public static final RegistryObject<Item> ALUMINUM_BLOCK = metalBlockItem(Metal.ALUMINUM);
+    public static final RegistryObject<Item> MAGNESIUM_BLOCK = metalBlockItem(Metal.MAGNESIUM);
+    public static final RegistryObject<Item> MANGANESE_BLOCK = metalBlockItem(Metal.MANGANESE);
+
+    public static final RegistryObject<Item> RAW_TIN_BLOCK = rawBlockItem(Metal.TIN);
+    public static final RegistryObject<Item> RAW_ALUMINUM_BLOCK = rawBlockItem(Metal.ALUMINUM);
+    public static final RegistryObject<Item> RAW_MAGNESIUM_BLOCK = rawBlockItem(Metal.MAGNESIUM);
+    public static final RegistryObject<Item> RAW_MANGANESE_BLOCK = rawBlockItem(Metal.MANGANESE);
+
     private static RegistryObject<Item> raw(Metal metal) {
         RegistryObject<Item> item = ITEMS.register(metal.rawName(), () -> new Item(new Item.Properties()));
         RAW.put(metal, item);
@@ -142,10 +158,34 @@ public final class ModItems {
         return item;
     }
 
+    private static RegistryObject<Item> metalBlockItem(Metal metal) {
+        RegistryObject<Block> block = ModBlocks.metalBlockOf(metal);
+        RegistryObject<Item> item = ITEMS.register(metal.blockName(), () -> new BlockItem(block.get(), new Item.Properties()));
+        METAL_BLOCK_ITEMS.put(metal, item);
+        return item;
+    }
+
+    private static RegistryObject<Item> rawBlockItem(Metal metal) {
+        RegistryObject<Block> block = ModBlocks.rawBlockOf(metal);
+        RegistryObject<Item> item = ITEMS.register(metal.rawBlockName(), () -> new BlockItem(block.get(), new Item.Properties()));
+        RAW_BLOCK_ITEMS.put(metal, item);
+        return item;
+    }
+
     private static RegistryObject<Item> ingot(Metal metal) {
         RegistryObject<Item> item = ITEMS.register(metal.ingotName(), () -> new Item(new Item.Properties()));
         INGOTS.put(metal, item);
         return item;
+    }
+
+    /** The item of the block of nine ingots of a metal. */
+    public static RegistryObject<Item> metalBlockItemOf(Metal metal) {
+        return METAL_BLOCK_ITEMS.get(metal);
+    }
+
+    /** The item of the block of nine raw items of a raw metal. */
+    public static RegistryObject<Item> rawBlockItemOf(Metal metal) {
+        return RAW_BLOCK_ITEMS.get(metal);
     }
 
     /** The raw item of a raw metal, for example the raw tin. */

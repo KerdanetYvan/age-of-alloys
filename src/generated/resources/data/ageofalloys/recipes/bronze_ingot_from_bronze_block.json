@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ageofalloys:bronze_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "ageofalloys:bronze_ingot"
+  }
+}

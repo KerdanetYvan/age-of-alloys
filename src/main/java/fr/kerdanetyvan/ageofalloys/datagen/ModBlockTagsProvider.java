@@ -32,6 +32,23 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.ALLOY_FOUNDRY.get());
         tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.ALLOY_FOUNDRY.get());
 
+        // The blocks of ingots and of raw items are mined with a pickaxe, at the same level as the ores of their
+        // metal. They join Forge's shared forge:storage_blocks tag, one sub-tag per metal.
+        for (Metal metal : Metal.values()) {
+            Block metalBlock = ModBlocks.metalBlockOf(metal).get();
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(metalBlock);
+            tag(metal.oreNeedsIronTool() ? BlockTags.NEEDS_IRON_TOOL : BlockTags.NEEDS_STONE_TOOL).add(metalBlock);
+            tag(ModTags.storageBlock(metal)).add(metalBlock);
+            tag(Tags.Blocks.STORAGE_BLOCKS).addTag(ModTags.storageBlock(metal));
+            if (metal.kind() == Metal.Kind.RAW) {
+                Block rawBlock = ModBlocks.rawBlockOf(metal).get();
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(rawBlock);
+                tag(metal.oreNeedsIronTool() ? BlockTags.NEEDS_IRON_TOOL : BlockTags.NEEDS_STONE_TOOL).add(rawBlock);
+                tag(ModTags.rawStorageBlock(metal)).add(rawBlock);
+                tag(Tags.Blocks.STORAGE_BLOCKS).addTag(ModTags.rawStorageBlock(metal));
+            }
+        }
+
         // The ores of the raw metals are mined with a pickaxe, at the stone level for the tin and the aluminum,
         // and at the iron level for the magnesium and the manganese (our alloys mine at the iron level too).
         for (Metal metal : Metal.values()) {

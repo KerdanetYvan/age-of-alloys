@@ -35,6 +35,30 @@ public final class ModTags {
                 ResourceLocation.fromNamespaceAndPath(COMMON_NAMESPACE, "ores/" + metal.id()));
     }
 
+    /** The tag of the block of ingots of a metal, for example {@code forge:storage_blocks/tin}. */
+    public static TagKey<Block> storageBlock(Metal metal) {
+        return TagKey.create(Registries.BLOCK,
+                ResourceLocation.fromNamespaceAndPath(COMMON_NAMESPACE, "storage_blocks/" + metal.id()));
+    }
+
+    /** The tag of the item of the block of ingots of a metal. */
+    public static TagKey<Item> storageBlockItem(Metal metal) {
+        return TagKey.create(Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(COMMON_NAMESPACE, "storage_blocks/" + metal.id()));
+    }
+
+    /** The tag of the block of raw items of a metal, for example {@code forge:storage_blocks/raw_tin}. */
+    public static TagKey<Block> rawStorageBlock(Metal metal) {
+        return TagKey.create(Registries.BLOCK,
+                ResourceLocation.fromNamespaceAndPath(COMMON_NAMESPACE, "storage_blocks/raw_" + metal.id()));
+    }
+
+    /** The tag of the item of the block of raw items of a metal. */
+    public static TagKey<Item> rawStorageBlockItem(Metal metal) {
+        return TagKey.create(Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath(COMMON_NAMESPACE, "storage_blocks/raw_" + metal.id()));
+    }
+
     /** The tag of the raw items of a metal, for example {@code forge:raw_materials/tin}. */
     public static TagKey<Item> rawMaterial(Metal metal) {
         return TagKey.create(Registries.ITEM,

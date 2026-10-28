@@ -70,6 +70,11 @@ public final class AlloyArmorMaterial implements ArmorMaterial {
         return stats.knockbackResistance();
     }
 
+    /** The name of the alloy without its namespace, for example {@code duralumin}: it names its texts. */
+    public String alloyId() {
+        return name.substring(name.indexOf(':') + 1);
+    }
+
     /** The change of speed that each piece gives to its wearer, as a share of the base speed. */
     public double movementSpeedBonus() {
         return stats.movementSpeedBonus();

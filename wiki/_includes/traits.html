@@ -1,0 +1,8 @@
+{%- comment -%} The character tiles of an alloy. alloy: bronze, duralumin or steel (see traits.yml). {%- endcomment -%}
+<div class="tiles">
+{%- for t in site.data.traits[include.alloy] -%}
+{%- assign ttitle = t.title[page.lang] -%}
+{%- assign ttext = t.text[page.lang] -%}
+{% include tile.html icon=t.icon title=ttitle text=ttext %}
+{%- endfor -%}
+</div>

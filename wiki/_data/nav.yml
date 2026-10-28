@@ -9,11 +9,30 @@ fr:
   fixed: Corrigé
   heat: Chaleur
   ten: "10 s"
+  batch: "lingots par fonte"
+  s_durability: Durabilité
+  s_speed: "Vitesse de minage"
+  s_enchant: Enchantabilité
+  s_damage: "Dégâts de l'épée"
+  s_attack: "Vitesse d'attaque"
+  s_protection: Protection
+  s_toughness: Robustesse
+  ref_iron: Fer
+  ref_diamond: Diamant
+  full_set: "Jeu complet"
+  per_piece: "par pièce"
+  pieces: { helmet: Casque, chestplate: Plastron, leggings: Jambières, boots: Bottes }
+  o_height: "Hauteur (Y)"
+  o_veins: "Filons par chunk"
+  o_size: "Taille d'un filon"
+  o_pickaxe: "Pioche minimale"
+  o_used: "Sert à faire du"
   alloys: "bronze, duralumin et acier alternent"
   items:
     - { key: home, title: Accueil, url: / }
     - { key: howto, title: Comment jouer, url: /comment-jouer/ }
     - { key: ores, title: Minerais, url: /minerais/ }
+    - { key: alloys, title: Alliages, url: /alliages/ }
     - { key: foundry, title: Fonderie, url: /fonderie/ }
     - { key: items, title: Objets, url: /objets/ }
     - { key: recipes, title: Recettes, url: /recettes/ }
@@ -29,11 +48,30 @@ en:
   fixed: Fixed
   heat: Heat
   ten: "10 s"
+  batch: "ingots per batch"
+  s_durability: Durability
+  s_speed: "Mining speed"
+  s_enchant: Enchantability
+  s_damage: "Sword damage"
+  s_attack: "Attack speed"
+  s_protection: Protection
+  s_toughness: Toughness
+  ref_iron: Iron
+  ref_diamond: Diamond
+  full_set: "Full set"
+  per_piece: "per piece"
+  pieces: { helmet: Helmet, chestplate: Chestplate, leggings: Leggings, boots: Boots }
+  o_height: "Height (Y)"
+  o_veins: "Veins per chunk"
+  o_size: "Vein size"
+  o_pickaxe: "Minimum pickaxe"
+  o_used: "Used to make"
   alloys: "bronze, duralumin and steel in turn"
   items:
     - { key: home, title: Home, url: / }
     - { key: howto, title: How to play, url: /how-to-play/ }
     - { key: ores, title: Ores, url: /ores/ }
+    - { key: alloys, title: Alloys, url: /alloys/ }
     - { key: foundry, title: Foundry, url: /foundry/ }
     - { key: items, title: Items, url: /items/ }
     - { key: recipes, title: Recipes, url: /recipes/ }

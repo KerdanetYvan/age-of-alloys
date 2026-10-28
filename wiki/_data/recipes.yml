@@ -72,12 +72,28 @@ foundry:
     count: 8
     text: { fr: "5 aluminium + 1 cuivre + 1 magnésium + 1 manganèse, au moins un charbon", en: "5 aluminum + 1 copper + 1 magnesium + 1 manganese, at least a coal" }
   - id: steel
-    inputs: [["iron_ingot", 4], ["coal,charcoal", 1]]
+    inputs: [["iron_ingot", 4], ["purified_coal", 1]]
     fuel: "coal_block,lava_bucket"
     heat: 3
     result: steel_ingot
-    count: 4
-    text: { fr: "4 lingots de fer + 1 charbon (ou charbon de bois), un bloc de charbon ou un seau de lave", en: "4 iron ingots + 1 coal (or charcoal), a coal block or a lava bucket" }
+    count: 1
+    text: { fr: "4 lingots de fer + 1 charbon purifié, un bloc de charbon ou un seau de lave", en: "4 iron ingots + 1 purified coal, a coal block or a lava bucket" }
+# Blocks: nine of the item make the block (shown in the crafting grid); the block alone gives the nine items back.
+blocks:
+  - { id: tin, item: tin_ingot, block: tin_block, title: { fr: "Bloc d'étain", en: "Block of Tin" }, text: { fr: "9 lingots d'étain", en: "9 tin ingots" } }
+  - { id: aluminum, item: aluminum_ingot, block: aluminum_block, title: { fr: "Bloc d'aluminium", en: "Block of Aluminum" }, text: { fr: "9 lingots d'aluminium", en: "9 aluminum ingots" } }
+  - { id: magnesium, item: magnesium_ingot, block: magnesium_block, title: { fr: "Bloc de magnésium", en: "Block of Magnesium" }, text: { fr: "9 lingots de magnésium", en: "9 magnesium ingots" } }
+  - { id: manganese, item: manganese_ingot, block: manganese_block, title: { fr: "Bloc de manganèse", en: "Block of Manganese" }, text: { fr: "9 lingots de manganèse", en: "9 manganese ingots" } }
+  - { id: bronze, item: bronze_ingot, block: bronze_block, title: { fr: "Bloc de bronze", en: "Block of Bronze" }, text: { fr: "9 lingots de bronze", en: "9 bronze ingots" } }
+  - { id: duralumin, item: duralumin_ingot, block: duralumin_block, title: { fr: "Bloc de duralumin", en: "Block of Duralumin" }, text: { fr: "9 lingots de duralumin", en: "9 duralumin ingots" } }
+  - { id: steel, item: steel_ingot, block: steel_block, title: { fr: "Bloc d'acier", en: "Block of Steel" }, text: { fr: "9 lingots d'acier", en: "9 steel ingots" } }
+  - { id: raw_tin, item: raw_tin, block: raw_tin_block, title: { fr: "Bloc d'étain brut", en: "Block of Raw Tin" }, text: { fr: "9 étains bruts", en: "9 raw tin" } }
+  - { id: raw_aluminum, item: raw_aluminum, block: raw_aluminum_block, title: { fr: "Bloc d'aluminium brut", en: "Block of Raw Aluminum" }, text: { fr: "9 aluminiums bruts", en: "9 raw aluminum" } }
+  - { id: raw_magnesium, item: raw_magnesium, block: raw_magnesium_block, title: { fr: "Bloc de magnésium brut", en: "Block of Raw Magnesium" }, text: { fr: "9 magnésiums bruts", en: "9 raw magnesium" } }
+  - { id: raw_manganese, item: raw_manganese, block: raw_manganese_block, title: { fr: "Bloc de manganèse brut", en: "Block of Raw Manganese" }, text: { fr: "9 manganèses bruts", en: "9 raw manganese" } }
+# Purified coal: coal is cooked in a furnace (20 s) or a blast furnace (10 s).
+purify:
+  - { raw: coal, result: purified_coal }
 smelt:
   - { raw: raw_tin, ore: "tin_ore,deepslate_tin_ore", result: tin_ingot }
   - { raw: raw_aluminum, ore: "aluminum_ore,deepslate_aluminum_ore", result: aluminum_ingot }

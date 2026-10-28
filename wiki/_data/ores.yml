@@ -1,0 +1,37 @@
+# The four metals of the world, for the ore cards. `icons`: the ore, the deepslate ore and the raw item.
+- id: tin
+  name: { fr: Étain, en: Tin }
+  icons: [tin_ore, deepslate_tin_ore, raw_tin, tin_ingot]
+  y: { fr: "-24 à 80", en: "-24 to 80" }
+  veins: 16
+  size: 9
+  pickaxe: { fr: pierre, en: stone }
+  alloy: bronze
+  note: { fr: "Presque aussi fréquent que le cuivre.", en: "Almost as common as copper." }
+- id: aluminum
+  name: { fr: Aluminium, en: Aluminum }
+  icons: [aluminum_ore, deepslate_aluminum_ore, raw_aluminum, aluminum_ingot]
+  y: { fr: "0 à 128", en: "0 to 128" }
+  veins: 14
+  size: 9
+  pickaxe: { fr: pierre, en: stone }
+  alloy: duralumin
+  note: { fr: "Le plus courant, de la surface aux grottes. Ses veines sombres se repèrent bien.", en: "The most common, from the surface down to the caves. Its dark veins are easy to spot." }
+- id: magnesium
+  name: { fr: Magnésium, en: Magnesium }
+  icons: [magnesium_ore, deepslate_magnesium_ore, raw_magnesium, magnesium_ingot]
+  y: { fr: "-48 à 48", en: "-48 to 48" }
+  veins: 4
+  size: 6
+  pickaxe: { fr: fer, en: iron }
+  alloy: duralumin
+  note: { fr: "Rare, autour de Y = 0.", en: "Rare, around Y = 0." }
+- id: manganese
+  name: { fr: Manganèse, en: Manganese }
+  icons: [manganese_ore, deepslate_manganese_ore, raw_manganese, manganese_ingot]
+  y: { fr: "-64 à 16", en: "-64 to 16" }
+  veins: 6
+  size: 6
+  pickaxe: { fr: fer, en: iron }
+  alloy: duralumin
+  note: { fr: "Rare et profond, surtout sous Y = 0.", en: "Rare and deep, mostly below Y = 0." }

@@ -1,0 +1,16 @@
+{%- comment -%} A storage block recipe: nine of an item make the block. b: an entry of recipes.yml (blocks). {%- endcomment -%}
+{%- assign b = include.b -%}
+<figure class="card">
+  <figcaption>{{ b.title[page.lang] }}</figcaption>
+  <div class="gui gui-craft" aria-hidden="true">
+    {%- for i in (0..8) -%}
+      {%- assign col = i | modulo: 3 -%}
+      {%- assign row = i | divided_by: 3 -%}
+      {%- assign x = col | times: 18 | plus: 4 -%}
+      {%- assign y = row | times: 18 | plus: 4 -%}
+      {% include slot.html ids=b.item x=x y=y %}
+    {%- endfor -%}
+    {% include slot.html ids=b.block x=98 y=22 %}
+  </div>
+  <p class="card-text">{{ b.text[page.lang] }}</p>
+</figure>

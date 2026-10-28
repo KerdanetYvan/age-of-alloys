@@ -1,0 +1,17 @@
+{%- comment -%} The card of a metal of the world. o: an entry of ores.yml. {%- endcomment -%}
+{%- assign o = include.o -%}
+{%- assign nav = site.data.nav[page.lang] -%}
+{%- assign a = site.data.alloys[o.alloy] -%}
+{%- assign url = nav.prefix | append: "/" | append: page.version | append: a.page[page.lang] -%}
+<div class="ore-card">
+  <div class="ore-icons">{%- for id in o.icons -%}{% include icon.html id=id s=3 %}{%- if forloop.index == 3 -%}<span class="arrow">&rarr;</span>{%- endif -%}{%- endfor -%}</div>
+  <h3>{{ o.name[page.lang] }}</h3>
+  <dl>
+    <div><dt>{{ nav.o_height }}</dt><dd>{{ o.y[page.lang] }}</dd></div>
+    <div><dt>{{ nav.o_veins }}</dt><dd>{{ o.veins }}</dd></div>
+    <div><dt>{{ nav.o_size }}</dt><dd>{{ o.size }}</dd></div>
+    <div><dt>{{ nav.o_pickaxe }}</dt><dd>{{ o.pickaxe[page.lang] }}</dd></div>
+  </dl>
+  <p>{{ o.note[page.lang] }}</p>
+  <p class="ore-use">{{ nav.o_used }} <a href="{{ url | relative_url }}">{% include icon.html id=a.ingot s=1 %} {{ a.name[page.lang] }}</a></p>
+</div>

@@ -18,6 +18,18 @@ bucket: { fr: "Seau", en: "Bucket" }
 charcoal: { fr: "Charbon de bois", en: "Charcoal" }
 coal: { fr: "Charbon", en: "Coal" }
 coal_block: { fr: "Bloc de charbon", en: "Block of Coal" }
+purified_coal: { fr: "Charbon purifié", en: "Purified Coal" }
+tin_block: { fr: "Bloc d'étain", en: "Block of Tin" }
+aluminum_block: { fr: "Bloc d'aluminium", en: "Block of Aluminum" }
+magnesium_block: { fr: "Bloc de magnésium", en: "Block of Magnesium" }
+manganese_block: { fr: "Bloc de manganèse", en: "Block of Manganese" }
+bronze_block: { fr: "Bloc de bronze", en: "Block of Bronze" }
+duralumin_block: { fr: "Bloc de duralumin", en: "Block of Duralumin" }
+steel_block: { fr: "Bloc d'acier", en: "Block of Steel" }
+raw_tin_block: { fr: "Bloc d'étain brut", en: "Block of Raw Tin" }
+raw_aluminum_block: { fr: "Bloc d'aluminium brut", en: "Block of Raw Aluminum" }
+raw_magnesium_block: { fr: "Bloc de magnésium brut", en: "Block of Raw Magnesium" }
+raw_manganese_block: { fr: "Bloc de manganèse brut", en: "Block of Raw Manganese" }
 copper_ingot: { fr: "Lingot de cuivre", en: "Copper Ingot" }
 deepslate_aluminum_ore: { fr: "Minerai d'aluminium des abîmes", en: "Deepslate Aluminum Ore" }
 deepslate_magnesium_ore: { fr: "Minerai de magnésium des abîmes", en: "Deepslate Magnesium Ore" }

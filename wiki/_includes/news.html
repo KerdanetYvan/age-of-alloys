@@ -1,14 +1,28 @@
+{%- comment -%} The news of a version, grouped by kind: a label (Added, Changed, Fixed) and the list of its lines. version: an id of news.yml. {%- endcomment -%}
 {%- assign release_news = site.data.news[include.version] -%}
 {%- assign text = release_news[page.lang] -%}
 {%- assign nav = site.data.nav[page.lang] -%}
+{%- if text.added %}
+<h3 class="news-kind"><span class="tag tag-added">{{ nav.added }}</span></h3>
 <ul class="news">
 {%- for line in text.added %}
-  <li><span class="tag tag-added">{{ nav.added }}</span> {{ line }}</li>
-{%- endfor %}
-{%- for line in text.changed %}
-  <li><span class="tag tag-changed">{{ nav.changed }}</span> {{ line }}</li>
-{%- endfor %}
-{%- for line in text.fixed %}
-  <li><span class="tag tag-fixed">{{ nav.fixed }}</span> {{ line }}</li>
+  <li>{{ line }}</li>
 {%- endfor %}
 </ul>
+{%- endif %}
+{%- if text.changed %}
+<h3 class="news-kind"><span class="tag tag-changed">{{ nav.changed }}</span></h3>
+<ul class="news">
+{%- for line in text.changed %}
+  <li>{{ line }}</li>
+{%- endfor %}
+</ul>
+{%- endif %}
+{%- if text.fixed %}
+<h3 class="news-kind"><span class="tag tag-fixed">{{ nav.fixed }}</span></h3>
+<ul class="news">
+{%- for line in text.fixed %}
+  <li>{{ line }}</li>
+{%- endfor %}
+</ul>
+{%- endif %}

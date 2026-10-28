@@ -1,0 +1,8 @@
+{%- comment -%} A row of item pictures with their names. ids: icon ids separated by commas, s: the zoom (4 by default). {%- endcomment -%}
+{%- assign ids = include.ids | split: "," -%}
+{%- assign gs = include.s | default: 4 -%}
+<div class="gallery">
+{%- for id in ids -%}
+<span class="gallery-item">{% include icon.html id=id s=gs %}<span>{{ site.data.icons[id][page.lang] }}</span></span>
+{%- endfor -%}
+</div>

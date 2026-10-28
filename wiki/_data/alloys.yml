@@ -1,0 +1,65 @@
+# The three alloys and the references of Minecraft, for the cards, the stat tiles and the armor rows of the pages.
+# A decimal number is written { fr: "7,5", en: "7.5" } so that the sign follows the language; a whole number is a plain number.
+bronze:
+  name: { fr: Bronze, en: Bronze }
+  role: { fr: "Robuste, le fer qui dure plus longtemps", en: "Sturdy, iron that lasts longer" }
+  page: { fr: /bronze/, en: /bronze/ }
+  ingot: bronze_ingot
+  block: bronze_block
+  heat: 1
+  batch: 4
+  gear: [bronze_pickaxe, bronze_axe, bronze_shovel, bronze_hoe, bronze_sword, bronze_helmet, bronze_chestplate, bronze_leggings, bronze_boots]
+  tools: { durability: 400, speed: 6, enchant: 12, damage: 6, attack: { fr: "1,6", en: "1.6" } }
+  armor:
+    pieces: { helmet: [2, 220], chestplate: [6, 320], leggings: [5, 300], boots: [2, 260] }
+    total: [15, 1100]
+    toughness: 0
+    enchant: 10
+duralumin:
+  name: { fr: Duralumin, en: Duralumin }
+  role: { fr: "Rapide, très enchantable, mine deux fois plus vite la roche et les minerais", en: "Fast, highly enchantable, mines rock and ores twice as fast" }
+  page: { fr: /duralumin/, en: /duralumin/ }
+  ingot: duralumin_ingot
+  block: duralumin_block
+  heat: 2
+  batch: 8
+  gear: [duralumin_pickaxe, duralumin_axe, duralumin_shovel, duralumin_hoe, duralumin_sword, duralumin_helmet, duralumin_chestplate, duralumin_leggings, duralumin_boots]
+  tools:
+    durability: 300
+    speed: { fr: "9", en: "9" }
+    special: { value: 18, label: { fr: "Sur la roche et les minerais", en: "On rock and ores" } }
+    enchant: 22
+    damage: 5
+    attack: { fr: "2,0", en: "2.0" }
+  armor:
+    pieces: { helmet: [2, 143], chestplate: [6, 208], leggings: [5, 195], boots: [2, 169] }
+    total: [15, 715]
+    toughness: 0
+    enchant: 22
+steel:
+  name: { fr: Acier, en: Steel }
+  role: { fr: "Le meilleur, juste sous le diamant, avec du charbon purifié", en: "The best, just below diamond, made with purified coal" }
+  page: { fr: /acier/, en: /steel/ }
+  ingot: steel_ingot
+  block: steel_block
+  heat: 3
+  batch: 1
+  gear: [steel_pickaxe, steel_axe, steel_shovel, steel_hoe, steel_sword, steel_helmet, steel_chestplate, steel_leggings, steel_boots]
+  tools:
+    durability: 1000
+    speed: { fr: "7,5", en: "7.5" }
+    special: { value: { fr: "9,4", en: "9.4" }, label: { fr: "Sur la pierre et l'ardoise", en: "On stone and deepslate" } }
+    enchant: 9
+    damage: { fr: "6,5", en: "6.5" }
+    attack: { fr: "1,6", en: "1.6" }
+  armor:
+    pieces: { helmet: [3, 297], chestplate: [7, 432], leggings: [5, 405], boots: [3, 351] }
+    total: [18, 1485]
+    toughness: 1
+    enchant: 9
+# References of Minecraft shown next to the numbers.
+iron:
+  tools: { durability: 250, speed: 6, enchant: 14, damage: 6, attack: { fr: "1,6", en: "1.6" } }
+  armor: { total: [15, 825], toughness: 0, enchant: 9 }
+diamond:
+  armor: { total: [20, 1815], toughness: 2, enchant: 10 }

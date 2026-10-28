@@ -65,6 +65,8 @@
   "tooltip.ageofalloys.recipe_book.heat.2": "Heat: coal or better",
   "tooltip.ageofalloys.recipe_book.heat.3": "Heat: coal block, lava bucket or better",
   "tooltip.ageofalloys.recipe_book.time": "Melting time: %s s",
+  "tooltip.ageofalloys.trait.duralumin.mining": "Hurried Miner: rock and ores +%s%%",
+  "tooltip.ageofalloys.trait.steel.mining": "Stonecutter: stone and deepslate +%s%%",
   "tooltip.ageofalloys.set.bronze.title": "Bronze Set (%s/4)",
   "tooltip.ageofalloys.set.bronze.effect": "Each piece repairs 1 durability every %s minutes",
   "tooltip.ageofalloys.set.duralumin.title": "Duralumin Set (%s/4)",

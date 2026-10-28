@@ -35,7 +35,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 ### Duralumin
 
 - **Réel** : aluminium (environ 94 %) + cuivre (4 %) + magnésium (1 %) + manganèse (0,5 %). Un alliage de l'aviation : léger, mais presque aussi résistant qu'un acier doux.
-- **En jeu** : l'alliage des **mineurs pressés** : vitesse de minage supérieure à celle de l'acier, mais durabilité et dégâts faibles. Il casse moins de blocs au total, plus vite.
+- **En jeu** : l'alliage des **mineurs pressés** : vitesse de minage supérieure à celle de l'acier, mais durabilité faible. Il casse moins de blocs au total, plus vite, et son enchantabilité (22, comme l'or) en fait le meilleur candidat aux enchantements de vitesse et de rendement.
 - **Objets** : `duralumin_ingot`, `duralumin_pickaxe`, `duralumin_axe`, `duralumin_shovel`, `duralumin_hoe`, `duralumin_sword`.
 - **Recette prévue (étape 2, non implémentée ici)** : alliage à 4 composants (aluminium, cuivre, magnésium, manganèse). Les proportions sont simplifiées pour rester jouables : 5 aluminium + 1 cuivre + 1 magnésium + 1 manganèse, pour 8 lingots (voir [alloy-creation.md](alloy-creation.md)).
 - **Palette** (6 teintes, sombre à clair) : `#344455` · `#566B80` · `#7C94AA` · `#A6BBCE` · `#CDDDEA` · `#EAF3FA`. Bleu-argent franc, pour le distinguer du fer (gris neutre) et de l'aluminium (gris mat).
@@ -55,10 +55,10 @@ Les lignes « vanilla » sont lues dans le code de Minecraft 1.20.1 (`net.minecr
 | Matériau | Durabilité | Vitesse | Bonus d'attaque | Niveau | Enchantabilité |
 |---|---:|---:|---:|---:|---:|
 | Pierre (vanilla) | 131 | 4 | 1 | 1 | 5 |
-| **Duralumin** | 200 | 7,5 | 0,5 | 2 | 15 |
 | Fer (vanilla) | 250 | 6 | 2 | 2 | 14 |
+| **Duralumin** | 300 | 9 | 1 | 2 | 22 |
 | **Bronze** | 400 | 6 | 2 | 2 | 12 |
-| **Acier** | 850 | 7 | 2,5 | 2 | 9 |
+| **Acier** | 1000 | 7,5 | 2,5 | 2 | 9 |
 | Diamant (vanilla) | 1561 | 8 | 3 | 3 | 10 |
 
 Lecture : la **durabilité** est le nombre d'utilisations, la **vitesse** celle de minage, le **niveau** décide des blocs qu'on peut casser (1 = pierre, 2 = fer, 3 = diamant), l'**enchantabilité** la qualité des enchantements proposés (plus c'est haut, mieux c'est).
@@ -69,11 +69,11 @@ La **vitesse d'attaque** n'appartient pas au matériau : elle se règle **objet 
 
 | Objet | Fer (vanilla) | Duralumin (proposé) |
 |---|---|---|
-| Épée | modificateur −2,4 → 1,6 coup/s, 6 dégâts par coup | −2,0 → **2,0 coups/s**, 4,5 dégâts par coup |
-| Hache | −3,1 → 0,9 coup/s, 9 dégâts par coup | −2,8 → **1,2 coup/s**, 7,5 dégâts par coup |
+| Épée | modificateur −2,4 → 1,6 coup/s, 6 dégâts par coup | −2,0 → **2,0 coups/s**, 5 dégâts par coup |
+| Hache | −3,1 → 0,9 coup/s, 9 dégâts par coup | −2,8 → **1,2 coup/s**, 8 dégâts par coup |
 | Pioche, pelle, houe | valeurs vanilla | valeurs vanilla |
 
-Dégâts par coup = base de l'objet + bonus du matériau + 1 (la main). Dégâts par seconde = dégâts par coup × coups par seconde : épée 9,0 contre 9,6 pour le fer, hache 9,0 contre 8,1. Le duralumin frappe **nettement plus souvent et un peu moins fort**.
+Dégâts par coup = base de l'objet + bonus du matériau + 1 (la main). Dégâts par seconde = dégâts par coup × coups par seconde : épée 10,0 contre 9,6 pour le fer, hache 9,6 contre 8,1. Le duralumin frappe **nettement plus souvent et un peu moins fort par coup**, ce qui lui donne un léger avantage par seconde.
 
 **Plafond utile : 2,0 coups/s.** Après un coup, la cible reste invulnérable 10 ticks (0,5 s) : un coup plus rapproché n'inflige que l'éventuel surplus de dégâts. Aller au-delà de 2,0 coups/s serait donc inutile contre les créatures. L'épée est réglée sur ce maximum. Le bronze et l'acier gardent les vitesses vanilla, à confirmer au ticket des outils (#11).
 

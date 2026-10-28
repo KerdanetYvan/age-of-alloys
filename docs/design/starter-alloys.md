@@ -45,7 +45,7 @@ Le laiton a été écarté : Create l'apporte déjà, ainsi que le zinc, et on n
 - **Réel** : fer + un peu de carbone (de 0,2 % à 2 %). Plus dur et plus résistant que le fer.
 - **En jeu** : le meilleur matériau de l'étape 1, à la frontière du diamant, qu'il n'égale pas.
 - **Objets** : `steel_ingot`, `steel_pickaxe`, `steel_axe`, `steel_shovel`, `steel_hoe`, `steel_sword`.
-- **Recette prévue (étape 2)** : fer + charbon (source de carbone) : 4 fer + 1 charbon, pour 4 lingots, avec une chaleur plus élevée (voir [alloy-creation.md](alloy-creation.md)).
+- **Recette** : fer + charbon purifié (source de carbone) : 4 fer + 1 charbon purifié, pour 1 lingot, avec une chaleur plus élevée (voir [alloy-creation.md](alloy-creation.md)).
 - **Palette** (carbone chaud) : `#2B2625` · `#47403D` · `#6B625D` · `#948A83` · `#BDB3AB`, avec `#E0D8D1` réservé aux éclats. Plus sombre que le fer (luminosité moyenne 97 contre 156) mais nettement plus clair que la netherite vanilla (59), pour ne pas la confondre avec elle.
 
 ## 3. Statistiques des outils
@@ -91,7 +91,7 @@ Dégâts par coup = base de l'objet + bonus du matériau + 1 (la main). Dégâts
 ## 5. Hors périmètre
 
 - **Armures** : leurs statistiques sont fixées dans [armor.md](armor.md).
-- **Blocs de minerai**, drops (minerais bruts) et **génération dans le monde** des matières premières : étape 3. Les *lingots* de ces métaux, eux, sont créés à l'étape 1. Le carbone de l'acier vient du charbon vanilla.
+- **Blocs de minerai**, drops (minerais bruts) et **génération dans le monde** des matières premières : étape 3. Les *lingots* de ces métaux, eux, sont créés à l'étape 1. Le carbone de l'acier vient du charbon purifié, fabriqué avec du charbon vanilla.
 - **Blocs de stockage** et **pépites** : quand une recette en a besoin.
 - Plusieurs de ces métaux existent déjà dans d'autres mods : l'utilisation de tags communs évitera les doublons à l'étape 4.
 - **Machines et mécanique de fonte** : étape 2, voir [alloy-creation.md](alloy-creation.md).

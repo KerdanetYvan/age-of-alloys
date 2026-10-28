@@ -41,6 +41,10 @@ public final class ModItems {
     public static final RegistryObject<Item> MAGNESIUM_INGOT = ingot(Metal.MAGNESIUM);
     public static final RegistryObject<Item> MANGANESE_INGOT = ingot(Metal.MANGANESE);
 
+    /** Coal cooked in a furnace: the carbon of steel. It is not a fuel. */
+    public static final RegistryObject<Item> PURIFIED_COAL =
+            ITEMS.register("purified_coal", () -> new Item(new Item.Properties()));
+
     // Attack damage and attack speed are set per tool, not per material: the values below are the
     // vanilla iron ones (read from net.minecraft.world.item.Items in 1.20.1).
     public static final RegistryObject<Item> BRONZE_PICKAXE = tool(Metal.BRONZE, ToolType.PICKAXE,

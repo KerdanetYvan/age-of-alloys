@@ -11,7 +11,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -33,7 +32,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.ingot(Metal.MAGNESIUM)).add(ModItems.MAGNESIUM_INGOT.get());
         tag(ModTags.ingot(Metal.MANGANESE)).add(ModItems.MANGANESE_INGOT.get());
 
-        tag(ModTags.COAL).add(Items.COAL);
+        tag(ModTags.PURIFIED_COAL).add(ModItems.PURIFIED_COAL.get());
 
         // Forge's own forge:ingots tag holds one sub-tag per metal; ours join them.
         for (Metal metal : Metal.values()) {

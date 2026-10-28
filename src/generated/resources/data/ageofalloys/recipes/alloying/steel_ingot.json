@@ -8,11 +8,11 @@
     },
     {
       "count": 1,
-      "tag": "ageofalloys:coal"
+      "tag": "ageofalloys:purified_coal"
     }
   ],
   "result": {
-    "count": 4,
+    "count": 1,
     "item": "ageofalloys:steel_ingot"
   },
   "time": 200

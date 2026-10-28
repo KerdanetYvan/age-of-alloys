@@ -25,6 +25,7 @@ public final class ModCreativeTabs {
                 output.accept(ModItems.ALUMINUM_INGOT.get());
                 output.accept(ModItems.MAGNESIUM_INGOT.get());
                 output.accept(ModItems.MANGANESE_INGOT.get());
+                output.accept(ModItems.PURIFIED_COAL.get());
                 for (Metal metal : Metal.values()) {
                     if (metal.kind() == Metal.Kind.RAW) {
                         output.accept(ModItems.rawOf(metal).get());

@@ -8,6 +8,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 ## [Non publié]
 
 ### Ajouté
+- Le charbon purifié : un charbon cuit longtemps au four (20 secondes) ou au haut fourneau (10 secondes), qui apporte le carbone de l'acier. Il est dans l'onglet créatif. Le charbon de bois n'en donne pas.
 - Les succès d'Age of Alloys : une page de succès qui apparaît quand on ramasse son premier métal brut, et guide le joueur du minerai aux alliages, aux outils et aux armures en 9 étapes (le tour des métaux, la fonderie, le bronze, le duralumin, l'acier, les outils, l'armure et un défi final). Leurs textes sont en anglais et en français et donnent des indices sans révéler les recettes, qu'on trouve dans le livre de recettes de la fonderie.
 - Le livre de recettes de la fonderie d'alliages : un bouton à gauche de l'interface, sous les entrées, l'ouvre à côté de la fenêtre, comme celui du four. Il montre les recettes débloquées, une recette se débloquant dès qu'on possède un de ses ingrédients (un lingot de cuivre ou d'étain pour le bronze, par exemple). En survolant une recette, on voit ses ingrédients avec leurs quantités, la chaleur requise et la durée de fonte. Il sert à consulter : cliquer sur une recette ne place rien dans les emplacements.
 
@@ -15,6 +16,7 @@ et le projet suit le [Versionnement Sémantique](https://semver.org/lang/fr/).
 - Le minerai d'aluminium dans la pierre est plus contrasté : ses veines, d'un bleu-gris plus sombre, se détachent mieux de la pierre et ne se confondent plus avec le magnésium.
 
 ### Modifié
+- L'acier est plus exigeant : il se fabrique avec 4 lingots de fer et 1 charbon purifié pour 1 lingot, au lieu de 4 lingots de fer et 1 charbon pour 4 lingots. Une armure complète en acier demande ainsi 96 lingots de fer.
 - Dans la fonderie d'alliages, les combustibles chauds brûlent plus vite : le charbon et le charbon de bois deux fois plus vite, le bloc de charbon et le seau de lave trois fois plus vite. Un bloc de charbon fait ainsi 26 lots de fonte au lieu de 80. Les combustibles les moins chauds (planches, bâtons) et le four ne changent pas.
 
 ### Corrigé

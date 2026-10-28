@@ -30,7 +30,7 @@ Tout se trouve dans l'onglet créatif **Age of Alloys**, et tout s'obtient aussi
 | Alliage | Rôle | Durabilité | Vitesse de minage |
 |---|---|---:|---:|
 | Bronze | Un outil robuste de milieu de partie, plus durable que le fer | 400 | 6 |
-| Duralumin | Le mineur pressé : rapide et très enchantable, deux fois plus rapide sur la roche et les minerais, avec une épée qui frappe 2,0 fois par seconde | 300 | 9 |
+| Duralumin | Le mineur pressé : rapide et très enchantable, deux fois plus rapide sur la roche et les minerais, avec une épée qui frappe 2,0 fois par seconde et porte un demi-bloc plus loin | 300 | 9 |
 | Acier | Le meilleur matériau de cette version, juste en dessous du diamant, un peu plus rapide sur la pierre et l'ardoise | 1 000 | 7,5 |
 | _Fer (vanilla, pour repère)_ | | _250_ | _6_ |
 
